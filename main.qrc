@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/BandyManager/main.qml</file>
+        <file>qml/BandyManager/logga.png</file>
+        <file>qml/BandyManager/SplashScreen.qml</file>
+        <file>qml/BandyManager/MainMenu.qml</file>
+        <file>qml/BandyManager/MainMenuButton.qml</file>
+        <file>qml/BandyManager/Credits.qml</file>
+        <file>qml/BandyManager/NewGame.qml</file>
+        <file>qml/BandyManager/Russia.png</file>
+        <file>qml/BandyManager/Sweden.png</file>
+        <file>qml/BandyManager/Right.png</file>
+        <file>qml/BandyManager/RightOMO.png</file>
+    </qresource>
+</RCC>
