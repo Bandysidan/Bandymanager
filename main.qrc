@@ -11,5 +11,11 @@
         <file>qml/BandyManager/Sweden.png</file>
         <file>qml/BandyManager/Right.png</file>
         <file>qml/BandyManager/RightOMO.png</file>
+        <file>qml/BandyManager/Denmark.png</file>
+        <file>qml/BandyManager/Finland.png</file>
+        <file>qml/BandyManager/Norway.png</file>
+        <file>qml/BandyManager/USA.png</file>
+        <file>qml/BandyManager/Left.png</file>
+        <file>qml/BandyManager/LeftOMO.png</file>
     </qresource>
 </RCC>

@@ -14,7 +14,7 @@ Rectangle {
             y: 10
         }
         Text {
-            text: "Detta spel är programmerat av Torbjörn Lindquist."
+            text: "Detta spel är programmerat av Torbjörn Lindquist.\n\nFlaggorna i spelet är gjorda av Gang of the Coconuts http://www.free-country-flags.com/index.php\n\nSpelet är släppt under Creative Commons Attribution-ShareAlike 3.0 Unported"
             x: 10
             y:120
         }
@@ -47,7 +47,7 @@ Rectangle {
 
     function show() {
         credits.visible = true;
-        MainMenu.visible = false;
+
     }
 
 
