@@ -17,5 +17,6 @@
         <file>qml/BandyManager/USA.png</file>
         <file>qml/BandyManager/Left.png</file>
         <file>qml/BandyManager/LeftOMO.png</file>
+        <file>qml/BandyManager/Countries.qml</file>
     </qresource>
 </RCC>

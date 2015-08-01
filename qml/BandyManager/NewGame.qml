@@ -1,5 +1,7 @@
 import QtQuick 2.0
 
+
+
 Rectangle {
     id: newGame
     anchors.fill: parent
@@ -11,6 +13,10 @@ Rectangle {
         font.pointSize: 75
         x: 10
         y: 10
+    }
+
+    Countries {
+
     }
 
     Text {
@@ -55,11 +61,15 @@ Rectangle {
                 onEntered: {
                     right.source= "RightOMO.png";
                 }
-
                 onExited: {
                     right.source= "Right.png";
                 }
-                onClicked: countryRight()
+
+                onClicked:{
+                    countryRight();
+                    changeFlag();
+                }
+
             }
         }
 
@@ -84,7 +94,10 @@ Rectangle {
                 onExited: {
                     left.source= "Left.png";
                 }
-                onClicked: countryLeft()
+                onClicked:{
+                    countryLeft();
+                    changeFlag();
+                }
             }
         }
 
@@ -96,11 +109,6 @@ Rectangle {
     function countryRight() {
         iCountry++;
         if (iCountry==6) iCountry=1;
-        if (iCountry==1) flag.source= "Sweden.png";
-        else if (iCountry==2) flag.source= "Russia.png";
-        else if (iCountry==3) flag.source= "Finland.png";
-        else if (iCountry==4) flag.source= "Norway.png";
-        else if (iCountry==5) flag.source= "USA.png";
 
 
     }
@@ -108,6 +116,10 @@ Rectangle {
     function countryLeft() {
         iCountry--;
         if (iCountry==0) iCountry=5;
+
+    }
+
+    function changeFlag() {
         if (iCountry==1) flag.source= "Sweden.png";
         else if (iCountry==2) flag.source= "Russia.png";
         else if (iCountry==3) flag.source= "Finland.png";
