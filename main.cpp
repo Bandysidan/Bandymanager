@@ -1,5 +1,6 @@
 #include <QtGui>
 #include <QtQml>
+
 #include "country.h"
 
 int main(int argc, char *argv[])

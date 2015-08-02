@@ -1,14 +1,27 @@
 #include "country.h"
+#include <QDebug>
 
-QList<Country *> *Country::m_countries;
+QHash<QString,Country *> *Country::m_countries;
 
 
 Country::Country(QObject *parent) :
     QObject(parent)
 {
     if(!m_countries)
-        m_countries= new QList<Country *>();
-    m_countries->push_front(this);
+        m_countries= new QHash<QString,Country *>();
+}
+
+void Country::setUid(QString value)
+{
+    m_uid = value;
+    m_countries->insert(m_uid, this);
+    emit uidChanged();
+}
+
+QString Country::uid()
+{
+     return m_uid;
+
 }
 
 void Country::setName(QString value)
@@ -43,4 +56,38 @@ void Country::setLeague(int value)
 int Country::league()
 {
     return m_ownleague;
+}
+
+QString Country::getFlagByUid(QString value)
+{
+    Country *country = m_countries->value(value);
+    if (country)
+        return country->flag();
+    else
+        return "none.png";
+}
+
+QString Country::getNameByUid(QString value)
+{
+    Country *country = m_countries->value(value);
+    if (country)
+        return country->name();
+    else
+        return "error";
+}
+
+QString Country::getNextByUid(QString value, QString filter)
+{
+    Country *country = m_countries->value(value);
+    if (country)
+        return country->name();
+    else
+        return "error";
+
+}
+
+
+void Country::onObjectNameChanged()
+{
+     qDebug() << "name " << objectName();
 }

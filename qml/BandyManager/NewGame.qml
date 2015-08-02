@@ -1,12 +1,14 @@
 import QtQuick 2.0
 
-
+import linkan.bandymanager 1.0
 
 Rectangle {
     id: newGame
     anchors.fill: parent
     z: 5
     property var iCountry: 1
+    property var currentCountry: "sweden"
+
     Text {
         id: bandy
         text: qsTr("BandyManager")
@@ -35,6 +37,10 @@ Rectangle {
             width: parent.width-16; height: 28
             focus: true
         }
+        Country {
+            id: country
+        }
+
         Image {
             id: flag
             x: 100
@@ -42,7 +48,17 @@ Rectangle {
             width: 235
             height: 142
             fillMode: Image.PreserveAspectFit
-            source: "Sweden.png"
+            Component.onCompleted: {
+                source = country.getFlagByUid(currentCountry);
+            }
+        }
+        Text {
+            id: countryname
+            x: 100
+            y: 315
+            Component.onCompleted: {
+                text = country.getNameByUid(currentCountry);
+            }
         }
 
         Image {
@@ -67,7 +83,7 @@ Rectangle {
 
                 onClicked:{
                     countryRight();
-                    changeFlag();
+                    changeCountry();
                 }
 
             }
@@ -96,7 +112,7 @@ Rectangle {
                 }
                 onClicked:{
                     countryLeft();
-                    changeFlag();
+                    changeCountry();
                 }
             }
         }
@@ -107,24 +123,36 @@ Rectangle {
     }
 
     function countryRight() {
-        iCountry++;
-        if (iCountry==6) iCountry=1;
-
-
+        if(currentCountry=="sweden")
+               currentCountry="russia"
+        else if(currentCountry=="russia")
+            currentCountry="finland"
+        else if(currentCountry=="finland")
+            currentCountry="norway"
+        else if(currentCountry=="norway")
+            currentCountry="usa"
+        else
+            currentCountry="sweden"
+//currentCountry = country.getNextByUid(currentCountry);
     }
 
     function countryLeft() {
-        iCountry--;
-        if (iCountry==0) iCountry=5;
+        if(currentCountry=="sweden")
+               currentCountry="usa"
+        else if(currentCountry=="usa")
+            currentCountry="norway"
+        else if(currentCountry=="norway")
+            currentCountry="finland"
+        else if(currentCountry=="finland")
+            currentCountry="russia"
+        else
+            currentCountry="sweden"
 
     }
 
-    function changeFlag() {
-        if (iCountry==1) flag.source= "Sweden.png";
-        else if (iCountry==2) flag.source= "Russia.png";
-        else if (iCountry==3) flag.source= "Finland.png";
-        else if (iCountry==4) flag.source= "Norway.png";
-        else if (iCountry==5) flag.source= "USA.png";
+    function changeCountry() {
+        flag.source= country.getFlagByUid(currentCountry);
+        countryname.text= country.getNameByUid(currentCountry);
 
     }
 
