@@ -58,6 +58,62 @@ int Country::league()
     return m_ownleague;
 }
 
+void Country::setMaleNational(int value)
+{
+    m_male_national = value;
+    emit maleChanged();
+}
+
+int Country::maleNational()
+{
+    return m_male_national;
+}
+
+
+void Country::setFemaleNational(int value)
+{
+    m_female_national = value;
+    emit femaleChanged();
+}
+
+int Country::femaleNational()
+{
+    return m_female_national;
+}
+
+void Country::setMemberNation(int value)
+{
+    m_member = value;
+    emit memberChanged();
+}
+
+int Country::memberNation()
+{
+    return m_member;
+}
+
+void Country::setMaleSkill(int value)
+{
+    m_male_skill = value;
+    emit maleSkillChanged();
+}
+
+int Country::maleSkill()
+{
+    return m_male_skill;
+}
+
+void Country::setFemaleSkill(int value)
+{
+    m_female_skill = value;
+    emit femaleSkillChanged();
+}
+
+int Country::femaleSkill()
+{
+    return m_female_skill;
+}
+
 QString Country::getFlagByUid(QString value)
 {
     Country *country = m_countries->value(value);
