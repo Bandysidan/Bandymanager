@@ -98,9 +98,108 @@ Rectangle {
         flag: "Estonia.png"
         league: 0
         maleNational: 1
-        femaleNational: 1
+        femaleNational: 0
         memberNation: 1
         maleSkill: 1650
+        femaleSkill: 850
+    }
+    Country {
+        uid: "latvia"
+        name: "Lettland"
+        flag: "Latvia.png"
+        league: 0
+        maleNational: 1
+        femaleNational: 0
+        memberNation: 1
+        maleSkill: 1670
+        femaleSkill: 810
+    }
+    Country {
+        uid: "hungary"
+        name: "Ungern"
+        flag: "Hungary.png"
+        league: 0
+        maleNational: 1
+        femaleNational: 1
+        memberNation: 1
+        maleSkill: 1600
+        femaleSkill: 1650
+    }
+    Country {
+        uid: "japan"
+        name: "Japan"
+        flag: "Japan.png"
+        league: 0
+        maleNational: 1
+        femaleNational: 0
+        memberNation: 1
+        maleSkill: 1580
+        femaleSkill: 750
+    }
+    Country {
+        uid: "holland"
+        name: "Holland"
+        flag: "Holland.png"
+        league: 0
+        maleNational: 1
+        femaleNational: 1
+        memberNation: 1
+        maleSkill: 1550
+        femaleSkill: 1620
+    }
+    Country {
+        uid: "germany"
+        name: "Tyskland"
+        flag: "Germany.png"
+        league: 0
+        maleNational: 1
+        femaleNational: 0
+        memberNation: 1
+        maleSkill: 1510
+        femaleSkill: 810
+    }
+    Country {
+        uid: "mongolia"
+        name: "Mongoliet"
+        flag: "Mongolia.png"
+        league: 0
+        maleNational: 1
+        femaleNational: 0
+        memberNation: 1
+        maleSkill: 1480
+        femaleSkill: 720
+    }
+    Country {
+        uid: "china"
+        name: "Kina"
+        flag: "China.png"
+        league: 0
+        maleNational: 1
+        femaleNational: 0
+        memberNation: 1
+        maleSkill: 1450
+        femaleSkill: 1550
+    }
+    Country {
+        uid: "czech"
+        name: "Tjeckien"
+        flag: "Czech.png"
+        league: 0
+        maleNational: 1
+        femaleNational: 0
+        memberNation: 1
+        maleSkill: 1520
+        femaleSkill: 870
+    }
+    Country {
+        uid: "somalia"
+        name: "Somalia"
+        flag: "Somalia.png"
+        league: 0
+        maleNational: 1
+        femaleNational: 0
+        memberNation: 1
+        maleSkill: 1200
         femaleSkill: 1850
     }
     Country {

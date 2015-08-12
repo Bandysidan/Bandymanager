@@ -62,5 +62,6 @@
         <file>qml/BandyManager/Turkmenistan.png</file>
         <file>qml/BandyManager/Ukraine.png</file>
         <file>qml/BandyManager/Uzbekistan.png</file>
+        <file>qml/BandyManager/Teams.qml</file>
     </qresource>
 </RCC>

@@ -1,6 +1,7 @@
 import QtQuick 2.0
 
 import linkan.bandymanager 1.0
+import team.bandymanager 1.0
 
 Rectangle {
     id: newGame
@@ -21,6 +22,10 @@ Rectangle {
 
     }
 
+    Teams {
+
+    }
+
     Text {
         id: namn
         text: qsTr("Ditt namn")
@@ -28,38 +33,134 @@ Rectangle {
         y: 130
     }
 
-        TextInput {
-            x: 100
-            y: 130
-            id: input
-            color: "red"
-            text: "Inqognito"
-            width: parent.width-16; height: 28
-            focus: true
+    TextInput {
+        x: 100
+        y: 130
+        id: input
+        color: "red"
+        text: "Inqognito"
+        width: parent.width-16; height: 28
+        focus: true
+    }
+    Country {
+        id: country
+    }
+    Team {
+        id: team
+    }
+    Rectangle{
+        x: 300
+        y: 415
+        width: 235
+        height: 442
+        Component {
+            id: teamDelegate
+            Item {
+                id: container
+                width: ListView.view.width; height: 30; anchors.leftMargin: 10; anchors.rightMargin: 10
+
+                Rectangle {
+                    id: content
+                    anchors.centerIn: parent; width: container.width - 40; height: container.height - 10
+                    color: "transparent"
+                    antialiasing: true
+                    radius: 5
+
+                    Rectangle { anchors.fill: parent; anchors.margins: 3; color: "#91AA9D"; antialiasing: true; radius: 8 }
+                }
+
+                Text {
+                    id: label
+                    anchors.centerIn: content
+                    text: name +" (" + (index + 1)+")"
+                    color: "#193441"
+                    font.pixelSize: 14
+                }
+
+                MouseArea {
+                    id: mouseArea
+                    anchors.fill: parent
+                    hoverEnabled: true
+
+                    onClicked: {
+                        container.ListView.view.currentIndex = index
+                        container.forceActiveFocus()
+                    }
+                }
+            }
+
         }
-        Country {
-            id: country
+        ListView {
+            id: teamslist
+            anchors.fill: parent
+            delegate: teamDelegate
+            model: teamlistSweden
+            highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
+            highlightFollowsCurrentItem: true
+
         }
 
-        Image {
-            id: flag
-            x: 100
-            y: 170
-            width: 235
-            height: 142
-            fillMode: Image.PreserveAspectFit
-            Component.onCompleted: {
-                source = country.getFlagByUid(currentCountry);
-            }
+    }
+
+    ListModel {
+        id: teamlistSweden
+        ListElement{name: "Sandvikens AIK"}
+        ListElement{name: "Västerås SK"}
+        ListElement{name: "Hammarby IF"}
+        ListElement{name: "Villa Lidköping BK"}
+    }
+
+    ListModel {
+        id: teamlistRussia
+        ListElement{name: "Dynamo Moskva"}
+        ListElement{name: "Jenisej"}
+    }
+
+    ListModel {
+        id: teamlistNorway
+        ListElement{name: "Stabaek"}
+        ListElement{name: "Ready"}
+    }
+
+    ListModel {
+        id: teamlistFinland
+        ListElement{name: "IFK Helsinki"}
+        ListElement{name: "OLS"}
+    }
+
+    ListModel {
+        id: teamlistUSA
+        ListElement{name: "Dinkytown Dukes"}
+        ListElement{name: "Minneapolis Bandolier"}
+    }
+
+    Image {
+        id: flag
+        x: 100
+        y: 170
+        width: 235
+        height: 142
+        fillMode: Image.PreserveAspectFit
+        Component.onCompleted: {
+            source = country.getFlagByUid(currentCountry);
         }
-        Text {
-            id: countryname
-            x: 100
-            y: 315
-            Component.onCompleted: {
-                text = country.getNameByUid(currentCountry);
-            }
+    }
+    Text {
+        id: countryname
+        x: 100
+        y: 315
+        Component.onCompleted: {
+            text = country.getNameByUid(currentCountry);
         }
+    }
+
+    Text {
+        id: chooseTeam
+        x: 300
+        y: 395
+        text: "Välj lag:"
+        font.bold: true
+    }
 
         Image {
             id: right
@@ -73,7 +174,6 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 hoverEnabled: true
-//                onClicked: button.clicked()
                 onEntered: {
                     right.source= "RightOMO.png";
                 }
@@ -102,7 +202,6 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 hoverEnabled: true
-//                onClicked: button.clicked()
                 onEntered: {
                     left.source= "LeftOMO.png";
                 }
@@ -153,6 +252,16 @@ Rectangle {
     function changeCountry() {
         flag.source= country.getFlagByUid(currentCountry);
         countryname.text= country.getNameByUid(currentCountry);
+        if(currentCountry=="sweden")
+          teamslist.model= teamlistSweden;
+        else if(currentCountry=="usa")
+          teamslist.model= teamlistUSA;
+        else if(currentCountry=="norway")
+                    teamslist.model= teamlistNorway;
+        else if(currentCountry=="finland")
+                      teamslist.model= teamlistFinland;
+        else
+            teamslist.model= teamlistRussia;
 
     }
 
