@@ -3,6 +3,11 @@
 
 #include <QObject>
 #include <QHash>
+#include <QList>
+#include <QStringList>
+#include <QVariant>
+#include <algorithm>
+
 
 class Country : public QObject
 {
@@ -11,6 +16,7 @@ class Country : public QObject
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString uid READ uid WRITE setUid NOTIFY uidChanged)
     Q_PROPERTY(QString flag READ flag WRITE setFlag NOTIFY flagChanged)
+    Q_PROPERTY(QVariant malename READ malename WRITE setMalename NOTIFY malenameChanged)
     Q_PROPERTY(int league READ league WRITE setLeague NOTIFY leagueChanged)
     Q_PROPERTY(int maleNational READ maleNational WRITE setMaleNational NOTIFY maleChanged)
     Q_PROPERTY(int femaleNational READ femaleNational WRITE setFemaleNational NOTIFY femaleChanged)
@@ -25,6 +31,9 @@ public:
 
     void setName(QString value);
     QString name();
+
+    void setMalename(QVariant value);
+    QString malename();
 
     void setFlag(QString value);
     QString flag();
@@ -55,6 +64,7 @@ signals:
     void uidChanged();
     void nameChanged();
     void flagChanged();
+    void malenameChanged();
     void leagueChanged();
     void maleChanged();
     void femaleChanged();
@@ -78,7 +88,11 @@ private:
     int m_male_skill;
     int m_female_skill;
 
+    QList<QString> m_male_name;
+
+
     static QHash<QString, Country *> *m_countries;
+
 };
 
 #endif // COUNTRY_H

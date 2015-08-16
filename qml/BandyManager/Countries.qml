@@ -14,6 +14,7 @@ Rectangle {
         memberNation: 1
         maleSkill: 2000
         femaleSkill: 2000
+        //malename: "Sven"
     }
     Country {
         uid: "russia"

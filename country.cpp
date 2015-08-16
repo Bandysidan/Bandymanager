@@ -35,6 +35,22 @@ QString Country::name()
     return m_name;
 }
 
+void Country::setMalename(QVariant value)
+{
+ /*   m_male_name.clear();
+    foreach (QVariant item, value.toList()) {
+                    m_male_name.append(item);
+                }
+
+    emit malenameChanged();*/
+}
+
+QString Country::malename()
+{
+    std::random_shuffle(m_male_name.begin(), m_male_name.end());
+    return m_male_name.takeFirst();
+}
+
 void Country::setFlag(QString value)
 {
     m_flagname = value;
