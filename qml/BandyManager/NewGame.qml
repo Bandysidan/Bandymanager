@@ -134,6 +134,15 @@ Rectangle {
         ListElement{name: "Minneapolis Bandolier"}
     }
 
+
+    Text{
+        x: 700
+        y: 415
+        width: 235
+        height: 442
+        id: playername
+    }
+
     Image {
         id: flag
         x: 100
@@ -262,6 +271,8 @@ Rectangle {
                       teamslist.model= teamlistFinland;
         else
             teamslist.model= teamlistRussia;
+        playername.text=country.getMaleName(currentCountry);
+
 
     }
 
