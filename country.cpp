@@ -161,8 +161,11 @@ void Country::setMaleName(QString value, QString cvalue)
 
 QString Country::getMaleName(QString value)
 {
-    Country *country = m_countries->value(value);
-     std::random_shuffle(country->m_male_name.begin(), country->m_male_name.end());
+    qDebug()<<"Testa: " << value;
+     Country *country = m_countries->value(value);
+qDebug()<<"Testa: " << value;
+std::random_shuffle(country->m_male_name.begin(), country->m_male_name.end());
+qDebug()<<"Testa: " << value;
      return country->m_male_name.first();
 
 }

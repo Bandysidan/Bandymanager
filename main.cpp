@@ -5,6 +5,7 @@
 #include "player.h"
 #include "team.h"
 
+
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
@@ -12,6 +13,8 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
     qmlRegisterType<Country>("linkan.bandymanager",1,0,"Country");
+
+    qmlRegisterType<Player>("players.bandymanager",1,0,"Player");
 
     qmlRegisterType<Team>("team.bandymanager",1,0,"Team");
 

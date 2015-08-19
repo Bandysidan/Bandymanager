@@ -14,8 +14,7 @@ Rectangle {
         memberNation: 1
         maleSkill: 2000
         femaleSkill: 2000
-        malename:
-            [
+        malename:[
             "Allan",
             "Anders",
             "Andreas",
@@ -183,7 +182,7 @@ Rectangle {
             "Ärling",
             "Örjan",
             "Östen"
-            ]
+        ]
     }
     Country {
         uid: "russia"
@@ -231,7 +230,32 @@ Rectangle {
         memberNation: 1
         maleSkill: 1700
         femaleSkill: 1880
-        malename: ["Ole","Lars"]
+        malename: [
+            "Bjørn",
+            "Bjørge",
+            "Christer",
+            "Edwin",
+            "Espen",
+            "Gabian",
+            "John",
+            "John Olav",
+            "Jonas",
+            "Kenneth",
+            "Kjell",
+            "Kjetil",
+            "Lars",
+            "Morten",
+            "Nikolay",
+            "Odd",
+            "Olav",
+            "Ole",
+            "Ole-Gunnar",
+            "Paul",
+            "Stian",
+            "Tom",
+            "Trond",
+            "Vegard"
+        ]
     }
     Country {
         uid: "usa"

@@ -2,6 +2,7 @@ import QtQuick 2.0
 
 import linkan.bandymanager 1.0
 import team.bandymanager 1.0
+import players.bandymanager 1.0
 
 Rectangle {
     id: newGame
@@ -18,14 +19,17 @@ Rectangle {
         y: 10
     }
 
-    Countries {
-
-    }
 
     Teams {
 
     }
 
+    Players {
+
+    }
+    Countries {
+
+    }
     Text {
         id: namn
         text: qsTr("Ditt namn")
@@ -47,6 +51,9 @@ Rectangle {
     }
     Team {
         id: team
+    }
+    Player {
+        id: player
     }
     Rectangle{
         x: 300
@@ -272,7 +279,7 @@ Rectangle {
         else
             teamslist.model= teamlistRussia;
         playername.text=country.getMaleName(currentCountry);
-
+//        playername.text=player.getFirstNameByUid("z");
 
     }
 
