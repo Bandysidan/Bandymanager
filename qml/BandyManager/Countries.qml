@@ -524,9 +524,9 @@ Rectangle {
         uid: "belarus"
         name: "Vitryssland"
         flag: "Belarus.png"
-        league: 0
+        league: -3
         maleNational: 1
-        femaleNational: 0
+        femaleNational: -3
         memberNation: 1
         maleSkill: 1680
         femaleSkill: 650
@@ -535,7 +535,7 @@ Rectangle {
         uid: "canada"
         name: "Kanada"
         flag: "Canada.png"
-        league: 0
+        league: -2
         maleNational: 1
         femaleNational: 1
         memberNation: 1
@@ -557,7 +557,7 @@ Rectangle {
         uid: "latvia"
         name: "Lettland"
         flag: "Latvia.png"
-        league: 0
+        league: -2
         maleNational: 1
         femaleNational: 0
         memberNation: 1
@@ -568,7 +568,7 @@ Rectangle {
         uid: "hungary"
         name: "Ungern"
         flag: "Hungary.png"
-        league: 0
+        league: -1
         maleNational: 1
         femaleNational: 1
         memberNation: 1
@@ -579,9 +579,9 @@ Rectangle {
         uid: "japan"
         name: "Japan"
         flag: "Japan.png"
-        league: 0
+        league: -1
         maleNational: 1
-        femaleNational: 0
+        femaleNational: -2
         memberNation: 1
         maleSkill: 1580
         femaleSkill: 750
@@ -590,7 +590,7 @@ Rectangle {
         uid: "holland"
         name: "Holland"
         flag: "Holland.png"
-        league: 0
+        league: -2
         maleNational: 1
         femaleNational: 1
         memberNation: 1
@@ -601,9 +601,9 @@ Rectangle {
         uid: "germany"
         name: "Tyskland"
         flag: "Germany.png"
-        league: 0
+        league: -2
         maleNational: 1
-        femaleNational: 0
+        femaleNational: -1
         memberNation: 1
         maleSkill: 1510
         femaleSkill: 810
@@ -612,9 +612,9 @@ Rectangle {
         uid: "mongolia"
         name: "Mongoliet"
         flag: "Mongolia.png"
-        league: 0
+        league: -3
         maleNational: 1
-        femaleNational: 0
+        femaleNational: -3
         memberNation: 1
         maleSkill: 1480
         femaleSkill: 720
@@ -623,7 +623,7 @@ Rectangle {
         uid: "china"
         name: "Kina"
         flag: "China.png"
-        league: 0
+        league: -1
         maleNational: 1
         femaleNational: 0
         memberNation: 1
@@ -634,9 +634,9 @@ Rectangle {
         uid: "czech"
         name: "Tjeckien"
         flag: "Czech.png"
-        league: 0
+        league: -3
         maleNational: 1
-        femaleNational: 0
+        femaleNational: -1
         memberNation: 1
         maleSkill: 1520
         femaleSkill: 870
@@ -645,23 +645,144 @@ Rectangle {
         uid: "somalia"
         name: "Somalia"
         flag: "Somalia.png"
-        league: 0
+        league: -5
         maleNational: 1
-        femaleNational: 0
+        femaleNational: -5
         memberNation: 1
         maleSkill: 1200
         femaleSkill: 1850
     }
     Country {
+        uid: "kyrgyzstan"
+        name: "Kirgisistan"
+        flag: "Kyrgyzstan.png"
+        league: -4
+        maleNational: 1
+        femaleNational: -4
+        memberNation: 1
+        maleSkill: 1300
+        femaleSkill: 1450
+    }
+    Country {
+        uid: "afghanistan"
+        name: "Afghanistan"
+        flag: "afghanistan.png"
+        league: -3
+        maleNational: -2
+        femaleNational: -4
+        memberNation: 1
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "argentina"
+        name: "Argentina"
+        flag: "argentina.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: 1
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "armenia"
+        name: "Armenien"
+        flag: "armenia.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: 1
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "australia"
+        name: "Australien"
+        flag: "australia.png"
+        league: -4
+        maleNational: -1
+        femaleNational: -2
+        memberNation: 1
+        maleSkill: 1250
+        femaleSkill: 1050
+    }
+    Country {
         uid: "denmark"
         name: "Danmark"
         flag: "denmark.png"
-        league: 0
+        league: -3
         maleNational: 0
-        femaleNational: 0
+        femaleNational: -2
         memberNation: 1
         maleSkill: 450
         femaleSkill: 450
+    }
+    Country {
+        uid: "india"
+        name: "Indien"
+        flag: "india.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: 1
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "ireland"
+        name: "Irland"
+        flag: "ireland.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: 1
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "italy"
+        name: "Italien"
+        flag: "italy.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: 1
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "lithuania"
+        name: "Litauen"
+        flag: "lithuania.png"
+        league: -4
+        maleNational: -2
+        femaleNational: -4
+        memberNation: 1
+        maleSkill: 1450
+        femaleSkill: 1350
+    }
+    Country {
+        uid: "poland"
+        name: "Poland"
+        flag: "poland.png"
+        league: -4
+        maleNational: -2
+        femaleNational: -4
+        memberNation: 1
+        maleSkill: 1325
+        femaleSkill: 1350
+    }
+    Country {
+        uid: "serbia"
+        name: "Serbien"
+        flag: "serbia.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: 1
+        maleSkill: 350
+        femaleSkill: 350
     }
 
 }

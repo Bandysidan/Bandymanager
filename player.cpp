@@ -43,11 +43,11 @@ void Player::setCountryUid(QString value)
     qDebug()<<"Testa: "<<m_first_name<< " "<< value;
     if(m_first_name=="")
     {
-       Country *country;
+      // Country *country;
        //QString test_name=country->getNameByUid(value);
-       QString test_name=country->getMaleName(value);
+      // QString test_name=country->getMaleName(value);
         //m_first_name="Test"
-        qDebug()<<"Test ? "<<test_name;
+        //qDebug()<<"Test ? "<<test_name;
     }
 
     emit countryUidChanged();
