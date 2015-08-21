@@ -36,6 +36,19 @@ QString Player::firstName()
     return m_first_name;
 }
 
+void Player::setFamilyName(QString value)
+{
+
+    m_family_name = value;
+
+    emit firstNameChanged();
+}
+
+QString Player::familyName()
+{
+    return m_family_name;
+}
+
 void Player::setCountryUid(QString value)
 {
 
@@ -74,12 +87,41 @@ QString Player::firstTeam()
 QString Player::getFirstNameByUid(QString value)
 {
     Player *player = m_players->value(value);
-    //qDebug()<<m_players->keys();
     if (player)
         return player->firstName();
     else
         return "error";
 }
+
+QString Player::getFamilyNameByUid(QString value)
+{
+    Player *player = m_players->value(value);
+    if (player)
+        return player->familyName();
+    else
+        return "error";
+}
+
+QString Player::getFullNameByUid(QString value)
+{
+    Player *player = m_players->value(value);
+    if (player)
+        return player->firstName();
+    else
+        return "error";
+}
+
+QString Player::getShortNameByUid(QString value)
+{
+    Player *player = m_players->value(value);
+    QString playername = player->familyName();
+    if (player)
+        return playername;
+    else
+        return "error";
+}
+
+
 
 QStringList Player::getPlayerUidsbyTeam(QString value)
 {

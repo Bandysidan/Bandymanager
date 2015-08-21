@@ -192,7 +192,7 @@ Rectangle {
             id: playerlist
             anchors.fill: parent
             delegate: playerDelegate
-            model: playerlistSAIK
+            model: playerlistTeam
             highlight: Rectangle { color: "#772020"; radius: 5 }
             highlightFollowsCurrentItem: true
 
@@ -200,11 +200,7 @@ Rectangle {
 
     }
     ListModel {
-        id: playerlistSAIK
-        ListElement{name: "Magnus Muhren"
-            number: "2"}
-        ListElement{name: "Stefan Andersson"
-            number: "5"}
+        id: playerlistTeam
     }
 
     Image {
@@ -327,13 +323,14 @@ Rectangle {
     function changeCountry() {
         flag.source= country.getFlagByUid(currentCountry);
         countryname.text= country.getNameByUid(currentCountry);
+        playerlistTeam.clear();
         if(currentCountry=="sweden")
             {
                 teamslist.model= teamlistSweden;
-                for(i=0;i < playerList.length ; ++i)
+                for(i=0;i < playerList.length ; i++)
                 {
                     playerNumber=i.toString();
-                    playerlistSAIK.set(i,{name: player.getFirstNameByUid(playerList[i]),number: playerNumber});
+                    playerlistTeam.set(i,{name: player.getShortNameByUid(playerList[i]),number: playerNumber});
                 }
 
 //                playerlistSAIK.set(0,{name: "Magnus Muhrén",number: "13"});
@@ -343,27 +340,30 @@ Rectangle {
         else if(currentCountry=="usa")
         {
           teamslist.model= teamlistUSA;
-            playerlistSAIK.set(0,{name: "Scott Manson",number: "17"});
-            playerlistSAIK.set(1,{name: "Mike Harrington",number: "19"});
+            playerlistTeam.clear();
+            playerlistTeam.set(0,{name: "Scott Manson",number: "17"});
+            playerlistTeam.set(1,{name: "Mike Harrington",number: "19"});
         }
         else if(currentCountry=="norway")
         {
                     teamslist.model= teamlistNorway;
-            playerlistSAIK.set(0,{name: "Pål Hansen",number: "7"});
-            playerlistSAIK.set(1,{name: "Aleksander Cras",number: "11"});
+playerlistTeam.clear();
+            playerlistTeam.set(0,{name: "Pål Hansen",number: "7"});
+            playerlistTeam.set(1,{name: "Aleksander Cras",number: "11"});
         }
         else if(currentCountry=="finland")
         {
                       teamslist.model= teamlistFinland;
-        playerlistSAIK.set(0,{name: "Mikka Muttikainen",number: "4"});
-        playerlistSAIK.set(1,{name: "Sami Laakkonen",number: "22"});
+        playerlistTeam.clear();
+            playerlistTeam.set(0,{name: "Mikka Muttikainen",number: "4"});
+        playerlistTeam.set(1,{name: "Sami Laakkonen",number: "22"});
         }
         else
         {
             teamslist.model= teamlistRussia;
-            playerlistSAIK.set(0,{name: "Misha Sveshnikov",number: "9"});
-            playerlistSAIK.set(1,{name: "Maxim Potechkin",number: "27"});
-            playerlistSAIK.remove(2)
+            playerlistTeam.clear();
+            playerlistTeam.set(0,{name: "Misha Sveshnikov",number: "9"});
+            playerlistTeam.set(1,{name: "Maxim Potechkin",number: "27"});
         }
 //        playername.text=country.getMaleName(currentCountry);
 //        playername.text=player.getFirstNameByUid("x01x01x02");
