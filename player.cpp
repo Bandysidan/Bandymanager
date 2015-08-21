@@ -105,8 +105,9 @@ QString Player::getFamilyNameByUid(QString value)
 QString Player::getFullNameByUid(QString value)
 {
     Player *player = m_players->value(value);
+    QString playername = player->firstName() +" "+ player->familyName();
     if (player)
-        return player->firstName();
+        return playername;
     else
         return "error";
 }
@@ -114,7 +115,7 @@ QString Player::getFullNameByUid(QString value)
 QString Player::getShortNameByUid(QString value)
 {
     Player *player = m_players->value(value);
-    QString playername = player->familyName();
+    QString playername = player->firstName().left(1) +". "+ player->familyName();
     if (player)
         return playername;
     else

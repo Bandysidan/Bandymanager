@@ -333,9 +333,6 @@ Rectangle {
                     playerlistTeam.set(i,{name: player.getShortNameByUid(playerList[i]),number: playerNumber});
                 }
 
-//                playerlistSAIK.set(0,{name: "Magnus Muhrén",number: "13"});
-//                playerlistSAIK.set(1,{name: "Torbjörn Lindquist",number: "47"});
-//                playerlistSAIK.set(2,{name: player.getFirstNameByUid(currentPlayer),number: "54"})
             }
         else if(currentCountry=="usa")
         {
