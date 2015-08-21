@@ -5,13 +5,32 @@ import team.bandymanager 1.0
 import players.bandymanager 1.0
 
 Rectangle {
+    /*
+        Grundläggande inställningar och laddning av data
+      */
+
+  /*  Countries {
+
+    }*/
+
+    Teams {
+
+    }
+
+    Players {
+
+    }
+
     id: newGame
     anchors.fill: parent
     z: 5
     property var iCountry: 1
     property var currentCountry: "sweden"
+    property var currentTeam: "SAIKbandyherrar"
     property var currentPlayer: "x01x01x01"
     property var playerList:["x01x01x01","x01x01x02","x01x01x03","x01x01x04"]
+    property var teamListSweden: ["SAIKbandyherrar","VSKbandyherrar","Bajenbandyherrar","Villabandyherrar","Tillbergabandyherrar"]
+    property var teamListRussia: ["Jenisejherrar","Dynamomoscowherrar","Vodnikherrar"]
     property var i:0
     property var playerNumber:"1"
 
@@ -23,17 +42,6 @@ Rectangle {
         y: 10
     }
 
-
-    Teams {
-
-    }
-
-    Players {
-
-    }
-    Countries {
-
-    }
     Text {
         id: namn
         text: qsTr("Ditt namn")
@@ -96,6 +104,7 @@ Rectangle {
                     onClicked: {
                         container.ListView.view.currentIndex = index
                         container.forceActiveFocus()
+                        changeTeam(container.ListView.view.currentIndex)
                     }
                 }
             }
@@ -105,7 +114,7 @@ Rectangle {
             id: teamslist
             anchors.fill: parent
             delegate: teamDelegate
-            model: teamlistSweden
+            model: teamlistModel
             highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
             highlightFollowsCurrentItem: true
 
@@ -114,12 +123,10 @@ Rectangle {
     }
 
     ListModel {
-        id: teamlistSweden
-        ListElement{name: "Sandvikens AIK"}
-        ListElement{name: "Västerås SK"}
-        ListElement{name: "Hammarby IF"}
-        ListElement{name: "Villa Lidköping BK"}
+        id: teamlistModel
+
     }
+
 
     ListModel {
         id: teamlistRussia
@@ -326,47 +333,83 @@ Rectangle {
         playerlistTeam.clear();
         if(currentCountry=="sweden")
             {
-                teamslist.model= teamlistSweden;
-                for(i=0;i < playerList.length ; i++)
+                teamlistModel.clear();
+                for(i=0; i < teamListSweden.length ; i++)
                 {
-                    playerNumber=i.toString();
-                    playerlistTeam.set(i,{name: player.getShortNameByUid(playerList[i]),number: playerNumber});
+                    teamlistModel.set(i,{name: team.getNameByUid(teamListSweden[i])})
                 }
+
+                teamslist.model= teamlistModel;
 
             }
         else if(currentCountry=="usa")
-        {
-          teamslist.model= teamlistUSA;
-            playerlistTeam.clear();
-            playerlistTeam.set(0,{name: "Scott Manson",number: "17"});
-            playerlistTeam.set(1,{name: "Mike Harrington",number: "19"});
-        }
+            {
+                teamslist.model= teamlistUSA;
+            }
         else if(currentCountry=="norway")
-        {
-                    teamslist.model= teamlistNorway;
-playerlistTeam.clear();
-            playerlistTeam.set(0,{name: "Pål Hansen",number: "7"});
-            playerlistTeam.set(1,{name: "Aleksander Cras",number: "11"});
-        }
+            {
+                teamslist.model= teamlistNorway;
+            }
         else if(currentCountry=="finland")
-        {
-                      teamslist.model= teamlistFinland;
-        playerlistTeam.clear();
-            playerlistTeam.set(0,{name: "Mikka Muttikainen",number: "4"});
-        playerlistTeam.set(1,{name: "Sami Laakkonen",number: "22"});
-        }
+            {
+                teamslist.model= teamlistFinland;
+            }
         else
-        {
-            teamslist.model= teamlistRussia;
-            playerlistTeam.clear();
-            playerlistTeam.set(0,{name: "Misha Sveshnikov",number: "9"});
-            playerlistTeam.set(1,{name: "Maxim Potechkin",number: "27"});
-        }
+            {
+                teamlistModel.clear();
+                for(i=0; i < teamListRussia.length ; i++)
+                    {
+                        teamlistModel.set(i,{name: team.getNameByUid(teamListRussia[i])})
+                    }
+
+                teamslist.model= teamlistModel;
+            }
 //        playername.text=country.getMaleName(currentCountry);
 //        playername.text=player.getFirstNameByUid("x01x01x02");
 
-
+        changeTeam(1);
     }
 
+
+    function changeTeam(teamindex){
+        playerlistTeam.clear();
+        if(currentCountry=="sweden")
+            {
+                currentTeam = teamListSweden[teamindex];
+                for(i=0;i < playerList.length ; i++)
+                    {
+                        playerNumber=i.toString();
+                        playerlistTeam.set(i,{name: player.getFullNameByUid(playerList[i]),number: playerNumber});
+                    }
+
+            }
+        else if(currentCountry=="usa")
+            {
+                playerlistTeam.clear();
+                playerlistTeam.set(0,{name: "Scott Manson",number: "17"});
+                playerlistTeam.set(1,{name: "Mike Harrington",number: "19"});
+            }
+        else if(currentCountry=="norway")
+            {
+                playerlistTeam.clear();
+                playerlistTeam.set(0,{name: "Pål Hansen",number: "7"});
+                playerlistTeam.set(1,{name: "Aleksander Cras",number: "11"});
+            }
+        else if(currentCountry=="finland")
+            {
+                playerlistTeam.clear();
+                playerlistTeam.set(0,{name: "Mikka Muttikainen",number: "4"});
+                playerlistTeam.set(1,{name: "Sami Laakkonen",number: "22"});
+            }
+        else
+            {
+                currentTeam = teamListRussia[teamindex];
+                playerlistTeam.clear();
+                playerlistTeam.set(0,{name: "Misha Sveshnikov",number: "9"});
+                playerlistTeam.set(1,{name: "Maxim Potechkin",number: "27"});
+            }
+
+
+    }
 
 }

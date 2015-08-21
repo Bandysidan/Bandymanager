@@ -25,8 +25,8 @@ return m_uid;
 
 void Player::setFirstName(QString value)
 {
-
-    m_first_name = value;
+    if(value!="?")
+        m_first_name = value;
 
     emit firstNameChanged();
 }
@@ -39,9 +39,10 @@ QString Player::firstName()
 void Player::setFamilyName(QString value)
 {
 
-    m_family_name = value;
+    if(value!="?")
+        m_family_name = value;
 
-    emit firstNameChanged();
+    emit familyNameChanged();
 }
 
 QString Player::familyName()
@@ -52,16 +53,11 @@ QString Player::familyName()
 void Player::setCountryUid(QString value)
 {
 
-    m_country_uid = value;
-    //qDebug()<<"Testa: "<<m_first_name<< " "<< value;
-    if(m_first_name=="")
-    {
-      // Country *country;
-       //QString test_name=country->getNameByUid(value);
-      // QString test_name=country->getMaleName(value);
-        //m_first_name="Test"
-        //qDebug()<<"Test ? "<<test_name;
-    }
+//    m_country_uid = value;
+    Country *country;
+//    QString name=country->getMaleName(value);
+    m_first_name=country->getMaleName(value);
+    m_family_name=country->getFamilyName(value);
 
     emit countryUidChanged();
 

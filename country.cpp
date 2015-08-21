@@ -37,23 +37,34 @@ QString Country::name()
 
 void Country::setMalenames(QVariant value)
 {
-
-
     m_male_name.clear();
     foreach (QVariant item, value.toList()) {
                 QString qs=item.toString();
                     m_male_name.append(qs);
                 }
-        //     m_male_name=value;
 
     emit malenameChanged();
 }
 
 QVariant Country::malename()
 {
-//    std::random_shuffle(m_male_name.begin(), m_male_name.end());
-//    return m_male_name.takeFirst();
     return m_male_name;
+}
+
+void Country::setFamilynames(QVariant value)
+{
+    m_family_name.clear();
+    foreach (QVariant item, value.toList()) {
+                QString qs=item.toString();
+                    m_family_name.append(qs);
+                }
+
+    emit malenameChanged();
+}
+
+QVariant Country::familyname()
+{
+    return m_family_name;
 }
 
 void Country::setFlag(QString value)
@@ -161,12 +172,17 @@ void Country::setMaleName(QString value, QString cvalue)
 
 QString Country::getMaleName(QString value)
 {
-    qDebug()<<"Testa: " << value;
-     Country *country = m_countries->value(value);
-qDebug()<<"Testa: " << value;
-std::random_shuffle(country->m_male_name.begin(), country->m_male_name.end());
-qDebug()<<"Testa: " << value;
-     return country->m_male_name.first();
+    Country *country = m_countries->value(value);
+    std::random_shuffle(country->m_male_name.begin(), country->m_male_name.end());
+    return country->m_male_name.first();
+
+}
+
+QString Country::getFamilyName(QString value)
+{
+    Country *country = m_countries->value(value);
+    std::random_shuffle(country->m_family_name.begin(), country->m_family_name.end());
+    return country->m_family_name.first();
 
 }
 /*

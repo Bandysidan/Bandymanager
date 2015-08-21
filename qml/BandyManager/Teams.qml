@@ -25,6 +25,13 @@ Rectangle {
         name: "Villa Lidköping"
         countryUid: "sweden"
     }
+
+    Team {
+        uid: "Tillbergabandyherrar"
+        name: "Tillberga bandy"
+        countryUid: "sweden"
+    }
+
     Team {
         uid: "Jenisejherrar"
         name: "Jenisej"
@@ -34,6 +41,11 @@ Rectangle {
     Team {
         uid: "Dynamomoscowherrar"
         name: "Dynamo Moskva"
+        countryUid: "russia"
+    }
+    Team {
+        uid: "Vodnikherrar"
+        name: "Vodnik"
         countryUid: "russia"
     }
 

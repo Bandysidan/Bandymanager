@@ -18,6 +18,9 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<Team>("team.bandymanager",1,0,"Team");
 
+    engine.load(QUrl(QStringLiteral("qrc:///qml/BandyManager/Countries.qml")));
+
+
     engine.load(QUrl(QStringLiteral("qrc:///qml/BandyManager/main.qml")));
 
 

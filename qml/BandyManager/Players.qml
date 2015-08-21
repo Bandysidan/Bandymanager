@@ -4,30 +4,30 @@ import players.bandymanager 1.0
 Rectangle {
     Player {
         uid: "x01x01x01"
-        firstName: "Svenne"
-        familyName: "Rubin"
+        firstName: "?"
+        familyName: "?"
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
     }
     Player {
         uid: "x01x01x02"
-        firstName: "Arne"
-        familyName: "Argus"
+        firstName: "?"
+        familyName: "?"
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
     }
     Player {
         uid: "x01x01x03"
-        firstName: "Torbjörn"
-        familyName: "Lindquist"
+        firstName: "?"
+        familyName: "?"
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
     }
     Player {
         uid: "x01x01x04"
-        firstName: "Rutger"
-        familyName: "Jönåker"
-        countryUid: "sweden"
+        firstName: "?"
+        familyName: "?"
+        countryUid: "russia"
         firstTeam: "SAIKbandyherrar"
     }
     Player {

@@ -17,6 +17,7 @@ class Country : public QObject
     Q_PROPERTY(QString uid READ uid WRITE setUid NOTIFY uidChanged)
     Q_PROPERTY(QString flag READ flag WRITE setFlag NOTIFY flagChanged)
     Q_PROPERTY(QVariant malename READ malename WRITE setMalenames NOTIFY malenameChanged)
+    Q_PROPERTY(QVariant familyname READ familyname WRITE setFamilynames NOTIFY familynameChanged)
     Q_PROPERTY(int league READ league WRITE setLeague NOTIFY leagueChanged)
     Q_PROPERTY(int maleNational READ maleNational WRITE setMaleNational NOTIFY maleChanged)
     Q_PROPERTY(int femaleNational READ femaleNational WRITE setFemaleNational NOTIFY femaleChanged)
@@ -34,6 +35,9 @@ public:
 
     void setMalenames(QVariant value);
     QVariant malename();
+
+    void setFamilynames(QVariant value);
+    QVariant familyname();
 
     void setFlag(QString value);
     QString flag();
@@ -60,6 +64,7 @@ public:
     Q_INVOKABLE QString getNameByUid(QString value);
     Q_INVOKABLE void setMaleName(QString value,QString cvalue);
     Q_INVOKABLE QString getMaleName(QString value);
+    Q_INVOKABLE QString getFamilyName(QString value);
 //    Q_INVOKABLE QString getNextByUid(QString value,QString filter);
 
 signals:
@@ -67,6 +72,7 @@ signals:
     void nameChanged();
     void flagChanged();
     void malenameChanged();
+    void familynameChanged();
     void leagueChanged();
     void maleChanged();
     void femaleChanged();
@@ -91,7 +97,7 @@ private:
     int m_female_skill;
 
     QStringList m_male_name;
-
+    QStringList m_family_name;
 
     static QHash<QString, Country *> *m_countries;
 

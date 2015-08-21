@@ -14,6 +14,10 @@ Rectangle {
         memberNation: 1
         maleSkill: 2000
         femaleSkill: 2000
+        familyname:[
+            "Andersson",
+            "Svensson"
+        ]
         malename:[
             "Allan",
             "Anders",
@@ -195,6 +199,7 @@ Rectangle {
         maleSkill: 2000
         femaleSkill: 1940
         malename: ["Misha","Maxim"]
+        familyname: ["Lomanov","Potechkin","Sveshnikov"]
     }
     Country {
         uid: "finland"
