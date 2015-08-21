@@ -40,7 +40,7 @@ void Player::setCountryUid(QString value)
 {
 
     m_country_uid = value;
-    qDebug()<<"Testa: "<<m_first_name<< " "<< value;
+    //qDebug()<<"Testa: "<<m_first_name<< " "<< value;
     if(m_first_name=="")
     {
       // Country *country;
@@ -74,9 +74,14 @@ QString Player::firstTeam()
 QString Player::getFirstNameByUid(QString value)
 {
     Player *player = m_players->value(value);
-    qDebug()<<m_players->keys();
+    //qDebug()<<m_players->keys();
     if (player)
         return player->firstName();
     else
         return "error";
+}
+
+QStringList Player::getPlayerUidsbyTeam(QString value)
+{
+  //return m_players;
 }

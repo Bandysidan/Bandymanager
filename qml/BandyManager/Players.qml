@@ -26,4 +26,29 @@ Rectangle {
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
     }
+    Player {
+        uid: "x01x02x01"
+        firstName: "Anders"
+        countryUid: "sweden"
+        firstTeam: "VSKbandyherrar"
+    }
+    Player {
+        uid: "x01x02x02"
+        firstName: "Urban"
+        countryUid: "sweden"
+        firstTeam: "VSKbandyherrar"
+    }
+    Player {
+        uid: "x01x02x03"
+        firstName: "Tobias"
+        countryUid: "sweden"
+        firstTeam: "VSKbandyherrar"
+    }
+    Player {
+        uid: "x01x02x04"
+        firstName: "Magnus"
+        countryUid: "sweden"
+        firstTeam: "VSKbandyherrar"
+    }
+
 }

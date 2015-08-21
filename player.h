@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QHash>
+#include <QStringList>
 #include <QDebug>
 #include "country.h"
 
@@ -32,6 +33,7 @@ public:
     QString firstTeam();
 
     Q_INVOKABLE QString getFirstNameByUid(QString value);
+    Q_INVOKABLE QStringList getPlayerUidsbyTeam(QString value);
 signals:
     void uidChanged();
     void firstNameChanged();

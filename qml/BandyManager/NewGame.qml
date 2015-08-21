@@ -10,6 +10,10 @@ Rectangle {
     z: 5
     property var iCountry: 1
     property var currentCountry: "sweden"
+    property var currentPlayer: "x01x01x01"
+    property var playerList:["x01x01x01","x01x01x02","x01x01x03","x01x01x04"]
+    property var i:0
+    property var playerNumber:"1"
 
     Text {
         id: bandy
@@ -285,7 +289,9 @@ Rectangle {
             }
         }
 
-    function show() {
+    Component.onCompleted: changeCountry();
+
+        function show() {
         newGame.visible = true;
 
     }
@@ -324,9 +330,15 @@ Rectangle {
         if(currentCountry=="sweden")
             {
                 teamslist.model= teamlistSweden;
-            playerlistSAIK.set(0,{name: "Magnus Muhrén",number: "13"});
-                playerlistSAIK.set(1,{name: "Torbjörn Lindquist",number: "47"});
-                playerlistSAIK.set(2,{name:"Jonas Pettersson",number: "54"})
+                for(i=0;i < playerList.length ; ++i)
+                {
+                    playerNumber=i.toString();
+                    playerlistSAIK.set(i,{name: player.getFirstNameByUid(playerList[i]),number: playerNumber});
+                }
+
+//                playerlistSAIK.set(0,{name: "Magnus Muhrén",number: "13"});
+//                playerlistSAIK.set(1,{name: "Torbjörn Lindquist",number: "47"});
+//                playerlistSAIK.set(2,{name: player.getFirstNameByUid(currentPlayer),number: "54"})
             }
         else if(currentCountry=="usa")
         {

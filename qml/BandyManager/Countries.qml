@@ -784,5 +784,236 @@ Rectangle {
         maleSkill: 350
         femaleSkill: 350
     }
+    Country {
+        uid: "azerbaijan"
+        name: "Azerbajdzjan"
+        flag: "azerbaijan.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -1
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "belgium"
+        name: "Belgien"
+        flag: "belgium.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -1
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "bosnia"
+        name: "Bosnien"
+        flag: "bosnia.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -1
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "brazil"
+        name: "Brasilien"
+        flag: "Brazil.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -4
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "bulgaria"
+        name: "Bulgarien"
+        flag: "Bulgaria.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -1
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "france"
+        name: "Frankrike"
+        flag: "France.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -2
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "georgia"
+        name: "Georgien"
+        flag: "Georgia.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -2
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "iceland"
+        name: "Island"
+        flag: "Iceland.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: 0
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "croatia"
+        name: "Kroatien"
+        flag: "Croatia.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -3
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "liechtenstein"
+        name: "Liechtenstein"
+        flag: "Liechtenstein.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -3
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "luxembourg"
+        name: "Luxemburg"
+        flag: "Luxembourg.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -2
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "northkorea"
+        name: "Nordkorea"
+        flag: "north_korea.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -4
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "newzealand"
+        name: "Nya Zeeland"
+        flag: "newzealand.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -3
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "moldavia"
+        name: "Moldavien"
+        flag: "Moldavia.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -2
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "romania"
+        name: "Rumänien"
+        flag: "Romania.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -1
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "slovakia"
+        name: "Slovakien"
+        flag: "Slovakia.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -2
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "southkorea"
+        name: "Sydkorea"
+        flag: "South_Korea.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -3
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "tajikistan"
+        name: "Tadzjikistan"
+        flag: "Tajikistan.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -2
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "turkmenistan"
+        name: "Turkmenistan"
+        flag: "Turkmenistan.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -2
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "uzbekistan"
+        name: "Uzbekistan"
+        flag: "Uzbekistan.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -5
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "austria"
+        name: "Österrike"
+        flag: "Austria.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -1
+        maleSkill: 350
+        femaleSkill: 350
+    }
 
 }

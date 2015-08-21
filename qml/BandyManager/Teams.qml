@@ -14,6 +14,28 @@ Rectangle {
         name: "Västerås SK"
         countryUid: "sweden"
     }
+    Team {
+        uid: "Bajenbandyherrar"
+        name: "Hammarby IF"
+        countryUid: "sweden"
+    }
+
+    Team {
+        uid: "Villabandyherrar"
+        name: "Villa Lidköping"
+        countryUid: "sweden"
+    }
+    Team {
+        uid: "Jenisejherrar"
+        name: "Jenisej"
+        countryUid: "russia"
+    }
+
+    Team {
+        uid: "Dynamomoscowherrar"
+        name: "Dynamo Moskva"
+        countryUid: "russia"
+    }
 
 
 }
