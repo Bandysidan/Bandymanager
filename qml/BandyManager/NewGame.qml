@@ -9,16 +9,21 @@ Rectangle {
         Grundläggande inställningar och laddning av data
       */
 
-  /*  Countries {
-
-    }*/
-
     Teams {
 
     }
 
     Players {
 
+    }
+    Country {
+        id: country
+    }
+    Team {
+        id: team
+    }
+    Player {
+        id: player
     }
 
     id: newGame
@@ -28,12 +33,16 @@ Rectangle {
     property var currentCountry: "sweden"
     property var currentTeam: "SAIKbandyherrar"
     property var currentPlayer: "x01x01x01"
-    property var playerList:["x01x01x01","x01x01x02","x01x01x03","x01x01x04"]
+    property var playerList:["x01x01x01","x01x01x02","x01x01x03","x01x01x04","x01x01x05","x01x01x06"]
     property var teamListSweden: ["SAIKbandyherrar","VSKbandyherrar","Bajenbandyherrar","Villabandyherrar","Tillbergabandyherrar"]
     property var teamListRussia: ["Jenisejherrar","Dynamomoscowherrar","Vodnikherrar"]
+    property var teamListNorway: ["Stabaekherrar","Mjöndalenherrar","Readyherrar"]
+    property var teamListUSA: ["Dinkytownherrar","Bandolierherrar"]
+    property var teamListFinland: ["Helsinkiherrar","OLSherrar"]
     property var i:0
     property var playerNumber:"1"
 
+    /*Titel*/
     Text {
         id: bandy
         text: qsTr("BandyManager")
@@ -41,7 +50,7 @@ Rectangle {
         x: 10
         y: 10
     }
-
+    /* Ditt namn */
     Text {
         id: namn
         text: qsTr("Ditt namn")
@@ -58,14 +67,91 @@ Rectangle {
         width: parent.width-16; height: 28
         focus: true
     }
-    Country {
-        id: country
+
+    /* Val av land */
+
+    Image {
+        id: flag
+        x: 100
+        y: 170
+        width: 235
+        height: 142
+        fillMode: Image.PreserveAspectFit
+        Component.onCompleted: {
+            source = country.getFlagByUid(currentCountry);
+        }
     }
-    Team {
-        id: team
+    Text {
+        id: countryname
+        x: 100
+        y: 315
+        Component.onCompleted: {
+            text = country.getNameByUid(currentCountry);
+        }
     }
-    Player {
-        id: player
+
+
+        Image {
+            id: right
+            x: 355
+            y: 225
+            width: 32
+            height: 32
+            fillMode: Image.PreserveAspectFit
+            source: "Right.png"
+            signal clicked()
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: {
+                    right.source= "RightOMO.png";
+                }
+                onExited: {
+                    right.source= "Right.png";
+                }
+
+                onClicked:{
+                    countryRight();
+                    changeCountry();
+                }
+
+            }
+        }
+
+
+        Image {
+            id: left
+            x: 55
+            y: 225
+            width: 32
+            height: 32
+            fillMode: Image.PreserveAspectFit
+            source: "Left.png"
+            signal clicked()
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: {
+                    left.source= "LeftOMO.png";
+                }
+
+                onExited: {
+                    left.source= "Left.png";
+                }
+                onClicked:{
+                    countryLeft();
+                    changeCountry();
+                }
+            }
+        }
+
+    /* Vallista för lag */
+    Text {
+        id: chooseTeam
+        x: 300
+        y: 395
+        text: "Välj lag:"
+        font.bold: true
     }
     Rectangle{
         x: 300
@@ -127,31 +213,14 @@ Rectangle {
 
     }
 
-
-    ListModel {
-        id: teamlistRussia
-        ListElement{name: "Dynamo Moskva"}
-        ListElement{name: "Jenisej"}
+    /* Vallista spelare */
+    Text {
+        id: teamPlayers
+        x: 570
+        y: 395
+        text: "Lagets spelare"
+        font.bold: true
     }
-
-    ListModel {
-        id: teamlistNorway
-        ListElement{name: "Stabaek"}
-        ListElement{name: "Ready"}
-    }
-
-    ListModel {
-        id: teamlistFinland
-        ListElement{name: "IFK Helsinki"}
-        ListElement{name: "OLS"}
-    }
-
-    ListModel {
-        id: teamlistUSA
-        ListElement{name: "Dinkytown Dukes"}
-        ListElement{name: "Minneapolis Bandolier"}
-    }
-
 
     Rectangle{
         x: 570
@@ -190,13 +259,14 @@ Rectangle {
                     onClicked: {
                         container.ListView.view.currentIndex = index
                         container.forceActiveFocus()
+                        changePlayer(container.ListView.view.currentIndex)
                     }
                 }
             }
 
         }
         ListView {
-            id: playerlist
+            id: playerlistView
             anchors.fill: parent
             delegate: playerDelegate
             model: playerlistTeam
@@ -210,93 +280,31 @@ Rectangle {
         id: playerlistTeam
     }
 
-    Image {
-        id: flag
-        x: 100
-        y: 170
-        width: 235
-        height: 142
-        fillMode: Image.PreserveAspectFit
-        Component.onCompleted: {
-            source = country.getFlagByUid(currentCountry);
-        }
-    }
-    Text {
-        id: countryname
-        x: 100
-        y: 315
-        Component.onCompleted: {
-            text = country.getNameByUid(currentCountry);
-        }
-    }
+    /* Spelarinformation */
 
     Text {
-        id: chooseTeam
-        x: 300
+        id: playerInfo
+        x: 840
         y: 395
-        text: "Välj lag:"
+        text: "Spelarinformation"
         font.bold: true
     }
-
-        Image {
-            id: right
-            x: 355
-            y: 225
-            width: 32
-            height: 32
-            fillMode: Image.PreserveAspectFit
-            source: "Right.png"
-            signal clicked()
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: {
-                    right.source= "RightOMO.png";
-                }
-                onExited: {
-                    right.source= "Right.png";
-                }
-
-                onClicked:{
-                    countryRight();
-                    changeCountry();
-                }
-
-            }
-        }
+    Text {
+        id: playerName
+        x: 840
+        y: 410
+        text: "Torbjörn Lindquist"
+        font.bold: false
+    }
 
 
-        Image {
-            id: left
-            x: 55
-            y: 225
-            width: 32
-            height: 32
-            fillMode: Image.PreserveAspectFit
-            source: "Left.png"
-            signal clicked()
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: {
-                    left.source= "LeftOMO.png";
-                }
 
-                onExited: {
-                    left.source= "Left.png";
-                }
-                onClicked:{
-                    countryLeft();
-                    changeCountry();
-                }
-            }
-        }
+
 
     Component.onCompleted: changeCountry();
 
-        function show() {
+    function show() {
         newGame.visible = true;
-
     }
 
     function countryRight() {
@@ -335,24 +343,33 @@ Rectangle {
             {
                 teamlistModel.clear();
                 for(i=0; i < teamListSweden.length ; i++)
-                {
-                    teamlistModel.set(i,{name: team.getNameByUid(teamListSweden[i])})
-                }
-
-                teamslist.model= teamlistModel;
-
+                    {
+                        teamlistModel.set(i,{name: team.getNameByUid(teamListSweden[i])})
+                    }
             }
         else if(currentCountry=="usa")
             {
-                teamslist.model= teamlistUSA;
+            teamlistModel.clear();
+            for(i=0; i < teamListUSA.length ; i++)
+                {
+                    teamlistModel.set(i,{name: team.getNameByUid(teamListUSA[i])})
+                }
             }
         else if(currentCountry=="norway")
             {
-                teamslist.model= teamlistNorway;
+                teamlistModel.clear();
+                for(i=0; i < teamListNorway.length ; i++)
+                    {
+                        teamlistModel.set(i,{name: team.getNameByUid(teamListNorway[i])})
+                    }
             }
         else if(currentCountry=="finland")
             {
-                teamslist.model= teamlistFinland;
+            teamlistModel.clear();
+            for(i=0; i < teamListSweden.length ; i++)
+                {
+                    teamlistModel.set(i,{name: team.getNameByUid(teamListFinland[i])})
+                }
             }
         else
             {
@@ -362,7 +379,6 @@ Rectangle {
                         teamlistModel.set(i,{name: team.getNameByUid(teamListRussia[i])})
                     }
 
-                teamslist.model= teamlistModel;
             }
 //        playername.text=country.getMaleName(currentCountry);
 //        playername.text=player.getFirstNameByUid("x01x01x02");
@@ -379,7 +395,7 @@ Rectangle {
                 for(i=0;i < playerList.length ; i++)
                     {
                         playerNumber=i.toString();
-                        playerlistTeam.set(i,{name: player.getFullNameByUid(playerList[i]),number: playerNumber});
+                        playerlistTeam.set(i,{name: player.getShortNameByUid(playerList[i]),number: playerNumber});
                     }
 
             }
@@ -412,4 +428,10 @@ Rectangle {
 
     }
 
+
+    function changePlayer(playerindex){
+        currentPlayer = playerList[playerindex];
+        playerName.text = player.getFullNameByUid(currentPlayer);
+        //playerName.text = currentPlayer;
+    }
 }

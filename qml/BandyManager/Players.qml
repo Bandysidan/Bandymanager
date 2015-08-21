@@ -20,7 +20,7 @@ Rectangle {
         uid: "x01x01x03"
         firstName: "?"
         familyName: "?"
-        countryUid: "sweden"
+        countryUid: "finland"
         firstTeam: "SAIKbandyherrar"
     }
     Player {
@@ -28,6 +28,20 @@ Rectangle {
         firstName: "?"
         familyName: "?"
         countryUid: "russia"
+        firstTeam: "SAIKbandyherrar"
+    }
+    Player {
+        uid: "x01x01x05"
+        firstName: "?"
+        familyName: "?"
+        countryUid: "usa"
+        firstTeam: "SAIKbandyherrar"
+    }
+    Player {
+        uid: "x01x01x06"
+        firstName: "?"
+        familyName: "?"
+        countryUid: "norway"
         firstTeam: "SAIKbandyherrar"
     }
     Player {

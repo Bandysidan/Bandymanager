@@ -48,6 +48,41 @@ Rectangle {
         name: "Vodnik"
         countryUid: "russia"
     }
+    Team {
+        uid: "Stabaekherrar"
+        name: "Stabaek"
+        countryUid: "norway"
+    }
+    Team {
+        uid: "Mjöndalenherrar"
+        name: "Mjöndalen"
+        countryUid: "norway"
+    }
+    Team {
+        uid: "Readyherrar"
+        name: "Ready"
+        countryUid: "norway"
+    }
+    Team {
+        uid: "Helsinkiherrar"
+        name: "IFK Helsinki"
+        countryUid: "finland"
+    }
+    Team {
+        uid: "OLSherrar"
+        name: "OLS"
+        countryUid: "finland"
+    }
+    Team {
+        uid: "Dinkytownherrar"
+        name: "Dinkytown Dukes"
+        countryUid: "usa"
+    }
+    Team {
+        uid: "Bandolierherrar"
+        name: "Minneapolis Bandolier"
+        countryUid: "usa"
+    }
 
 
 }

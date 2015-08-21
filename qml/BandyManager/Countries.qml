@@ -198,7 +198,7 @@ Rectangle {
         memberNation: 1
         maleSkill: 2000
         femaleSkill: 1940
-        malename: ["Misha","Maxim"]
+        malename: ["Anatolij","Misha","Maxim","Sergej"]
         familyname: ["Lomanov","Potechkin","Sveshnikov"]
     }
     Country {
@@ -211,7 +211,8 @@ Rectangle {
         memberNation: 1
         maleSkill: 1950
         femaleSkill: 1850
-        malename: ["Tattu","Mikka"]
+        malename: ["Mikka","Petteri","Tattu"]
+        familyname: ["Muttikainen","Laakkonen","Laampinen"]
     }
     Country {
         uid: "kazakhstan"
@@ -224,6 +225,7 @@ Rectangle {
         maleSkill: 1950
         femaleSkill: 850
         malename: ["Rinat","Ivan"]
+        familyname: ["Samshutov"]
     }
     Country {
         uid: "norway"
@@ -260,6 +262,11 @@ Rectangle {
             "Tom",
             "Trond",
             "Vegard"
+        ]
+        familyname:[
+            "Aamot",
+            "Hammar",
+            "Hansen"
         ]
     }
     Country {
@@ -523,6 +530,10 @@ Rectangle {
             "Zander",
             "Zane",
             "Zayden"
+        ]
+        familyname: [
+            "Halden",
+            "Manson"
         ]
     }
     Country {
