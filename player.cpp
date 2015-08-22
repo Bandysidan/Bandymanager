@@ -53,9 +53,8 @@ QString Player::familyName()
 void Player::setCountryUid(QString value)
 {
 
-//    m_country_uid = value;
+    m_country_uid = value;
     Country *country;
-//    QString name=country->getMaleName(value);
     m_first_name=country->getMaleName(value);
     m_family_name=country->getFamilyName(value);
 
@@ -78,6 +77,17 @@ void Player::setFirstTeam(QString value)
 QString Player::firstTeam()
 {
     return m_first_team;
+}
+
+void Player::setSkills(QList<int> value)
+{
+    m_skills=value;
+    emit skillsChanged();
+}
+
+QList<int> Player::skills()
+{
+    return m_skills;
 }
 
 QString Player::getFirstNameByUid(QString value)
@@ -111,6 +121,7 @@ QString Player::getFullNameByUid(QString value)
 QString Player::getShortNameByUid(QString value)
 {
     Player *player = m_players->value(value);
+
     QString playername = player->firstName().left(1) +". "+ player->familyName();
     if (player)
         return playername;
@@ -118,9 +129,30 @@ QString Player::getShortNameByUid(QString value)
         return "error";
 }
 
-
-
-QStringList Player::getPlayerUidsbyTeam(QString value)
+QString Player::getCountryByUid(QString value)
 {
-  //return m_players;
+    Player *player = m_players->value(value);
+    if (player)
+        return player->countryUid();
+    else
+        return "error";
 }
+
+QList<int> Player::getSkillsByUid(QString value)
+{
+    Player *player = m_players->value(value);
+    QList<int> errorreturn;
+    errorreturn.append(-1);
+    if (player)
+        return player->skills();
+    else
+        return errorreturn;
+
+}
+
+
+
+//QStringList Player::getPlayerUidsbyTeam(QString value)
+//{
+  //return m_players;
+//}

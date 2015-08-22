@@ -8,6 +8,7 @@ Rectangle {
         familyName: "?"
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
+        skills: [175,164,45,53,24,15,35,24,14, 9,11]
     }
     Player {
         uid: "x01x01x02"
@@ -15,6 +16,7 @@ Rectangle {
         familyName: "?"
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
+        skills: [5,4,165,123,154,185,175,164,154,149,181]
     }
     Player {
         uid: "x01x01x03"
@@ -22,6 +24,7 @@ Rectangle {
         familyName: "?"
         countryUid: "finland"
         firstTeam: "SAIKbandyherrar"
+        skills: [7,4,165,123,154,185,175,164,154,149,181]
     }
     Player {
         uid: "x01x01x04"
@@ -29,6 +32,7 @@ Rectangle {
         familyName: "?"
         countryUid: "russia"
         firstTeam: "SAIKbandyherrar"
+        skills: [9,4,165,123,154,185,175,164,154,149,181]
     }
     Player {
         uid: "x01x01x05"
@@ -36,6 +40,7 @@ Rectangle {
         familyName: "?"
         countryUid: "usa"
         firstTeam: "SAIKbandyherrar"
+        skills: [10,4,165,123,154,185,175,164,154,149,181]
     }
     Player {
         uid: "x01x01x06"
@@ -43,6 +48,7 @@ Rectangle {
         familyName: "?"
         countryUid: "norway"
         firstTeam: "SAIKbandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
     }
     Player {
         uid: "x01x02x01"
@@ -50,6 +56,7 @@ Rectangle {
         familyName: "Andersson"
         countryUid: "sweden"
         firstTeam: "VSKbandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
     }
     Player {
         uid: "x01x02x02"
@@ -57,6 +64,7 @@ Rectangle {
         familyName: "Modin"
         countryUid: "sweden"
         firstTeam: "VSKbandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
     }
     Player {
         uid: "x01x02x03"
@@ -64,6 +72,7 @@ Rectangle {
         familyName: "Jansson"
         countryUid: "sweden"
         firstTeam: "VSKbandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
     }
     Player {
         uid: "x01x02x04"
@@ -71,6 +80,23 @@ Rectangle {
         familyName: "Pettersson"
         countryUid: "sweden"
         firstTeam: "VSKbandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x02x05"
+        firstName: "?"
+        familyName: "?"
+        countryUid: "norway"
+        firstTeam: "VSKbandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x02x06"
+        firstName: "?"
+        familyName: "?"
+        countryUid: "russia"
+        firstTeam: "VSKbandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
     }
 
 }

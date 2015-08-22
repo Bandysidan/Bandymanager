@@ -34,6 +34,8 @@ Rectangle {
     property var currentTeam: "SAIKbandyherrar"
     property var currentPlayer: "x01x01x01"
     property var playerList:["x01x01x01","x01x01x02","x01x01x03","x01x01x04","x01x01x05","x01x01x06"]
+    property var playerList2:["x01x02x01","x01x02x02","x01x02x03","x01x02x04","x01x02x05","x01x02x06"]
+    property var playerList3:["x01x01x01","x01x01x02","x01x01x03","x01x01x04","x01x01x05","x01x01x06"]
     property var teamListSweden: ["SAIKbandyherrar","VSKbandyherrar","Bajenbandyherrar","Villabandyherrar","Tillbergabandyherrar"]
     property var teamListRussia: ["Jenisejherrar","Dynamomoscowherrar","Vodnikherrar"]
     property var teamListNorway: ["Stabaekherrar","Mjöndalenherrar","Readyherrar"]
@@ -41,6 +43,8 @@ Rectangle {
     property var teamListFinland: ["Helsinkiherrar","OLSherrar"]
     property var i:0
     property var playerNumber:"1"
+    property var playerSkills:[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
+    property var tempVar
 
     /*Titel*/
     Text {
@@ -297,8 +301,171 @@ Rectangle {
         font.bold: false
     }
 
-
-
+    Text {
+        id: saveText
+        x: 840
+        y: 435
+        text: "Räddning: "
+        font.bold: true
+    }
+    Text {
+        id: saveValue
+        x: 945
+        y: 435
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: throwText
+        x: 840
+        y: 450
+        text: "Utkast: "
+        font.bold: true
+    }
+    Text {
+        id: throwValue
+        x: 945
+        y: 450
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: skatingText
+        x: 840
+        y: 465
+        text: "Skridskoåkning: "
+        font.bold: true
+    }
+    Text {
+        id: skatingValue
+        x: 945
+        y: 465
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: interceptText
+        x: 840
+        y: 480
+        text: "Brytning: "
+        font.bold: true
+    }
+    Text {
+        id: interceptValue
+        x: 945
+        y: 480
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: passingText
+        x: 840
+        y: 495
+        text: "Passning: "
+        font.bold: true
+    }
+    Text {
+        id: passingValue
+        x: 945
+        y: 495
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: lyrText
+        x: 840
+        y: 510
+        text: "Lyrboll: "
+        font.bold: true
+    }
+    Text {
+        id: lyrValue
+        x: 945
+        y: 510
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: takedownText
+        x: 840
+        y: 525
+        text: "Nedtagning: "
+        font.bold: true
+    }
+    Text {
+        id: takedownValue
+        x: 945
+        y: 525
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: takingText
+        x: 840
+        y: 540
+        text: "Mottagning: "
+        font.bold: true
+    }
+    Text {
+        id: takingValue
+        x: 945
+        y: 540
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: dribblingText
+        x: 840
+        y: 555
+        text: "Dribbling: "
+        font.bold: true
+    }
+    Text {
+        id: dribblingValue
+        x: 945
+        y: 555
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: aggressionText
+        x: 840
+        y: 570
+        text: "Aggresivitet: "
+        font.bold: true
+    }
+    Text {
+        id: aggressionValue
+        x: 945
+        y: 570
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: konditionText
+        x: 840
+        y: 585
+        text: "Kondition: "
+        font.bold: true
+    }
+    Text {
+        id: konditionValue
+        x: 945
+        y: 585
+        text: ""
+        font.bold: false
+    }
+    Image {
+        id: playerFlag
+        x: 1050
+        y: 410
+        width: 59
+        height: 36
+        fillMode: Image.PreserveAspectFit
+        Component.onCompleted: {
+            source = country.getFlagByUid(currentCountry);
+        }
+    }
 
 
     Component.onCompleted: changeCountry();
@@ -383,7 +550,7 @@ Rectangle {
 //        playername.text=country.getMaleName(currentCountry);
 //        playername.text=player.getFirstNameByUid("x01x01x02");
 
-        changeTeam(1);
+        changeTeam(0);
     }
 
 
@@ -392,6 +559,10 @@ Rectangle {
         if(currentCountry=="sweden")
             {
                 currentTeam = teamListSweden[teamindex];
+                if(currentTeam=="SAIKbandyherrar")
+                    playerList=playerList3;
+                else
+                    playerList=playerList2;
                 for(i=0;i < playerList.length ; i++)
                     {
                         playerNumber=i.toString();
@@ -424,7 +595,7 @@ Rectangle {
                 playerlistTeam.set(0,{name: "Misha Sveshnikov",number: "9"});
                 playerlistTeam.set(1,{name: "Maxim Potechkin",number: "27"});
             }
-
+        changePlayer(0);
 
     }
 
@@ -432,6 +603,19 @@ Rectangle {
     function changePlayer(playerindex){
         currentPlayer = playerList[playerindex];
         playerName.text = player.getFullNameByUid(currentPlayer);
-        //playerName.text = currentPlayer;
+        playerSkills = player.getSkillsByUid(currentPlayer);
+        saveValue.text = parseInt((playerSkills[0]-1)/10+1);
+        throwValue.text = parseInt((playerSkills[1]-1)/10+1);
+        skatingValue.text = parseInt((playerSkills[2]-1)/10+1);
+        interceptValue.text = parseInt((playerSkills[3]-1)/10+1);
+        passingValue.text = parseInt((playerSkills[4]-1)/10+1);
+        lyrValue.text = parseInt((playerSkills[5]-1)/10+1);
+        takedownValue.text = parseInt((playerSkills[6]-1)/10+1);
+        takingValue.text = parseInt((playerSkills[7]-1)/10+1);
+        dribblingValue.text = parseInt((playerSkills[8]-1)/10+1);
+        aggressionValue.text = parseInt((playerSkills[9]-1)/10+1);
+        konditionValue.text = parseInt((playerSkills[10]-1)/10+1);
+        tempVar=player.getCountryByUid(currentPlayer);
+        playerFlag.source = country.getFlagByUid(tempVar);
     }
 }
