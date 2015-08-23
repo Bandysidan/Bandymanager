@@ -65,5 +65,6 @@
         <file>qml/BandyManager/Teams.qml</file>
         <file>qml/BandyManager/Names.qml</file>
         <file>qml/BandyManager/Players.qml</file>
+        <file>qml/BandyManager/England.png</file>
     </qresource>
 </RCC>

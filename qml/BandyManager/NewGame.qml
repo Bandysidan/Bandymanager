@@ -181,7 +181,7 @@ Rectangle {
                 Text {
                     id: label
                     anchors.centerIn: content
-                    text: name +" (" + (index + 1)+")"
+                    text: name
                     color: "#193441"
                     font.pixelSize: 14
                 }
@@ -250,6 +250,7 @@ Rectangle {
                 Text {
                     id: label
                     anchors.centerIn: content
+                    //anchors.left: content
                     text: number +":" +name
                     color: "#193441"
                     font.pixelSize: 14

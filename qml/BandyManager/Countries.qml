@@ -14,10 +14,6 @@ Rectangle {
         memberNation: 1
         maleSkill: 2000
         femaleSkill: 2000
-        familyname:[
-            "Andersson",
-            "Svensson"
-        ]
         malename:[
             "Allan",
             "Anders",
@@ -187,6 +183,10 @@ Rectangle {
             "Örjan",
             "Östen"
         ]
+        familyname:[
+            "Andersson",
+            "Svensson"
+        ]
     }
     Country {
         uid: "russia"
@@ -211,7 +211,7 @@ Rectangle {
         memberNation: 1
         maleSkill: 1950
         femaleSkill: 1850
-        malename: ["Mikka","Petteri","Tattu"]
+        malename: ["Mikka","Nikku","Petteri","Tattu"]
         familyname: ["Muttikainen","Laakkonen","Laampinen"]
     }
     Country {
@@ -546,6 +546,20 @@ Rectangle {
         memberNation: 1
         maleSkill: 1680
         femaleSkill: 650
+        malename: [
+            "Aleksei",
+            "Artem",
+            "Maksim",
+            "Mikita",
+            "Nikita"
+        ]
+        familyname: [
+            "Dashkevich",
+            "Matskevich",
+            "Mickewicz",
+            "Shushkevich",
+            "Vaytsiushkevich"
+        ]
     }
     Country {
         uid: "canada"
@@ -557,6 +571,26 @@ Rectangle {
         memberNation: 1
         maleSkill: 1650
         femaleSkill: 1850
+        malename: [
+            "Benjamin",
+            "Brandon",
+            "Drew",
+            "Liam",
+            "Lucas",
+            "Jacob",
+            "Nathan",
+            "Noah",
+            "Ronnie",
+            "William"
+        ]
+        familyname: [
+            "Bell",
+            "Ellement",
+            "Krul",
+            "Landerville",
+            "Lintick",
+            "Ross"
+        ]
     }
     Country {
         uid: "estonia"
@@ -568,6 +602,20 @@ Rectangle {
         memberNation: 1
         maleSkill: 1650
         femaleSkill: 850
+        malename: [
+            "Anton",
+            "Artur",
+            "Eduard",
+            "Georg",
+            "Heino"
+        ]
+        familyname: [
+            "Aare",
+            "Alver",
+            "Eskola",
+            "Härma",
+            "Jögi"
+        ]
     }
     Country {
         uid: "latvia"
@@ -579,6 +627,16 @@ Rectangle {
         memberNation: 1
         maleSkill: 1670
         femaleSkill: 810
+        malename: [
+            "Julij",
+            "Karlis",
+            "Niks"
+        ]
+        familyname: [
+            "Apsitis",
+            "Kadnaj",
+            "Zakrevskis"
+        ]
     }
     Country {
         uid: "hungary"
@@ -590,6 +648,16 @@ Rectangle {
         memberNation: 1
         maleSkill: 1600
         femaleSkill: 1650
+        malename: [
+            "Istvan",
+            "Kristian",
+            "Sandor"
+        ]
+        familyname: [
+            "Banfy",
+            "Marosi",
+            "Polgar"
+        ]
     }
     Country {
         uid: "japan"
@@ -601,6 +669,12 @@ Rectangle {
         memberNation: 1
         maleSkill: 1580
         femaleSkill: 750
+        malename: [
+            "Ryuichi"
+        ]
+        familyname: [
+            "Shimizu"
+        ]
     }
     Country {
         uid: "holland"
@@ -612,6 +686,14 @@ Rectangle {
         memberNation: 1
         maleSkill: 1550
         femaleSkill: 1620
+        malename: [
+            "Marc",
+            "Thomas"
+        ]
+        familyname: [
+            "Jeukens",
+            "Perenboom"
+        ]
     }
     Country {
         uid: "germany"
@@ -623,6 +705,12 @@ Rectangle {
         memberNation: 1
         maleSkill: 1510
         femaleSkill: 810
+        malename: [
+            "Sören"
+        ]
+        familyname: [
+            "Löbrich"
+        ]
     }
     Country {
         uid: "mongolia"
@@ -634,6 +722,12 @@ Rectangle {
         memberNation: 1
         maleSkill: 1480
         femaleSkill: 720
+        malename: [
+            "Borhuu"
+        ]
+        familyname: [
+            "Ganholboo"
+        ]
     }
     Country {
         uid: "china"
@@ -645,6 +739,12 @@ Rectangle {
         memberNation: 1
         maleSkill: 1450
         femaleSkill: 1550
+        malename: [
+            "Geng"
+        ]
+        familyname: [
+            "Yi"
+        ]
     }
     Country {
         uid: "czech"
@@ -656,6 +756,12 @@ Rectangle {
         memberNation: 1
         maleSkill: 1520
         femaleSkill: 870
+        malename: [
+            "Lukáš"
+        ]
+        familyname: [
+            "Turza"
+        ]
     }
     Country {
         uid: "somalia"
@@ -667,10 +773,16 @@ Rectangle {
         memberNation: 1
         maleSkill: 1200
         femaleSkill: 1850
+        malename: [
+            "Ibrahim"
+        ]
+        familyname: [
+            "Abdi Mokilid"
+        ]
     }
     Country {
         uid: "kyrgyzstan"
-        name: "Kirgisistan"
+        name: "Kirgizistan"
         flag: "Kyrgyzstan.png"
         league: -4
         maleNational: 1
@@ -678,6 +790,14 @@ Rectangle {
         memberNation: 1
         maleSkill: 1300
         femaleSkill: 1450
+        malename: [
+            "Rahat",
+            "Ruslan"
+        ]
+        familyname: [
+            "Abyshev",
+            "Kadiev"
+        ]
     }
     Country {
         uid: "afghanistan"
@@ -733,6 +853,17 @@ Rectangle {
         memberNation: 1
         maleSkill: 450
         femaleSkill: 450
+    }
+    Country {
+        uid: "england"
+        name: "England"
+        flag: "england.png"
+        league: -3
+        maleNational: -2
+        femaleNational: -4
+        memberNation: 1
+        maleSkill: 350
+        femaleSkill: 350
     }
     Country {
         uid: "india"

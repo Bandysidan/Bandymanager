@@ -68,19 +68,19 @@ Rectangle {
     }
     Player {
         uid: "x01x02x03"
-        firstName: "Tobias"
-        familyName: "Jansson"
-        countryUid: "sweden"
+        firstName: "?"
+        familyName: "?"
+        countryUid: "estonia"
         firstTeam: "VSKbandyherrar"
         skills: [11,4,165,123,154,185,175,164,154,149,181]
     }
     Player {
         uid: "x01x02x04"
-        firstName: "Magnus"
-        familyName: "Pettersson"
-        countryUid: "sweden"
+        firstName: "?"
+        familyName: "?"
+        countryUid: "mongolia"
         firstTeam: "VSKbandyherrar"
-        skills: [11,4,165,123,154,185,175,164,154,149,181]
+        skills: [11,4,165,97,122,185,175,164,56,188,193]
     }
     Player {
         uid: "x01x02x05"
