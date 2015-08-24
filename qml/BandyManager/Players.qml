@@ -84,7 +84,34 @@ Rectangle {
         skills: [5,4,165,123,154,185,175,164,154,149,181]
     }
     Player {
-        uid: "x01x02x01"
+        uid: "x01x01x0A"
+        firstName: "?"
+        familyName: "?"
+        birth: 1982
+        countryUid: "sweden"
+        firstTeam: "SAIKbandyherrar"
+        skills: [5,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x01x0B"
+        firstName: "?"
+        familyName: "?"
+        birth: 1982
+        countryUid: "sweden"
+        firstTeam: "SAIKbandyherrar"
+        skills: [5,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x01x0C"
+        firstName: "?"
+        familyName: "?"
+        birth: 1982
+        countryUid: "somalia"
+        firstTeam: "SAIKbandyherrar"
+        skills: [5,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x02x0D"
         firstName: "?"
         familyName: "?"
         birth: 1979
@@ -135,6 +162,222 @@ Rectangle {
         birth: 1975
         countryUid: "russia"
         firstTeam: "VSKbandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x03x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Villabandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x04x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Bajenbandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x05x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x06x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Bollnasherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x07x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Brobergherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x08x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Siriusherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x09x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "IFKKungalvherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x0Ax01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "VetlandaBKherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x0Bx01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Kalixbandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x0Cx01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Gripenherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x0Dx01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Vanersborgbandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x0Ex01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Tillbergabandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x02x01x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "russia"
+        firstTeam: "Jenisejherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x02x02x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "russia"
+        firstTeam: "Dynamomoscowherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x02x03x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "russia"
+        firstTeam: "Vodnikherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x03x01x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "norway"
+        firstTeam: "Stabaekherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x03x02x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "norway"
+        firstTeam: "Mjondalenherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x03x03x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "norway"
+        firstTeam: "Readyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x04x01x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "finland"
+        firstTeam: "Helsinkiherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x04x02x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "finland"
+        firstTeam: "OLSherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x04x03x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "finland"
+        firstTeam: "Narukeraherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x05x01x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "usa"
+        firstTeam: "Dinkytownherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x05x02x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "usa"
+        firstTeam: "Bandolierherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x05x03x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "usa"
+        firstTeam: "Mississippiherrar"
         skills: [11,4,165,123,154,185,175,164,154,149,181]
     }
 

@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include <QObject>
+#include <QMultiHash>
 #include <QHash>
 #include <QStringList>
 #include <QDebug>
@@ -54,7 +55,7 @@ public:
     Q_INVOKABLE QString getCountryByUid(QString value);
     Q_INVOKABLE QList<int> getSkillsByUid(QString value);
 
-  //  Q_INVOKABLE QStringList getPlayerUidsbyTeam(QString value);
+    Q_INVOKABLE QStringList getPlayerUidsbyTeam(QString value);
 signals:
     void uidChanged();
     void firstNameChanged();
@@ -80,7 +81,7 @@ private:
 
     QList<int> m_skills;
 
-
+    static QMultiHash<QString,QString> *m_first_team_uid;
     static QHash<QString, Player *> *m_players;
 
 };

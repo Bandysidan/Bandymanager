@@ -31,21 +31,14 @@ Rectangle {
     z: 5
     property var iCountry: 1
     property var currentCountry: "sweden"
-    property var currentTeam: "SAIKbandyherrar"
-    property var currentPlayer: "x01x01x01"
-    property var playerList:["x01x01x01","x01x01x02","x01x01x03","x01x01x04","x01x01x05","x01x01x06"]
-    property var playerList2:["x01x02x01","x01x02x02","x01x02x03","x01x02x04","x01x02x05","x01x02x06"]
-    property var playerList3:["x01x01x01","x01x01x02","x01x01x03","x01x01x04","x01x01x05","x01x01x06"]
-    property var teamList: ["lorem","ipsum"]
-    property var teamListSweden: ["SAIKbandyherrar","VSKbandyherrar","Bajenbandyherrar","Villabandyherrar","Tillbergabandyherrar"]
-    property var teamListRussia: ["Jenisejherrar","Dynamomoscowherrar","Vodnikherrar"]
-    property var teamListNorway: ["Stabaekherrar","Mjöndalenherrar","Readyherrar"]
-    property var teamListUSA: ["Dinkytownherrar","Bandolierherrar"]
-    property var teamListFinland: ["Helsinkiherrar","OLSherrar"]
+    property var currentTeam
+    property var currentPlayer
+    property var playerList
+    property var teamList
     property var birthyear
     property var i:0
     property var playerNumber:"1"
-    property var playerSkills:[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
+    property var playerSkills
     property var tempVar
 
     /*Titel*/
@@ -467,7 +460,7 @@ Rectangle {
         fillMode: Image.PreserveAspectFit
         Component.onCompleted: {
             source = country.getFlagByUid(currentCountry);
-           // teamList = team.getUidByCountryUid(currentCountry);
+
         }
     }
     Text {
@@ -498,7 +491,9 @@ Rectangle {
     }
 
 
-    Component.onCompleted: changeCountry();
+    Component.onCompleted: {
+        changeCountry();
+    }
 
     function show() {
         newGame.visible = true;
@@ -533,100 +528,28 @@ Rectangle {
     }
 
     function changeCountry() {
+        teamList = team.getUidByCountryUid(currentCountry);
         flag.source= country.getFlagByUid(currentCountry);
         countryname.text= country.getNameByUid(currentCountry);
-        playerlistTeam.clear();
-        if(currentCountry=="sweden")
+        teamlistModel.clear();
+        for(i=0; i < teamList.length ; i++)
             {
-                teamlistModel.clear();
-                for(i=0; i < teamListSweden.length ; i++)
-                    {
-                        teamlistModel.set(i,{name: team.getNameByUid(teamListSweden[i])})
-                    }
+                teamlistModel.set(i,{name: team.getNameByUid(teamList[i])})
             }
-        else if(currentCountry=="usa")
-            {
-            teamlistModel.clear();
-            for(i=0; i < teamListUSA.length ; i++)
-                {
-                    teamlistModel.set(i,{name: team.getNameByUid(teamListUSA[i])})
-                }
-            }
-        else if(currentCountry=="norway")
-            {
-                teamlistModel.clear();
-                for(i=0; i < teamListNorway.length ; i++)
-                    {
-                        teamlistModel.set(i,{name: team.getNameByUid(teamListNorway[i])})
-                    }
-            }
-        else if(currentCountry=="finland")
-            {
-            teamlistModel.clear();
-            for(i=0; i < teamListSweden.length ; i++)
-                {
-                    teamlistModel.set(i,{name: team.getNameByUid(teamListFinland[i])})
-                }
-            }
-        else
-            {
-                teamlistModel.clear();
-                for(i=0; i < teamListRussia.length ; i++)
-                    {
-                        teamlistModel.set(i,{name: team.getNameByUid(teamListRussia[i])})
-                    }
-
-            }
-//        playername.text=country.getMaleName(currentCountry);
-//        playername.text=player.getFirstNameByUid("x01x01x02");
-
         changeTeam(0);
     }
 
 
     function changeTeam(teamindex){
         playerlistTeam.clear();
-        if(currentCountry=="sweden")
+        currentTeam = teamList[teamindex];
+        playerList=player.getPlayerUidsbyTeam(currentTeam);
+        for(i=0;i < playerList.length ; i++)
             {
-                currentTeam = teamListSweden[teamindex];
-                if(currentTeam=="SAIKbandyherrar")
-                    playerList=playerList3;
-                else
-                    playerList=playerList2;
-                for(i=0;i < playerList.length ; i++)
-                    {
-                        playerNumber=i.toString();
-                        playerlistTeam.set(i,{name: player.getShortNameByUid(playerList[i]),number: playerNumber});
-                    }
-
-            }
-        else if(currentCountry=="usa")
-            {
-                playerlistTeam.clear();
-                playerlistTeam.set(0,{name: "Scott Manson",number: "17"});
-                playerlistTeam.set(1,{name: "Mike Harrington",number: "19"});
-            }
-        else if(currentCountry=="norway")
-            {
-                playerlistTeam.clear();
-                playerlistTeam.set(0,{name: "Pål Hansen",number: "7"});
-                playerlistTeam.set(1,{name: "Aleksander Cras",number: "11"});
-            }
-        else if(currentCountry=="finland")
-            {
-                playerlistTeam.clear();
-                playerlistTeam.set(0,{name: "Mikka Muttikainen",number: "4"});
-                playerlistTeam.set(1,{name: "Sami Laakkonen",number: "22"});
-            }
-        else
-            {
-                currentTeam = teamListRussia[teamindex];
-                playerlistTeam.clear();
-                playerlistTeam.set(0,{name: "Misha Sveshnikov",number: "9"});
-                playerlistTeam.set(1,{name: "Maxim Potechkin",number: "27"});
+                playerNumber=i.toString();
+                playerlistTeam.set(i,{name: player.getShortNameByUid(playerList[i]),number: playerNumber});
             }
         changePlayer(0);
-
     }
 
 

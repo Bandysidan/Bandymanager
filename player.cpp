@@ -1,26 +1,32 @@
 #include "player.h"
 
 QHash<QString,Player *> *Player::m_players;
-
+QMultiHash<QString,QString> *Player::m_first_team_uid;
 
 Player::Player(QObject *parent) :
     QObject(parent)
 {
     if(!m_players)
         m_players= new QHash<QString,Player *>();
+    if(!m_first_team_uid)
+        m_first_team_uid= new QMultiHash<QString,QString>();
 }
 
 void Player::setUid(QString value)
 {
     m_uid = value;
     m_players->insert(m_uid, this);
+    m_first_team_uid->insert(m_first_team,m_uid);
+    //int i;
+
+    //qDebug()<<"setUid: "<< " "<< m_uid << " "<< m_first_team;
     emit uidChanged();
 
 }
 
 QString Player::uid()
 {
-return m_uid;
+    return m_uid;
 }
 
 void Player::setFirstName(QString value)
@@ -175,7 +181,8 @@ QList<int> Player::getSkillsByUid(QString value)
 
 
 
-//QStringList Player::getPlayerUidsbyTeam(QString value)
-//{
-  //return m_players;
-//}
+QStringList Player::getPlayerUidsbyTeam(QString value)
+{
+    QStringList values = m_first_team_uid->values(value);
+    return values;
+}

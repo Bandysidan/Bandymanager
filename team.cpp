@@ -1,7 +1,7 @@
 #include "team.h"
 
 QHash<QString,Team *> *Team::m_teams;
-QHash<QString,QString> *Team::m_teams_by_country;
+QMultiHash<QString,QString> *Team::m_teams_by_country;
 
 Team::Team(QObject *parent) :
     QObject(parent)
@@ -9,7 +9,7 @@ Team::Team(QObject *parent) :
     if(!m_teams)
         m_teams= new QHash<QString,Team *>();
     if(!m_teams_by_country)
-        m_teams_by_country = new QHash<QString,QString>();
+        m_teams_by_country = new QMultiHash<QString,QString>();
 
 }
 
@@ -17,8 +17,17 @@ void Team::setUid(QString value)
 {
     m_uid = value;
     m_teams->insert(m_uid, this);
-    m_teams_by_country->insert(m_uid,m_country_uid);
-//    qDebug()<<"setUid: "<< m_uid << " "<< m_country_uid;
+    m_teams_by_country->insert(m_country_uid,m_uid);
+ /*      int i;
+         i=m_teams_by_country->count();
+         qDebug()<<"setUid: "<< i << " "<< m_uid << " "<< m_country_uid;
+         QList<QString> teamFilter = m_teams_by_country->values(m_country_uid);
+         //QHash<QString> teamFilter = m_teams_by_country->find(m_uid);
+         qDebug() << m_teams_by_country->count() << " "<< teamFilter.count();
+         for (int j = 0; j < teamFilter.size(); ++j)
+           qDebug() << j <<" "<<teamFilter.at(j) ;
+*/
+
     emit uidChanged();
 }
 
@@ -61,15 +70,12 @@ QString Team::getNameByUid(QString value)
     else
         return "error";
 }
-/*
-QHash<Qstring,Qstring> Team::getUidByCountryUid(QString value)
+
+QStringList Team::getUidByCountryUid(QString value)
 {
-//    QHash<Qstring,Qstring> teams = m_teams_by_country.value(value);
-    QString key;
-    foreach( key, m_teams_by_country.keys() )
-      qDebug() << key << " = " << m_teams_by_country[key];
+    QStringList values = m_teams_by_country->values(value);
+    values.sort();
 
+    return values;
 
-    //return teams;
-
-}*/
+}

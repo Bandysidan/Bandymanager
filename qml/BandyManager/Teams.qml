@@ -75,8 +75,14 @@ Rectangle {
     }
 
     Team {
+        uid: "Vanersborgbandyherrar"
+        name: "IFK Vänersborg"
+        countryUid: "sweden"
+    }
+
+    Team {
         uid: "Tillbergabandyherrar"
-        name: "Tillberga bandy"
+        name: "TB Västerås"
         countryUid: "sweden"
     }
 
@@ -102,7 +108,7 @@ Rectangle {
         countryUid: "norway"
     }
     Team {
-        uid: "Mjöndalenherrar"
+        uid: "Mjondalenherrar"
         name: "Mjöndalen"
         countryUid: "norway"
     }
@@ -122,6 +128,11 @@ Rectangle {
         countryUid: "finland"
     }
     Team {
+        uid: "Narukeraherrar"
+        name: "Narukäre"
+        countryUid: "finland"
+    }
+    Team {
         uid: "Dinkytownherrar"
         name: "Dinkytown Dukes"
         countryUid: "usa"
@@ -129,6 +140,11 @@ Rectangle {
     Team {
         uid: "Bandolierherrar"
         name: "Minneapolis Bandolier"
+        countryUid: "usa"
+    }
+    Team {
+        uid: "Mississippiherrar"
+        name: "Mississippi Mojo"
         countryUid: "usa"
     }
 

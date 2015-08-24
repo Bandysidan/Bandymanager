@@ -8,9 +8,16 @@ Rectangle {
 
     Text {
         id: bandy
-        text: qsTr("BandyManager")
+        //text: qsTr("BandyManager")
         font.pointSize: 75
         anchors.centerIn: parent
+    }
+
+    Image {
+        id: splashImage
+        anchors.centerIn: parent
+        fillMode: Image.Stretch
+        source: "BMstart.png"
     }
     MouseArea {
         anchors.fill: parent
