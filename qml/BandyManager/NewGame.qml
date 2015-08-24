@@ -42,13 +42,23 @@ Rectangle {
     property var tempVar
 
     /*Titel*/
+    Image {
+        id: logo
+        x: 10
+        y: 10
+        width: 335
+        height: 120
+        fillMode: Image.PreserveAspectFit
+        source: "BMlogo.png"
+    }
+    /*
     Text {
         id: bandy
         text: qsTr("BandyManager")
         font.pointSize: 75
         x: 10
         y: 10
-    }
+    }*/
     /* Ditt namn */
     Text {
         id: namn
@@ -485,7 +495,10 @@ Rectangle {
         height: 250
         BandyManager.MainMenuButton {
             text: "Starta spelet"
-            onClicked: Qt.quit()
+            onClicked: {
+                newGame.visible = false;
+                mainGameScreen.show();
+            }
         }
 
     }

@@ -28,4 +28,8 @@ ApplicationWindow {
         id: newGame
         visible: false
     }
+    BandyManager.MainGameScreen {
+        id: mainGameScreen
+        visible: false
+    }
 }

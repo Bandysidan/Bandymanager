@@ -17,7 +17,7 @@ Rectangle {
         id: splashImage
         anchors.centerIn: parent
         fillMode: Image.Stretch
-        source: "BMstart.png"
+        source: "BMlogo.png"
     }
     MouseArea {
         anchors.fill: parent
