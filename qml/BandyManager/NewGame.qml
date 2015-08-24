@@ -466,7 +466,7 @@ Rectangle {
         fillMode: Image.PreserveAspectFit
         Component.onCompleted: {
             source = country.getFlagByUid(currentCountry);
-            teamList = team.getUidByCountryUid(currentCountry);
+           // teamList = team.getUidByCountryUid(currentCountry);
         }
     }
 

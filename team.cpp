@@ -1,6 +1,7 @@
 #include "team.h"
 
 QHash<QString,Team *> *Team::m_teams;
+QHash<QString,QString> *Team::m_teams_by_country;
 
 Team::Team(QObject *parent) :
     QObject(parent)
@@ -14,7 +15,7 @@ void Team::setUid(QString value)
 {
     m_uid = value;
     m_teams->insert(m_uid, this);
-    m_teams_by_country->insert(m_uid,m_country_uid);
+    //m_teams_by_country->insert(m_uid,m_country_uid);
 //    qDebug()<<"setUid: "<< m_uid << " "<< m_country_uid;
     emit uidChanged();
 }
