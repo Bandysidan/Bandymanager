@@ -36,6 +36,7 @@ Rectangle {
     property var playerList:["x01x01x01","x01x01x02","x01x01x03","x01x01x04","x01x01x05","x01x01x06"]
     property var playerList2:["x01x02x01","x01x02x02","x01x02x03","x01x02x04","x01x02x05","x01x02x06"]
     property var playerList3:["x01x01x01","x01x01x02","x01x01x03","x01x01x04","x01x01x05","x01x01x06"]
+    property var teamList: ["lorem","ipsum"]
     property var teamListSweden: ["SAIKbandyherrar","VSKbandyherrar","Bajenbandyherrar","Villabandyherrar","Tillbergabandyherrar"]
     property var teamListRussia: ["Jenisejherrar","Dynamomoscowherrar","Vodnikherrar"]
     property var teamListNorway: ["Stabaekherrar","Mjöndalenherrar","Readyherrar"]
@@ -465,6 +466,7 @@ Rectangle {
         fillMode: Image.PreserveAspectFit
         Component.onCompleted: {
             source = country.getFlagByUid(currentCountry);
+            teamList = team.getUidByCountryUid(currentCountry);
         }
     }
 

@@ -22,7 +22,55 @@ Rectangle {
 
     Team {
         uid: "Villabandyherrar"
-        name: "Villa Lidköping"
+        name: "Villa Lidköping BK"
+        countryUid: "sweden"
+    }
+
+    Team {
+        uid: "Edsbynherrar"
+        name: "Edsbyns IF"
+        countryUid: "sweden"
+    }
+
+    Team {
+        uid: "Bollnasherrar"
+        name: "Bollnäs GoIF"
+        countryUid: "sweden"
+    }
+
+    Team {
+        uid: "Brobergherrar"
+        name: "Brobergs IF"
+        countryUid: "sweden"
+    }
+
+    Team {
+        uid: "Siriusherrar"
+        name: "IK Sirius"
+        countryUid: "sweden"
+    }
+
+    Team {
+        uid: "IFKKungalvherrar"
+        name: "IFK Kungälv"
+        countryUid: "sweden"
+    }
+
+    Team {
+        uid: "VetlandaBKherrar"
+        name: "Vetlanda BK"
+        countryUid: "sweden"
+    }
+
+    Team {
+        uid: "Kalixbandyherrar"
+        name: "Kalix Bandy"
+        countryUid: "sweden"
+    }
+
+    Team {
+        uid: "Gripenherrar"
+        name: "Gripen Trollhättan BK"
         countryUid: "sweden"
     }
 
