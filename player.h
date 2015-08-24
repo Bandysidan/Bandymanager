@@ -5,6 +5,7 @@
 #include <QHash>
 #include <QStringList>
 #include <QDebug>
+#include <QDate>
 #include "country.h"
 
 
@@ -14,6 +15,7 @@ class Player : public QObject
 
     Q_PROPERTY(QString firstName READ firstName WRITE setFirstName NOTIFY firstNameChanged)
     Q_PROPERTY(QString familyName READ familyName WRITE setFamilyName NOTIFY familyNameChanged)
+    Q_PROPERTY(int birth READ birth WRITE setBirth NOTIFY birthChanged)
     Q_PROPERTY(QString countryUid READ countryUid WRITE setCountryUid NOTIFY countryUidChanged)
     Q_PROPERTY(QString uid READ uid WRITE setUid NOTIFY uidChanged)
     Q_PROPERTY(QString firstTeam READ firstTeam WRITE setFirstTeam NOTIFY firstTeamChanged)
@@ -31,6 +33,9 @@ public:
     void setFamilyName(QString value);
     QString familyName();
 
+    void setBirth(int value);
+    int birth();
+
     void setCountryUid(QString value);
     QString countryUid();
 
@@ -45,6 +50,7 @@ public:
     Q_INVOKABLE QString getFamilyNameByUid(QString value);
     Q_INVOKABLE QString getFullNameByUid(QString value);
     Q_INVOKABLE QString getShortNameByUid(QString value);
+    Q_INVOKABLE int getBirthyearByUid(QString value);
     Q_INVOKABLE QString getCountryByUid(QString value);
     Q_INVOKABLE QList<int> getSkillsByUid(QString value);
 
@@ -53,6 +59,7 @@ signals:
     void uidChanged();
     void firstNameChanged();
     void familyNameChanged();
+    void birthChanged();
     void countryUidChanged();
     void firstTeamChanged();
     void skillsChanged();
@@ -69,6 +76,7 @@ private:
     QString m_last_name;
     QString m_country_uid;
     QString m_first_team;
+    int m_birthyear;
 
     QList<int> m_skills;
 

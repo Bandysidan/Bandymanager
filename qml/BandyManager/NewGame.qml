@@ -1,5 +1,5 @@
 import QtQuick 2.0
-
+import "qrc:///qml/BandyManager" as BandyManager
 import linkan.bandymanager 1.0
 import team.bandymanager 1.0
 import players.bandymanager 1.0
@@ -41,6 +41,7 @@ Rectangle {
     property var teamListNorway: ["Stabaekherrar","Mjöndalenherrar","Readyherrar"]
     property var teamListUSA: ["Dinkytownherrar","Bandolierherrar"]
     property var teamListFinland: ["Helsinkiherrar","OLSherrar"]
+    property var birthyear
     property var i:0
     property var playerNumber:"1"
     property var playerSkills:[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
@@ -467,6 +468,32 @@ Rectangle {
             source = country.getFlagByUid(currentCountry);
         }
     }
+    Text {
+        id: ageText
+        x: 1050
+        y: 500
+        text: "Ålder: "
+        font.bold: true
+    }
+    Text {
+        id: ageValue
+        x: 1155
+        y: 500
+        text: ""
+        font.bold: false
+    }
+
+    Rectangle{
+        x:1050
+        y: 650
+        width: 250
+        height: 250
+        BandyManager.MainMenuButton {
+            text: "Starta spelet"
+            onClicked: Qt.quit()
+        }
+
+    }
 
 
     Component.onCompleted: changeCountry();
@@ -618,5 +645,10 @@ Rectangle {
         konditionValue.text = parseInt((playerSkills[10]-1)/10+1);
         tempVar=player.getCountryByUid(currentPlayer);
         playerFlag.source = country.getFlagByUid(tempVar);
+        birthyear=player.getBirthyearByUid(currentPlayer);
+        if(birthyear>0)
+            ageValue.text = 2015-birthyear;
+        else
+            ageValue.text = "";
     }
 }

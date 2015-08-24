@@ -50,6 +50,19 @@ QString Player::familyName()
     return m_family_name;
 }
 
+void Player::setBirth(int value)
+{
+    m_birthyear=value;
+
+emit familyNameChanged();
+
+}
+
+int Player::birth()
+{
+    return m_birthyear;
+}
+
 void Player::setCountryUid(QString value)
 {
 
@@ -127,6 +140,16 @@ QString Player::getShortNameByUid(QString value)
         return playername;
     else
         return "error";
+}
+
+int Player::getBirthyearByUid(QString value)
+{
+    Player *player = m_players->value(value);
+    if (player)
+        return player->birth();
+    else
+        return -999;
+
 }
 
 QString Player::getCountryByUid(QString value)
