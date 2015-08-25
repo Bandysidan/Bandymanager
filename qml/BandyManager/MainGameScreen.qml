@@ -64,6 +64,11 @@ Rectangle {
                 text: "Nästa match"
                 onClicked: Qt.quit()
             }
+            Rectangle {
+                width: 100
+                height: 150
+                opacity: 0
+            }
 
             BandyManager.MainGameButton {
                 text: "Avsluta"
@@ -77,7 +82,7 @@ Rectangle {
        y: 154
        BandyManager.MainGameHome {
            id: mainGameHome
-           visible: true
+           visible: false
        }
        BandyManager.MainGameSquad {
            id: mainGameSquad
@@ -94,6 +99,7 @@ Rectangle {
     function show() {
        // newGame.visible = false;
         mainGameScreen.visible = true;
+        mainGameHome.show();
     }
 
 }

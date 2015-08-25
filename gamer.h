@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QHash>
+#include <QDebug>
 
 class Gamer : public QObject
 {
@@ -25,8 +26,11 @@ public:
     void setTeamUid(QString value);
     QString teamUid();
 
-    Q_INVOKABLE void setNameStart(QString value,QString gamer);
-    Q_INVOKABLE QString getName(QString gamer);
+    Q_INVOKABLE void setNameStart(QString value,QString gamertype);
+    Q_INVOKABLE QString getName(QString value);
+    Q_INVOKABLE void setTeamUidStart(QString value,QString gamertype);
+    Q_INVOKABLE QString getTeamUid(QString value);
+
 signals:
     void uidChanged();
     void nameChanged();
@@ -40,7 +44,6 @@ private:
     QString m_team_uid;
 
     static QHash<QString, Gamer *> *m_gamers;
-    static QHash<QString, QString> *m_gamernames;
 
 };
 

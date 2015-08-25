@@ -1,7 +1,6 @@
 import QtQuick 2.0
 import "qrc:///qml/BandyManager" as BandyManager
 import linkan.bandymanager 1.0
-//import gamer.bandymanager 1.0
 import team.bandymanager 1.0
 import players.bandymanager 1.0
 
@@ -39,7 +38,7 @@ Rectangle {
     z: 5
     property var iCountry: 1
     property var currentCountry: "sweden"
-    property var currentGamer: "player1"
+    property var currentGamer: "Player1"
     property var currentTeam
     property var currentPlayer
     property var playerList
@@ -60,14 +59,6 @@ Rectangle {
         fillMode: Image.PreserveAspectFit
         source: "BMlogo.png"
     }
-    /*
-    Text {
-        id: bandy
-        text: qsTr("BandyManager")
-        font.pointSize: 75
-        x: 10
-        y: 10
-    }*/
     /* Ditt namn */
     Text {
         id: namn
@@ -505,6 +496,8 @@ Rectangle {
         BandyManager.MainMenuButton {
             text: "Starta spelet"
             onClicked: {
+                gamer.setTeamUidStart(currentTeam,currentGamer);
+                gamer.setNameStart(input.text,currentGamer);
                 newGame.visible = false;
                 mainGameScreen.show();
             }
