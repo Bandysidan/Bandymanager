@@ -17,6 +17,35 @@ Rectangle {
         fillMode: Image.PreserveAspectFit
         source: "BMlogo.png"
     }
+    Rectangle {
+        x: 0
+        y: 0
+        width: 106
+        height: 800
+
+        gradient: Gradient { // This sets a vertical gradient fill
+            GradientStop { position: 0.0; color: "black" }
+            GradientStop { position: 1.0; color: "darkgrey" }
+        }
+        Column {
+            width: 100
+            height: 794
+            anchors.centerIn: parent
+            spacing: 3
+            BandyManager.MainGameButton {
+                text: "Truppen"
+                onClicked: Qt.quit()
+            }
+
+            BandyManager.MainGameButton {
+                text: "Nästa match"
+                onClicked: Qt.quit()
+            }
+        }
+    }
+
+
+
     function show() {
        // newGame.visible = false;
         mainGameScreen.visible = true;

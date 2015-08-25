@@ -68,5 +68,6 @@
         <file>qml/BandyManager/England.png</file>
         <file>qml/BandyManager/MainGameScreen.qml</file>
         <file>qml/BandyManager/BMlogo.png</file>
+        <file>qml/BandyManager/MainGameButton.qml</file>
     </qresource>
 </RCC>
