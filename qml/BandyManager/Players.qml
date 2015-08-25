@@ -9,7 +9,7 @@ Rectangle {
         birth: 1991
         countryUid: "russia"
         firstTeam: "SAIKbandyherrar"
-        skills: [175,200,45,53,24,15,35,24,14, 9,11]
+        skills: [175,200,45,53,24,15,35,24,14, 9,11,34,74]
     }
     Player {
         uid: "x01x01x02"
@@ -18,7 +18,7 @@ Rectangle {
         birth: 1990
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
-        skills: [5,4,165,123,154,185,175,164,154,149,181]
+        skills: [5,4,165,123,154,185,175,164,154,149,181,141,165]
     }
     Player {
         uid: "x01x01x03"
@@ -27,7 +27,7 @@ Rectangle {
         birth: 1989
         countryUid: "finland"
         firstTeam: "SAIKbandyherrar"
-        skills: [7,4,165,123,154,185,175,164,154,149,181]
+        skills: [7,4,165,123,154,185,175,164,154,149,181,146,175]
     }
     Player {
         uid: "x01x01x04"
@@ -36,7 +36,7 @@ Rectangle {
         birth: 1980
         countryUid: "russia"
         firstTeam: "SAIKbandyherrar"
-        skills: [9,4,165,123,154,185,175,164,154,149,181]
+        skills: [9,4,165,123,154,185,175,164,154,149,181,120,95]
     }
     Player {
         uid: "x01x01x05"
@@ -45,7 +45,7 @@ Rectangle {
         birth: 1981
         countryUid: "usa"
         firstTeam: "SAIKbandyherrar"
-        skills: [10,4,165,123,154,185,175,164,154,149,181]
+        skills: [10,4,165,123,154,185,175,164,154,149,181,88,92]
     }
     Player {
         uid: "x01x01x06"
@@ -54,7 +54,7 @@ Rectangle {
         birth: 1982
         countryUid: "norway"
         firstTeam: "SAIKbandyherrar"
-        skills: [11,4,165,123,154,185,175,164,154,149,181]
+        skills: [11,4,165,123,154,185,175,164,154,149,181,120,22]
     }
     Player {
         uid: "x01x01x07"
@@ -63,7 +63,7 @@ Rectangle {
         birth: 1985
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
-        skills: [12,24,125,143,124,85,175,64,174,119,121]
+        skills: [12,24,125,143,124,85,175,64,174,119,121,90,45]
     }
     Player {
         uid: "x01x01x08"
@@ -72,7 +72,7 @@ Rectangle {
         birth: 1983
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
-        skills: [5,4,165,123,154,185,175,164,154,149,181]
+        skills: [5,4,165,123,154,185,175,164,154,149,181,45,67]
     }
     Player {
         uid: "x01x01x09"
@@ -81,7 +81,7 @@ Rectangle {
         birth: 1982
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
-        skills: [5,4,165,123,154,185,175,164,154,149,181]
+        skills: [5,4,165,123,154,185,175,164,154,149,181,87,61]
     }
     Player {
         uid: "x01x01x0A"
@@ -90,7 +90,7 @@ Rectangle {
         birth: 1982
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
-        skills: [5,4,165,123,154,185,175,164,154,149,181]
+        skills: [5,4,165,123,154,185,175,164,154,149,181,125,67]
     }
     Player {
         uid: "x01x01x0B"
@@ -99,7 +99,7 @@ Rectangle {
         birth: 1982
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
-        skills: [5,4,165,123,154,185,175,164,154,149,181]
+        skills: [5,4,165,123,154,185,175,164,154,149,181,190,121]
     }
     Player {
         uid: "x01x01x0C"
@@ -108,10 +108,10 @@ Rectangle {
         birth: 1982
         countryUid: "somalia"
         firstTeam: "SAIKbandyherrar"
-        skills: [5,4,165,123,154,185,175,164,154,149,181]
+        skills: [5,4,165,123,154,185,175,164,154,149,181,180,175]
     }
     Player {
-        uid: "x01x02x0D"
+        uid: "x01x02x01"
         firstName: "?"
         familyName: "?"
         birth: 1979

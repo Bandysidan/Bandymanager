@@ -316,7 +316,7 @@ Rectangle {
     }
     Text {
         id: saveValue
-        x: 945
+        x: 960
         y: 435
         text: ""
         font.bold: false
@@ -330,7 +330,7 @@ Rectangle {
     }
     Text {
         id: throwValue
-        x: 945
+        x: 960
         y: 450
         text: ""
         font.bold: false
@@ -344,7 +344,7 @@ Rectangle {
     }
     Text {
         id: skatingValue
-        x: 945
+        x: 960
         y: 465
         text: ""
         font.bold: false
@@ -358,7 +358,7 @@ Rectangle {
     }
     Text {
         id: interceptValue
-        x: 945
+        x: 960
         y: 480
         text: ""
         font.bold: false
@@ -372,7 +372,7 @@ Rectangle {
     }
     Text {
         id: passingValue
-        x: 945
+        x: 960
         y: 495
         text: ""
         font.bold: false
@@ -386,7 +386,7 @@ Rectangle {
     }
     Text {
         id: lyrValue
-        x: 945
+        x: 960
         y: 510
         text: ""
         font.bold: false
@@ -400,7 +400,7 @@ Rectangle {
     }
     Text {
         id: takedownValue
-        x: 945
+        x: 960
         y: 525
         text: ""
         font.bold: false
@@ -414,7 +414,7 @@ Rectangle {
     }
     Text {
         id: takingValue
-        x: 945
+        x: 960
         y: 540
         text: ""
         font.bold: false
@@ -428,7 +428,7 @@ Rectangle {
     }
     Text {
         id: dribblingValue
-        x: 945
+        x: 960
         y: 555
         text: ""
         font.bold: false
@@ -442,22 +442,50 @@ Rectangle {
     }
     Text {
         id: aggressionValue
-        x: 945
+        x: 960
         y: 570
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: shotHardnessText
+        x: 840
+        y: 585
+        text: "Skott (Hårdhet): "
+        font.bold: true
+    }
+    Text {
+        id: shotHardnessValue
+        x: 960
+        y: 585
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: shotPrecissionText
+        x: 840
+        y: 600
+        text: "Skott (Precission): "
+        font.bold: true
+    }
+    Text {
+        id: shotPrecissionValue
+        x: 960
+        y: 600
         text: ""
         font.bold: false
     }
     Text {
         id: konditionText
         x: 840
-        y: 585
+        y: 615
         text: "Kondition: "
         font.bold: true
     }
     Text {
         id: konditionValue
-        x: 945
-        y: 585
+        x: 960
+        y: 615
         text: ""
         font.bold: false
     }
@@ -582,7 +610,9 @@ Rectangle {
         takingValue.text = parseInt((playerSkills[7]-1)/10+1);
         dribblingValue.text = parseInt((playerSkills[8]-1)/10+1);
         aggressionValue.text = parseInt((playerSkills[9]-1)/10+1);
-        konditionValue.text = parseInt((playerSkills[10]-1)/10+1);
+        shotHardnessValue.text = parseInt((playerSkills[10]-1)/10+1);
+        shotPrecissionValue.text = parseInt((playerSkills[11]-1)/10+1);
+        konditionValue.text = parseInt((playerSkills[12]-1)/10+1);
         tempVar=player.getCountryByUid(currentPlayer);
         playerFlag.source = country.getFlagByUid(tempVar);
         birthyear=player.getBirthyearByUid(currentPlayer);
