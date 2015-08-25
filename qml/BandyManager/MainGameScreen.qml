@@ -7,7 +7,7 @@ import players.bandymanager 1.0
 
 Rectangle {
     z:20
- anchors.fill: parent
+    anchors.fill: parent
     Image {
         id: logo
         x: 110
@@ -32,16 +32,61 @@ Rectangle {
             height: 794
             anchors.centerIn: parent
             spacing: 3
+
+            BandyManager.MainGameButton {
+                text: "Hem"
+                onClicked: {
+                    mainGameHome.show();
+                    mainGameSquad.hide();
+                    mainGameTactics.hide();
+                }
+            }
+
             BandyManager.MainGameButton {
                 text: "Truppen"
-                onClicked: Qt.quit()
+                onClicked: {
+                    mainGameHome.hide();
+                    mainGameSquad.show();
+                    mainGameTactics.hide();
+                }
+            }
+
+            BandyManager.MainGameButton {
+                text: "Taktik"
+                onClicked: {
+                    mainGameHome.hide();
+                    mainGameSquad.hide();
+                    mainGameTactics.show();
+                }
             }
 
             BandyManager.MainGameButton {
                 text: "Nästa match"
                 onClicked: Qt.quit()
             }
+
+            BandyManager.MainGameButton {
+                text: "Avsluta"
+                onClicked: Qt.quit()
+            }
+
         }
+    }
+    Rectangle {
+       x: 108
+       y: 154
+       BandyManager.MainGameHome {
+           id: mainGameHome
+           visible: true
+       }
+       BandyManager.MainGameSquad {
+           id: mainGameSquad
+           visible: false
+       }
+       BandyManager.MainGameTactics {
+           id: mainGameTactics
+           visible: false
+       }
     }
 
 

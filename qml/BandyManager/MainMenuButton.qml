@@ -5,8 +5,12 @@ Rectangle {
     id: button
     width: 250
     height: 32
-    border.color: "#000000"
-    border.width: 3
+    radius: 4 // This gives rounded corners to the Rectangle
+            gradient: Gradient { // This sets a vertical gradient fill
+                GradientStop { position: 0.0; color: "aqua" }
+                GradientStop { position: 1.0; color: "teal" }
+            }
+            border { width: 1; color: "black" }
 
 
     signal clicked()
@@ -27,7 +31,7 @@ Rectangle {
         }
 
         onExited: {
-            border.color= "#000000";
+            border.color= "#black";
         }
     }
 

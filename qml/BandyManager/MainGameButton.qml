@@ -27,6 +27,7 @@ Rectangle {
         onClicked: button.clicked()
         onEntered: {
             border.color= "#FF0000";
+            gradient.GradientStop.color = "FF0000";
         }
 
         onExited: {
