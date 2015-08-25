@@ -4,6 +4,7 @@
 #include "country.h"
 #include "player.h"
 #include "team.h"
+#include "gamer.h"
 
 
 int main(int argc, char *argv[])
@@ -13,6 +14,8 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
     qmlRegisterType<Country>("linkan.bandymanager",1,0,"Country");
+
+    qmlRegisterType<Gamer>("gamer.bandymanager",1,0,"Gamer");
 
     qmlRegisterType<Player>("players.bandymanager",1,0,"Player");
 

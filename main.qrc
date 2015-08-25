@@ -72,5 +72,6 @@
         <file>qml/BandyManager/MainGameHome.qml</file>
         <file>qml/BandyManager/MainGameSquad.qml</file>
         <file>qml/BandyManager/MainGameTactics.qml</file>
+        <file>qml/BandyManager/Gamers.qml</file>
     </qresource>
 </RCC>

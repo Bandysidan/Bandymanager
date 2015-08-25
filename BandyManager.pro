@@ -10,7 +10,8 @@ QML_IMPORT_PATH =
 SOURCES += main.cpp \
     country.cpp \
     team.cpp \
-    player.cpp
+    player.cpp \
+    gamer.cpp
 
 # Installation path
 # target.path =
@@ -24,9 +25,11 @@ RESOURCES += \
 
 OTHER_FILES += \
     qml/BandyManager/SplashScreen.qml \
-    qml/BandyManager/Countries.qml
+    qml/BandyManager/Countries.qml \
+    qml/BandyManager/Gamers.qml
 
 HEADERS += \
     country.h \
     team.h \
-    player.h
+    player.h \
+    gamer.h

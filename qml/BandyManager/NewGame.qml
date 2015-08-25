@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import "qrc:///qml/BandyManager" as BandyManager
 import linkan.bandymanager 1.0
+import gamer.bandymanager 1.0
 import team.bandymanager 1.0
 import players.bandymanager 1.0
 
@@ -16,6 +17,10 @@ Rectangle {
     Players {
 
     }
+    Gamers {
+
+    }
+
     Country {
         id: country
     }
@@ -25,12 +30,16 @@ Rectangle {
     Player {
         id: player
     }
+    Gamer {
+        id: gamer
+    }
 
     id: newGame
     anchors.fill: parent
     z: 5
     property var iCountry: 1
     property var currentCountry: "sweden"
+    property var currentGamer: "player1"
     property var currentTeam
     property var currentPlayer
     property var playerList
