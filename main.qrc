@@ -73,5 +73,7 @@
         <file>qml/BandyManager/MainGameSquad.qml</file>
         <file>qml/BandyManager/MainGameTactics.qml</file>
         <file>qml/BandyManager/Gamers.qml</file>
+        <file>qml/BandyManager/Belarus.png</file>
+        <file>qml/BandyManager/Germany.png</file>
     </qresource>
 </RCC>

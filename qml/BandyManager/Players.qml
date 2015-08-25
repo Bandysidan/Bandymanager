@@ -7,9 +7,9 @@ Rectangle {
         firstName: "?"
         familyName: "?"
         birth: 1991
-        countryUid: "sweden"
+        countryUid: "russia"
         firstTeam: "SAIKbandyherrar"
-        skills: [175,164,45,53,24,15,35,24,14, 9,11]
+        skills: [175,200,45,53,24,15,35,24,14, 9,11]
     }
     Player {
         uid: "x01x01x02"
@@ -160,12 +160,30 @@ Rectangle {
         firstName: "?"
         familyName: "?"
         birth: 1975
-        countryUid: "russia"
+        countryUid: "kyrgyzstan"
+        firstTeam: "VSKbandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x02x07"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "kyrgyzstan"
         firstTeam: "VSKbandyherrar"
         skills: [11,4,165,123,154,185,175,164,154,149,181]
     }
     Player {
         uid: "x01x03x01"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Villabandyherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x03x02"
         firstName: "?"
         familyName: "?"
         birth: 1975
@@ -188,6 +206,42 @@ Rectangle {
         familyName: "?"
         birth: 1975
         countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x05x02"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "belarus"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x05x03"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "canada"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x05x04"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "japan"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181]
+    }
+    Player {
+        uid: "x01x05x05"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "germany"
         firstTeam: "Edsbynherrar"
         skills: [11,4,165,123,154,185,175,164,154,149,181]
     }

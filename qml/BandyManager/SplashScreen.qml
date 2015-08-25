@@ -8,9 +8,10 @@ Rectangle {
 
     Text {
         id: bandy
-        //text: qsTr("BandyManager")
-        font.pointSize: 75
-        anchors.centerIn: parent
+        text: qsTr("Version: 0.1.0-preAlpha")
+        font.pointSize: 25
+        x: 10
+        y: 10
     }
 
     Image {
@@ -19,6 +20,7 @@ Rectangle {
         fillMode: Image.Stretch
         source: "BMlogo.png"
     }
+
     MouseArea {
         anchors.fill: parent
         onClicked: {

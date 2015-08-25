@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<Country>("linkan.bandymanager",1,0,"Country");
 
-    qmlRegisterType<Gamer>("gamer.bandymanager",1,0,"Gamer");
+    qmlRegisterType<Gamer>("linkan.bandymanager",1,0,"Gamer");
 
     qmlRegisterType<Player>("players.bandymanager",1,0,"Player");
 

@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import "qrc:///qml/BandyManager" as BandyManager
 import linkan.bandymanager 1.0
-import gamer.bandymanager 1.0
+//import gamer.bandymanager 1.0
 import team.bandymanager 1.0
 import players.bandymanager 1.0
 
