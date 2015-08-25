@@ -79,3 +79,21 @@ QStringList Team::getUidByCountryUid(QString value)
     return values;
 
 }
+
+void Team::setPosition(QString position, QString player)
+{
+    QStringList possiblePosition;
+    possiblePosition<<"Goalkeeper"<<"Defender1"<<"Defender2"<<"Defender3"<<"Defender4"<<"Defender5"<<"Midfielder1"<<"Midfielder2"<<"Midfielder3"<<"Attacker1"<<"Attacker2"<<"ReserveKeeper"<<"Substitution1"<<"Substitution2"<<"Substitution3"<<"Substitution4";
+    if(possiblePosition.indexOf(position)>=0)
+    {
+        m_player_positions.insert(position,player);
+    }
+}
+
+QString Team::getPosition(QString position)
+{
+    QString returnvalue;
+    returnvalue=m_player_positions.value(position);
+    return returnvalue;
+}
+
