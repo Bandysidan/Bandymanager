@@ -8,7 +8,7 @@ import players.bandymanager 1.0
 Rectangle {
     id:mainGameSquad
     z:15
- property var playerList
+    property var playerList
     property var gamerName
     property var gamerTeam
     property var i
@@ -75,6 +75,12 @@ Rectangle {
                             color: "#193441"
                             font.pixelSize: 14
                         }
+                        Text {
+                            id: position
+                            text: "   "+positionstring
+                            color: "#193441"
+                            font.pixelSize: 14
+                        }
                     }
 
 
@@ -118,7 +124,7 @@ Rectangle {
             for(i=0;i < playerList.length ; i++)
                 {
                     playerNumber=i.toString();
-                    playerlistTeam.set(i,{name: player.getShortNameByUid(playerList[i]),number: playerNumber,playerflag: country.getFlagByUid(player.getCountryByUid(playerList[i])), agestring: player.getBirthyearByUid(playerList[i])});
+                    playerlistTeam.set(i,{name: player.getShortNameByUid(playerList[i]),number: playerNumber,playerflag: country.getFlagByUid(player.getCountryByUid(playerList[i])), agestring: player.getBirthyearByUid(playerList[i]), positionstring:player.getBestPosition(playerList[i])});
                 }
         }
 

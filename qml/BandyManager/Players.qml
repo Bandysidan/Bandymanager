@@ -18,7 +18,7 @@ Rectangle {
         birth: 1990
         countryUid: "sweden"
         firstTeam: "SAIKbandyherrar"
-        skills: [  5,  4,165,123,154,185,175,164,154,149,181,141,165]
+        skills: [  5,  4,165,123,154,85,75,64,154,149,81,41,165]
     }
     Player {
         uid: "x01x01x03"
@@ -27,7 +27,7 @@ Rectangle {
         birth: 1989
         countryUid: "finland"
         firstTeam: "SAIKbandyherrar"
-        skills: [  7,  4,165,123,154,185,175,164,154,149,181,146,175]
+        skills: [  7,  4,165,23,154,15,175,164,154,149,181,146,175]
     }
     Player {
         uid: "x01x01x04"
@@ -108,7 +108,34 @@ Rectangle {
         birth: 1982
         countryUid: "somalia"
         firstTeam: "SAIKbandyherrar"
-        skills: [  5,  4,165,123,154,185,175,164,154,149,181,180,175]
+        skills: [  5,  4,165,123,154,185,75,14,154,149,21,80,175]
+    }
+    Player {
+        uid: "x01x01x0D"
+        firstName: "?"
+        familyName: "?"
+        birth: 1982
+        countryUid: "sweden"
+        firstTeam: "SAIKbandyherrar"
+        skills: [  5,  4,165,123,154,185,175,164,154,149,181,125, 67]
+    }
+    Player {
+        uid: "x01x01x0E"
+        firstName: "?"
+        familyName: "?"
+        birth: 1982
+        countryUid: "sweden"
+        firstTeam: "SAIKbandyherrar"
+        skills: [  5,  4,165,123,154,185,175,164,154,149,181,190,121]
+    }
+    Player {
+        uid: "x01x01x0F"
+        firstName: "?"
+        familyName: "?"
+        birth: 2008
+        countryUid: "sweden"
+        firstTeam: "SAIKbandyherrar"
+        skills: [  5,  4,65,23,54,85,75,4,24,49,81,80,75]
     }
     Player {
         uid: "x01x02x01"
@@ -325,6 +352,15 @@ Rectangle {
         countryUid: "sweden"
         firstTeam: "Tillbergabandyherrar"
         skills: [11,4,165,123,154,185,175,164,154,149,181,120,193]
+    }
+    Player {
+        uid: "x01x0Ex02"
+        firstName: "?"
+        familyName: "?"
+        birth: 1985
+        countryUid: "russia"
+        firstTeam: "Tillbergabandyherrar"
+        skills: [11,4,65,23,154,45,175,164,154,199,181,120,193]
     }
     Player {
         uid: "x02x01x01"

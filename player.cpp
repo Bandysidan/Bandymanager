@@ -199,6 +199,45 @@ QList<int> Player::getPositionSkills(QString value)
     return positionSkills;
 }
 
+QString Player::getBestPosition(QString value)
+{
+    Player *player = m_players->value(value);
+    QList<int> skills;
+    int bestSkillnumber;
+    skills=player->skills();
+    QList<int> positionSkills;
+    QString bestPosition;
+
+    if (player){
+        positionSkills.append((skills[0]*65+skills[1]*30+skills[12]*5)/100);
+        positionSkills.append((skills[2]*20+skills[3]*30+skills[4]*20+skills[5]*15+skills[9]*10+skills[12]*5)/100);
+        positionSkills.append((skills[2]*20+skills[3]*35+skills[4]*20+skills[5]*10+skills[9]*10+skills[12]*5)/100);
+        positionSkills.append((skills[2]*19+skills[3]*18+skills[4]*20+skills[5]*12+skills[7]*5+skills[8]*5+skills[9]*5+skills[10]*3+skills[11]*3+skills[12]*10)/100);
+        positionSkills.append((skills[2]*25+skills[4]*20+skills[6]*5+skills[7]*10+skills[8]*10+skills[9]*5+skills[10]*10+skills[11]*10+skills[12]*5)/100);
+        positionSkills.append((skills[2]*20+skills[4]*10+skills[6]*11+skills[7]*12+skills[8]*12+skills[10]*15+skills[11]*15+skills[12]*5)/100);
+        bestPosition="Målvakt"; bestSkillnumber=positionSkills[0];
+        if (positionSkills[1]>bestSkillnumber) {
+            bestPosition="Libero"; bestSkillnumber=positionSkills[1];
+        }
+        if (positionSkills[2]>bestSkillnumber) {
+            bestPosition="Back"; bestSkillnumber=positionSkills[2];
+        }
+        if (positionSkills[3]>bestSkillnumber) {
+            bestPosition="Halv"; bestSkillnumber=positionSkills[3];
+        }
+        if (positionSkills[4]>bestSkillnumber) {
+            bestPosition="Mittfältare"; bestSkillnumber=positionSkills[4];
+        }
+        if (positionSkills[5]>bestSkillnumber) {
+            bestPosition="Anfallare";
+        }
+    }
+    else
+        bestPosition="error";
+    return bestPosition;
+
+}
+
 
 
 QStringList Player::getPlayerUidsbyTeam(QString value)
