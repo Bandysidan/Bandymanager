@@ -14,7 +14,7 @@ Rectangle {
             y: 10
         }
         Text {
-            text: "Detta spel är programmerat av Torbjörn Lindquist.\n\nFlaggorna i spelet är gjorda av Gang of the Coconuts http://www.free-country-flags.com/index.php\n\nSpelet är släppt under Creative Commons Attribution-ShareAlike 3.0 Unported"
+            text: "Detta spel är programmerat av Torbjörn Lindquist.\n\nFlaggorna i spelet är gjorda av Gang of the Coconuts http://www.free-country-flags.com/index.php . Bandyplanen är hämtad från 'Bandy pitch metric av Suede'\n - Eget arbete. Licensierad under Public Domain via Wikimedia Commons - https://commons.wikimedia.org/wiki/File:Bandy_pitch_metric.svg#/media/File:Bandy_pitch_metric.svg \n\nSpelet är släppt under Creative Commons Attribution-ShareAlike 3.0 Unported"
             x: 10
             y:120
         }

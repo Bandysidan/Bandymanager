@@ -185,7 +185,21 @@ Rectangle {
         ]
         familyname:[
             "Andersson",
-            "Svensson"
+            "Bergwall",
+            "Berlin",
+            "Carlsson",
+            "Edlund",
+            "Einarsson",
+            "Elfving",
+            "Hellmyrs",
+            "Johansson",
+            "Löfstedt",
+            "Nilsson",
+            "Pettersson",
+            "Svensson",
+            "Säfström",
+            "Välitalo",
+            "Westh"
         ]
     }
     Country {

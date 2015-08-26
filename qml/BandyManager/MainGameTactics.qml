@@ -115,6 +115,116 @@ Rectangle {
             id: playerlistTeam
         }
 
+        Image {
+            id: pitch
+            x: 800
+            y: 10
+            height: 800
+            width: 530
+            source: "pitch.png"
+        }
+
+        Image {
+            id:goalkeeperImage
+            x: 1035
+            y: 695
+            height: 81
+            width: 59
+            source: "ShirtNonchoosen.png"
+        }
+
+
+        Image {
+            id:liberoImage
+            x: 1035
+            y: 595
+            height: 81
+            width: 59
+            source: "ShirtNonchoosen.png"
+        }
+
+
+        Image {
+            id:leftbackImage
+            x: 935
+            y: 565
+            height: 81
+            width: 59
+            source: "ShirtNonchoosen.png"
+        }
+
+        Image {
+            id:rightbackImage
+            x: 1135
+            y: 565
+            height: 81
+            width: 59
+            source: "ShirtNonchoosen.png"
+        }
+
+        Image {
+            id:lefthalfImage
+            x: 815
+            y: 545
+            height: 81
+            width: 59
+            source: "ShirtNonchoosen.png"
+        }
+
+        Image {
+            id:righthalfImage
+            x: 1255
+            y: 545
+            height: 81
+            width: 59
+            source: "ShirtNonchoosen.png"
+        }
+
+        Image {
+            id:midImage
+            x: 1035
+            y: 415
+            height: 81
+            width: 59
+            source: "ShirtNonchoosen.png"
+        }
+
+
+        Image {
+            id:leftmidImage
+            x: 855
+            y: 375
+            height: 81
+            width: 59
+            source: "ShirtNonchoosen.png"
+        }
+
+        Image {
+            id:rightmidImage
+            x: 1215
+            y: 375
+            height: 81
+            width: 59
+            source: "ShirtNonchoosen.png"
+        }
+
+        Image {
+            id:leftattackImage
+            x: 855
+            y: 175
+            height: 81
+            width: 59
+            source: "ShirtNonchoosen.png"
+        }
+
+        Image {
+            id:rightattackImage
+            x: 1215
+            y: 175
+            height: 81
+            width: 59
+            source: "ShirtNonchoosen.png"
+        }
 
         function show() {
             mainGameTactics.visible = true;

@@ -21,7 +21,7 @@ Rectangle {
         x: 0
         y: 0
         width: 106
-        height: 800
+        height: 1000
 
         gradient: Gradient { // This sets a vertical gradient fill
             GradientStop { position: 0.0; color: "black" }
@@ -29,7 +29,7 @@ Rectangle {
         }
         Column {
             width: 100
-            height: 794
+            height: 990
             anchors.centerIn: parent
             spacing: 3
 
@@ -80,6 +80,8 @@ Rectangle {
     Rectangle {
        x: 108
        y: 154
+       width:1000
+       height: 900
        BandyManager.MainGameHome {
            id: mainGameHome
            visible: false

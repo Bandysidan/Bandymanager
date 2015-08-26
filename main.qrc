@@ -75,5 +75,7 @@
         <file>qml/BandyManager/Gamers.qml</file>
         <file>qml/BandyManager/Belarus.png</file>
         <file>qml/BandyManager/Germany.png</file>
+        <file>qml/BandyManager/pitch.png</file>
+        <file>qml/BandyManager/ShirtNonchoosen.png</file>
     </qresource>
 </RCC>

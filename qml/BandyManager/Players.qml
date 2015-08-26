@@ -273,6 +273,78 @@ Rectangle {
         skills: [11,4,165,123,154,185,175,164,154,149,181,120,193]
     }
     Player {
+        uid: "x01x05x06"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181,120,193]
+    }
+    Player {
+        uid: "x01x05x07"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181,120,193]
+    }
+    Player {
+        uid: "x01x05x08"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181,120,193]
+    }
+    Player {
+        uid: "x01x05x09"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181,120,193]
+    }
+    Player {
+        uid: "x01x05x0A"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181,120,193]
+    }
+    Player {
+        uid: "x01x05x0B"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181,120,193]
+    }
+    Player {
+        uid: "x01x05x0C"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181,120,193]
+    }
+    Player {
+        uid: "x01x05x0D"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
+        skills: [11,4,165,123,154,185,175,164,154,149,181,120,193]
+    }
+    Player {
         uid: "x01x06x01"
         firstName: "?"
         familyName: "?"
