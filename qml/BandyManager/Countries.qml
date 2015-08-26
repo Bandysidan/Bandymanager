@@ -193,6 +193,7 @@ Rectangle {
             "Elfving",
             "Hellmyrs",
             "Johansson",
+            "Jönsson",
             "Löfstedt",
             "Nilsson",
             "Pettersson",
@@ -279,8 +280,14 @@ Rectangle {
         ]
         familyname:[
             "Aamot",
+            "Høgvold",
+            "Jensen",
+            "Larsen",
+            "Løyning",
             "Hammar",
-            "Hansen"
+            "Hansen",
+            "Randsborg",
+            "Smerkerud"
         ]
     }
     Country {
