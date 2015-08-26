@@ -54,7 +54,7 @@ public:
     Q_INVOKABLE int getBirthyearByUid(QString value);
     Q_INVOKABLE QString getCountryByUid(QString value);
     Q_INVOKABLE QList<int> getSkillsByUid(QString value);
-
+    Q_INVOKABLE QList<int> getPositionSkills(QString value);
     Q_INVOKABLE QStringList getPlayerUidsbyTeam(QString value);
 signals:
     void uidChanged();

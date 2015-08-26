@@ -47,6 +47,7 @@ Rectangle {
     property var i:0
     property var playerNumber:"1"
     property var playerSkills
+    property var positionSkills
     property var tempVar
 
     /*Titel*/
@@ -515,6 +516,97 @@ Rectangle {
         text: ""
         font.bold: false
     }
+    Text {
+        id: ratingText
+        x: 1050
+        y: 525
+        text: "Ranking"
+        font.bold: true
+    }
+    Text {
+        id: goalkeeperText
+        x: 1050
+        y: 545
+        text: "Målvakt: "
+        font.bold: true
+    }
+    Text {
+        id: goalkeeperValue
+        x: 1155
+        y: 545
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: liberoText
+        x: 1050
+        y: 560
+        text: "Libero: "
+        font.bold: true
+    }
+    Text {
+        id: liberoValue
+        x: 1155
+        y: 560
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: defenderText
+        x: 1050
+        y: 575
+        text: "Back: "
+        font.bold: true
+    }
+    Text {
+        id: defenderValue
+        x: 1155
+        y: 575
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: halfbackText
+        x: 1050
+        y: 590
+        text: "Halv: "
+        font.bold: true
+    }
+    Text {
+        id: halfbackValue
+        x: 1155
+        y: 590
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: midfieldText
+        x: 1050
+        y: 605
+        text: "Mittfältare: "
+        font.bold: true
+    }
+    Text {
+        id: midfieldValue
+        x: 1155
+        y: 605
+        text: ""
+        font.bold: false
+    }
+    Text {
+        id: attackerText
+        x: 1050
+        y: 620
+        text: "Anfallare: "
+        font.bold: true
+    }
+    Text {
+        id: attackerValue
+        x: 1155
+        y: 620
+        text: ""
+        font.bold: false
+    }
 
     Rectangle{
         x:1050
@@ -600,6 +692,7 @@ Rectangle {
         currentPlayer = playerList[playerindex];
         playerName.text = player.getFullNameByUid(currentPlayer);
         playerSkills = player.getSkillsByUid(currentPlayer);
+        positionSkills = player.getPositionSkills(currentPlayer);
         saveValue.text = parseInt((playerSkills[0]-1)/10+1);
         throwValue.text = parseInt((playerSkills[1]-1)/10+1);
         skatingValue.text = parseInt((playerSkills[2]-1)/10+1);
@@ -616,6 +709,12 @@ Rectangle {
         tempVar=player.getCountryByUid(currentPlayer);
         playerFlag.source = country.getFlagByUid(tempVar);
         birthyear=player.getBirthyearByUid(currentPlayer);
+        goalkeeperValue.text=parseInt((positionSkills[0]-1)/10+1);
+        liberoValue.text=parseInt((positionSkills[1]-1)/10+1);
+        defenderValue.text=parseInt((positionSkills[2]-1)/10+1);
+        halfbackValue.text=parseInt((positionSkills[3]-1)/10+1);
+        midfieldValue.text=parseInt((positionSkills[4]-1)/10+1);
+        attackerValue.text=parseInt((positionSkills[5]-1)/10+1);
         if(birthyear>0)
             ageValue.text = 2015-birthyear;
         else

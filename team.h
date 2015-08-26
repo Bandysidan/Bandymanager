@@ -34,6 +34,7 @@ public:
 
     Q_INVOKABLE void setPosition(QString position,QString player);
     Q_INVOKABLE QString getPosition(QString position);
+
 signals:
     void uidChanged();
     void nameChanged();
