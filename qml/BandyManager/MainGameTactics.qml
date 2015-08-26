@@ -199,14 +199,22 @@ Rectangle {
             source: "ShirtNonchoosen.png"
         }
 
-        Image {
-            id:rightmidImage
+        Rectangle {
             x: 1215
             y: 375
-            height: 81
-            width: 59
-            source: "ShirtNonchoosen.png"
+            Column {
+                Image {
+                    id:rightmidImage
+                    height: 81
+                    width: 59
+                    source: "ShirtRed.png"
+                }
+                Text {
+                    text: "Spelare Test"
+                }
+            }
         }
+
 
         Image {
             id:leftattackImage
