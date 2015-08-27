@@ -4,12 +4,13 @@ Rectangle {
     id:tacticShirt
     height: 100
     width: 100
-    color: "#cccccc"
+  //  color: "#cccccc"
  //   opacity: 0
     signal clicked()
 
     property string text: ""
     property string shirt: "ShirtNonchoosen.png"
+    property int pos
     Column {
         anchors.top: parent.Top
         Image {
@@ -35,9 +36,9 @@ Rectangle {
         }
 
         onClicked:{
-
-            tacticShirt.text=player.getShortNameByUid(currentPlayer);
-            tacticShirt.shirt="ShirtRed.png"
+            changeShirt(pos);
+           // tacticShirt.text=player.getShortNameByUid(currentPlayer);
+           // tacticShirt.shirt="ShirtRed.png"
         }
 
     }
