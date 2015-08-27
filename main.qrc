@@ -78,5 +78,6 @@
         <file>qml/BandyManager/pitch.png</file>
         <file>qml/BandyManager/ShirtNonchoosen.png</file>
         <file>qml/BandyManager/ShirtRed.png</file>
+        <file>qml/BandyManager/TacticShirt.qml</file>
     </qresource>
 </RCC>

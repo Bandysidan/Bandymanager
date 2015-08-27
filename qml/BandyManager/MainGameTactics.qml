@@ -13,7 +13,9 @@ Rectangle {
     property var gamerTeam
     property var i
     property var playerNumber
-
+    property var playerindex: 0
+    property var currentPlayer
+    property var teamTactics: ["x01x01x01","x01x01x03","","","","","","","","","",""]
     Country {
         id: country
     }
@@ -94,7 +96,8 @@ Rectangle {
                         onClicked: {
                             container.ListView.view.currentIndex = index
                             container.forceActiveFocus()
-                       //     changePlayer(container.ListView.view.currentIndex)
+                            playerindex=container.ListView.view.currentIndex;
+                            currentPlayer=playerList[playerindex];
                         }
                     }
                 }
@@ -124,7 +127,7 @@ Rectangle {
             source: "pitch.png"
         }
 
-        Image {
+/*        Image {
             id:goalkeeperImage
             x: 1035
             y: 695
@@ -180,6 +183,7 @@ Rectangle {
             source: "ShirtNonchoosen.png"
         }
 
+
         Image {
             id:midImage
             x: 1035
@@ -197,22 +201,114 @@ Rectangle {
             height: 81
             width: 59
             source: "ShirtNonchoosen.png"
+        }*/
+
+        BandyManager.TacticShirt {
+            id: goalkeeperShirt
+            x: 1035
+            y: 695
         }
 
-        Rectangle {
+        BandyManager.TacticShirt {
+            id:liberoShirt
+            x: 1035
+            y: 595
+        }
+
+        BandyManager.TacticShirt {
+            id:leftdefendShirt
+            x: 935
+            y: 565
+        }
+
+        BandyManager.TacticShirt {
+            id:rightdefendShirt
+            x: 1135
+            y: 565
+        }
+
+        BandyManager.TacticShirt {
+            id:lefthalfShirt
+            x: 815
+            y: 545
+        }
+
+        BandyManager.TacticShirt {
+            id:righthalfShirt
+            x: 1235
+            y: 545
+        }
+
+        BandyManager.TacticShirt {
+            id:midShirt
+            x: 1045
+            y: 415
+        }
+
+        BandyManager.TacticShirt {
+            id:leftmidShirt
+            x: 855
+            y: 375
+        }
+        BandyManager.TacticShirt {
+            id:rightmidShirt
             x: 1215
             y: 375
+        }
+
+        BandyManager.TacticShirt {
+            id:leftattackShirt
+            x: 855
+            y: 175
+        }
+
+        BandyManager.TacticShirt {
+            id:rightattackShirt
+            x: 1215
+            y: 175
+        }
+
+        /*
+        Rectangle {
+            id:rightmidRectangle
+            x: 1215
+            y: 405
+            height: 100
+            width: 100
+            color: "#cccccc"
+         //   opacity: 0
+            signal clicked()
             Column {
+                anchors.top: parent.Top
                 Image {
                     id:rightmidImage
                     height: 81
                     width: 59
+                  //  opacity: 1
                     source: "ShirtRed.png"
                 }
                 Text {
+                    id: rightmidText
                     text: "Spelare Test"
                 }
             }
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: {
+                    rightmidImage.opacity=0.1;
+                }
+                onExited: {
+                    rightmidImage.opacity=1;
+                }
+
+                onClicked:{
+
+                    rightmidText.text=player.getShortNameByUid(currentPlayer);
+                }
+
+            }
+
         }
 
 
@@ -234,6 +330,9 @@ Rectangle {
             source: "ShirtNonchoosen.png"
         }
 
+        */
+
+
         function show() {
             mainGameTactics.visible = true;
             gamerName=gamer.getName("Player1");
@@ -246,6 +345,13 @@ Rectangle {
                     playerNumber=i.toString();
                     playerlistTeam.set(i,{name: player.getShortNameByUid(playerList[i]),number: playerNumber,playerflag: country.getFlagByUid(player.getCountryByUid(playerList[i])), agestring: player.getBirthyearByUid(playerList[i]), positionstring:player.getBestPosition(playerList[i])});
                 }
+            currentPlayer=playerList[0];
+            if(teamTactics[0]!=""){
+                goalkeeperShirt.shirt="ShirtRed.png"
+                goalkeeperShirt.text=player.getShortNameByUid(teamTactics[0]);
+            }
+
+            leftmidShirt.shirt="ShirtNonchoosen.png"
         }
 
 
