@@ -65,8 +65,7 @@ public:
     Q_INVOKABLE void setMaleName(QString value,QString cvalue);
     Q_INVOKABLE QString getMaleName(QString value);
     Q_INVOKABLE QString getFamilyName(QString value);
-//    Q_INVOKABLE QString getNextByUid(QString value,QString filter);
-
+    //    Q_INVOKABLE QString getNextByUid(QString value,QString filter);
 signals:
     void uidChanged();
     void nameChanged();

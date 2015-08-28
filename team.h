@@ -8,7 +8,7 @@
 #include <QStringList>
 #include <QString>
 #include <QDebug>
-
+#include "player.h"
 class Team : public QObject
 {
     Q_OBJECT
@@ -34,6 +34,8 @@ public:
 
     Q_INVOKABLE void setPosition(QString position,QString player);
     Q_INVOKABLE QString getPosition(QString position);
+
+    Q_INVOKABLE void fillTeams();
 
 signals:
     void uidChanged();

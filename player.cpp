@@ -19,7 +19,7 @@ void Player::setUid(QString value)
     m_first_team_uid->insert(m_first_team,m_uid);
     //int i;
 
-    //qDebug()<<"setUid: "<< " "<< m_uid << " "<< m_first_team;
+//    qDebug()<<"setUid: "<< " "<< m_uid << " "<< m_first_team;
     emit uidChanged();
 
 }
@@ -107,6 +107,13 @@ void Player::setSkills(QList<int> value)
 QList<int> Player::skills()
 {
     return m_skills;
+}
+
+int Player::playersPerTeam(QString value)
+{
+    QStringList values = m_first_team_uid->values(value);
+    return values.count();
+
 }
 
 QString Player::getFirstNameByUid(QString value)

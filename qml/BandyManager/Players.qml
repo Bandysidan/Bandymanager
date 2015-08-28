@@ -333,7 +333,7 @@ Rectangle {
         birth: 1975
         countryUid: "sweden"
         firstTeam: "Edsbynherrar"
-        skills: [11,4,165,123,154,185,175,164,154,149,181,120,193]
+        skills: [27,1,135,34,145,14,75,165,140,173,82,95,117]
     }
     Player {
         uid: "x01x05x0D"
@@ -342,7 +342,52 @@ Rectangle {
         birth: 1975
         countryUid: "sweden"
         firstTeam: "Edsbynherrar"
+        skills: [11,23,175,34,27,14,156,167,145,34,125,155,127]
+    }
+    Player {
+        uid: "x01x05x0E"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
+        skills: [1,7,125,156,145,150,45,63,112,167,34,54,155]
+    }
+    Player {
+        uid: "x01x05x0F"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
         skills: [11,4,165,123,154,185,175,164,154,149,181,120,193]
+    }
+    Player {
+        uid: "x01x05x0G"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "canada"
+        firstTeam: "Edsbynherrar"
+        skills: [1,7,125,140,160,114,45,63,112,167,34,54,155]
+    }
+    Player {
+        uid: "x01x05x0H"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "sweden"
+        firstTeam: "Edsbynherrar"
+        skills: [1,7,125,156,145,150,45,63,112,167,34,54,155]
+    }
+    Player {
+        uid: "x01x05x0I"
+        firstName: "?"
+        familyName: "?"
+        birth: 1975
+        countryUid: "usa"
+        firstTeam: "Edsbynherrar"
+        skills: [125,140,34,56,32,67,21,72,13,6,9,4,165]
     }
     Player {
         uid: "x01x06x01"

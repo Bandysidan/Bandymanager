@@ -46,6 +46,7 @@ public:
     void setSkills(QList<int> value);
     QList<int> skills();
 
+    int playersPerTeam(QString value);
 
     Q_INVOKABLE QString getFirstNameByUid(QString value);
     Q_INVOKABLE QString getFamilyNameByUid(QString value);

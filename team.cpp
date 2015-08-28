@@ -97,3 +97,29 @@ QString Team::getPosition(QString position)
     return returnvalue;
 }
 
+void Team::fillTeams()
+{
+    int numPlayers;
+//    Team *team;
+    Player *player;
+    Player *newPlayer;
+    QHash<QString, Team *>::iterator i = m_teams->begin();
+    while (i != m_teams->end()) {
+//        team = m_teams->value(i.key());
+        numPlayers= player->playersPerTeam(i.key());
+//        qDebug() << i.key() << " " << player->playersPerTeam(i.key());
+/*
+        if(numPlayers==1){
+            newPlayer=new Player();
+            newPlayer->setFirstTeam(i.key());
+            newPlayer->setUid(i.key());
+            newPlayer->setFirstName("Testar");
+            newPlayer->setFamilyName("Efternamn");
+            qDebug() << i.key() << newPlayer->firstTeam();
+            qDebug() << i.key() << " " << player->getFirstNameByUid(i.key());
+//            newPlayer->setSkills();
+        }
+        */
+        ++i;
+    }
+}

@@ -181,7 +181,7 @@ Rectangle {
                     antialiasing: true
                     radius: 5
 
-                    Rectangle { anchors.fill: parent; anchors.margins: 3; color: "#91AA9D"; antialiasing: true; radius: 8 }
+                    Rectangle { anchors.fill: parent; anchors.margins: 3; color: "yellowgreen"; antialiasing: true; radius: 8 }
                 }
 
                 Text {
@@ -211,7 +211,7 @@ Rectangle {
             anchors.fill: parent
             delegate: teamDelegate
             model: teamlistModel
-            highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
+            highlight: Rectangle { color: "darkgreen"; radius: 5 }
             highlightFollowsCurrentItem: true
 
         }
@@ -628,6 +628,7 @@ Rectangle {
 
     Component.onCompleted: {
         changeCountry();
+        team.fillTeams()
     }
 
     function show() {

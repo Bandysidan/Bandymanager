@@ -185,6 +185,7 @@ QString Country::getFamilyName(QString value)
     return country->m_family_name.first();
 
 }
+
 /*
 QString Country::getNextByUid(QString value, QString filter)
 {

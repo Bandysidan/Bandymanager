@@ -7,8 +7,8 @@ Rectangle {
     height: 32
     radius: 4 // This gives rounded corners to the Rectangle
             gradient: Gradient { // This sets a vertical gradient fill
-                GradientStop { position: 0.0; color: "aqua" }
-                GradientStop { position: 1.0; color: "teal" }
+                GradientStop { position: 0.0; color: "lime" }
+                GradientStop { position: 1.0; color: "olive" }
             }
             border { width: 1; color: "black" }
 
