@@ -32,4 +32,8 @@ ApplicationWindow {
         id: mainGameScreen
         visible: false
     }
+    BandyManager.MatchView {
+        id: matchView
+        visible: false
+    }
 }

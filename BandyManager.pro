@@ -26,7 +26,9 @@ RESOURCES += \
 OTHER_FILES += \
     qml/BandyManager/SplashScreen.qml \
     qml/BandyManager/Countries.qml \
-    qml/BandyManager/Gamers.qml
+    qml/BandyManager/Gamers.qml \
+    qml/BandyManager/MatchPlay.qml \
+    qml/BandyManager/MatchTactic.qml
 
 HEADERS += \
     country.h \

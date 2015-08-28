@@ -79,5 +79,8 @@
         <file>qml/BandyManager/ShirtNonchoosen.png</file>
         <file>qml/BandyManager/ShirtRed.png</file>
         <file>qml/BandyManager/TacticShirt.qml</file>
+        <file>qml/BandyManager/MatchView.qml</file>
+        <file>qml/BandyManager/MatchTactic.qml</file>
+        <file>qml/BandyManager/MatchPlay.qml</file>
     </qresource>
 </RCC>

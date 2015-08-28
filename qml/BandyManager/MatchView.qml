@@ -7,6 +7,7 @@ import players.bandymanager 1.0
 
 
 Rectangle {
+    id: matchView
     z:20
     anchors.fill: parent
     Image {
@@ -19,5 +20,57 @@ Rectangle {
         source: "BMlogo.png"
     }
 
+    Rectangle {
+        x: 0
+        y: 0
+        width: 106
+        height: 1000
+
+        gradient: Gradient { // This sets a vertical gradient fill
+            GradientStop { position: 0.0; color: "black" }
+            GradientStop { position: 1.0; color: "darkgrey" }
+        }
+        Column {
+            width: 100
+            height: 990
+            anchors.centerIn: parent
+            spacing: 3
+
+            BandyManager.MainGameButton {
+                text: "Starta matchen"
+                onClicked: {
+                }
+            }
+
+
+
+        }
+    }
+    Rectangle {
+       x: 108
+       y: 154
+       width:1000
+       height: 900
+       BandyManager.MatchTactic {
+           id: matchTactic
+           visible: false
+       }
+       BandyManager.MatchPlay {
+           id: matchPlay
+           visible: false
+       }
+
+
+    }
+
+
+    function show() {
+        matchView.visible = true;
+        matchTactic.show();
+    }
+
+    function hide() {
+        matchView.visible = false;
+    }
 
 }

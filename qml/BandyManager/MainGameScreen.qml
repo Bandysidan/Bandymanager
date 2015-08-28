@@ -17,6 +17,11 @@ Rectangle {
         fillMode: Image.PreserveAspectFit
         source: "BMlogo.png"
     }
+
+    Gamer {
+        id: gamer
+    }
+
     Rectangle {
         x: 0
         y: 0
@@ -62,7 +67,11 @@ Rectangle {
 
             BandyManager.MainGameButton {
                 text: "Nästa match"
-                onClicked: Qt.quit()
+                onClicked: {
+                    if(gamer.getTeamUid("Player1")==="SAIKbandyherrar" || gamer.getTeamUid("Player1")==="Edsbynherrar"){
+                        matchView.show();
+                    }
+                }
             }
             Rectangle {
                 width: 100
