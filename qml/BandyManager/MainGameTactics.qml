@@ -155,7 +155,7 @@ Rectangle {
         BandyManager.TacticShirt {
             id:lefthalfShirt
             pos:4
-            x: 815
+            x: 835
             y: 545
         }
 
@@ -169,7 +169,7 @@ Rectangle {
         BandyManager.TacticShirt {
             id:midShirt
             pos: 6
-            x: 1045
+            x: 1035
             y: 415
         }
 
@@ -235,81 +235,81 @@ Rectangle {
 
         function showShirts(){
             if(teamTactics[0]!==""){
-                goalkeeperShirt.shirt="ShirtRed.png";
+                goalkeeperShirt.shirt="shirts/ShirtRed.png";
                 goalkeeperShirt.text=player.getShortNameByUid(teamTactics[0]);
             }else{
-                goalkeeperShirt.shirt="ShirtNonchoosen.png";
+                goalkeeperShirt.shirt="shirts/ShirtNonchoosen.png";
                 goalkeeperShirt.text="";
             }
 
             if(teamTactics[1]!==""){
-                liberoShirt.shirt="ShirtRed.png";
+                liberoShirt.shirt="shirts/ShirtRed.png";
                 liberoShirt.text=player.getShortNameByUid(teamTactics[1]);
             }else {
-                liberoShirt.shirt="ShirtNonchoosen.png";
+                liberoShirt.shirt="shirts/ShirtNonchoosen.png";
                 liberoShirt.text="";
             }
             if(teamTactics[2]!==""){
-                leftdefendShirt.shirt="ShirtRed.png";
+                leftdefendShirt.shirt="shirts/ShirtRed.png";
                 leftdefendShirt.text=player.getShortNameByUid(teamTactics[2]);
             }else{
-                leftdefendShirt.shirt="ShirtNonchoosen.png";
+                leftdefendShirt.shirt="shirts/ShirtNonchoosen.png";
                 leftdefendShirt.text="";
             }
             if(teamTactics[3]!==""){
-                rightdefendShirt.shirt="ShirtRed.png";
+                rightdefendShirt.shirt="shirts/ShirtRed.png";
                 rightdefendShirt.text=player.getShortNameByUid(teamTactics[3]);
             }else{
-                rightdefendShirt.shirt="ShirtNonchoosen.png";
+                rightdefendShirt.shirt="shirts/ShirtNonchoosen.png";
                 rightdefendShirt.text="";
             }
             if(teamTactics[4]!==""){
-                lefthalfShirt.shirt="ShirtRed.png";
+                lefthalfShirt.shirt="shirts/ShirtRed.png";
                 lefthalfShirt.text=player.getShortNameByUid(teamTactics[4]);
             }else{
-                lefthalfShirt.shirt="ShirtNonchoosen.png";
+                lefthalfShirt.shirt="shirts/ShirtNonchoosen.png";
                 lefthalfShirt.text="";
             }
             if(teamTactics[5]!==""){
-                righthalfShirt.shirt="ShirtRed.png";
+                righthalfShirt.shirt="shirts/ShirtRed.png";
                 righthalfShirt.text=player.getShortNameByUid(teamTactics[5]);
             }else{
-                righthalfShirt.shirt="ShirtNonchoosen.png";
+                righthalfShirt.shirt="shirts/ShirtNonchoosen.png";
                 righthalfShirt.text="";
             }
             if(teamTactics[6]!==""){
-                midShirt.shirt="ShirtRed.png";
+                midShirt.shirt="shirts/ShirtRed.png";
                 midShirt.text=player.getShortNameByUid(teamTactics[6]);
             }else {
-                midShirt.shirt="ShirtNonchoosen.png";
+                midShirt.shirt="shirts/ShirtNonchoosen.png";
                 midShirt.text="";
             }
             if(teamTactics[7]!==""){
-                leftmidShirt.shirt="ShirtRed.png";
+                leftmidShirt.shirt="shirts/ShirtRed.png";
                 leftmidShirt.text=player.getShortNameByUid(teamTactics[7]);
             }else{
-                leftmidShirt.shirt="ShirtNonchoosen.png";
+                leftmidShirt.shirt="shirts/ShirtNonchoosen.png";
                 leftmidShirt.text="";
             }
             if(teamTactics[8]!==""){
-                rightmidShirt.shirt="ShirtRed.png";
+                rightmidShirt.shirt="shirts/ShirtRed.png";
                 rightmidShirt.text=player.getShortNameByUid(teamTactics[8]);
             }else{
-                rightmidShirt.shirt="ShirtNonchoosen.png";
+                rightmidShirt.shirt="shirts/ShirtNonchoosen.png";
                 rightmidShirt.text="";
             }
             if(teamTactics[9]!==""){
-                leftattackShirt.shirt="ShirtRed.png";
+                leftattackShirt.shirt="shirts/ShirtRed.png";
                 leftattackShirt.text=player.getShortNameByUid(teamTactics[9]);
             }else{
-                leftattackShirt.shirt="ShirtNonchoosen.png";
+                leftattackShirt.shirt="shirts/ShirtNonchoosen.png";
                 leftattackShirt.text="";
             }
             if(teamTactics[10]!==""){
-                rightattackShirt.shirt="ShirtRed.png";
+                rightattackShirt.shirt="shirts/ShirtRed.png";
                 rightattackShirt.text=player.getShortNameByUid(teamTactics[10]);
             }else{
-                rightattackShirt.shirt="ShirtNonchoosen.png";
+                rightattackShirt.shirt="shirts/ShirtNonchoosen.png";
                 rightattackShirt.text="";
             }
 

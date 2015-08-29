@@ -34,5 +34,14 @@ Rectangle {
             border.color= "white";
         }
     }
+
+
+    function show() {
+        button.visible=true;
+    }
+    function hide() {
+        button.visible=false;
+    }
+
 }
 

@@ -1,7 +1,7 @@
 import QtQuick 2.0
 
 Item {
-    id:tacticShirt
+    id:matchShirt
     height: 100
     width: 100
     signal clicked()
@@ -15,11 +15,11 @@ Item {
             id:shirtImage
             height: 81
             width: 59
-            source: tacticShirt.shirt
+            source: matchShirt.shirt
         }
         Text {
             id: shirtText
-            text: tacticShirt.text
+            text: matchShirt.text
         }
     }
     MouseArea {
@@ -33,10 +33,8 @@ Item {
         }
 
         onClicked:{
-            changeShirt(pos);
         }
 
     }
 
 }
-

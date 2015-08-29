@@ -36,6 +36,11 @@ Rectangle {
     }
 
 
-
+    function show() {
+        button.visible=true;
+    }
+    function hide() {
+        button.visible=true;
+    }
 
 }

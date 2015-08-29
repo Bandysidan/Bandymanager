@@ -7,7 +7,7 @@ Rectangle {
     Country {
         uid: "sweden"
         name: "Sverige"
-        flag: "Sweden.png"
+        flag: "flags/Sweden.png"
         league: 5
         maleNational: 1
         femaleNational: 1
@@ -206,7 +206,7 @@ Rectangle {
     Country {
         uid: "russia"
         name: "Ryssland"
-        flag: "Russia.png"
+        flag: "flags/Russia.png"
         league: 5
         maleNational: 1
         femaleNational: 1
@@ -219,33 +219,47 @@ Rectangle {
     Country {
         uid: "finland"
         name: "Finland"
-        flag: "Finland.png"
+        flag: "flags/Finland.png"
         league: 5
         maleNational: 1
         femaleNational: 1
         memberNation: 1
         maleSkill: 1950
         femaleSkill: 1850
-        malename: ["Mikka","Nikku","Petteri","Tattu"]
-        familyname: ["Muttikainen","Laakkonen","Laampinen"]
+        malename: [
+            "Mikka",
+            "Nikku",
+            "Petteri",
+            "Tattu"
+        ]
+        familyname: [
+            "Muttikainen",
+            "Laakkonen",
+            "Laampinen"
+        ]
     }
     Country {
         uid: "kazakhstan"
         name: "Kazakhstan"
-        flag: "Kazakhstan.png"
+        flag: "flags/Kazakhstan.png"
         league: 0
         maleNational: 1
         femaleNational: 0
         memberNation: 1
         maleSkill: 1950
         femaleSkill: 850
-        malename: ["Rinat","Ivan"]
-        familyname: ["Samshutov"]
+        malename: [
+            "Ivan",
+            "Rinat"
+        ]
+        familyname: [
+            "Samshutov"
+        ]
     }
     Country {
         uid: "norway"
         name: "Norge"
-        flag: "Norway.png"
+        flag: "flags/Norway.png"
         league: 5
         maleNational: 1
         femaleNational: 1
@@ -293,7 +307,7 @@ Rectangle {
     Country {
         uid: "usa"
         name: "USA"
-        flag: "USA.png"
+        flag: "flags/USA.png"
         league: 3
         maleNational: 1
         femaleNational: 1
@@ -560,7 +574,7 @@ Rectangle {
     Country {
         uid: "belarus"
         name: "Vitryssland"
-        flag: "Belarus.png"
+        flag: "flags/Belarus.png"
         league: -3
         maleNational: 1
         femaleNational: -3
@@ -585,7 +599,7 @@ Rectangle {
     Country {
         uid: "canada"
         name: "Kanada"
-        flag: "Canada.png"
+        flag: "flags/Canada.png"
         league: -2
         maleNational: 1
         femaleNational: 1
@@ -616,7 +630,7 @@ Rectangle {
     Country {
         uid: "estonia"
         name: "Estland"
-        flag: "Estonia.png"
+        flag: "flags/Estonia.png"
         league: 0
         maleNational: 1
         femaleNational: 0
@@ -641,7 +655,7 @@ Rectangle {
     Country {
         uid: "latvia"
         name: "Lettland"
-        flag: "Latvia.png"
+        flag: "flags/Latvia.png"
         league: -2
         maleNational: 1
         femaleNational: 0
@@ -683,7 +697,7 @@ Rectangle {
     Country {
         uid: "japan"
         name: "Japan"
-        flag: "Japan.png"
+        flag: "flags/Japan.png"
         league: -1
         maleNational: 1
         femaleNational: -2
@@ -700,11 +714,11 @@ Rectangle {
     Country {
         uid: "holland"
         name: "Holland"
-        flag: "Holland.png"
+        flag: "flags/Netherlands.png"
         league: -2
         maleNational: 1
         femaleNational: 1
-        memberNation: 1
+        memberNation: 12
         maleSkill: 1550
         femaleSkill: 1620
         malename: [
@@ -719,7 +733,7 @@ Rectangle {
     Country {
         uid: "germany"
         name: "Tyskland"
-        flag: "Germany.png"
+        flag: "flags/Germany.png"
         league: -2
         maleNational: 1
         femaleNational: -1
@@ -736,7 +750,7 @@ Rectangle {
     Country {
         uid: "mongolia"
         name: "Mongoliet"
-        flag: "Mongolia.png"
+        flag: "flags/Mongolia.png"
         league: -3
         maleNational: 1
         femaleNational: -3
@@ -753,7 +767,7 @@ Rectangle {
     Country {
         uid: "china"
         name: "Kina"
-        flag: "China.png"
+        flag: "flags/China.png"
         league: -1
         maleNational: 1
         femaleNational: 0
@@ -770,7 +784,7 @@ Rectangle {
     Country {
         uid: "czech"
         name: "Tjeckien"
-        flag: "Czech.png"
+        flag: "flags/Czech.png"
         league: -3
         maleNational: 1
         femaleNational: -1
@@ -787,7 +801,7 @@ Rectangle {
     Country {
         uid: "somalia"
         name: "Somalia"
-        flag: "Somalia.png"
+        flag: "flags/Somalia.png"
         league: -5
         maleNational: 1
         femaleNational: -5
@@ -802,9 +816,20 @@ Rectangle {
         ]
     }
     Country {
+        uid: "ukraine"
+        name: "Ukraine"
+        flag: "flags/Ukraine.png"
+        league: -5
+        maleNational: 1
+        femaleNational: -5
+        memberNation: 1
+        maleSkill: 1200
+        femaleSkill: 1850
+    }
+    Country {
         uid: "kyrgyzstan"
         name: "Kirgizistan"
-        flag: "Kyrgyzstan.png"
+        flag: "flags/Kyrgyzstan.png"
         league: -4
         maleNational: 1
         femaleNational: -4
@@ -823,7 +848,7 @@ Rectangle {
     Country {
         uid: "afghanistan"
         name: "Afghanistan"
-        flag: "afghanistan.png"
+        flag: "flags/Afghanistan.png"
         league: -3
         maleNational: -2
         femaleNational: -4
@@ -834,7 +859,7 @@ Rectangle {
     Country {
         uid: "argentina"
         name: "Argentina"
-        flag: "argentina.png"
+        flag: "flags/Argentina.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -845,7 +870,7 @@ Rectangle {
     Country {
         uid: "armenia"
         name: "Armenien"
-        flag: "armenia.png"
+        flag: "flags/Armenia.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -856,7 +881,7 @@ Rectangle {
     Country {
         uid: "australia"
         name: "Australien"
-        flag: "australia.png"
+        flag: "flags/Australia.png"
         league: -4
         maleNational: -1
         femaleNational: -2
@@ -867,7 +892,7 @@ Rectangle {
     Country {
         uid: "denmark"
         name: "Danmark"
-        flag: "denmark.png"
+        flag: "flags/Denmark.png"
         league: -3
         maleNational: 0
         femaleNational: -2
@@ -878,7 +903,7 @@ Rectangle {
     Country {
         uid: "england"
         name: "England"
-        flag: "england.png"
+        flag: "flags/England.png"
         league: -3
         maleNational: -2
         femaleNational: -4
@@ -889,7 +914,7 @@ Rectangle {
     Country {
         uid: "india"
         name: "Indien"
-        flag: "india.png"
+        flag: "flags/India.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -900,7 +925,7 @@ Rectangle {
     Country {
         uid: "ireland"
         name: "Irland"
-        flag: "ireland.png"
+        flag: "flags/Ireland.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -911,7 +936,7 @@ Rectangle {
     Country {
         uid: "italy"
         name: "Italien"
-        flag: "italy.png"
+        flag: "flags/Italy.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -922,7 +947,7 @@ Rectangle {
     Country {
         uid: "lithuania"
         name: "Litauen"
-        flag: "lithuania.png"
+        flag: "flags/Lithuania.png"
         league: -4
         maleNational: -2
         femaleNational: -4
@@ -933,7 +958,7 @@ Rectangle {
     Country {
         uid: "poland"
         name: "Poland"
-        flag: "poland.png"
+        flag: "flags/Poland.png"
         league: -4
         maleNational: -2
         femaleNational: -4
@@ -944,7 +969,7 @@ Rectangle {
     Country {
         uid: "serbia"
         name: "Serbien"
-        flag: "serbia.png"
+        flag: "flags/Serbia.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -955,7 +980,7 @@ Rectangle {
     Country {
         uid: "azerbaijan"
         name: "Azerbajdzjan"
-        flag: "azerbaijan.png"
+        flag: "flags/Azerbaijan.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -966,7 +991,7 @@ Rectangle {
     Country {
         uid: "belgium"
         name: "Belgien"
-        flag: "belgium.png"
+        flag: "flags/Belgium.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -977,7 +1002,7 @@ Rectangle {
     Country {
         uid: "bosnia"
         name: "Bosnien"
-        flag: "bosnia.png"
+        flag: "flags/Bosnia.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -988,7 +1013,7 @@ Rectangle {
     Country {
         uid: "brazil"
         name: "Brasilien"
-        flag: "Brazil.png"
+        flag: "flags/Brazil.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -999,7 +1024,7 @@ Rectangle {
     Country {
         uid: "bulgaria"
         name: "Bulgarien"
-        flag: "Bulgaria.png"
+        flag: "flags/Bulgaria.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1010,7 +1035,7 @@ Rectangle {
     Country {
         uid: "france"
         name: "Frankrike"
-        flag: "France.png"
+        flag: "flags/France.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1021,7 +1046,7 @@ Rectangle {
     Country {
         uid: "georgia"
         name: "Georgien"
-        flag: "Georgia.png"
+        flag: "flags/Georgia.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1032,7 +1057,7 @@ Rectangle {
     Country {
         uid: "iceland"
         name: "Island"
-        flag: "Iceland.png"
+        flag: "flags/Iceland.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1043,7 +1068,7 @@ Rectangle {
     Country {
         uid: "croatia"
         name: "Kroatien"
-        flag: "Croatia.png"
+        flag: "flags/Croatia.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1054,7 +1079,7 @@ Rectangle {
     Country {
         uid: "liechtenstein"
         name: "Liechtenstein"
-        flag: "Liechtenstein.png"
+        flag: "flags/Liechtenstein.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1065,7 +1090,7 @@ Rectangle {
     Country {
         uid: "luxembourg"
         name: "Luxemburg"
-        flag: "Luxembourg.png"
+        flag: "flags/Luxembourg.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1076,7 +1101,7 @@ Rectangle {
     Country {
         uid: "northkorea"
         name: "Nordkorea"
-        flag: "north_korea.png"
+        flag: "flags/North_korea.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1087,7 +1112,7 @@ Rectangle {
     Country {
         uid: "newzealand"
         name: "Nya Zeeland"
-        flag: "newzealand.png"
+        flag: "flags/New_Zealand.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1098,7 +1123,7 @@ Rectangle {
     Country {
         uid: "moldavia"
         name: "Moldavien"
-        flag: "Moldavia.png"
+        flag: "flags/Moldavia.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1109,7 +1134,7 @@ Rectangle {
     Country {
         uid: "romania"
         name: "Rumänien"
-        flag: "Romania.png"
+        flag: "flags/Romania.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1120,7 +1145,18 @@ Rectangle {
     Country {
         uid: "slovakia"
         name: "Slovakien"
-        flag: "Slovakia.png"
+        flag: "flags/Slovakia.png"
+        league: -4
+        maleNational: -4
+        femaleNational: -4
+        memberNation: -2
+        maleSkill: 350
+        femaleSkill: 350
+    }
+    Country {
+        uid: "slovenia"
+        name: "Slovenien"
+        flag: "flags/Slovenia.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1131,7 +1167,7 @@ Rectangle {
     Country {
         uid: "southkorea"
         name: "Sydkorea"
-        flag: "South_Korea.png"
+        flag: "flags/South_Korea.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1142,7 +1178,7 @@ Rectangle {
     Country {
         uid: "tajikistan"
         name: "Tadzjikistan"
-        flag: "Tajikistan.png"
+        flag: "flags/Tajikistan.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1153,7 +1189,7 @@ Rectangle {
     Country {
         uid: "turkmenistan"
         name: "Turkmenistan"
-        flag: "Turkmenistan.png"
+        flag: "flags/Turkmenistan.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1164,7 +1200,7 @@ Rectangle {
     Country {
         uid: "uzbekistan"
         name: "Uzbekistan"
-        flag: "Uzbekistan.png"
+        flag: "flags/Uzbekistan.png"
         league: -4
         maleNational: -4
         femaleNational: -4
@@ -1175,7 +1211,7 @@ Rectangle {
     Country {
         uid: "austria"
         name: "Österrike"
-        flag: "Austria.png"
+        flag: "flags/Austria.png"
         league: -4
         maleNational: -4
         femaleNational: -4

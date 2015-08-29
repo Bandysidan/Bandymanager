@@ -37,12 +37,37 @@ Rectangle {
             spacing: 3
 
             BandyManager.MainGameButton {
+                id: matchStart
                 text: "Starta matchen"
                 onClicked: {
+                    matchTactic.hide();
+                    matchPlay.show();
+                    matchStart.hide();
+                    matchPlay.startTime();
                 }
             }
+            BandyManager.MainGameButton {
+                id: secondHalfStart
+                text: "2:a halvlek"
+                visible: false
+                onClicked: {
+                    secondHalfStart.hide();
+                    matchPlay.startTime();
+                }
+            }
+            BandyManager.MainGameButton {
+                id: matchEnd
+                text: "Avsluta matchen"
+                visible: false
+                onClicked: {
+                    matchStart.show();
+                    secondHalfStart.hide();
+                    matchEnd.hide();
+                    matchPlay.hide();
+                    matchView.hide();
 
-
+                }
+            }
 
         }
     }
@@ -59,8 +84,6 @@ Rectangle {
            id: matchPlay
            visible: false
        }
-
-
     }
 
 

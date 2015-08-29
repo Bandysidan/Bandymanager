@@ -28,7 +28,8 @@ OTHER_FILES += \
     qml/BandyManager/Countries.qml \
     qml/BandyManager/Gamers.qml \
     qml/BandyManager/MatchPlay.qml \
-    qml/BandyManager/MatchTactic.qml
+    qml/BandyManager/MatchTactic.qml \
+    qml/BandyManager/MatchShirt.qml
 
 HEADERS += \
     country.h \

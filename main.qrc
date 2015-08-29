@@ -1,86 +1,87 @@
 <RCC>
     <qresource prefix="/">
-        <file>qml/BandyManager/main.qml</file>
+        <file>qml/BandyManager/flags/Russia.png</file>
+        <file>qml/BandyManager/flags/Sweden.png</file>
+        <file>qml/BandyManager/flags/Denmark.png</file>
+        <file>qml/BandyManager/flags/Finland.png</file>
+        <file>qml/BandyManager/flags/Norway.png</file>
+        <file>qml/BandyManager/flags/USA.png</file>
+        <file>qml/BandyManager/flags/Afghanistan.png</file>
+        <file>qml/BandyManager/flags/Argentina.png</file>
+        <file>qml/BandyManager/flags/Armenia.png</file>
+        <file>qml/BandyManager/flags/Australia.png</file>
+        <file>qml/BandyManager/flags/Austria.png</file>
+        <file>qml/BandyManager/flags/Azerbaijan.png</file>
+        <file>qml/BandyManager/flags/Belgium.png</file>
+        <file>qml/BandyManager/flags/Bosnia.png</file>
+        <file>qml/BandyManager/flags/Brazil.png</file>
+        <file>qml/BandyManager/flags/Bulgaria.png</file>
+        <file>qml/BandyManager/flags/Canada.png</file>
+        <file>qml/BandyManager/flags/China.png</file>
+        <file>qml/BandyManager/flags/Croatia.png</file>
+        <file>qml/BandyManager/flags/Czech.png</file>
+        <file>qml/BandyManager/flags/Estonia.png</file>
+        <file>qml/BandyManager/flags/France.png</file>
+        <file>qml/BandyManager/flags/Georgia.png</file>
+        <file>qml/BandyManager/flags/Iceland.png</file>
+        <file>qml/BandyManager/flags/India.png</file>
+        <file>qml/BandyManager/flags/Ireland.png</file>
+        <file>qml/BandyManager/flags/Italy.png</file>
+        <file>qml/BandyManager/flags/Japan.png</file>
+        <file>qml/BandyManager/flags/Kazakhstan.png</file>
+        <file>qml/BandyManager/flags/Kyrgyzstan.png</file>
+        <file>qml/BandyManager/flags/Latvia.png</file>
+        <file>qml/BandyManager/flags/Liechtenstein.png</file>
+        <file>qml/BandyManager/flags/Lithuania.png</file>
+        <file>qml/BandyManager/flags/Luxembourg.png</file>
+        <file>qml/BandyManager/flags/Moldova.png</file>
+        <file>qml/BandyManager/flags/Mongolia.png</file>
+        <file>qml/BandyManager/flags/Netherlands.png</file>
+        <file>qml/BandyManager/flags/New_Zealand.png</file>
+        <file>qml/BandyManager/flags/North_Korea.png</file>
+        <file>qml/BandyManager/flags/Poland.png</file>
+        <file>qml/BandyManager/flags/Romania.png</file>
+        <file>qml/BandyManager/flags/Serbia.png</file>
+        <file>qml/BandyManager/flags/Slovakia.png</file>
+        <file>qml/BandyManager/flags/Slovenia.png</file>
+        <file>qml/BandyManager/flags/Somalia.png</file>
+        <file>qml/BandyManager/flags/South_Korea.png</file>
+        <file>qml/BandyManager/flags/Tajikistan.png</file>
+        <file>qml/BandyManager/flags/Turkmenistan.png</file>
+        <file>qml/BandyManager/flags/Ukraine.png</file>
+        <file>qml/BandyManager/flags/Uzbekistan.png</file>
+        <file>qml/BandyManager/flags/England.png</file>
+        <file>qml/BandyManager/flags/Belarus.png</file>
+        <file>qml/BandyManager/flags/Germany.png</file>
+        <file>qml/BandyManager/shirts/ShirtNonchoosen.png</file>
+        <file>qml/BandyManager/shirts/ShirtRed.png</file>
+        <file>qml/BandyManager/pitch.png</file>
         <file>qml/BandyManager/logga.png</file>
+        <file>qml/BandyManager/BMlogo.png</file>
+        <file>qml/BandyManager/Right.png</file>
+        <file>qml/BandyManager/RightOMO.png</file>
+        <file>qml/BandyManager/Left.png</file>
+        <file>qml/BandyManager/LeftOMO.png</file>
+        <file>qml/BandyManager/main.qml</file>
         <file>qml/BandyManager/SplashScreen.qml</file>
         <file>qml/BandyManager/MainMenu.qml</file>
         <file>qml/BandyManager/MainMenuButton.qml</file>
         <file>qml/BandyManager/Credits.qml</file>
         <file>qml/BandyManager/NewGame.qml</file>
-        <file>qml/BandyManager/Russia.png</file>
-        <file>qml/BandyManager/Sweden.png</file>
-        <file>qml/BandyManager/Right.png</file>
-        <file>qml/BandyManager/RightOMO.png</file>
-        <file>qml/BandyManager/Denmark.png</file>
-        <file>qml/BandyManager/Finland.png</file>
-        <file>qml/BandyManager/Norway.png</file>
-        <file>qml/BandyManager/USA.png</file>
-        <file>qml/BandyManager/Left.png</file>
-        <file>qml/BandyManager/LeftOMO.png</file>
         <file>qml/BandyManager/Countries.qml</file>
-        <file>qml/BandyManager/Afghanistan.png</file>
-        <file>qml/BandyManager/Argentina.png</file>
-        <file>qml/BandyManager/Armenia.png</file>
-        <file>qml/BandyManager/Australia.png</file>
-        <file>qml/BandyManager/Austria.png</file>
-        <file>qml/BandyManager/Azerbaijan.png</file>
-        <file>qml/BandyManager/Belgium.png</file>
-        <file>qml/BandyManager/Bosnia.png</file>
-        <file>qml/BandyManager/Brazil.png</file>
-        <file>qml/BandyManager/Bulgaria.png</file>
-        <file>qml/BandyManager/Canada.png</file>
-        <file>qml/BandyManager/China.png</file>
-        <file>qml/BandyManager/Croatia.png</file>
-        <file>qml/BandyManager/Czech.png</file>
-        <file>qml/BandyManager/Estonia.png</file>
-        <file>qml/BandyManager/France.png</file>
-        <file>qml/BandyManager/Georgia.png</file>
-        <file>qml/BandyManager/Iceland.png</file>
-        <file>qml/BandyManager/India.png</file>
-        <file>qml/BandyManager/Ireland.png</file>
-        <file>qml/BandyManager/Italy.png</file>
-        <file>qml/BandyManager/Japan.png</file>
-        <file>qml/BandyManager/Kazakhstan.png</file>
-        <file>qml/BandyManager/Kyrgyzstan.png</file>
-        <file>qml/BandyManager/Latvia.png</file>
-        <file>qml/BandyManager/Liechtenstein.png</file>
-        <file>qml/BandyManager/Lithuania.png</file>
-        <file>qml/BandyManager/Luxembourg.png</file>
-        <file>qml/BandyManager/Moldova.png</file>
-        <file>qml/BandyManager/Mongolia.png</file>
-        <file>qml/BandyManager/Netherlands.png</file>
-        <file>qml/BandyManager/New_Zealand.png</file>
-        <file>qml/BandyManager/North_Korea.png</file>
-        <file>qml/BandyManager/Poland.png</file>
-        <file>qml/BandyManager/Romania.png</file>
-        <file>qml/BandyManager/Serbia.png</file>
-        <file>qml/BandyManager/Slovakia.png</file>
-        <file>qml/BandyManager/Slovenia.png</file>
-        <file>qml/BandyManager/Somalia.png</file>
-        <file>qml/BandyManager/South_Korea.png</file>
-        <file>qml/BandyManager/Tajikistan.png</file>
-        <file>qml/BandyManager/Turkmenistan.png</file>
-        <file>qml/BandyManager/Ukraine.png</file>
-        <file>qml/BandyManager/Uzbekistan.png</file>
         <file>qml/BandyManager/Teams.qml</file>
         <file>qml/BandyManager/Names.qml</file>
         <file>qml/BandyManager/Players.qml</file>
-        <file>qml/BandyManager/England.png</file>
         <file>qml/BandyManager/MainGameScreen.qml</file>
-        <file>qml/BandyManager/BMlogo.png</file>
         <file>qml/BandyManager/MainGameButton.qml</file>
         <file>qml/BandyManager/MainGameHome.qml</file>
         <file>qml/BandyManager/MainGameSquad.qml</file>
         <file>qml/BandyManager/MainGameTactics.qml</file>
         <file>qml/BandyManager/Gamers.qml</file>
-        <file>qml/BandyManager/Belarus.png</file>
-        <file>qml/BandyManager/Germany.png</file>
-        <file>qml/BandyManager/pitch.png</file>
-        <file>qml/BandyManager/ShirtNonchoosen.png</file>
-        <file>qml/BandyManager/ShirtRed.png</file>
         <file>qml/BandyManager/TacticShirt.qml</file>
         <file>qml/BandyManager/MatchView.qml</file>
         <file>qml/BandyManager/MatchTactic.qml</file>
         <file>qml/BandyManager/MatchPlay.qml</file>
+        <file>qml/BandyManager/MatchShirt.qml</file>
     </qresource>
 </RCC>
