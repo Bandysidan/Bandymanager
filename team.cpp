@@ -127,8 +127,6 @@ void Team::autoPositions(QString value)
         team->m_player_positions.insert("Midfielder3",playerUids[8]);
         team->m_player_positions.insert("Attacker1",playerUids[9]);
         team->m_player_positions.insert("Attacker2",playerUids[10]);
-
-//        qDebug() << value<< " "<< playerUids[0];
     }
 }
 

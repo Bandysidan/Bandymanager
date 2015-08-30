@@ -16,7 +16,7 @@ Rectangle {
     property var playerNumber
     property int playerindex: 0
     property var currentPlayer
-    property var teamTactics: ["x01x01x01","x01x01x03","","x01x01x0C","x01x01x0A","x01x01x0B","x01x01x07","x01x01x05","x01x01x09","x01x01x02","","x01x01x05","",""]
+    property var teamTactics: ["","","","","","","","","","","","","",""]
     Country {
         id: country
     }
@@ -205,7 +205,7 @@ Rectangle {
             mainGameTactics.visible = true;
             gamerName=gamer.getName("Player1");
             gamerTeam=gamer.getTeamUid("Player1");
-
+            getPlayers();
             playerlistTeam.clear();
              playerList=player.getPlayerUidsbyTeam(gamerTeam);
             for(i=0;i < playerList.length ; i++)
@@ -226,6 +226,29 @@ Rectangle {
             for (i=0;i<=10;i++){
                 if (teamTactics[i]===currentPlayer){
                     teamTactics[i]="";
+                    if(i===0){
+                        team.setPosition(gamerTeam,"Goalkeeper","");
+                    }else if(i===1){
+                        team.setPosition(gamerTeam,"Defender1","");
+                    }else if(i===2){
+                        team.setPosition(gamerTeam,"Defender2","");
+                    }else if(i===3){
+                        team.setPosition(gamerTeam,"Defender3","");
+                    }else if(i===4){
+                        team.setPosition(gamerTeam,"Defender4","");
+                    }else if(i===5){
+                        team.setPosition(gamerTeam,"Defender5","");
+                    }else if(i===6){
+                        team.setPosition(gamerTeam,"Midfielder1","");
+                    }else if(i===7){
+                        team.setPosition(gamerTeam,"Midfielder2","");
+                    }else if(i===8){
+                        team.setPosition(gamerTeam,"Midfielder3","");
+                    }else if(i===9){
+                        team.setPosition(gamerTeam,"Attacker1","");
+                    }else if(i===10){
+                        team.setPosition(gamerTeam,"Attacker2","");
+                    }
                 }
             }
             teamTactics[tacticsPos]=currentPlayer;
@@ -337,4 +360,19 @@ Rectangle {
             }
 
         }
+        function getPlayers(){
+            teamTactics[0]=team.getPosition(gamerTeam,"Goalkeeper");
+            teamTactics[1]=team.getPosition(gamerTeam,"Defender1");
+            teamTactics[2]=team.getPosition(gamerTeam,"Defender2");
+            teamTactics[3]=team.getPosition(gamerTeam,"Defender3");
+            teamTactics[4]=team.getPosition(gamerTeam,"Defender4");
+            teamTactics[5]=team.getPosition(gamerTeam,"Defender5");
+            teamTactics[6]=team.getPosition(gamerTeam,"Midfielder1");
+            teamTactics[7]=team.getPosition(gamerTeam,"Midfielder2");
+            teamTactics[8]=team.getPosition(gamerTeam,"Midfielder3");
+            teamTactics[9]=team.getPosition(gamerTeam,"Attacker1");
+            teamTactics[10]=team.getPosition(gamerTeam,"Attacker2");
+        }
+
+
 }

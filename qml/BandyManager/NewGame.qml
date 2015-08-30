@@ -616,8 +616,10 @@ Rectangle {
         BandyManager.MainMenuButton {
             text: "Starta spelet"
             onClicked: {
+
                 gamer.setTeamUidStart(currentTeam,currentGamer);
                 gamer.setNameStart(input.text,currentGamer);
+                team.autoPositions(currentTeam);
                 newGame.visible = false;
                 mainGameScreen.show();
             }
