@@ -80,21 +80,56 @@ QStringList Team::getUidByCountryUid(QString value)
 
 }
 
-void Team::setPosition(QString position, QString player)
+void Team::setPosition(QString value,QString position, QString player)
 {
+    Team *team = m_teams->value(value);
+
     QStringList possiblePosition;
     possiblePosition<<"Goalkeeper"<<"Defender1"<<"Defender2"<<"Defender3"<<"Defender4"<<"Defender5"<<"Midfielder1"<<"Midfielder2"<<"Midfielder3"<<"Attacker1"<<"Attacker2"<<"ReserveKeeper"<<"Substitution1"<<"Substitution2"<<"Substitution3"<<"Substitution4";
-    if(possiblePosition.indexOf(position)>=0)
-    {
-        m_player_positions.insert(position,player);
+    if (team){
+        if(possiblePosition.indexOf(position)>=0)
+        {
+            team->m_player_positions.insert(position,player);
+        }
     }
+    //qDebug() << value << " " << position << " "<< player;
 }
 
-QString Team::getPosition(QString position)
+QString Team::getPosition(QString value,QString position)
 {
+    Team *team = m_teams->value(value);
     QString returnvalue;
-    returnvalue=m_player_positions.value(position);
+    if (team){
+        returnvalue=team->m_player_positions.value(position);
+    }else{
+        returnvalue="error";
+    }
+    //qDebug() << value << " " << position << " " << returnvalue;
     return returnvalue;
+}
+
+void Team::autoPositions(QString value)
+{
+    Team *team = m_teams->value(value);
+    Player *player;
+    QStringList playerUids;
+
+    if (team){
+        playerUids=player->getPlayerUidsbyTeam(value);
+        team->m_player_positions.insert("Goalkeeper",playerUids[0]);
+        team->m_player_positions.insert("Defender1",playerUids[1]);
+        team->m_player_positions.insert("Defender2",playerUids[2]);
+        team->m_player_positions.insert("Defender3",playerUids[3]);
+        team->m_player_positions.insert("Defender4",playerUids[4]);
+        team->m_player_positions.insert("Defender5",playerUids[5]);
+        team->m_player_positions.insert("Midfielder1",playerUids[6]);
+        team->m_player_positions.insert("Midfielder2",playerUids[7]);
+        team->m_player_positions.insert("Midfielder3",playerUids[8]);
+        team->m_player_positions.insert("Attacker1",playerUids[9]);
+        team->m_player_positions.insert("Attacker2",playerUids[10]);
+
+//        qDebug() << value<< " "<< playerUids[0];
+    }
 }
 
 void Team::fillTeams()

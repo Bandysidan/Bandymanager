@@ -32,9 +32,10 @@ public:
     Q_INVOKABLE QString getNameByUid(QString value);
     Q_INVOKABLE QStringList getUidByCountryUid(QString value);
 
-    Q_INVOKABLE void setPosition(QString position,QString player);
-    Q_INVOKABLE QString getPosition(QString position);
-
+    Q_INVOKABLE void setPosition(QString value,QString position,QString player);
+    Q_INVOKABLE QString getPosition(QString value,QString position);
+    Q_INVOKABLE void autoPositions(QString value);
+    
     Q_INVOKABLE void fillTeams();
 
 signals:

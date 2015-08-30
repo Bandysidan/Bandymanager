@@ -225,11 +225,34 @@ Rectangle {
         function changeShirt(tacticsPos){
             for (i=0;i<=10;i++){
                 if (teamTactics[i]===currentPlayer){
-                    teamTactics[i]=""
+                    teamTactics[i]="";
                 }
             }
-
             teamTactics[tacticsPos]=currentPlayer;
+            if(tacticsPos===0){
+                team.setPosition(gamerTeam,"Goalkeeper",currentPlayer);
+            }else if(tacticsPos===1){
+                team.setPosition(gamerTeam,"Defender1",currentPlayer);
+            }else if(tacticsPos===2){
+                team.setPosition(gamerTeam,"Defender2",currentPlayer);
+            }else if(tacticsPos===3){
+                team.setPosition(gamerTeam,"Defender3",currentPlayer);
+            }else if(tacticsPos===4){
+                team.setPosition(gamerTeam,"Defender4",currentPlayer);
+            }else if(tacticsPos===5){
+                team.setPosition(gamerTeam,"Defender5",currentPlayer);
+            }else if(tacticsPos===6){
+                team.setPosition(gamerTeam,"Midfielder1",currentPlayer);
+            }else if(tacticsPos===7){
+                team.setPosition(gamerTeam,"Midfielder2",currentPlayer);
+            }else if(tacticsPos===8){
+                team.setPosition(gamerTeam,"Midfielder3",currentPlayer);
+            }else if(tacticsPos===9){
+                team.setPosition(gamerTeam,"Attacker1",currentPlayer);
+            }else if(tacticsPos===10){
+                team.setPosition(gamerTeam,"Attacker2",currentPlayer);
+            }
+
             showShirts();
         }
 
