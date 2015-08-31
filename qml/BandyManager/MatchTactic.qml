@@ -7,7 +7,7 @@ import players.bandymanager 1.0
 Rectangle {
     id: matchTactic
     z: 25
-       anchors.fill: parent
+    anchors.fill: parent
 
     Country {
         id: country
@@ -25,12 +25,15 @@ Rectangle {
         id: match
     }
 
+
+
     property var gamerName
     property var gamerTeam
     property string homeTeam
     property string awayTeam
     property var homeTeamTactics: ["","","","","","","","","","","","","",""]
     property var awayTeamTactics: ["","","","","","","","","","","","","",""]
+    property string matchUid: "SweElitR01M01"
 
     Text {
         text: "Taktiksida"
@@ -219,8 +222,8 @@ Rectangle {
     function show() {
         gamerName=gamer.getName("Player1");
         gamerTeam=gamer.getTeamUid("Player1");
-        homeTeam=match.getHomeTeamUid("SweElitR01M01");
-        awayTeam=match.getAwayTeamUid("SweElitR01M01");
+        homeTeam=match.getHomeTeamUid(matchUid);
+        awayTeam=match.getAwayTeamUid(matchUid);
         if(homeTeam===gamerTeam){
             team.autoPositions(awayTeam);
         }else{

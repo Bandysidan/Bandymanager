@@ -12,6 +12,8 @@ class Match : public QObject
     Q_PROPERTY(QString uid READ uid WRITE setUid NOTIFY uidChanged)
     Q_PROPERTY(QString homeTeamUid READ homeTeamUid WRITE setHomeTeamUid NOTIFY homeTeamUidChanged)
     Q_PROPERTY(QString awayTeamUid READ awayTeamUid WRITE setAwayTeamUid NOTIFY awayTeamUidChanged)
+    Q_PROPERTY(int homeTeamScore READ homeTeamScore WRITE setHomeTeamScore NOTIFY homeTeamScoreChanged)
+    Q_PROPERTY(int awayTeamScore READ awayTeamScore WRITE setAwayTeamScore NOTIFY awayTeamScoreChanged)
 public:
     explicit Match(QObject *parent = 0);
 
@@ -23,12 +25,26 @@ public:
     void setAwayTeamUid(QString value);
     QString awayTeamUid();
 
+    void setHomeTeamScore(int value);
+    int homeTeamScore();
+    void setAwayTeamScore(int value);
+    int awayTeamScore();
+
+
     Q_INVOKABLE QString getHomeTeamUid(QString value);
     Q_INVOKABLE QString getAwayTeamUid(QString value);
+
+    Q_INVOKABLE void matchTick(QString value,int min, int sec);
+
+    Q_INVOKABLE int getHomeResult(QString value);
+    Q_INVOKABLE int getAwayResult(QString value);
+
 signals:
     void uidChanged();
     void homeTeamUidChanged();
     void awayTeamUidChanged();
+    void homeTeamScoreChanged();
+    void awayTeamScoreChanged();
 
 public slots:
 

@@ -45,12 +45,34 @@ QString Match::awayTeamUid()
     return m_away_team_uid;
 }
 
+void Match::setHomeTeamScore(int value)
+{
+    m_home_score=value;
+    emit homeTeamScore();
+}
+
+int Match::homeTeamScore()
+{
+    return m_home_score;
+}
+
+void Match::setAwayTeamScore(int value)
+{
+    m_away_score=value;
+    emit awayTeamScore();
+}
+
+int Match::awayTeamScore()
+{
+    return m_away_score;
+}
+
 QString Match::getHomeTeamUid(QString value)
 {
     Match *match =m_matches->value(value);
-    qDebug() << value;
+    //qDebug() << value;
     if(match){
-        qDebug() << match->homeTeamUid();
+        //qDebug() << match->homeTeamUid();
         return match->homeTeamUid();
     }else{
         return "error";
@@ -60,12 +82,48 @@ QString Match::getHomeTeamUid(QString value)
 QString Match::getAwayTeamUid(QString value)
 {
     Match *match =m_matches->value(value);
-    qDebug() << value;
+    //qDebug() << value;
     if(match){
-        qDebug() << match->awayTeamUid();
+        //qDebug() << match->awayTeamUid();
         return match->awayTeamUid();
     }else{
         return "error";
+    }
+
+}
+
+void Match::matchTick(QString value, int min, int sec)
+{
+    Match *match =m_matches->value(value);
+    int homeScore;
+    int awayScore;
+    if(match){
+        homeScore=match->homeTeamScore();
+        awayScore=match->awayTeamScore();
+        if(min==5 && sec==7){
+            match->setAwayTeamScore(awayScore+1);
+        }
+    }
+}
+
+int Match::getHomeResult(QString value)
+{
+    Match *match =m_matches->value(value);
+    if(match){
+        return match->homeTeamScore();
+    }else{
+        return -999;
+    }
+
+}
+
+int Match::getAwayResult(QString value)
+{
+    Match *match =m_matches->value(value);
+    if(match){
+        return match->awayTeamScore();
+    }else{
+        return -999;
     }
 
 }

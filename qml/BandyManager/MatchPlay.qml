@@ -21,7 +21,12 @@ Rectangle {
     Gamer {
         id: gamer
     }
+    Match {
+        id: match
+    }
 
+    property var gamerName
+    property var gamerTeam
     property string homeTeam
     property string awayTeam
     property string homeTeamName
@@ -30,6 +35,8 @@ Rectangle {
     property int awayTeamScore
     property int seconds
     property int minutes
+    property string matchUid: "SweElitR01M01"
+
     Text {
         text: "Spela matchen"
     }
@@ -95,8 +102,10 @@ Rectangle {
     }
     function show() {
         matchPlay.visible = true;
-        homeTeam= "SAIKbandyherrar";
-        awayTeam= "Edsbynherrar";
+        gamerName=gamer.getName("Player1");
+        gamerTeam=gamer.getTeamUid("Player1");
+        homeTeam=match.getHomeTeamUid(matchUid);
+        awayTeam=match.getAwayTeamUid(matchUid);
         homeTeamName= team.getNameByUid(homeTeam);
         awayTeamName= team.getNameByUid(awayTeam);
         homeTeamScore= 0;
@@ -121,6 +130,7 @@ Rectangle {
             seconds=0;
             minutes++;
         }
+        /*
         if(minutes==4 && seconds==24) {
             awayTeamScore++;
             eventText.text="Edsbyn gjorde 0-1";
@@ -140,6 +150,7 @@ Rectangle {
         if(minutes==47 && seconds==56) homeTeamScore++;
         if(minutes==74 && seconds==24) awayTeamScore++;
         if(minutes==87 && seconds==24) homeTeamScore++;
+*/
         if(minutes==45 && seconds==0) {
             matchClock.running=false;
             matchClock.repeat=false;
@@ -152,7 +163,9 @@ Rectangle {
             eventText.text="Slutsignal";
             matchEnd.show();
         }
-
+        match.matchTick(matchUid,minutes,seconds);
+        homeTeamScore=match.getHomeResult(matchUid);
+        awayTeamScore=match.getAwayResult(matchUid);
         secs.text=seconds.toString();
         mins.text=minutes.toString();
     }
