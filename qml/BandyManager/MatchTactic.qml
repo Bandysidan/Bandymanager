@@ -21,11 +21,14 @@ Rectangle {
     Gamer {
         id: gamer
     }
+    Match {
+        id: match
+    }
 
     property var gamerName
     property var gamerTeam
-    property string homeTeam: "SAIKbandyherrar"
-    property string awayTeam: "Edsbynherrar"
+    property string homeTeam
+    property string awayTeam
     property var homeTeamTactics: ["","","","","","","","","","","","","",""]
     property var awayTeamTactics: ["","","","","","","","","","","","","",""]
 
@@ -216,6 +219,8 @@ Rectangle {
     function show() {
         gamerName=gamer.getName("Player1");
         gamerTeam=gamer.getTeamUid("Player1");
+        homeTeam=match.getHomeTeamUid("SwedenElitserienR01M01");
+        awayTeam=match.getAwayTeamUid("SwedenElitserienR01M01");
         if(homeTeam===gamerTeam){
             team.autoPositions(awayTeam);
         }else{

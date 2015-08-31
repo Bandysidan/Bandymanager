@@ -83,5 +83,6 @@
         <file>qml/BandyManager/MatchTactic.qml</file>
         <file>qml/BandyManager/MatchPlay.qml</file>
         <file>qml/BandyManager/MatchShirt.qml</file>
+        <file>qml/BandyManager/Matches.qml</file>
     </qresource>
 </RCC>

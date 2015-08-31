@@ -5,6 +5,7 @@
 #include "player.h"
 #include "team.h"
 #include "gamer.h"
+#include "match.h"
 
 
 int main(int argc, char *argv[])
@@ -16,6 +17,8 @@ int main(int argc, char *argv[])
     qmlRegisterType<Country>("linkan.bandymanager",1,0,"Country");
 
     qmlRegisterType<Gamer>("linkan.bandymanager",1,0,"Gamer");
+
+    qmlRegisterType<Match>("linkan.bandymanager",1,0,"Match");
 
     qmlRegisterType<Player>("players.bandymanager",1,0,"Player");
 
