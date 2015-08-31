@@ -36,7 +36,7 @@ QString Match::homeTeamUid()
 
 void Match::setAwayTeamUid(QString value)
 {
-    m_home_team_uid = value;
+    m_away_team_uid = value;
     emit awayTeamUidChanged();
 }
 
@@ -48,7 +48,9 @@ QString Match::awayTeamUid()
 QString Match::getHomeTeamUid(QString value)
 {
     Match *match =m_matches->value(value);
+    qDebug() << value;
     if(match){
+        qDebug() << match->homeTeamUid();
         return match->homeTeamUid();
     }else{
         return "error";
@@ -57,5 +59,13 @@ QString Match::getHomeTeamUid(QString value)
 
 QString Match::getAwayTeamUid(QString value)
 {
+    Match *match =m_matches->value(value);
+    qDebug() << value;
+    if(match){
+        qDebug() << match->awayTeamUid();
+        return match->awayTeamUid();
+    }else{
+        return "error";
+    }
 
 }

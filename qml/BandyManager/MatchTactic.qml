@@ -219,8 +219,8 @@ Rectangle {
     function show() {
         gamerName=gamer.getName("Player1");
         gamerTeam=gamer.getTeamUid("Player1");
-        homeTeam=match.getHomeTeamUid("SwedenElitserienR01M01");
-        awayTeam=match.getAwayTeamUid("SwedenElitserienR01M01");
+        homeTeam=match.getHomeTeamUid("SweElitR01M01");
+        awayTeam=match.getAwayTeamUid("SweElitR01M01");
         if(homeTeam===gamerTeam){
             team.autoPositions(awayTeam);
         }else{
