@@ -1,5 +1,6 @@
 #include <QtGui>
 #include <QtQml>
+#include <ctime>
 
 #include "country.h"
 #include "player.h"
@@ -10,6 +11,7 @@
 
 int main(int argc, char *argv[])
 {
+    srand(time(0));
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;

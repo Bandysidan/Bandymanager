@@ -108,6 +108,7 @@ Rectangle {
         awayTeam=match.getAwayTeamUid(matchUid);
         homeTeamName= team.getNameByUid(homeTeam);
         awayTeamName= team.getNameByUid(awayTeam);
+        match.matchInitiate(matchUid);
         homeTeamScore= 0;
         awayTeamScore= 0;
         seconds= 0;
@@ -130,27 +131,6 @@ Rectangle {
             seconds=0;
             minutes++;
         }
-        /*
-        if(minutes==4 && seconds==24) {
-            awayTeamScore++;
-            eventText.text="Edsbyn gjorde 0-1";
-        }
-        if(minutes==9 && seconds==33) {
-            awayTeamScore++;
-            eventText.text="Edsbyn gjorde 0-2";
-        }
-        if(minutes==14 && seconds==12) {
-            homeTeamScore++;
-            eventText.text="Sandviken gjorde 1-2";
-        }
-        if(minutes==35 && seconds==4) {
-            awayTeamScore++;
-            eventText.text="Edsbyn gjorde 1-3";
-        }
-        if(minutes==47 && seconds==56) homeTeamScore++;
-        if(minutes==74 && seconds==24) awayTeamScore++;
-        if(minutes==87 && seconds==24) homeTeamScore++;
-*/
         if(minutes==45 && seconds==0) {
             matchClock.running=false;
             matchClock.repeat=false;

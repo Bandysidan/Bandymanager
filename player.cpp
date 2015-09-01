@@ -188,6 +188,7 @@ QList<int> Player::getSkillsByUid(QString value)
 
 QList<int> Player::getPositionSkills(QString value)
 {
+    //qDebug() << "getPositionSkills(Value): "<<value;
     Player *player = m_players->value(value);
     QList<int> skills;
     skills=player->skills();
