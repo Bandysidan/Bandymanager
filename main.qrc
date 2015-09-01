@@ -70,7 +70,6 @@
         <file>qml/BandyManager/NewGame.qml</file>
         <file>qml/BandyManager/Countries.qml</file>
         <file>qml/BandyManager/Teams.qml</file>
-        <file>qml/BandyManager/Names.qml</file>
         <file>qml/BandyManager/Players.qml</file>
         <file>qml/BandyManager/MainGameScreen.qml</file>
         <file>qml/BandyManager/MainGameButton.qml</file>
@@ -84,5 +83,6 @@
         <file>qml/BandyManager/MatchPlay.qml</file>
         <file>qml/BandyManager/MatchShirt.qml</file>
         <file>qml/BandyManager/Matches.qml</file>
+        <file>qml/BandyManager/flags/Hungary.png</file>
     </qresource>
 </RCC>

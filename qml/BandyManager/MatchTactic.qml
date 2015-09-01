@@ -220,8 +220,14 @@ Rectangle {
     }
 
     function show() {
+
+
         gamerName=gamer.getName("Player1");
         gamerTeam=gamer.getTeamUid("Player1");
+//        matchUid="SweElitR01M01";
+//        homeTeam=match.getUidByHomeTeam(gamerTeam);
+//        awayTeam=match.getUidByAwayTeam(gamerTeam);
+
         homeTeam=match.getHomeTeamUid(matchUid);
         awayTeam=match.getAwayTeamUid(matchUid);
         if(homeTeam===gamerTeam){

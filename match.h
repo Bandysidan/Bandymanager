@@ -38,6 +38,8 @@ public:
     Q_INVOKABLE void matchInitiate(QString value);
     Q_INVOKABLE void matchTick(QString value,int min, int sec);
 
+
+
     Q_INVOKABLE int getHomeResult(QString value);
     Q_INVOKABLE int getAwayResult(QString value);
 
@@ -64,6 +66,8 @@ private:
     //QHash<QString,QString> m_match_events;
 
     static QHash<QString, Match *> *m_matches;
+    static QHash<QString,QString> *m_home_team;
+    static QHash<QString,QString> *m_away_team;
 
 };
 

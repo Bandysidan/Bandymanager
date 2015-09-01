@@ -30,6 +30,7 @@ public:
     QString countryUid();
 
     Q_INVOKABLE QString getNameByUid(QString value);
+    Q_INVOKABLE QString getCountryByUid(QString value);
     Q_INVOKABLE QStringList getUidByCountryUid(QString value);
 
     Q_INVOKABLE void setPosition(QString value,QString position,QString player);

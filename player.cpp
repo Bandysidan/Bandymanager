@@ -14,12 +14,16 @@ Player::Player(QObject *parent) :
 
 void Player::setUid(QString value)
 {
-    m_uid = value;
+    QString seed;
+    int random;
+    random=rand()%10000;
+    seed=QString::number(random);
+    m_uid = value; //+seed;
     m_players->insert(m_uid, this);
-    m_first_team_uid->insert(m_first_team,m_uid);
+    m_first_team_uid->insert(m_first_team,value);
     //int i;
 
-//    qDebug()<<"setUid: "<< " "<< m_uid << " "<< m_first_team;
+    //qDebug()<<"setUid: "<< " "<< m_uid << " "<< m_first_team;
     emit uidChanged();
 
 }
@@ -60,7 +64,7 @@ void Player::setBirth(int value)
 {
     m_birthyear=value;
 
-emit familyNameChanged();
+    emit familyNameChanged();
 
 }
 
@@ -100,6 +104,7 @@ QString Player::firstTeam()
 
 void Player::setSkills(QList<int> value)
 {
+
     m_skills=value;
     emit skillsChanged();
 }

@@ -71,6 +71,16 @@ QString Team::getNameByUid(QString value)
         return "error";
 }
 
+QString Team::getCountryByUid(QString value)
+{
+    Team *team = m_teams->value(value);
+    if (team)
+        return team->countryUid();
+    else
+        return "error";
+
+}
+
 QStringList Team::getUidByCountryUid(QString value)
 {
     QStringList values = m_teams_by_country->values(value);
@@ -133,27 +143,166 @@ void Team::autoPositions(QString value)
 
 void Team::fillTeams()
 {
+//    qDebug() << "Test";
     int numPlayers;
-//    Team *team;
+    int numGoalkeeper;
+    int numDefender;
+    int numMidfielder;
+    int numAttacker;
+    int targetNumPlayers;
+    int randomNumber;
+    int playerType;
+    Team *team;
     Player *player;
     Player *newPlayer;
     QHash<QString, Team *>::iterator i = m_teams->begin();
+    QList<int> skills;
     while (i != m_teams->end()) {
-//        team = m_teams->value(i.key());
+        team = m_teams->value(i.key());
         numPlayers= player->playersPerTeam(i.key());
-//        qDebug() << i.key() << " " << player->playersPerTeam(i.key());
-/*
-        if(numPlayers==1){
-            newPlayer=new Player();
-            newPlayer->setFirstTeam(i.key());
-            newPlayer->setUid(i.key());
-            newPlayer->setFirstName("Testar");
-            newPlayer->setFamilyName("Efternamn");
-            qDebug() << i.key() << newPlayer->firstTeam();
-            qDebug() << i.key() << " " << player->getFirstNameByUid(i.key());
-//            newPlayer->setSkills();
+        qDebug() << i.key() << " " << player->playersPerTeam(i.key());
+
+        if(numPlayers<=15){
+
+            targetNumPlayers=rand()%6+15;
+            for(int j=numPlayers;j<=targetNumPlayers;j++){
+                newPlayer=new Player();
+                newPlayer->setFirstTeam(i.key());
+                newPlayer->setUid(i.key()+QString::number(j));
+                newPlayer->setBirth(2015-19-rand()%15);
+                randomNumber=rand()%400;
+                if(randomNumber<280){
+                    newPlayer->setCountryUid(team->getCountryByUid(i.key()));
+                }else if(randomNumber<320){
+                    newPlayer->setCountryUid("finland");
+                }else if(randomNumber<330){
+                    newPlayer->setCountryUid("norway");
+                }else if(randomNumber<335){
+                    newPlayer->setCountryUid("kazakhstan");
+                }else if(randomNumber<340){
+                    newPlayer->setCountryUid("usa");
+                }else if(randomNumber<345){
+                    newPlayer->setCountryUid("belarus");
+                }else if(randomNumber<347){
+                    newPlayer->setCountryUid("canada");
+                }else if(randomNumber<349){
+                    newPlayer->setCountryUid("estonia");
+                }else if(randomNumber<350){
+                    newPlayer->setCountryUid("hungary");
+                }else if(randomNumber<352){
+                    newPlayer->setCountryUid("japan");
+                }else if(randomNumber<353){
+                    newPlayer->setCountryUid("germany");
+                }else if(randomNumber<354){
+                    newPlayer->setCountryUid("holland");
+                }else if(randomNumber<355){
+                    newPlayer->setCountryUid("mongolia");
+                }else if(randomNumber<356){
+                    newPlayer->setCountryUid("china");
+                }else if(randomNumber<357){
+                    newPlayer->setCountryUid("czech");
+                }else if(randomNumber<380){
+                    newPlayer->setCountryUid("sweden");
+                }else{
+                    newPlayer->setCountryUid("russia");
+                }
+                newPlayer->setFirstName("?");
+                newPlayer->setFamilyName("?");
+                playerType=rand()%20;
+                skills.clear();
+                if(playerType<2){
+                    skills.append(120+rand()%60);
+                    skills.append(120+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(50+rand()%60);
+                }else if(playerType<4){
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(100+rand()%60);
+                    skills.append(120+rand()%70);
+                    skills.append(100+rand()%60);
+                    skills.append(60+rand()%80);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(75+rand()%120);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(100+rand()%60);
+                }else if(playerType<7){
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(100+rand()%60);
+                    skills.append(100+rand()%60);
+                    skills.append(120+rand()%70);
+                    skills.append(60+rand()%80);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(75+rand()%120);
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(100+rand()%60);
+                }else if(playerType<10){
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(80+rand()%60);
+                    skills.append(50+rand()%60);
+                    skills.append(100+rand()%80);
+                    skills.append(rand()%60);
+                    skills.append(30+rand()%60);
+                    skills.append(30+rand()%60);
+                    skills.append(30+rand()%60);
+                    skills.append(30+rand()%80);
+                    skills.append(30+rand()%60);
+                    skills.append(30+rand()%70);
+                    skills.append(100+rand()%60);
+                }else if(playerType<15){
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(100+rand()%80);
+                    skills.append(1+rand()%60);
+                    skills.append(100+rand()%80);
+                    skills.append(1+rand()%60);
+                    skills.append(30+rand()%60);
+                    skills.append(90+rand()%90);
+                    skills.append(90+rand()%90);
+                    skills.append(30+rand()%80);
+                    skills.append(70+rand()%90);
+                    skills.append(70+rand()%90);
+                    skills.append(100+rand()%60);
+                }else{
+                    skills.append(1+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(120+rand()%60);
+                    skills.append(1+rand()%60);
+                    skills.append(70+rand()%90);
+                    skills.append(1+rand()%60);
+                    skills.append(70+rand()%90);
+                    skills.append(80+rand()%80);
+                    skills.append(80+rand()%80);
+                    skills.append(1+rand()%80);
+                    skills.append(100+rand()%80);
+                    skills.append(100+rand()%80);
+                    skills.append(100+rand()%60);
+                }
+
+
+    //            qDebug() << i.key() << newPlayer->firstTeam();
+    //            qDebug() << i.key() << " " << player->getFirstNameByUid(i.key());
+                newPlayer->setSkills(skills);
+            }
         }
-        */
+
         ++i;
     }
 }

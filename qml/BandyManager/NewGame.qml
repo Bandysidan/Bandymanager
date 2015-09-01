@@ -175,11 +175,11 @@ Rectangle {
             id: teamDelegate
             Item {
                 id: container
-                width: ListView.view.width; height: 30; anchors.leftMargin: 10; anchors.rightMargin: 10
+                width: ListView.view.width; height: 24; anchors.leftMargin: 10; anchors.rightMargin: 10
 
                 Rectangle {
                     id: content
-                    anchors.centerIn: parent; width: container.width - 40; height: container.height - 10
+                    anchors.centerIn: parent; width: container.width - 4; height: container.height - 4
                     color: "transparent"
                     antialiasing: true
                     radius: 5
@@ -244,16 +244,16 @@ Rectangle {
             id: playerDelegate
             Item {
                 id: container
-                width: ListView.view.width; height: 30; anchors.leftMargin: 10; anchors.rightMargin: 10
+                width: ListView.view.width; height: 24; anchors.leftMargin: 10; anchors.rightMargin: 10
 
                 Rectangle {
                     id: content
-                    anchors.centerIn: parent; width: container.width - 40; height: container.height - 10
+                    anchors.centerIn: parent; width: container.width - 4; height: container.height - 4
                     color: "transparent"
                     antialiasing: true
                     radius: 5
 
-                    Rectangle { anchors.fill: parent; anchors.margins: 3; color: "#91AA9D"; antialiasing: true; radius: 8 }
+                    Rectangle { anchors.fill: parent; anchors.margins: 3; color: "yellowgreen"; antialiasing: true; radius: 8 }
                 }
 
                 Text {
@@ -284,7 +284,7 @@ Rectangle {
             anchors.fill: parent
             delegate: playerDelegate
             model: playerlistTeam
-            highlight: Rectangle { color: "#772020"; radius: 5 }
+            highlight: Rectangle { color: "darkgreen"; radius: 5 }
             highlightFollowsCurrentItem: true
 
         }
@@ -632,8 +632,8 @@ Rectangle {
 
 
     Component.onCompleted: {
+        team.fillTeams();
         changeCountry();
-        team.fillTeams()
     }
 
     function show() {

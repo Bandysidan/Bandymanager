@@ -1,19 +1,26 @@
 #include "match.h"
 
 QHash<QString,Match *> *Match::m_matches;
+QHash<QString,QString> *Match::m_home_team;
+QHash<QString,QString> *Match::m_away_team;
+
 
 Match::Match(QObject *parent) :
     QObject(parent)
 {
     if(!m_matches)
         m_matches= new QHash<QString,Match *>();
-
+    if(!m_home_team)
+        m_home_team = new QHash<QString,QString>();
+    if(!m_away_team)
+        m_away_team = new QHash<QString,QString>();
 }
 
 void Match::setUid(QString value)
 {
     m_uid = value;
     m_matches->insert(m_uid,this);
+
     emit uidChanged();
 }
 
@@ -204,7 +211,7 @@ void Match::matchTick(QString value, int min, int sec)
         if(sec%10==0){
             randNum=rand()%2000;
             hsChans=randNum+homeAttackSkill/10+homeMidSkill/20-awayDefSkill/20-awayGoalSkill/10;
-            asChans=randNum-homeAttackSkill/10-homeMidSkill/20+awayDefSkill/20+awayGoalSkill/10;
+            asChans=randNum-awayAttackSkill/10-awayMidSkill/20+homeDefSkill/20+homeGoalSkill/10;
             if(asChans<20)match->setAwayTeamScore(awayScore+1);
             if(hsChans>1980)match->setHomeTeamScore(homeScore+1);
         }

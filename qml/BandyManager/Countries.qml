@@ -676,7 +676,7 @@ Rectangle {
     Country {
         uid: "hungary"
         name: "Ungern"
-        flag: "Hungary.png"
+        flag: "flags/Hungary.png"
         league: -1
         maleNational: 1
         femaleNational: 1
