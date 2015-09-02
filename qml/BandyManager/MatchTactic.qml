@@ -33,7 +33,7 @@ Rectangle {
     property string awayTeam
     property var homeTeamTactics: ["","","","","","","","","","","","","",""]
     property var awayTeamTactics: ["","","","","","","","","","","","","",""]
-    property string matchUid: "SweElitR01M01"
+    property string matchUid
 
     Text {
         text: "Taktiksida"
@@ -224,7 +224,8 @@ Rectangle {
 
         gamerName=gamer.getName("Player1");
         gamerTeam=gamer.getTeamUid("Player1");
-//        matchUid="SweElitR01M01";
+        matchUid="SweElitR01M01";
+        homeTeam=match.getUidByTeamUid(gamerTeam);
 //        homeTeam=match.getUidByHomeTeam(gamerTeam);
 //        awayTeam=match.getUidByAwayTeam(gamerTeam);
 

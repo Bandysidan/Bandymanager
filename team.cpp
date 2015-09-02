@@ -160,7 +160,7 @@ void Team::fillTeams()
     while (i != m_teams->end()) {
         team = m_teams->value(i.key());
         numPlayers= player->playersPerTeam(i.key());
-        qDebug() << i.key() << " " << player->playersPerTeam(i.key());
+//        qDebug() << i.key() << " " << player->playersPerTeam(i.key());
 
         if(numPlayers<=15){
 

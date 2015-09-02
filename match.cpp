@@ -20,7 +20,8 @@ void Match::setUid(QString value)
 {
     m_uid = value;
     m_matches->insert(m_uid,this);
-
+    m_home_team->insert(m_home_team_uid,m_uid);
+    m_away_team->insert(m_away_team_uid,m_uid);
     emit uidChanged();
 }
 
@@ -50,6 +51,39 @@ void Match::setAwayTeamUid(QString value)
 QString Match::awayTeamUid()
 {
     return m_away_team_uid;
+}
+
+void Match::setMatchDay(int value)
+{
+    m_match_day=value;
+    emit matchDayChanged();
+}
+
+int Match::matchDay()
+{
+    return m_match_day;
+}
+
+void Match::setMatchMonth(int value)
+{
+    m_match_month=value;
+    emit matchMonthChanged();
+}
+
+int Match::matchMonth()
+{
+    return m_match_month;
+}
+
+void Match::setMatchYear(int value)
+{
+    m_match_year=value;
+    emit matchYearChanged();
+}
+
+int Match::matchYear()
+{
+    return m_match_year;
 }
 
 void Match::setHomeTeamScore(int value)
@@ -97,6 +131,12 @@ QString Match::getAwayTeamUid(QString value)
         return "error";
     }
 
+}
+
+QString Match::getUidByTeamUid(QString value)
+{
+    QString match = m_home_team->value(value);
+    qDebug() << "hometeam:" << value << match;
 }
 
 void Match::matchInitiate(QString value)
@@ -216,6 +256,18 @@ void Match::matchTick(QString value, int min, int sec)
             if(hsChans>1980)match->setHomeTeamScore(homeScore+1);
         }
     }
+}
+
+int Match::getMatchDay(QString value)
+{
+    Match *match =m_matches->value(value);
+
+    if(match){
+        return match->matchDay();
+    }else{
+        return -999;
+    }
+
 }
 
 int Match::getHomeResult(QString value)
