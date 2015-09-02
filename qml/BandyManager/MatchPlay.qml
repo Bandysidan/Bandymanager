@@ -25,18 +25,6 @@ Rectangle {
         id: match
     }
 
-    property var gamerName
-    property var gamerTeam
-    property string homeTeam
-    property string awayTeam
-    property string homeTeamName
-    property string awayTeamName
-    property int homeTeamScore
-    property int awayTeamScore
-    property int seconds
-    property int minutes
-    property string matchUid: "SweElitR01M01"
-
     Text {
         text: "Spela matchen"
     }
@@ -102,10 +90,6 @@ Rectangle {
     }
     function show() {
         matchPlay.visible = true;
-        gamerName=gamer.getName("Player1");
-        gamerTeam=gamer.getTeamUid("Player1");
-        homeTeam=match.getHomeTeamUid(matchUid);
-        awayTeam=match.getAwayTeamUid(matchUid);
         homeTeamName= team.getNameByUid(homeTeam);
         awayTeamName= team.getNameByUid(awayTeam);
         match.matchInitiate(matchUid);

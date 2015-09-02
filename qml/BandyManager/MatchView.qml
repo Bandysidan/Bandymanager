@@ -9,6 +9,21 @@ import players.bandymanager 1.0
 Rectangle {
     id: matchView
     z:20
+
+    property var gamerName
+    property var gamerTeam
+    property string homeTeam
+    property string awayTeam
+    property string homeTeamName
+    property string awayTeamName
+    property int homeTeamScore
+    property int awayTeamScore
+    property int seconds
+    property int minutes
+    property var homeTeamTactics: ["","","","","","","","","","","","","",""]
+    property var awayTeamTactics: ["","","","","","","","","","","","","",""]
+    property string matchUid
+
     anchors.fill: parent
     Image {
         id: logo

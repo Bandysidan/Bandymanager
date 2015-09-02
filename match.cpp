@@ -111,9 +111,7 @@ int Match::awayTeamScore()
 QString Match::getHomeTeamUid(QString value)
 {
     Match *match =m_matches->value(value);
-    //qDebug() << value;
     if(match){
-        //qDebug() << match->homeTeamUid();
         return match->homeTeamUid();
     }else{
         return "error";
@@ -123,9 +121,8 @@ QString Match::getHomeTeamUid(QString value)
 QString Match::getAwayTeamUid(QString value)
 {
     Match *match =m_matches->value(value);
-    //qDebug() << value;
     if(match){
-        //qDebug() << match->awayTeamUid();
+        //qDebug() << "Away team"<< match->awayTeamUid();
         return match->awayTeamUid();
     }else{
         return "error";
@@ -136,7 +133,15 @@ QString Match::getAwayTeamUid(QString value)
 QString Match::getUidByTeamUid(QString value)
 {
     QString match = m_home_team->value(value);
-    qDebug() << "hometeam:" << value << match;
+    if(match==""){
+        match = m_away_team->value(value);
+    }
+    if(match!=""){
+        return match;
+    }else{
+        return "error";
+    }
+
 }
 
 void Match::matchInitiate(QString value)
@@ -258,14 +263,24 @@ void Match::matchTick(QString value, int min, int sec)
     }
 }
 
-int Match::getMatchDay(QString value)
+QString Match::getMatchDay(QString value)
 {
     Match *match =m_matches->value(value);
-
+    int day;
+    int month;
+    int year;
+    QDate matchDate;
+    QString dateString;
     if(match){
-        return match->matchDay();
+        day=match->matchDay();
+        month=match->matchMonth();
+        year=match->matchYear();
+        matchDate=QDate(year,month,day);
+        dateString=matchDate.toString("yyyy-MM-dd");
+        //qDebug() << matchDate.month();
+        return dateString;
     }else{
-        return -999;
+        return "1900-01-01";
     }
 
 }

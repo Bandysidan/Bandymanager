@@ -25,16 +25,6 @@ Rectangle {
         id: match
     }
 
-
-
-    property var gamerName
-    property var gamerTeam
-    property string homeTeam
-    property string awayTeam
-    property var homeTeamTactics: ["","","","","","","","","","","","","",""]
-    property var awayTeamTactics: ["","","","","","","","","","","","","",""]
-    property string matchUid
-
     Text {
         text: "Taktiksida"
     }
@@ -224,11 +214,8 @@ Rectangle {
 
         gamerName=gamer.getName("Player1");
         gamerTeam=gamer.getTeamUid("Player1");
-        matchUid="SweElitR01M01";
-        homeTeam=match.getUidByTeamUid(gamerTeam);
-//        homeTeam=match.getUidByHomeTeam(gamerTeam);
-//        awayTeam=match.getUidByAwayTeam(gamerTeam);
-
+        matchUid=match.getUidByTeamUid(gamerTeam);
+        console.log(matchUid);
         homeTeam=match.getHomeTeamUid(matchUid);
         awayTeam=match.getAwayTeamUid(matchUid);
         if(homeTeam===gamerTeam){

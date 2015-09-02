@@ -5,6 +5,7 @@
 #include "country.h"
 #include "player.h"
 #include "team.h"
+#include "game.h"
 #include "gamer.h"
 #include "match.h"
 

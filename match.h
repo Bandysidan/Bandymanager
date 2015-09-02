@@ -50,7 +50,7 @@ public:
     Q_INVOKABLE void matchInitiate(QString value);
     Q_INVOKABLE void matchTick(QString value,int min, int sec);
 
-    Q_INVOKABLE int getMatchDay(QString value);
+    Q_INVOKABLE QString getMatchDay(QString value);
 
     Q_INVOKABLE int getHomeResult(QString value);
     Q_INVOKABLE int getAwayResult(QString value);
