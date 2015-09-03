@@ -23,6 +23,8 @@ Rectangle {
     property var homeTeamTactics: ["","","","","","","","","","","","","",""]
     property var awayTeamTactics: ["","","","","","","","","","","","","",""]
     property string matchUid
+    property string homeShirt
+    property string awayShirt
 
     anchors.fill: parent
     Image {

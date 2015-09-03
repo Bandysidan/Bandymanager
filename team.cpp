@@ -62,6 +62,18 @@ QString Team::countryUid()
     return m_country_uid;
 }
 
+void Team::setHomeShirt(QString value)
+{
+    m_home_shirt = value;
+    emit homeShirtChanged();
+
+}
+
+QString Team::homeShirt()
+{
+    return m_home_shirt;
+}
+
 QString Team::getNameByUid(QString value)
 {
     Team *team = m_teams->value(value);
@@ -87,6 +99,16 @@ QStringList Team::getUidByCountryUid(QString value)
     values.sort();
 
     return values;
+
+}
+
+QString Team::getHomeShirtByUid(QString value)
+{
+    Team *team = m_teams->value(value);
+    if (team)
+        return team->homeShirt();
+    else
+        return "error";
 
 }
 

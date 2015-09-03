@@ -27,6 +27,9 @@ public:
 
 signals:
     void uidChanged();
+    void dayChanged();
+    void monthChanged();
+    void yearChanged();
 
 public slots:
 
