@@ -135,7 +135,7 @@ Rectangle {
         uid: "Mjondalenherrar"
         name: "Mjøndalen"
         countryUid: "norway"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtBrown.png"
     }
     Team {
         uid: "Readyherrar"

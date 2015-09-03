@@ -52,12 +52,12 @@ Rectangle {
                 anchors.rightMargin: 10
                  Rectangle {
                     id: content
-                    anchors.centerIn: parent; width: container.width - 8; height: container.height - 2
+                    anchors.centerIn: parent; width: container.width - 4; height: container.height - 2
                     color: "transparent"
                     antialiasing: true
                     radius: 5
 
-                    Rectangle { anchors.fill: parent; anchors.margins: 3; color: "#91AA9D"; antialiasing: true; radius: 3 }
+                    Rectangle { anchors.fill: parent; anchors.margins: 3; color: "yellowgreen"; antialiasing: true; radius: 3 }
                 }
                 Row {
                     anchors.centerIn: content
@@ -106,7 +106,7 @@ Rectangle {
            anchors.fill: parent
            delegate: playerDelegate
            model: playerlistTeam
-                highlight: Rectangle { color: "#772020"; radius: 5 }
+                highlight: Rectangle { color: "darkgreen"; radius: 5 }
                 highlightFollowsCurrentItem: true
 
             }

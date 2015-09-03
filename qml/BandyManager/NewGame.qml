@@ -37,6 +37,7 @@ Rectangle {
     }
     Game {
         id: mainGame
+        uid: "mainGame"
         day: 10
         month: 9
         year: 2015
@@ -184,12 +185,12 @@ Rectangle {
 
                 Rectangle {
                     id: content
-                    anchors.centerIn: parent; width: container.width - 4; height: container.height - 4
+                    anchors.centerIn: parent; width: container.width - 4; height: container.height - 2
                     color: "transparent"
                     antialiasing: true
                     radius: 5
 
-                    Rectangle { anchors.fill: parent; anchors.margins: 3; color: "yellowgreen"; antialiasing: true; radius: 8 }
+                    Rectangle { anchors.fill: parent; anchors.margins: 3; color: "yellowgreen"; antialiasing: true; radius: 3 }
                 }
 
                 Text {
@@ -258,7 +259,7 @@ Rectangle {
                     antialiasing: true
                     radius: 5
 
-                    Rectangle { anchors.fill: parent; anchors.margins: 3; color: "yellowgreen"; antialiasing: true; radius: 8 }
+                    Rectangle { anchors.fill: parent; anchors.margins: 3; color: "yellowgreen"; antialiasing: true; radius: 3 }
                 }
 
                 Text {

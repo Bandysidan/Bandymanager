@@ -83,11 +83,10 @@ Rectangle {
             }
 
             BandyManager.MainGameButton {
+                id: nextMatch
                 text: "Nästa match"
                 onClicked: {
-                    //if(gamer.getTeamUid("Player1")==="SAIKbandyherrar" || gamer.getTeamUid("Player1")==="Edsbynherrar"){
-                        matchView.show();
-                    //}
+                     matchView.show();
                 }
             }
             Rectangle {

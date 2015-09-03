@@ -90,5 +90,6 @@
         <file>qml/BandyManager/shirts/ShirtGreen.png</file>
         <file>qml/BandyManager/shirts/ShirtOrange.png</file>
         <file>qml/BandyManager/shirts/ShirtBlack.png</file>
+        <file>qml/BandyManager/shirts/ShirtBrown.png</file>
     </qresource>
 </RCC>
