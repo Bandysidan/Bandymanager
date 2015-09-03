@@ -10,6 +10,12 @@ Rectangle {
     }
 
     Team {
+        uid: "Edsbynherrar"
+        name: "Edsbyns IF"
+        countryUid: "sweden"
+    }
+
+    Team {
         uid: "VSKbandyherrar"
         name: "Västerås SK"
         countryUid: "sweden"
@@ -23,12 +29,6 @@ Rectangle {
     Team {
         uid: "Villabandyherrar"
         name: "Villa Lidköping BK"
-        countryUid: "sweden"
-    }
-
-    Team {
-        uid: "Edsbynherrar"
-        name: "Edsbyns IF"
         countryUid: "sweden"
     }
 
@@ -103,18 +103,48 @@ Rectangle {
         countryUid: "russia"
     }
     Team {
+        uid: "Zorkijherrar"
+        name: "Zorkij"
+        countryUid: "russia"
+    }
+    Team {
         uid: "Stabaekherrar"
         name: "Stabaek"
         countryUid: "norway"
     }
     Team {
         uid: "Mjondalenherrar"
-        name: "Mjöndalen"
+        name: "Mjøndalen"
         countryUid: "norway"
     }
     Team {
         uid: "Readyherrar"
         name: "Ready"
+        countryUid: "norway"
+    }
+    Team {
+        uid: "Solbergherrar"
+        name: "Solberg"
+        countryUid: "norway"
+    }
+    Team {
+        uid: "Ullevålherrar"
+        name: "Ullevål"
+        countryUid: "norway"
+    }
+    Team {
+        uid: "Høvikherrar"
+        name: "Høvik"
+        countryUid: "norway"
+    }
+    Team {
+        uid: "Sarpsborgherrar"
+        name: "Sarpsborg"
+        countryUid: "norway"
+    }
+    Team {
+        uid: "Drammenherrar"
+        name: "Drammen bandy"
         countryUid: "norway"
     }
     Team {
@@ -133,6 +163,11 @@ Rectangle {
         countryUid: "finland"
     }
     Team {
+        uid: "Veiteräherrar"
+        name: "Veiterä"
+        countryUid: "finland"
+    }
+    Team {
         uid: "Dinkytownherrar"
         name: "Dinkytown Dukes"
         countryUid: "usa"
@@ -145,6 +180,21 @@ Rectangle {
     Team {
         uid: "Mississippiherrar"
         name: "Mississippi Mojo"
+        countryUid: "usa"
+    }
+    Team {
+        uid: "Minisotabladesherrar"
+        name: "Minisota Blades"
+        countryUid: "usa"
+    }
+    Team {
+        uid: "IceTigersherrar"
+        name: "Twin City Ice Tigers"
+        countryUid: "usa"
+    }
+    Team {
+        uid: "DynamoDuluthherrar"
+        name: "Dynamo Duluth"
         countryUid: "usa"
     }
 
