@@ -539,6 +539,7 @@ Rectangle {
             "Samuel",
             "Santiago",
             "Sawyer",
+            "Scott",
             "Sean",
             "Sebastian",
             "Seth",
@@ -567,6 +568,7 @@ Rectangle {
             "Zayden"
         ]
         familyname: [
+            "Arundel",
             "Halden",
             "Manson"
         ]
