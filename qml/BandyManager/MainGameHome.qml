@@ -9,21 +9,6 @@ import players.bandymanager 1.0
 
 Rectangle {
 
-    property var gamerName
-    property var gamerTeam
-
-    Country {
-        id: country
-    }
-    Team {
-        id: team
-    }
-    Player {
-        id: player
-    }
-    Gamer {
-        id: gamer
-    }
     id:mainGameHome
     z: 10
     anchors.fill: parent
@@ -40,7 +25,8 @@ Rectangle {
         mainGameHome.visible = true;
         gamerName=gamer.getName("Player1");
         gamerTeam=gamer.getTeamUid("Player1");
-        namn.text=gamerName.concat(" är ny tränare för ",team.getNameByUid(gamerTeam));
+        //namn.text=gamerName.concat(" är ny tränare för ",team.getNameByUid(gamerTeam),". ",String(mainGame.year),String(mainGame.month),String(mainGame.day));
+        namn.text=mainGame.getShortDate("blabla");
     }
 
 

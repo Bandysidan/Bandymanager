@@ -8,6 +8,26 @@ import players.bandymanager 1.0
 Rectangle {
     z:20
     anchors.fill: parent
+
+    property var gamerName
+    property var gamerTeam
+
+    Country {
+        id: country
+    }
+    Team {
+        id: team
+    }
+    Player {
+        id: player
+    }
+    Gamer {
+        id: gamer
+    }
+    Game {
+        id: mainGame
+    }
+
     Image {
         id: logo
         x: 110
@@ -18,9 +38,6 @@ Rectangle {
         source: "BMlogo.png"
     }
 
-    Gamer {
-        id: gamer
-    }
 
     Rectangle {
         x: 0

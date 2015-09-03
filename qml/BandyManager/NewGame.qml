@@ -35,7 +35,12 @@ Rectangle {
     Gamer {
         id: gamer
     }
-
+    Game {
+        id: mainGame
+        day: 10
+        month: 9
+        year: 2015
+    }
     id: newGame
     anchors.fill: parent
     z: 5

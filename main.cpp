@@ -8,6 +8,7 @@
 #include "game.h"
 #include "gamer.h"
 #include "match.h"
+#include "serie.h"
 
 
 int main(int argc, char *argv[])
@@ -22,6 +23,10 @@ int main(int argc, char *argv[])
     qmlRegisterType<Gamer>("linkan.bandymanager",1,0,"Gamer");
 
     qmlRegisterType<Match>("linkan.bandymanager",1,0,"Match");
+
+    qmlRegisterType<Game>("linkan.bandymanager",1,0,"Game");
+
+    qmlRegisterType<Serie>("linkan.bandymanager",1,0,"Serie");
 
     qmlRegisterType<Player>("players.bandymanager",1,0,"Player");
 

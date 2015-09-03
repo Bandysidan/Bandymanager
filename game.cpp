@@ -1,10 +1,13 @@
+#include <QTextStream>
+#include <QDebug>
+#include <QDate>
 #include "game.h"
 
 Game::Game(QObject *parent) :
     QObject(parent)
 {
 }
-
+/*
 void Game::setUid(QString value)
 {
     m_uid = value;
@@ -15,7 +18,7 @@ QString Game::uid()
 {
     return m_uid;
 }
-
+*/
 void Game::setDay(int value)
 {
     m_day = value;
@@ -47,4 +50,14 @@ void Game::setYear(int value)
 int Game::year()
 {
     return m_year;
+}
+
+QString Game::getShortDate(QString value)
+{
+    QString shortDateString;
+    QDate shortDate;
+    shortDate=QDate(year(),month(),day());
+    qDebug()<< year();
+    shortDateString=shortDate.toString("yyyy-MM-dd");
+    return shortDateString;
 }

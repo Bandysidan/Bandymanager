@@ -7,7 +7,7 @@ Rectangle {
         uid: "SAIKbandyherrar"
         name: "Sandvikens AIK"
         countryUid: "sweden"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtBlack.png"
     }
 
     Team {
@@ -21,27 +21,27 @@ Rectangle {
         uid: "VSKbandyherrar"
         name: "Västerås SK"
         countryUid: "sweden"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtWhite.png"
     }
     Team {
         uid: "Bajenbandyherrar"
         name: "Hammarby IF"
         countryUid: "sweden"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtGreen.png"
     }
 
     Team {
         uid: "Villabandyherrar"
         name: "Villa Lidköping BK"
         countryUid: "sweden"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtBlue.png"
     }
 
     Team {
         uid: "Bollnasherrar"
         name: "Bollnäs GoIF"
         countryUid: "sweden"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtOrange.png"
     }
 
     Team {
@@ -69,7 +69,7 @@ Rectangle {
         uid: "VetlandaBKherrar"
         name: "Vetlanda BK"
         countryUid: "sweden"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtYellow.png"
     }
 
     Team {
@@ -83,21 +83,21 @@ Rectangle {
         uid: "Gripenherrar"
         name: "Gripen Trollhättan BK"
         countryUid: "sweden"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtYellow.png"
     }
 
     Team {
         uid: "Vanersborgbandyherrar"
         name: "IFK Vänersborg"
         countryUid: "sweden"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtBlue.png"
     }
 
     Team {
         uid: "Tillbergabandyherrar"
         name: "TB Västerås"
         countryUid: "sweden"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtBlack.png"
     }
 
     Team {
@@ -111,25 +111,25 @@ Rectangle {
         uid: "Dynamomoscowherrar"
         name: "Dynamo Moskva"
         countryUid: "russia"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtWhite.png"
     }
     Team {
         uid: "Vodnikherrar"
         name: "Vodnik"
         countryUid: "russia"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtYellow.png"
     }
     Team {
         uid: "Zorkijherrar"
         name: "Zorkij"
         countryUid: "russia"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtYellow.png"
     }
     Team {
         uid: "Stabaekherrar"
         name: "Stabaek"
         countryUid: "norway"
-        homeShirt: "ShirtRed.png"
+        homeShirt: "ShirtBlue.png"
     }
     Team {
         uid: "Mjondalenherrar"

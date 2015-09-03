@@ -86,5 +86,9 @@
         <file>qml/BandyManager/flags/Hungary.png</file>
         <file>qml/BandyManager/shirts/ShirtYellow.png</file>
         <file>qml/BandyManager/shirts/ShirtBlue.png</file>
+        <file>qml/BandyManager/shirts/ShirtWhite.png</file>
+        <file>qml/BandyManager/shirts/ShirtGreen.png</file>
+        <file>qml/BandyManager/shirts/ShirtOrange.png</file>
+        <file>qml/BandyManager/shirts/ShirtBlack.png</file>
     </qresource>
 </RCC>
