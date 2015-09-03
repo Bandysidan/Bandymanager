@@ -194,6 +194,7 @@ Rectangle {
             "Hellmyrs",
             "Johansson",
             "Jönsson",
+            "Larsson",
             "Löfstedt",
             "Nilsson",
             "Pettersson",
