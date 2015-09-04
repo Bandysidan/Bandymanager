@@ -9,22 +9,6 @@ Rectangle {
     z:25
     anchors.fill: parent
 
-    Country {
-        id: country
-    }
-    Team {
-        id: team
-    }
-    Player {
-        id: player
-    }
-    Gamer {
-        id: gamer
-    }
-    Match {
-        id: match
-    }
-
     Text {
         text: "Spela matchen"
     }

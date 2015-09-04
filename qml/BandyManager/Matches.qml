@@ -60,6 +60,14 @@ Rectangle {
         matchYear: 2015
     }
     Match {
+        uid: "SweElitR02M01"
+        homeTeamUid: "Tillbergabandyherrar"
+        awayTeamUid: "SAIKbandyherrar"
+        matchDay: 25
+        matchMonth: 10
+        matchYear: 2015
+    }
+    Match {
         uid: "RusSuperR01M01"
         homeTeamUid: "Jenisejherrar"
         awayTeamUid: "Dynamomoscowherrar"

@@ -10,6 +10,21 @@ Rectangle {
     id: matchView
     z:20
 
+    Country {
+        id: country
+    }
+    Team {
+        id: team
+    }
+    Player {
+        id: player
+    }
+    Gamer {
+        id: gamer
+    }
+    Match {
+        id: match
+    }
     property var gamerName
     property var gamerTeam
     property string homeTeam
@@ -25,6 +40,7 @@ Rectangle {
     property string matchUid
     property string homeShirt
     property string awayShirt
+    property int days
 
     anchors.fill: parent
     Image {
@@ -105,6 +121,22 @@ Rectangle {
 
 
     function show() {
+        gamerName=gamer.getName("Player1");
+        gamerTeam=gamer.getTeamUid("Player1");
+        for(days=0;days<7;days++){
+            match.getMatchesForDaysAhead(days);
+        }
+
+        matchUid=match.getUidByTeamUid(gamerTeam);
+        homeTeam=match.getHomeTeamUid(matchUid);
+        homeShirt="shirts/"+team.getHomeShirtByUid(homeTeam);
+        awayTeam=match.getAwayTeamUid(matchUid);
+        awayShirt="shirts/"+team.getHomeShirtByUid(awayTeam);
+        if(homeTeam===gamerTeam){
+            team.autoPositions(awayTeam);
+        }else{
+            team.autoPositions(homeTeam);
+        }
         matchView.visible = true;
         matchTactic.show();
     }

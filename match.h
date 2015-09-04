@@ -3,9 +3,12 @@
 
 #include <QObject>
 #include <QHash>
+#include <QMultiHash>
 #include <QDebug>
 #include <QDate>
+#include <QList>
 #include "team.h"
+#include "game.h"
 
 class Match : public QObject
 {
@@ -46,6 +49,7 @@ public:
     Q_INVOKABLE QString getHomeTeamUid(QString value);
     Q_INVOKABLE QString getAwayTeamUid(QString value);
     Q_INVOKABLE QString getUidByTeamUid(QString value);
+    Q_INVOKABLE QList<QString> getMatchesForDaysAhead(int days);
 
     Q_INVOKABLE void matchInitiate(QString value);
     Q_INVOKABLE void matchTick(QString value,int min, int sec);
@@ -84,6 +88,7 @@ private:
     //QHash<QString,QString> m_match_events;
 
     static QHash<QString, Match *> *m_matches;
+    static QMultiHash<QDate,QString> *m_match_dates;
     static QHash<QString,QString> *m_home_team;
     static QHash<QString,QString> *m_away_team;
 

@@ -3,7 +3,7 @@
 QHash<QString,Match *> *Match::m_matches;
 QHash<QString,QString> *Match::m_home_team;
 QHash<QString,QString> *Match::m_away_team;
-
+QMultiHash<QDate,QString>   *Match::m_match_dates;
 
 Match::Match(QObject *parent) :
     QObject(parent)
@@ -14,6 +14,8 @@ Match::Match(QObject *parent) :
         m_home_team = new QHash<QString,QString>();
     if(!m_away_team)
         m_away_team = new QHash<QString,QString>();
+    if(!m_match_dates)
+        m_match_dates=new QMultiHash<QDate,QString>();
 }
 
 void Match::setUid(QString value)
@@ -22,6 +24,7 @@ void Match::setUid(QString value)
     m_matches->insert(m_uid,this);
     m_home_team->insert(m_home_team_uid,m_uid);
     m_away_team->insert(m_away_team_uid,m_uid);
+    m_match_dates->insert(QDate(),m_uid);
     emit uidChanged();
 }
 
@@ -142,6 +145,19 @@ QString Match::getUidByTeamUid(QString value)
         return "error";
     }
 
+}
+
+QList<QString> Match::getMatchesForDaysAhead(int days)
+{
+    QList<QString> returnMatches;
+    //Game *game =m_game->value("mainGame");
+    //QDate todayDate=game->today();
+    QDate todayDate=QDate(2015,9,10);
+    QDate indaysDate=todayDate.addDays(days);
+    qDebug() << indaysDate;
+ //   returnMatches=m_match_dates->values();
+    returnMatches.append("Test");
+    return returnMatches;
 }
 
 void Match::matchInitiate(QString value)

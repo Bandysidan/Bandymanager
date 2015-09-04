@@ -9,21 +9,6 @@ Rectangle {
     z: 25
     anchors.fill: parent
 
-    Country {
-        id: country
-    }
-    Team {
-        id: team
-    }
-    Player {
-        id: player
-    }
-    Gamer {
-        id: gamer
-    }
-    Match {
-        id: match
-    }
 
     Text {
         text: "Taktiksida"
@@ -210,21 +195,6 @@ Rectangle {
     }
 
     function show() {
-
-
-        gamerName=gamer.getName("Player1");
-        gamerTeam=gamer.getTeamUid("Player1");
-        matchUid=match.getUidByTeamUid(gamerTeam);
-        console.log(matchUid);
-        homeTeam=match.getHomeTeamUid(matchUid);
-        homeShirt="shirts/"+team.getHomeShirtByUid(homeTeam);
-        awayTeam=match.getAwayTeamUid(matchUid);
-        awayShirt="shirts/"+team.getHomeShirtByUid(awayTeam);
-        if(homeTeam===gamerTeam){
-            team.autoPositions(awayTeam);
-        }else{
-            team.autoPositions(homeTeam);
-        }
 
         matchTactic.visible = true;
         getPlayers();
