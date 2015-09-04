@@ -41,6 +41,9 @@ Rectangle {
     property string homeShirt
     property string awayShirt
     property int days
+    property var gamesList
+    property int i
+    property var playedGames
 
     anchors.fill: parent
     Image {
@@ -124,7 +127,12 @@ Rectangle {
         gamerName=gamer.getName("Player1");
         gamerTeam=gamer.getTeamUid("Player1");
         for(days=0;days<7;days++){
-            match.getMatchesForDaysAhead(days);
+            gamesList = match.getMatchesForDaysAhead(days);
+            console.log(gamesList[0]);
+            for(i=0;i<gamesList.length;i++){
+                console.log(gamesList[i]);
+
+            }
         }
 
         matchUid=match.getUidByTeamUid(gamerTeam);

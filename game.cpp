@@ -67,3 +67,12 @@ QString Game::getShortDate()
     shortDateString=game->today().toString("yyyy-MM-dd");
     return shortDateString;
 }
+
+QDate Game::getDate()
+{
+    Game *game =m_game->value("mainGame");
+    //QString shortDateString;
+    //shortDateString=game->today().toString("yyyy-MM-dd");
+    return game->today();
+
+}

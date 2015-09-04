@@ -31,6 +31,7 @@ public:
     QDate today();
 
     Q_INVOKABLE QString getShortDate();
+    Q_INVOKABLE QDate getDate();
 
 signals:
     void uidChanged();

@@ -71,16 +71,16 @@ Rectangle {
         uid: "RusSuperR01M01"
         homeTeamUid: "Jenisejherrar"
         awayTeamUid: "Dynamomoscowherrar"
-        matchDay: 21
-        matchMonth: 10
+        matchDay: 14
+        matchMonth: 9
         matchYear: 2015
     }
     Match {
         uid: "RusSuperR01M02"
         homeTeamUid: "Vodnikherrar"
         awayTeamUid: "Zorkijherrar"
-        matchDay: 21
-        matchMonth: 10
+        matchDay: 14
+        matchMonth: 9
         matchYear: 2015
     }
     Match {
