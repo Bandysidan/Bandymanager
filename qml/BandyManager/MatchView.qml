@@ -41,9 +41,10 @@ Rectangle {
     property string homeShirt
     property string awayShirt
     property int days
-    property var gamesList
+    property var matchList
     property int i
     property var playedGames
+    property int gamerToday
 
     anchors.fill: parent
     Image {
@@ -126,27 +127,49 @@ Rectangle {
     function show() {
         gamerName=gamer.getName("Player1");
         gamerTeam=gamer.getTeamUid("Player1");
-        for(days=0;days<7;days++){
-            gamesList = match.getMatchesForDaysAhead(days);
-            console.log(gamesList[0]);
-            for(i=0;i<gamesList.length;i++){
-                console.log(gamesList[i]);
+        gamerToday=0;
+        days=0;
+        matchUid="";
+        while (gamerToday==0){
+//        for(days=0;days<7;days++){
+            matchList = match.getMatchesForDaysAhead(days);
+//            console.log(gamesList[0]);
+            homeTeam="";
+            awayTeam="";
+
+            for(i=0;i<matchList.length;i++){
+                homeTeam=match.getHomeTeamUid(matchList[i]);
+                awayTeam=match.getAwayTeamUid(matchList[i]);
+                console.log(homeTeam+" "+awayTeam+" "+gamerTeam);
+                if(homeTeam===gamerTeam || awayTeam===gamerTeam){
+                    gamerToday=1
+                    matchUid=matchList[i];
+                    console.log(matchUid);
+
+                    homeShirt="shirts/"+team.getHomeShirtByUid(homeTeam);
+                    awayShirt="shirts/"+team.getHomeShirtByUid(awayTeam);
+                    if(homeTeam===gamerTeam){
+                        team.autoPositions(awayTeam);
+                    }else{
+                        team.autoPositions(homeTeam);
+                    }
+                }else{
+                    team.autoPositions(awayTeam);
+                    team.autoPositions(homeTeam);
+                }
+
+                //console.log(gamesList[i]);
 
             }
+            if(gamerToday==0) days++;
         }
-
-        matchUid=match.getUidByTeamUid(gamerTeam);
+        console.log(matchUid);
         homeTeam=match.getHomeTeamUid(matchUid);
-        homeShirt="shirts/"+team.getHomeShirtByUid(homeTeam);
         awayTeam=match.getAwayTeamUid(matchUid);
-        awayShirt="shirts/"+team.getHomeShirtByUid(awayTeam);
-        if(homeTeam===gamerTeam){
-            team.autoPositions(awayTeam);
-        }else{
-            team.autoPositions(homeTeam);
-        }
         matchView.visible = true;
         matchTactic.show();
+
+
     }
 
     function hide() {
