@@ -32,6 +32,7 @@ public:
 
     Q_INVOKABLE QString getShortDate();
     Q_INVOKABLE QDate getDate();
+    Q_INVOKABLE void addDays(int days);
 
 signals:
     void uidChanged();

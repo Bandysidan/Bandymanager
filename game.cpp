@@ -76,3 +76,10 @@ QDate Game::getDate()
     return game->today();
 
 }
+
+void Game::addDays(int days)
+{
+    Game *game =m_game->value("mainGame");
+    game->m_today=game->m_today.addDays(days);
+
+}

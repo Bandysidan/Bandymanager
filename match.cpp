@@ -155,12 +155,6 @@ QList<QString> Match::getMatchesForDaysAhead(int days)
     QDate indaysDate=todayDate.addDays(days);
     qDebug() << indaysDate;
     returnMatches=m_match_dates->values(indaysDate);
-/*    QMultiHash<QDate,QString>::iterator i = m_match_dates->begin();
-    while(i!=m_match_dates->end()){
-        qDebug()<< i.key();
-    }*/
-//    qDebug() << returnMatches.count();
-    //    returnMatches.append("Test");
     return returnMatches;
 }
 

@@ -25,6 +25,10 @@ Rectangle {
     Match {
         id: match
     }
+    Game {
+        id: game
+    }
+
     property var gamerName
     property var gamerTeam
     property string homeTeam
@@ -130,10 +134,8 @@ Rectangle {
         gamerToday=0;
         days=0;
         matchUid="";
-        while (gamerToday==0){
-//        for(days=0;days<7;days++){
+        while (gamerToday==0 && days < 7){
             matchList = match.getMatchesForDaysAhead(days);
-//            console.log(gamesList[0]);
             homeTeam="";
             awayTeam="";
 
@@ -144,7 +146,7 @@ Rectangle {
                 if(homeTeam===gamerTeam || awayTeam===gamerTeam){
                     gamerToday=1
                     matchUid=matchList[i];
-                    console.log(matchUid);
+//                    console.log(matchUid);
 
                     homeShirt="shirts/"+team.getHomeShirtByUid(homeTeam);
                     awayShirt="shirts/"+team.getHomeShirtByUid(awayTeam);
@@ -156,19 +158,31 @@ Rectangle {
                 }else{
                     team.autoPositions(awayTeam);
                     team.autoPositions(homeTeam);
+                    match.matchInitiate(matchList[i]);
+                    seconds = 0;
+                    minutes = 0;
+                    homeTeamScore=0;
+                    awayTeamScore=0;
+                    for(minutes=0;minutes<=90;minutes++){
+                        for(seconds=0;seconds<60;seconds++){
+                            match.matchTick(matchList[i],minutes,seconds);
+                        }
+                    }
+                    homeTeamScore=match.getHomeResult(matchList[i]);
+                    awayTeamScore=match.getAwayResult(matchList[i]);
+                    console.log(homeTeamScore+" - "+awayTeamScore);
                 }
-
-                //console.log(gamesList[i]);
-
             }
-            if(gamerToday==0) days++;
+            days++;
         }
-        console.log(matchUid);
-        homeTeam=match.getHomeTeamUid(matchUid);
-        awayTeam=match.getAwayTeamUid(matchUid);
-        matchView.visible = true;
-        matchTactic.show();
-
+        if(gamerToday==1){
+            console.log(matchUid);
+            homeTeam=match.getHomeTeamUid(matchUid);
+            awayTeam=match.getAwayTeamUid(matchUid);
+            matchView.visible = true;
+            matchTactic.show();
+        }
+        game.addDays(days);
 
     }
 

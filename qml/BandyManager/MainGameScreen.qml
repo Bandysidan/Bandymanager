@@ -87,6 +87,7 @@ Rectangle {
                 text: "Nästa match"
                 onClicked: {
                      matchView.show();
+                     mainGameHome.update();
                 }
             }
             Rectangle {
