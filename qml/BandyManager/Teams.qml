@@ -99,6 +99,30 @@ Rectangle {
         countryUid: "sweden"
         homeShirt: "ShirtBlack.png"
     }
+    Team {
+        uid: "Ljusdalherrar"
+        name: "Ljusdals BK"
+        countryUid: "sweden"
+        homeShirt: "ShirtYellow.png"
+    }
+    Team {
+        uid: "Rattvikherrar"
+        name: "IFK Rättvik"
+        countryUid: "sweden"
+        homeShirt: "ShirtBlue.png"
+    }
+    Team {
+        uid: "Jonkopingherrar"
+        name: "Jönköping Bandy"
+        countryUid: "sweden"
+        homeShirt: "ShirtRed.png"
+    }
+    Team {
+        uid: "TranasBoisherrar"
+        name: "Tranås Bois"
+        countryUid: "sweden"
+        homeShirt: "ShirtWhite.png"
+    }
 
     Team {
         uid: "Jenisejherrar"

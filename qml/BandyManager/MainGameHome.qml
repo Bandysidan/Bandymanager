@@ -102,6 +102,8 @@ Rectangle {
         dateID.text=dateString;
         if(dateString==="2015-09-10"){
             news.text=gamerName.concat(" är ny tränare för ",team.getNameByUid(gamerTeam),".");
+        }else{
+            news.text="";
         }
 
     }

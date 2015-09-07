@@ -129,6 +129,11 @@ Rectangle {
 
 
     function show() {
+        matchView.visible = true;
+        matchTactic.hide();
+        matchPlay.hide();
+        matchStart.hide();
+
         gamerName=gamer.getName("Player1");
         gamerTeam=gamer.getTeamUid("Player1");
         gamerToday=0;
@@ -175,14 +180,16 @@ Rectangle {
             }
             days++;
         }
+        game.addDays(days);
         if(gamerToday==1){
             console.log(matchUid);
             homeTeam=match.getHomeTeamUid(matchUid);
             awayTeam=match.getAwayTeamUid(matchUid);
-            matchView.visible = true;
             matchTactic.show();
+            matchStart.show();
+        }else{
+            matchView.visible = false;
         }
-        game.addDays(days);
 
     }
 

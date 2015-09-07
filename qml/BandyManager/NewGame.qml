@@ -22,6 +22,9 @@ Rectangle {
     Matches{
 
     }
+    Series{
+
+    }
 
     Country {
         id: country
@@ -35,6 +38,10 @@ Rectangle {
     Gamer {
         id: gamer
     }
+    Serie{
+        id: serie
+    }
+
     Game {
         id: mainGame
         uid: "mainGame"
@@ -42,19 +49,22 @@ Rectangle {
         month: 9
         year: 2015
     }
+
     id: newGame
     anchors.fill: parent
     z: 5
-    property var iCountry: 1
-    property var currentCountry: "sweden"
-    property var currentGamer: "Player1"
+    property int iCountry: 1
+    property string currentCountry: "sweden"
+    property string currentSeries
+    property string currentGamer: "Player1"
     property var currentTeam
     property var currentPlayer
     property var playerList
     property var teamList
+    property var serieList
     property var birthyear
-    property var i:0
-    property var playerNumber:"1"
+    property int i:0
+    property string playerNumber:"1"
     property var playerSkills
     property var positionSkills
     property var tempVar
@@ -110,59 +120,123 @@ Rectangle {
     }
 
 
-        Image {
-            id: right
-            x: 355
-            y: 225
-            width: 32
-            height: 32
-            fillMode: Image.PreserveAspectFit
-            source: "Right.png"
-            signal clicked()
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: {
-                    right.source= "RightOMO.png";
-                }
-                onExited: {
-                    right.source= "Right.png";
-                }
-
-                onClicked:{
-                    countryRight();
-                    changeCountry();
-                }
-
+    Image {
+        id: right
+        x: 355
+        y: 225
+        width: 32
+        height: 32
+        fillMode: Image.PreserveAspectFit
+        source: "Right.png"
+        signal clicked()
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+            onEntered: {
+               right.source= "RightOMO.png";
+            }
+            onExited: {
+               right.source= "Right.png";
+            }
+            onClicked:{
+                countryRight();
+                changeCountry();
             }
         }
+    }
 
 
-        Image {
-            id: left
-            x: 55
-            y: 225
-            width: 32
-            height: 32
-            fillMode: Image.PreserveAspectFit
-            source: "Left.png"
-            signal clicked()
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: {
-                    left.source= "LeftOMO.png";
-                }
-
-                onExited: {
-                    left.source= "Left.png";
-                }
-                onClicked:{
-                    countryLeft();
-                    changeCountry();
-                }
+    Image {
+        id: left
+        x: 55
+        y: 225
+        width: 32
+        height: 32
+        fillMode: Image.PreserveAspectFit
+        source: "Left.png"
+        signal clicked()
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+            onEntered: {
+                left.source= "LeftOMO.png";
+            }
+            onExited: {
+                left.source= "Left.png";
+            }
+            onClicked:{
+                countryLeft();
+                changeCountry();
             }
         }
+    }
+
+    /* Vallista för serier */
+    Text {
+        id: chooseSerie
+        x: 20
+        y: 395
+        text: "Välj serie:"
+        font.bold: true
+    }
+    Rectangle{
+        x: 20
+        y: 415
+        width: 235
+        height: 442
+        Component {
+            id: serieDelegate
+            Item {
+                id: container
+                width: ListView.view.width; height: 24; anchors.leftMargin: 10; anchors.rightMargin: 10
+
+                Rectangle {
+                    id: content
+                    anchors.centerIn: parent; width: container.width - 4; height: container.height - 2
+                    color: "transparent"
+                    antialiasing: true
+                    radius: 5
+
+                    Rectangle { anchors.fill: parent; anchors.margins: 3; color: "yellowgreen"; antialiasing: true; radius: 3 }
+                }
+
+                Text {
+                    id: label
+                    anchors.centerIn: content
+                    text: name
+                    color: "#193441"
+                    font.pixelSize: 14
+                }
+
+                MouseArea {
+                    id: mouseArea
+                    anchors.fill: parent
+                    hoverEnabled: true
+
+                    onClicked: {
+                        container.ListView.view.currentIndex = index
+                        container.forceActiveFocus()
+                        changeSeries(container.ListView.view.currentIndex)
+                    }
+                }
+            }
+
+        }
+        ListView {
+            id: serielist
+            anchors.fill: parent
+            delegate: serieDelegate
+            model: serielistModel
+            highlight: Rectangle { color: "darkgreen"; radius: 5 }
+            highlightFollowsCurrentItem: true
+
+        }
+
+    }
+
+    ListModel {
+       id: serielistModel
+    }
 
     /* Vallista för lag */
     Text {
@@ -674,16 +748,32 @@ Rectangle {
 
     }
 
-    function changeCountry() {
-        teamList = team.getUidByCountryUid(currentCountry);
-        flag.source= country.getFlagByUid(currentCountry);
-        countryname.text= country.getNameByUid(currentCountry);
+    function changeSeries(seriesindex) {
+        //teamList = team.getUidByCountryUid(currentCountry);
+        currentSeries=serieList[seriesindex];
+        teamList = serie.getTeamsByUid(currentSeries);
         teamlistModel.clear();
         for(i=0; i < teamList.length ; i++)
             {
                 teamlistModel.set(i,{name: team.getNameByUid(teamList[i])})
             }
         changeTeam(0);
+    }
+
+    function changeCountry() {
+        flag.source= country.getFlagByUid(currentCountry);
+        countryname.text= country.getNameByUid(currentCountry);
+
+        serieList = serie.getUidByCountryUid(currentCountry);
+//        console.log(serieList.length);
+        serielistModel.clear();
+        for(i=0; i < serieList.length ; i++)
+            {
+
+                serielistModel.set(i,{name: serie.getNameByUid(serieList[i])})
+            }
+
+        changeSeries(0);
     }
 
 

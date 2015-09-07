@@ -61,6 +61,7 @@ Rectangle {
                     mainGameHome.show();
                     mainGameSquad.hide();
                     mainGameTactics.hide();
+                    mainGamePlayedMatches.hide();
                 }
             }
 
@@ -70,6 +71,7 @@ Rectangle {
                     mainGameHome.hide();
                     mainGameSquad.show();
                     mainGameTactics.hide();
+                    mainGamePlayedMatches.hide();
                 }
             }
 
@@ -79,6 +81,17 @@ Rectangle {
                     mainGameHome.hide();
                     mainGameSquad.hide();
                     mainGameTactics.show();
+                    mainGamePlayedMatches.hide();
+                }
+            }
+
+            BandyManager.MainGameButton {
+                text: "Matcher"
+                onClicked: {
+                    mainGameHome.hide();
+                    mainGameSquad.hide();
+                    mainGameTactics.hide();
+                    mainGamePlayedMatches.show();
                 }
             }
 
@@ -88,6 +101,10 @@ Rectangle {
                 onClicked: {
                      matchView.show();
                      mainGameHome.update();
+                    mainGameHome.show();
+                    mainGameSquad.hide();
+                    mainGameTactics.hide();
+                    mainGamePlayedMatches.hide();
                 }
             }
             Rectangle {
@@ -114,6 +131,10 @@ Rectangle {
        }
        BandyManager.MainGameSquad {
            id: mainGameSquad
+           visible: false
+       }
+       BandyManager.MainGamePlayedMatches {
+           id: mainGamePlayedMatches
            visible: false
        }
        BandyManager.MainGameTactics {
