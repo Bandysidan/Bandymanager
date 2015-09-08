@@ -68,6 +68,30 @@ Rectangle {
         matchYear: 2015
     }
     Match {
+        uid: "SweAllNR01M01"
+        homeTeamUid: "Ljusdalherrar"
+        awayTeamUid: "Katrineholmherrar"
+        matchDay: 07
+        matchMonth: 11
+        matchYear: 2015
+    }
+    Match {
+        uid: "SweAllNR01M02"
+        homeTeamUid: "Rattvikherrar"
+        awayTeamUid: "Västanforsherrar"
+        matchDay: 07
+        matchMonth: 11
+        matchYear: 2015
+    }
+    Match {
+        uid: "SweAllSR01M01"
+        homeTeamUid: "Jonkopingherrar"
+        awayTeamUid: "TranasBoisherrar"
+        matchDay: 07
+        matchMonth: 11
+        matchYear: 2015
+    }
+    Match {
         uid: "RusSuperR01M01"
         homeTeamUid: "Jenisejherrar"
         awayTeamUid: "Dynamomoscowherrar"

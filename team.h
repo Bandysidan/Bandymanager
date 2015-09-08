@@ -17,6 +17,7 @@ class Team : public QObject
     Q_PROPERTY(QString uid READ uid WRITE setUid NOTIFY uidChanged)
     Q_PROPERTY(QString countryUid READ countryUid WRITE setCountryUid NOTIFY countryUidChanged)
     Q_PROPERTY(QString homeShirt READ homeShirt WRITE setHomeShirt NOTIFY homeShirtChanged)
+    Q_PROPERTY(int rating READ rating WRITE setRating NOTIFY ratingChanged)
 
 public:
     explicit Team(QObject *parent = 0);
@@ -33,11 +34,17 @@ public:
     void setHomeShirt(QString value);
     QString homeShirt();
 
+    void setRating(int value);
+    int rating();
+
+
     Q_INVOKABLE QString getNameByUid(QString value);
     Q_INVOKABLE QString getCountryByUid(QString value);
     Q_INVOKABLE QStringList getUidByCountryUid(QString value);
 
     Q_INVOKABLE QString getHomeShirtByUid(QString value);
+
+    Q_INVOKABLE int getRating(QString value);
 
     Q_INVOKABLE void setPosition(QString value,QString position,QString player);
     Q_INVOKABLE QString getPosition(QString value,QString position);
@@ -50,6 +57,7 @@ signals:
     void nameChanged();
     void countryUidChanged();
     void homeShirtChanged();
+    void ratingChanged();
 
 public slots:
 
@@ -59,6 +67,7 @@ private:
     QString m_country_uid;
     QString m_home_shirt;
     QString m_away_shirt;
+    int m_rating;
     QHash<QString,QString> m_player_positions;
 
 

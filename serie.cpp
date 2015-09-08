@@ -4,6 +4,7 @@ QHash<QString,Serie *> *Serie::m_series;
 QMultiHash<QString,QString> *Serie::m_series_by_country;
 
 
+
 Serie::Serie(QObject *parent) :
     QObject(parent)
 {
@@ -19,7 +20,7 @@ void Serie::setUid(QString value)
     m_uid = value;
     m_series->insert(m_uid, this);
     m_series_by_country->insert(m_country_uid,m_uid);
-    qDebug() << m_uid << " " << m_country_uid;
+//    qDebug() << m_uid << " " << m_country_uid;
     emit uidChanged();
 
 }
@@ -62,6 +63,18 @@ void Serie::setTeamUid(QStringList value)
 QStringList Serie::teamUid()
 {
     return m_team_list;
+}
+
+void Serie::setMatchUid(QStringList value)
+{
+    m_match_list=value;
+    emit matchUidChanged();
+
+}
+
+QStringList Serie::matchUid()
+{
+    return m_match_list;
 }
 
 QString Serie::getNameByUid(QString value)

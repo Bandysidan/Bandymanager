@@ -186,6 +186,16 @@ QString Country::getFamilyName(QString value)
 
 }
 
+int Country::getMaleSkill(QString value)
+{
+    Country *country = m_countries->value(value);
+    if (country)
+        return country->maleSkill();
+    else
+        return -999;
+
+}
+
 /*
 QString Country::getNextByUid(QString value, QString filter)
 {

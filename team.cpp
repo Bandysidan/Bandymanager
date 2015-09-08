@@ -74,6 +74,17 @@ QString Team::homeShirt()
     return m_home_shirt;
 }
 
+void Team::setRating(int value)
+{
+    m_rating =  value;
+    emit ratingChanged();
+}
+
+int Team::rating()
+{
+    return m_rating;
+}
+
 QString Team::getNameByUid(QString value)
 {
     Team *team = m_teams->value(value);
@@ -109,6 +120,16 @@ QString Team::getHomeShirtByUid(QString value)
         return team->homeShirt();
     else
         return "error";
+
+}
+
+int Team::getRating(QString value)
+{
+    Team *team = m_teams->value(value);
+    if (team)
+        return team->rating();
+    else
+        return -999;
 
 }
 
@@ -174,7 +195,11 @@ void Team::fillTeams()
     int targetNumPlayers;
     int randomNumber;
     int playerType;
+    int teamRating;
+    int countryRating;
+    int totalRating;
     Team *team;
+    Country *country;
     Player *player;
     Player *newPlayer;
     QHash<QString, Team *>::iterator i = m_teams->begin();
@@ -182,7 +207,11 @@ void Team::fillTeams()
     while (i != m_teams->end()) {
         team = m_teams->value(i.key());
         numPlayers= player->playersPerTeam(i.key());
+        teamRating=team->rating();
+        countryRating=country->getMaleSkill(team->countryUid());
+        totalRating=teamRating*countryRating/1000;
 //        qDebug() << i.key() << " " << player->playersPerTeam(i.key());
+        qDebug() << i.key() << " " << totalRating;
 
         if(numPlayers<=15){
 
@@ -233,26 +262,26 @@ void Team::fillTeams()
                 playerType=rand()%20;
                 skills.clear();
                 if(playerType<2){
-                    skills.append(120+rand()%60);
-                    skills.append(120+rand()%60);
-                    skills.append(1+rand()%60);
-                    skills.append(1+rand()%60);
-                    skills.append(1+rand()%60);
-                    skills.append(1+rand()%60);
-                    skills.append(1+rand()%60);
-                    skills.append(1+rand()%60);
-                    skills.append(1+rand()%60);
-                    skills.append(1+rand()%60);
-                    skills.append(1+rand()%60);
-                    skills.append(1+rand()%60);
-                    skills.append(50+rand()%60);
+                    skills.append(6*totalRating/100+rand()%(3*totalRating/100));
+                    skills.append(6*totalRating/100+rand()%(3*totalRating/100));
+                    skills.append(1+rand()%(3*totalRating/100));
+                    skills.append(1+rand()%(3*totalRating/100));
+                    skills.append(1+rand()%(3*totalRating/100));
+                    skills.append(1+rand()%(3*totalRating/100));
+                    skills.append(1+rand()%(3*totalRating/100));
+                    skills.append(1+rand()%(3*totalRating/100));
+                    skills.append(1+rand()%(3*totalRating/100));
+                    skills.append(1+rand()%(3*totalRating/100));
+                    skills.append(1+rand()%(3*totalRating/100));
+                    skills.append(1+rand()%(3*totalRating/100));
+                    skills.append(3*totalRating/100+rand()%(3*totalRating/100));
                 }else if(playerType<4){
-                    skills.append(1+rand()%60);
-                    skills.append(1+rand()%60);
-                    skills.append(100+rand()%60);
-                    skills.append(120+rand()%70);
-                    skills.append(100+rand()%60);
-                    skills.append(60+rand()%80);
+                    skills.append(1+rand()%(3*totalRating/100));
+                    skills.append(1+rand()%(3*totalRating/100));
+                    skills.append((6*totalRating/100)+rand()%(3*totalRating/100));
+                    skills.append((6*totalRating/100)+rand()%(3*totalRating/80));
+                    skills.append((5*totalRating/100)+rand()%(3*totalRating/100));
+                    skills.append((3*totalRating/100)+rand()%80);
                     skills.append(1+rand()%60);
                     skills.append(1+rand()%60);
                     skills.append(1+rand()%60);
