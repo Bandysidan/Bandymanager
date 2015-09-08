@@ -16,7 +16,7 @@ Rectangle {
         uid: "SwedenAllsvNorra"
         name: "Allsvenskan Norra"
         countryUid: "sweden"
-        teamUid: ["Ljusdalherrar","Katrineholmherrar","Rattvikherrar","Västanforsherrar"]
+        teamUid: ["Ljusdalherrar","Katrineholmherrar","Rattvikherrar","Västanforsherrar","SpångaDjurgardenHerrar","FaluBSHerrar","GustavsbergHerrar","HaparandaHerrar","BorlangeHerrar","HelenelundHerrar","UnikHerrar","TellusHerrar"]
     }
     Serie {
         uid: "SwedenElitserien"
@@ -61,11 +61,20 @@ Rectangle {
         name: "Bandyliiga"
         countryUid: "finland"
         teamUid:["Helsinkiherrar","Narukeraherrar","OLSherrar","Veiteräherrar"]
+        matchUid: [
+            "FinBandyR01M01",
+            "FinBandyR01M02"
+        ]
     }
     Serie {
         uid: "USADivision1"
         name: "Division 1"
         countryUid: "usa"
         teamUid: ["Bandolierherrar","Dinkytownherrar","DynamoDuluthherrar","Minisotabladesherrar","Mississippiherrar","IceTigersherrar"]
+        matchUid: [
+            "USADiv1R01M01",
+            "USADiv1R01M02",
+            "USADiv1R01M03"
+        ]
     }
 }

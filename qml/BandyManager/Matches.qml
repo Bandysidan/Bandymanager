@@ -84,6 +84,38 @@ Rectangle {
         matchYear: 2015
     }
     Match {
+        uid: "SweAllNR01M03"
+        homeTeamUid: "SpångaDjurgardenHerrar"
+        awayTeamUid: "FaluBSHerrar"
+        matchDay: 07
+        matchMonth: 11
+        matchYear: 2015
+    }
+    Match {
+        uid: "SweAllNR01M04"
+        homeTeamUid: "GustavsbergHerrar"
+        awayTeamUid: "HaparandaHerrar"
+        matchDay: 07
+        matchMonth: 11
+        matchYear: 2015
+    }
+    Match {
+        uid: "SweAllNR01M05"
+        homeTeamUid: "BorlangeHerrar"
+        awayTeamUid: "HelenelundHerrar"
+        matchDay: 07
+        matchMonth: 11
+        matchYear: 2015
+    }
+    Match {
+        uid: "SweAllNR01M06"
+        homeTeamUid: "TellusHerrar"
+        awayTeamUid: "UnikHerrar"
+        matchDay: 07
+        matchMonth: 11
+        matchYear: 2015
+    }
+    Match {
         uid: "SweAllSR01M01"
         homeTeamUid: "Jonkopingherrar"
         awayTeamUid: "TranasBoisherrar"

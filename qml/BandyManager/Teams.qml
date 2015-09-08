@@ -142,6 +142,62 @@ Rectangle {
         rating: 885
     }
     Team {
+        uid: "SpångaDjurgardenHerrar"
+        name: "Spånga Djurgården"
+        countryUid: "sweden"
+        homeShirt: "ShirtBlue.png"
+        rating: 780
+    }
+    Team {
+        uid: "FaluBSHerrar"
+        name: "Falu BS"
+        countryUid: "sweden"
+        homeShirt: "ShirtBlue.png"
+        rating: 830
+    }
+    Team {
+        uid: "GustavsbergHerrar"
+        name: "Gustavsbergs IF"
+        countryUid: "sweden"
+        homeShirt: "ShirtBlue.png"
+        rating: 820
+    }
+    Team {
+        uid: "HaparandaHerrar"
+        name: "HaparandaTornio bandy"
+        countryUid: "sweden"
+        homeShirt: "ShirtBlue.png"
+        rating: 860
+    }
+    Team {
+        uid: "BorlangeHerrar"
+        name: "Borlänge Bandy"
+        countryUid: "sweden"
+        homeShirt: "ShirtBlue.png"
+        rating: 850
+    }
+    Team {
+        uid: "HelenelundHerrar"
+        name: "Helenelunds IK"
+        countryUid: "sweden"
+        homeShirt: "ShirtRed.png"
+        rating: 840
+    }
+    Team {
+        uid: "UnikHerrar"
+        name: "Unik Bandy"
+        countryUid: "sweden"
+        homeShirt: "ShirtBlue.png"
+        rating: 820
+    }
+    Team {
+        uid: "TellusHerrar"
+        name: "IK Tellus"
+        countryUid: "sweden"
+        homeShirt: "ShirtBlue.png"
+        rating: 820
+    }
+    Team {
         uid: "Jonkopingherrar"
         name: "Jönköping Bandy"
         countryUid: "sweden"
