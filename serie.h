@@ -6,6 +6,7 @@
 #include <QMultiHash>
 #include <QStringList>
 #include <QDebug>
+#include "match.h"
 
 class Serie : public QObject
 {
@@ -38,7 +39,7 @@ public:
     Q_INVOKABLE QStringList getTeamsByUid(QString value);
 
     Q_INVOKABLE QStringList getUidByCountryUid(QString value);
-
+    Q_INVOKABLE void makeSchedule(QString value);
 
 signals:
     void uidChanged();

@@ -107,3 +107,46 @@ QStringList Serie::getUidByCountryUid(QString value)
 
 }
 
+void Serie::makeSchedule(QString value)
+{
+    Serie *serie = m_series->value(value);
+    Match *newMatch;
+    QStringList teams;
+    int countTeams;
+    QString uid;
+    if (serie){
+        teams=serie->m_team_list;
+        countTeams=teams.count();
+        if(countTeams==6){
+//            qDebug()<< "Debug" << teams[0];
+            newMatch = new Match();
+            newMatch->setHomeTeamUid(teams[5]);
+            newMatch->setAwayTeamUid(teams[3]);
+            newMatch->setMatchDay(13);
+            newMatch->setMatchMonth(9);
+            newMatch->setMatchYear(2015);
+            uid=serie->name()+teams[5]+teams[3];
+            newMatch->setUid(serie->name());
+//            qDebug()<< "Debug";
+            newMatch = new Match();
+            newMatch->setHomeTeamUid(teams[4]);
+            newMatch->setAwayTeamUid(teams[2]);
+            newMatch->setMatchDay(13);
+            newMatch->setMatchMonth(9);
+            newMatch->setMatchYear(2015);
+            uid=serie->name()+teams[4]+teams[2];
+            newMatch->setUid(serie->name());
+            newMatch = new Match();
+            newMatch->setHomeTeamUid(teams[1]);
+            newMatch->setAwayTeamUid(teams[0]);
+            newMatch->setMatchDay(13);
+            newMatch->setMatchMonth(9);
+            newMatch->setMatchYear(2015);
+            uid=serie->name()+teams[1]+teams[0];
+            newMatch->setUid(serie->name());
+
+        }
+    }
+
+}
+

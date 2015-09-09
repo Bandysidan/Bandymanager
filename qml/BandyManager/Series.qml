@@ -31,7 +31,13 @@ Rectangle {
             "SweElitR01M05",
             "SweElitR01M06",
             "SweElitR01M07",
-            "SweElitR01M02"
+            "SweElitR02M01",
+            "SweElitR02M02",
+            "SweElitR02M03",
+            "SweElitR02M04",
+            "SweElitR02M05",
+            "SweElitR02M06",
+            "SweElitR02M07"
         ]
     }
     Serie {

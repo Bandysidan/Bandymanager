@@ -58,6 +58,7 @@ public:
     Q_INVOKABLE QList<int> getPositionSkills(QString value);
     Q_INVOKABLE QString getBestPosition(QString value);
     Q_INVOKABLE QStringList getPlayerUidsbyTeam(QString value);
+
 signals:
     void uidChanged();
     void firstNameChanged();

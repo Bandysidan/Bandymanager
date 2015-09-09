@@ -68,6 +68,54 @@ Rectangle {
         matchYear: 2015
     }
     Match {
+        uid: "SweElitR02M02"
+        homeTeamUid: "Edsbynherrar"
+        awayTeamUid: "VSKbandyherrar"
+        matchDay: 25
+        matchMonth: 10
+        matchYear: 2015
+    }
+    Match {
+        uid: "SweElitR02M03"
+        homeTeamUid: "Bajenbandyherrar"
+        awayTeamUid: "Villabandyherrar"
+        matchDay: 25
+        matchMonth: 10
+        matchYear: 2015
+    }
+    Match {
+        uid: "SweElitR02M04"
+        homeTeamUid: "Bollnasherrar"
+        awayTeamUid: "Brobergherrar"
+        matchDay: 25
+        matchMonth: 10
+        matchYear: 2015
+    }
+    Match {
+        uid: "SweElitR02M05"
+        homeTeamUid: "Siriusherrar"
+        awayTeamUid: "IFKKungalvherrar"
+        matchDay: 25
+        matchMonth: 10
+        matchYear: 2015
+    }
+    Match {
+        uid: "SweElitR02M06"
+        homeTeamUid: "VetlandaBKherrar"
+        awayTeamUid: "Kalixbandyherrar"
+        matchDay: 25
+        matchMonth: 10
+        matchYear: 2015
+    }
+    Match {
+        uid: "SweElitR02M07"
+        homeTeamUid: "Gripenherrar"
+        awayTeamUid: "Vanersborgbandyherrar"
+        matchDay: 25
+        matchMonth: 10
+        matchYear: 2015
+    }
+    Match {
         uid: "SweAllNR01M01"
         homeTeamUid: "Ljusdalherrar"
         awayTeamUid: "Katrineholmherrar"
@@ -187,6 +235,7 @@ Rectangle {
         matchMonth: 10
         matchYear: 2015
     }
+/*
     Match {
         uid: "USADiv1R01M01"
         homeTeamUid: "Dinkytownherrar"
@@ -211,4 +260,5 @@ Rectangle {
         matchMonth: 10
         matchYear: 2015
     }
+    */
 }

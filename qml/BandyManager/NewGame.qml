@@ -718,6 +718,7 @@ Rectangle {
 
     function show() {
         newGame.visible = true;
+        serie.makeSchedule("USADivision1");
     }
 
     function countryRight() {

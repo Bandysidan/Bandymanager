@@ -296,7 +296,6 @@ QString Match::getMatchDay(QString value)
     }else{
         return "1900-01-01";
     }
-
 }
 
 int Match::getHomeResult(QString value)
@@ -307,7 +306,6 @@ int Match::getHomeResult(QString value)
     }else{
         return -999;
     }
-
 }
 
 int Match::getAwayResult(QString value)
@@ -318,5 +316,4 @@ int Match::getAwayResult(QString value)
     }else{
         return -999;
     }
-
 }
