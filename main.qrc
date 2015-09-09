@@ -93,5 +93,6 @@
         <file>qml/BandyManager/shirts/ShirtBrown.png</file>
         <file>qml/BandyManager/MainGamePlayedMatches.qml</file>
         <file>qml/BandyManager/Series.qml</file>
+        <file>qml/BandyManager/MainGameTable.qml</file>
     </qresource>
 </RCC>

@@ -16,6 +16,8 @@ Match::Match(QObject *parent) :
         m_away_team = new QHash<QString,QString>();
     if(!m_match_dates)
         m_match_dates=new QMultiHash<QDate,QString>();
+    m_home_score=-1;
+    m_away_score=-1;
 }
 
 void Match::setUid(QString value)
@@ -166,6 +168,8 @@ void Match::matchInitiate(QString value)
     QList<int> possitionSkills;
 
     if(match){
+        match->setHomeTeamScore(0);
+        match->setAwayTeamScore(0);
 
        match->m_home_player_positions.insert("Goalkeeper",team->getPosition(match->homeTeamUid(),"Goalkeeper"));
        possitionSkills=player->getPositionSkills(match->m_home_player_positions.value("Goalkeeper"));

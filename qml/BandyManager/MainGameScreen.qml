@@ -27,6 +27,12 @@ Rectangle {
     Game {
         id: mainGame
     }
+    Serie {
+        id: serie
+    }
+    Match {
+        id: match
+    }
 
     Image {
         id: logo
@@ -62,6 +68,7 @@ Rectangle {
                     mainGameSquad.hide();
                     mainGameTactics.hide();
                     mainGamePlayedMatches.hide();
+                    mainGameTable.hide();
                 }
             }
 
@@ -72,6 +79,7 @@ Rectangle {
                     mainGameSquad.show();
                     mainGameTactics.hide();
                     mainGamePlayedMatches.hide();
+                    mainGameTable.hide();
                 }
             }
 
@@ -82,6 +90,7 @@ Rectangle {
                     mainGameSquad.hide();
                     mainGameTactics.show();
                     mainGamePlayedMatches.hide();
+                    mainGameTable.hide();
                 }
             }
 
@@ -92,6 +101,18 @@ Rectangle {
                     mainGameSquad.hide();
                     mainGameTactics.hide();
                     mainGamePlayedMatches.show();
+                    mainGameTable.hide();
+                }
+            }
+
+            BandyManager.MainGameButton {
+                text: "Tabell"
+                onClicked: {
+                    mainGameHome.hide();
+                    mainGameSquad.hide();
+                    mainGameTactics.hide();
+                    mainGamePlayedMatches.hide();
+                    mainGameTable.show();
                 }
             }
 
@@ -105,6 +126,7 @@ Rectangle {
                     mainGameSquad.hide();
                     mainGameTactics.hide();
                     mainGamePlayedMatches.hide();
+                    mainGameTable.hide();
                 }
             }
             Rectangle {
@@ -135,6 +157,10 @@ Rectangle {
        }
        BandyManager.MainGamePlayedMatches {
            id: mainGamePlayedMatches
+           visible: false
+       }
+       BandyManager.MainGameTable {
+           id: mainGameTable
            visible: false
        }
        BandyManager.MainGameTactics {

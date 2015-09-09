@@ -77,10 +77,5 @@ Rectangle {
         name: "Division 1"
         countryUid: "usa"
         teamUid: ["Bandolierherrar","Dinkytownherrar","DynamoDuluthherrar","Minisotabladesherrar","Mississippiherrar","IceTigersherrar"]
-        matchUid: [
-            "USADiv1R01M01",
-            "USADiv1R01M02",
-            "USADiv1R01M03"
-        ]
     }
 }

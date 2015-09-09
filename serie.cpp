@@ -99,6 +99,18 @@ QStringList Serie::getTeamsByUid(QString value)
 
 }
 
+QStringList Serie::getMatchesByUid(QString value)
+{
+    Serie *serie = m_series->value(value);
+    QStringList errorlist;
+    errorlist.append("error");
+    if (serie)
+        return serie->matchUid();
+    else
+        return errorlist;
+
+}
+
 QStringList Serie::getUidByCountryUid(QString value)
 {
     QStringList values = m_series_by_country->values(value);
@@ -115,35 +127,95 @@ void Serie::makeSchedule(QString value)
     int countTeams;
     QString uid;
     if (serie){
+        serie->m_match_list.clear();
         teams=serie->m_team_list;
         countTeams=teams.count();
         if(countTeams==6){
 //            qDebug()<< "Debug" << teams[0];
+
             newMatch = new Match();
             newMatch->setHomeTeamUid(teams[5]);
             newMatch->setAwayTeamUid(teams[3]);
             newMatch->setMatchDay(13);
-            newMatch->setMatchMonth(9);
+            newMatch->setMatchMonth(11);
             newMatch->setMatchYear(2015);
-            uid=serie->name()+teams[5]+teams[3];
-            newMatch->setUid(serie->name());
-//            qDebug()<< "Debug";
+            uid=serie->uid()+teams[5]+teams[3];
+            newMatch->setUid(uid);
+            serie->m_match_list.append(uid);
             newMatch = new Match();
             newMatch->setHomeTeamUid(teams[4]);
             newMatch->setAwayTeamUid(teams[2]);
             newMatch->setMatchDay(13);
-            newMatch->setMatchMonth(9);
+            newMatch->setMatchMonth(11);
             newMatch->setMatchYear(2015);
-            uid=serie->name()+teams[4]+teams[2];
-            newMatch->setUid(serie->name());
+            uid=serie->uid()+teams[4]+teams[2];
+            newMatch->setUid(uid);
+            serie->m_match_list.append(uid);
             newMatch = new Match();
             newMatch->setHomeTeamUid(teams[1]);
             newMatch->setAwayTeamUid(teams[0]);
             newMatch->setMatchDay(13);
-            newMatch->setMatchMonth(9);
+            newMatch->setMatchMonth(11);
             newMatch->setMatchYear(2015);
-            uid=serie->name()+teams[1]+teams[0];
-            newMatch->setUid(serie->name());
+            uid=serie->uid()+teams[1]+teams[0];
+            newMatch->setUid(uid);
+            serie->m_match_list.append(uid);
+
+            newMatch = new Match();
+            newMatch->setHomeTeamUid(teams[3]);
+            newMatch->setAwayTeamUid(teams[2]);
+            newMatch->setMatchDay(20);
+            newMatch->setMatchMonth(11);
+            newMatch->setMatchYear(2015);
+            uid=serie->uid()+teams[3]+teams[2];
+            newMatch->setUid(uid);
+            serie->m_match_list.append(uid);
+            newMatch = new Match();
+            newMatch->setHomeTeamUid(teams[0]);
+            newMatch->setAwayTeamUid(teams[5]);
+            newMatch->setMatchDay(20);
+            newMatch->setMatchMonth(11);
+            newMatch->setMatchYear(2015);
+            uid=serie->uid()+teams[0]+teams[5];
+            newMatch->setUid(uid);
+            serie->m_match_list.append(uid);
+            newMatch = new Match();
+            newMatch->setHomeTeamUid(teams[1]);
+            newMatch->setAwayTeamUid(teams[4]);
+            newMatch->setMatchDay(20);
+            newMatch->setMatchMonth(11);
+            newMatch->setMatchYear(2015);
+            uid=serie->uid()+teams[1]+teams[4];
+            newMatch->setUid(uid);
+            serie->m_match_list.append(uid);
+
+            newMatch = new Match();
+            newMatch->setHomeTeamUid(teams[0]);
+            newMatch->setAwayTeamUid(teams[3]);
+            newMatch->setMatchDay(27);
+            newMatch->setMatchMonth(11);
+            newMatch->setMatchYear(2015);
+            uid=serie->uid()+teams[0]+teams[3];
+            newMatch->setUid(uid);
+            serie->m_match_list.append(uid);
+            newMatch = new Match();
+            newMatch->setHomeTeamUid(teams[2]);
+            newMatch->setAwayTeamUid(teams[1]);
+            newMatch->setMatchDay(27);
+            newMatch->setMatchMonth(11);
+            newMatch->setMatchYear(2015);
+            uid=serie->uid()+teams[2]+teams[1];
+            newMatch->setUid(uid);
+            serie->m_match_list.append(uid);
+            newMatch = new Match();
+            newMatch->setHomeTeamUid(teams[5]);
+            newMatch->setAwayTeamUid(teams[4]);
+            newMatch->setMatchDay(27);
+            newMatch->setMatchMonth(11);
+            newMatch->setMatchYear(2015);
+            uid=serie->uid()+teams[5]+teams[4];
+            newMatch->setUid(uid);
+            serie->m_match_list.append(uid);
 
         }
     }
