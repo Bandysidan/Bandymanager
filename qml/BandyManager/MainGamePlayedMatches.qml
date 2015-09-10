@@ -36,34 +36,53 @@ Rectangle {
                 font.pointSize: 16
             }
             TableView {
+                id: matchListView
                 width: 620
                 height: 620
+
                 TableViewColumn {
+                    id: dateColumn
                     role: "dateShow"
                     title: "Datum"
                     width: 100
+                    movable: false
+                    resizable: false
                 }
                 TableViewColumn {
+                    id: hometeamColumn
                     role: "hometeam"
                     title: "Hemmalag"
                     width: 200
+                    movable: false
+                    resizable: false
                 }
                 TableViewColumn {
                     role: "separator"
                     title: ""
                     width: 20
+                    movable: false
+                    resizable: false
                 }
                 TableViewColumn {
+                    id: awayteamColumn
                     role: "awayteam"
                     title: "Bortalaglag"
                     width: 200
+                    movable: false
+                    resizable: false
                 }
                 TableViewColumn {
+                    id: resultColumn
                     role: "result"
                     title: "Resultat"
                     width: 100
+                    movable: false
+                    resizable: false
                 }
                 model: resultModel
+                onClicked: {
+                    console.log(matchListView.currentRow) ;
+                }
             }
         }
     }
@@ -71,12 +90,10 @@ Rectangle {
 
     function show() {
         matchList=serie.getMatchesByUid("USADivision1");
-        //console.log(gamerTeam);
         tempText="";
         prevdate="";
         resultModel.clear();
         for(i=0;i<matchList.length;i++){
-            //console.log(matchList[i]);
             date=match.getMatchDay(matchList[i]);
             homeTeam=match.getHomeTeamUid(matchList[i]);
             awayTeam=match.getAwayTeamUid(matchList[i]);
@@ -103,10 +120,8 @@ Rectangle {
                 tempText=awayTeamName;
             }
             resultModel.set(i,{awayteam: tempText});
-            //console.log(homeScore);
             resultModel.set(i,{result: "-"});
             if(homeScore>0){
-                //console.log("Debug");
                 tempText=homeScore+"-"+awayScore;
                 resultModel.set(i,{result: tempText});
             }
