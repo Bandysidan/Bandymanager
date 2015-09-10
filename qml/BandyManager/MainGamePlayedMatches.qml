@@ -31,16 +31,15 @@ Rectangle {
             }
             Text {
                 id: matchListText
-                text: "Test"
+                text: ""
             }
         }
-
     }
 
 
     function show() {
         matchList=serie.getMatchesByUid("USADivision1");
-        //console.log(matchList);
+        //console.log(gamerTeam);
         tempText="";
         prevdate="";
         for(i=0;i<matchList.length;i++){
@@ -48,17 +47,28 @@ Rectangle {
             date=match.getMatchDay(matchList[i]);
             homeTeam=match.getHomeTeamUid(matchList[i]);
             awayTeam=match.getAwayTeamUid(matchList[i]);
+            homeTeamName=team.getNameByUid(homeTeam);
+            awayTeamName=team.getNameByUid(awayTeam);
             homeScore=match.getHomeResult(matchList[i]);
             awayScore=match.getAwayResult(matchList[i]);
             if(date != prevdate){
                 tempText+="<br/><b>"+date+"</b><br/>";
                 prevdate=date;
             }
-
-            tempText+="<b>"+homeTeam+" - "+awayTeam+"</b> ";
+            if(gamerTeam===homeTeam){
+                tempText+="<b>"+homeTeamName+"</b>";
+            }else{
+                tempText+=homeTeamName;
+            }
+            tempText+=" - ";
+            if(gamerTeam===awayTeam){
+                tempText+="<b>"+awayTeamName+"</b>";
+            }else{
+                tempText+=awayTeamName;
+            }
             if(homeScore>0){
 
-                tempText+=homeScore+"-"+awayScore;
+                tempText+="     <b>"+homeScore+"-"+awayScore+"</b>";
             }
             tempText+="<br/>";
         }

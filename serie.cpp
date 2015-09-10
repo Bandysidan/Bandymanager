@@ -126,99 +126,72 @@ void Serie::makeSchedule(QString value)
     QStringList teams;
     int countTeams;
     QString uid;
+    QList<int> homeTeams;
+    QList<int> awayTeams;
+    QList<int> day;
+    QList<int> month;
+    QList<int> year;
+    int countGames;
     if (serie){
         serie->m_match_list.clear();
         teams=serie->m_team_list;
         countTeams=teams.count();
         if(countTeams==6){
-//            qDebug()<< "Debug" << teams[0];
-
-            newMatch = new Match();
-            newMatch->setHomeTeamUid(teams[5]);
-            newMatch->setAwayTeamUid(teams[3]);
-            newMatch->setMatchDay(13);
-            newMatch->setMatchMonth(11);
-            newMatch->setMatchYear(2015);
-            uid=serie->uid()+teams[5]+teams[3];
-            newMatch->setUid(uid);
-            serie->m_match_list.append(uid);
-            newMatch = new Match();
-            newMatch->setHomeTeamUid(teams[4]);
-            newMatch->setAwayTeamUid(teams[2]);
-            newMatch->setMatchDay(13);
-            newMatch->setMatchMonth(11);
-            newMatch->setMatchYear(2015);
-            uid=serie->uid()+teams[4]+teams[2];
-            newMatch->setUid(uid);
-            serie->m_match_list.append(uid);
-            newMatch = new Match();
-            newMatch->setHomeTeamUid(teams[1]);
-            newMatch->setAwayTeamUid(teams[0]);
-            newMatch->setMatchDay(13);
-            newMatch->setMatchMonth(11);
-            newMatch->setMatchYear(2015);
-            uid=serie->uid()+teams[1]+teams[0];
-            newMatch->setUid(uid);
-            serie->m_match_list.append(uid);
-
-            newMatch = new Match();
-            newMatch->setHomeTeamUid(teams[3]);
-            newMatch->setAwayTeamUid(teams[2]);
-            newMatch->setMatchDay(20);
-            newMatch->setMatchMonth(11);
-            newMatch->setMatchYear(2015);
-            uid=serie->uid()+teams[3]+teams[2];
-            newMatch->setUid(uid);
-            serie->m_match_list.append(uid);
-            newMatch = new Match();
-            newMatch->setHomeTeamUid(teams[0]);
-            newMatch->setAwayTeamUid(teams[5]);
-            newMatch->setMatchDay(20);
-            newMatch->setMatchMonth(11);
-            newMatch->setMatchYear(2015);
-            uid=serie->uid()+teams[0]+teams[5];
-            newMatch->setUid(uid);
-            serie->m_match_list.append(uid);
-            newMatch = new Match();
-            newMatch->setHomeTeamUid(teams[1]);
-            newMatch->setAwayTeamUid(teams[4]);
-            newMatch->setMatchDay(20);
-            newMatch->setMatchMonth(11);
-            newMatch->setMatchYear(2015);
-            uid=serie->uid()+teams[1]+teams[4];
-            newMatch->setUid(uid);
-            serie->m_match_list.append(uid);
-
-            newMatch = new Match();
-            newMatch->setHomeTeamUid(teams[0]);
-            newMatch->setAwayTeamUid(teams[3]);
-            newMatch->setMatchDay(27);
-            newMatch->setMatchMonth(11);
-            newMatch->setMatchYear(2015);
-            uid=serie->uid()+teams[0]+teams[3];
-            newMatch->setUid(uid);
-            serie->m_match_list.append(uid);
-            newMatch = new Match();
-            newMatch->setHomeTeamUid(teams[2]);
-            newMatch->setAwayTeamUid(teams[1]);
-            newMatch->setMatchDay(27);
-            newMatch->setMatchMonth(11);
-            newMatch->setMatchYear(2015);
-            uid=serie->uid()+teams[2]+teams[1];
-            newMatch->setUid(uid);
-            serie->m_match_list.append(uid);
-            newMatch = new Match();
-            newMatch->setHomeTeamUid(teams[5]);
-            newMatch->setAwayTeamUid(teams[4]);
-            newMatch->setMatchDay(27);
-            newMatch->setMatchMonth(11);
-            newMatch->setMatchYear(2015);
-            uid=serie->uid()+teams[5]+teams[4];
-            newMatch->setUid(uid);
-            serie->m_match_list.append(uid);
+            //countGames=countTeams*(countTeams-1);
+            countGames=30;
+            // Round 1
+            homeTeams.append(5); awayTeams.append(3); day.append(13); month.append(11); year.append(2015);
+            homeTeams.append(4); awayTeams.append(2); day.append(13); month.append(11); year.append(2015);
+            homeTeams.append(1); awayTeams.append(0); day.append(13); month.append(11); year.append(2015);
+            // Round 2
+            homeTeams.append(3); awayTeams.append(2); day.append(20); month.append(11); year.append(2015);
+            homeTeams.append(0); awayTeams.append(5); day.append(20); month.append(11); year.append(2015);
+            homeTeams.append(1); awayTeams.append(4); day.append(20); month.append(11); year.append(2015);
+            // Round 3
+            homeTeams.append(0); awayTeams.append(3); day.append(27); month.append(11); year.append(2015);
+            homeTeams.append(2); awayTeams.append(1); day.append(27); month.append(11); year.append(2015);
+            homeTeams.append(5); awayTeams.append(4); day.append(27); month.append(11); year.append(2015);
+            // Round 4
+            homeTeams.append(3); awayTeams.append(1); day.append(4); month.append(12); year.append(2015);
+            homeTeams.append(4); awayTeams.append(0); day.append(4); month.append(12); year.append(2015);
+            homeTeams.append(5); awayTeams.append(2); day.append(4); month.append(12); year.append(2015);
+            // Round 5
+            homeTeams.append(4); awayTeams.append(3); day.append(11); month.append(12); year.append(2015);
+            homeTeams.append(1); awayTeams.append(5); day.append(11); month.append(12); year.append(2015);
+            homeTeams.append(0); awayTeams.append(2); day.append(11); month.append(12); year.append(2015);
+            // Round 6
+            homeTeams.append(3); awayTeams.append(5); day.append(18); month.append(12); year.append(2015);
+            homeTeams.append(2); awayTeams.append(4); day.append(18); month.append(12); year.append(2015);
+            homeTeams.append(0); awayTeams.append(1); day.append(18); month.append(12); year.append(2015);
+            // Round 7
+            homeTeams.append(2); awayTeams.append(3); day.append(5); month.append(1); year.append(2016);
+            homeTeams.append(5); awayTeams.append(0); day.append(5); month.append(1); year.append(2016);
+            homeTeams.append(4); awayTeams.append(1); day.append(5); month.append(1); year.append(2016);
+            // Round 8
+            homeTeams.append(3); awayTeams.append(0); day.append(12); month.append(1); year.append(2016);
+            homeTeams.append(1); awayTeams.append(2); day.append(12); month.append(1); year.append(2016);
+            homeTeams.append(4); awayTeams.append(5); day.append(12); month.append(1); year.append(2016);
+            // Round 9
+            homeTeams.append(1); awayTeams.append(3); day.append(19); month.append(1); year.append(2016);
+            homeTeams.append(0); awayTeams.append(4); day.append(19); month.append(1); year.append(2016);
+            homeTeams.append(2); awayTeams.append(5); day.append(19); month.append(1); year.append(2016);
+            // Round 10
+            homeTeams.append(3); awayTeams.append(4); day.append(11); month.append(2); year.append(2016);
+            homeTeams.append(5); awayTeams.append(1); day.append(11); month.append(2); year.append(2016);
+            homeTeams.append(2); awayTeams.append(0); day.append(11); month.append(2); year.append(2016);
 
         }
+        for(int i=0;i<countGames;i++){
+            newMatch = new Match();
+            newMatch->setHomeTeamUid(teams[homeTeams[i]]);
+            newMatch->setAwayTeamUid(teams[awayTeams[i]]);
+            newMatch->setMatchDay(day[i]);
+            newMatch->setMatchMonth(month[i]);
+            newMatch->setMatchYear(year[i]);
+            uid=serie->uid()+teams[homeTeams[i]]+teams[awayTeams[i]];
+            newMatch->setUid(uid);
+            serie->m_match_list.append(uid);
+        }
     }
-
 }
 

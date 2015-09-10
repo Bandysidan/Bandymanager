@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QHash>
 #include <QMultiHash>
+#include <QList>
 #include <QStringList>
 #include <QDebug>
 #include "match.h"

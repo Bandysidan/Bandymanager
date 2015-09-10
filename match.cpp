@@ -155,7 +155,7 @@ QList<QString> Match::getMatchesForDaysAhead(int days)
     Game *game;
     QDate todayDate=game->getDate();
     QDate indaysDate=todayDate.addDays(days);
-    qDebug() << indaysDate;
+//    qDebug() << indaysDate;
     returnMatches=m_match_dates->values(indaysDate);
     return returnMatches;
 }
