@@ -121,7 +121,7 @@ Rectangle {
             }
             resultModel.set(i,{awayteam: tempText});
             resultModel.set(i,{result: "-"});
-            if(homeScore>0){
+            if(homeScore>=0){
                 tempText=homeScore+"-"+awayScore;
                 resultModel.set(i,{result: tempText});
             }
