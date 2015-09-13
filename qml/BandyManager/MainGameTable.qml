@@ -166,12 +166,12 @@ Rectangle {
                     }
                 }else if(awayTeam===teamList[i] && homeScore>=0){
                     playedList[i]++;
-                    scoredList[i]+=homeScore;
-                    againstList[i]+=awayScore;
-                    if(homeScore>awayScore){
+                    scoredList[i]+=awayScore;
+                    againstList[i]+=homeScore;
+                    if(awayScore>homeScore){
                         wonList[i]++;
                         pointList[i]+=2;
-                    }else if(homeScore<awayScore){
+                    }else if(awayScore<homeScore){
                         lostList[i]++;
                     }else{
                         drawList[i]++;
@@ -191,15 +191,11 @@ Rectangle {
         }
 
         for(i=0;i<teamList.length;i++) {
-            if(teamList[i]===gamerTeam) {
-                tempText="<b>"+teamList[placeList[i]]+"</b>";
+            if(teamList[placeList[i]]===gamerTeam) {
+                tempText="<b>"+team.getNameByUid(teamList[placeList[i]])+"</b>";
             }else{
-                tempText=teamList[placeList[i]];
+                tempText=team.getNameByUid(teamList[placeList[i]]);
             }
-            console.log(i);
-            console.log(placeList[i]);
-            console.log(teamList[placeList[i]]);
-            console.log(wonList[i]);
             tableModel.set(i,{teamname: tempText});
             tableModel.set(i,{played: playedList[placeList[i]]});
             tableModel.set(i,{won: wonList[placeList[i]]});
