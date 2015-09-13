@@ -307,8 +307,68 @@ Rectangle {
         memberNation: 1
         maleSkill: 2000
         femaleSkill: 1940
-        malename: ["Anatolij","Misha","Maxim","Sergej"]
-        familyname: ["Lomanov","Potechkin","Sveshnikov"]
+        malename: [
+            "Alexander",
+            "Alexej",
+            "Anatolij",
+            "Artem",
+            "Denis",
+            "Egor",
+            "Evgenij",
+            "Gennadij",
+            "Jurij",
+            "Konstantin",
+            "Mikhail",
+            "Maxim",
+            "Nikolaj",
+            "Oleg",
+            "Pavel",
+            "Petr",
+            "Ruslan",
+            "Semen",
+            "Sergej",
+            "Vadim",
+            "Valereiy",
+            "Viktor",
+            "Vjacheslav",
+            "Vladislav"
+        ]
+        familyname: [
+            "Anufriev",
+            "Bazdurev",
+            "Bochkarev",
+            "Borisenko",
+            "Bushuev",
+            "Egorychev",
+            "Gorjachev",
+            "Igoshin",
+            "Ivkin",
+            "Jakushev",
+            "Kamenev",
+            "Kitkov",
+            "Kriushenkov",
+            "Kozlov",
+            "Lebedev",
+            "Lomanov",
+            "Morozov",
+            "Potechkin",
+            "Radjushin",
+            "Saveliev",
+            "Scheglov",
+            "Shardakov",
+            "Stasenko",
+            "Sveshnikov",
+            "Tarasov",
+            "Tremaskin",
+            "Vasilenko",
+            "Vasiliev",
+            "Vdovenko",
+            "Volochugin",
+            "Voronkov",
+            "Zakharov",
+            "Zemtsov",
+            "Zubarev"
+        ]
     }
     Country {
         uid: "finland"
@@ -321,15 +381,25 @@ Rectangle {
         maleSkill: 1950
         femaleSkill: 1850
         malename: [
-            "Mikka",
-            "Nikku",
-            "Petteri",
-            "Tattu"
+           "Hampus",
+           "Mikka",
+           "Nikku",
+           "Petteri",
+           "Raoul",
+           "Tattu",
+           "Tomi",
+            "Tuomo",
+           "Veli-Veikko"
         ]
         familyname: [
+            "Angeria",
             "Muttikainen",
             "Laakkonen",
-            "Laampinen"
+            "Laampinen",
+            "Pursio",
+            "Tukiainen",
+            "Vainio",
+            "Väärälä"
         ]
     }
     Country {
@@ -343,11 +413,44 @@ Rectangle {
         maleSkill: 1950
         femaleSkill: 850
         malename: [
+            "Alexander",
+            "Andrey",
+            "Antatoly",
+            "Denis",
+            "Evgeny",
+            "Ilyas",
+            "Iskander",
             "Ivan",
-            "Rinat"
+            "Konstantin",
+            "Leonid",
+            "Maxim",
+            "Pavel",
+            "Rauan",
+            "Rinat",
+            "Ruslan",
+            "Sergey",
+            "Vyacheslav"
         ]
         familyname: [
-            "Samshutov"
+            "Bedarev",
+            "Dubovik",
+            "Galyautodinov",
+            "Gavrilenko",
+            "Golubkov",
+            "Gorchakov",
+            "Issaliev",
+            "Khairekishev",
+            "Markin",
+            "Maximenko",
+            "Morokov",
+            "Nasonov",
+            "Nugmanov",
+            "Pepelyaev",
+            "Pochkunov",
+            "Rein",
+            "Samshutov",
+            "Shadrin",
+            "Slautin"
         ]
     }
     Country {
@@ -361,11 +464,16 @@ Rectangle {
         maleSkill: 1700
         femaleSkill: 1880
         malename: [
+            "Aksel",
             "Bjørn",
             "Bjørge",
             "Christer",
+            "Christian",
+            "Christoffer",
             "Edwin",
             "Espen",
+            "Fredrik",
+            "Fritjof",
             "Gabian",
             "John",
             "John Olav",
@@ -374,28 +482,44 @@ Rectangle {
             "Kjell",
             "Kjetil",
             "Lars",
+            "Magnus",
+            "Marius",
             "Morten",
             "Nikolay",
             "Odd",
             "Olav",
             "Ole",
+            "Ole Emil",
             "Ole-Gunnar",
             "Paul",
+            "Sigurd",
+            "Sondre",
             "Stian",
+            "Sverre",
             "Tom",
             "Trond",
             "Vegard"
         ]
         familyname:[
             "Aamot",
+            "Austad",
+            "Brecheisen",
             "Høgvold",
             "Jensen",
+            "Kristoffersen",
             "Larsen",
             "Løyning",
+            "Hagberg",
             "Hammar",
+            "Hammerstad",
             "Hansen",
+            "Oby",
             "Randsborg",
-            "Smerkerud"
+            "Remman",
+            "Smerkerud",
+            "Strømnes",
+            "Tjomsland",
+            "Waahler"
         ]
     }
     Country {
@@ -478,6 +602,7 @@ Rectangle {
             "Damian",
             "Damien",
             "Daniel",
+            "Daren",
             "David",
             "Dean",
             "Declan",
@@ -662,9 +787,23 @@ Rectangle {
             "Zayden"
         ]
         familyname: [
+            "Alesen",
             "Arundel",
+            "Blucher",
+            "Brown",
             "Halden",
-            "Manson"
+            "Haney",
+            "Hogan",
+            "Keseley",
+            "Lickteig",
+            "Knutson",
+            "Manson",
+            "Melander",
+            "Olson",
+            "Plaunt",
+            "Richardson",
+            "Stolpestad",
+            "Wentzel"
         ]
     }
     Country {
@@ -759,14 +898,29 @@ Rectangle {
         maleSkill: 1670
         femaleSkill: 810
         malename: [
+            "Aldis",
+            "Artur",
+            "Janis",
             "Julij",
             "Karlis",
-            "Niks"
+            "Lauris",
+            "Maksim",
+            "Martins",
+            "Niks",
+            "Valters"
         ]
         familyname: [
             "Apsitis",
-            "Kadnaj",
-            "Zakrevskis"
+            "Befus",
+            "Blem",
+            "Golubovics",
+            "Kadnajs",
+            "Matveev",
+            "Ozolins",
+            "Popens",
+            "Skuska",
+            "Zakrevskis",
+            "Ziemins"
         ]
     }
     Country {
@@ -780,13 +934,25 @@ Rectangle {
         maleSkill: 1600
         femaleSkill: 1650
         malename: [
+            "David",
+            "Ferenc",
             "Istvan",
+            "Nagy",
+            "Jozsef",
             "Kristian",
-            "Sandor"
+            "Norbert",
+            "Peter",
+            "Sandor",
+            "Tamás",
+            "Zoltan"
         ]
         familyname: [
             "Banfy",
+            "Geyer",
+            "Györi",
+            "Jankovics",
             "Marosi",
+            "Muzsik",
             "Polgar"
         ]
     }
