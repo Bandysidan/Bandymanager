@@ -9,6 +9,7 @@ Rectangle {
 
     property var matchList
     property var teamList
+    property var series
     property var placeList: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     property var playedList: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     property var wonList: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -133,9 +134,10 @@ Rectangle {
 
     function show() {
         mainGameTable.visible = true;
-        teamList=serie.getTeamsByUid("USADivision1");
-        matchList=serie.getMatchesByUid("USADivision1");
-        //console.log(matchList);
+        series="SwedenElitserien";
+        teamList=serie.getTeamsByUid(series);
+        matchList=serie.getMatchesByUid(series);
+        console.log(gamerTeam +" "+ series);
         tempText="";
         for(i=0;i<teamList.length;i++) {
             placeList[i]=i;
@@ -189,7 +191,6 @@ Rectangle {
                 }
             }
         }
-
         for(i=0;i<teamList.length;i++) {
             if(teamList[placeList[i]]===gamerTeam) {
                 tempText="<b>"+team.getNameByUid(teamList[placeList[i]])+"</b>";

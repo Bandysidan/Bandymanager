@@ -119,6 +119,17 @@ QStringList Serie::getUidByCountryUid(QString value)
 
 }
 
+QStringList Serie::getAllUid()
+{
+    QStringList serieslist;
+    QHash<QString, Serie *>::iterator i = m_series->begin();
+    while (i != m_series->end()) {
+        serieslist.append(i.key());
+        ++i;
+    }
+    return serieslist;
+}
+
 void Serie::makeSchedule(QString value)
 {
     Serie *serie = m_series->value(value);

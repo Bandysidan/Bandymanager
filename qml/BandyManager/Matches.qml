@@ -229,8 +229,8 @@ Rectangle {
     }
     Match {
         uid: "FinBandyR01M02"
-        homeTeamUid: "Helsinkiherrar"
-        awayTeamUid: "OLSherrar"
+        homeTeamUid: "Narukeraherrar"
+        awayTeamUid: "Veiteraherrar"
         matchDay: 21
         matchMonth: 10
         matchYear: 2015

@@ -36,11 +36,13 @@ public:
     void setMatchUid(QStringList value);
     QStringList matchUid();
 
+
     Q_INVOKABLE QString getNameByUid(QString value);
     Q_INVOKABLE QStringList getTeamsByUid(QString value);
     Q_INVOKABLE QStringList getMatchesByUid(QString value);
 
     Q_INVOKABLE QStringList getUidByCountryUid(QString value);
+    Q_INVOKABLE QStringList getAllUid();
     Q_INVOKABLE void makeSchedule(QString value);
 
 signals:

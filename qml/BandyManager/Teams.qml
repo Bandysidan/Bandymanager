@@ -319,7 +319,7 @@ Rectangle {
         rating: 990
     }
     Team {
-        uid: "Veiteräherrar"
+        uid: "Veiteraherrar"
         name: "Veiterä"
         countryUid: "finland"
         homeShirt: "ShirtRed.png"

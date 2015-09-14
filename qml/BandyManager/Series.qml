@@ -17,6 +17,14 @@ Rectangle {
         name: "Allsvenskan Norra"
         countryUid: "sweden"
         teamUid: ["Ljusdalherrar","Katrineholmherrar","Rattvikherrar","Västanforsherrar","SpångaDjurgardenHerrar","FaluBSHerrar","GustavsbergHerrar","HaparandaHerrar","BorlangeHerrar","HelenelundHerrar","UnikHerrar","TellusHerrar"]
+        matchUid: [
+            "SweAllNR01M01",
+            "SweAllNR01M02",
+            "SweAllNR01M03",
+            "SweAllNR01M04",
+            "SweAllNR01M05",
+            "SweAllNR01M06"
+        ]
     }
     Serie {
         uid: "SwedenElitserien"

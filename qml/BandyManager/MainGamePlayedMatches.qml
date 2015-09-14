@@ -8,6 +8,8 @@ Rectangle {
     anchors.fill: parent
 
     property var matchList
+    property var series
+    property var seriesList
     property int i
     property int j
     property string tempText
@@ -23,73 +25,128 @@ Rectangle {
     ListModel {
         id: resultModel
     }
-
-    Item{
+    ListModel {
+        id: seriesModel
+    }
+    anchors.left: parent.left
+    anchors.top: parent.top
+    anchors.margins: 20 // Sets all margins at once
+    Column {
+        id: seriesColumn
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.margins: 20 // Sets all margins at once
-        Column {
-            Text {
-                id: matchListHeadline
-                text: "Division 1"
-                font.bold: true
-                font.pointSize: 16
-            }
-            TableView {
-                id: matchListView
-                width: 620
-                height: 620
+        Text {
+            id: seriesHeadline
+            text: "Välj serie"
+            font.bold: true
+            font.pointSize: 16
+        }
+        TableView {
+            id: seriesListView
+            width: 310
+            height: 620
 
-                TableViewColumn {
-                    id: dateColumn
-                    role: "dateShow"
-                    title: "Datum"
-                    width: 100
-                    movable: false
-                    resizable: false
-                }
-                TableViewColumn {
-                    id: hometeamColumn
-                    role: "hometeam"
-                    title: "Hemmalag"
-                    width: 200
-                    movable: false
-                    resizable: false
-                }
-                TableViewColumn {
-                    role: "separator"
-                    title: ""
-                    width: 20
-                    movable: false
-                    resizable: false
-                }
-                TableViewColumn {
-                    id: awayteamColumn
-                    role: "awayteam"
-                    title: "Bortalaglag"
-                    width: 200
-                    movable: false
-                    resizable: false
-                }
-                TableViewColumn {
-                    id: resultColumn
-                    role: "result"
-                    title: "Resultat"
-                    width: 100
-                    movable: false
-                    resizable: false
-                }
-                model: resultModel
-                onClicked: {
-                    console.log(matchListView.currentRow) ;
-                }
+            TableViewColumn {
+                id: serieNameColumn
+                role: "serieNameShow"
+                title: "Serie"
+                width: 200
+                movable: false
+                resizable: false
+            }
+            TableViewColumn {
+                id: countryColumn
+                role: "country"
+                title: "Land"
+                width: 100
+                movable: false
+                resizable: false
+            }
+            model: seriesModel
+            onClicked: {
+                console.log(seriesListView.currentRow) ;
+                series=seriesList[seriesListView.currentRow];
+                getMatches();
+            }
+        }
+    }
+
+    Column {
+        id: matchesColumn
+        anchors.left: seriesColumn.right
+        anchors.top: parent.top
+        anchors.margins: 20 // Sets all margins at once
+        Text {
+            id: matchListHeadline
+            text: "Division 1"
+            font.bold: true
+            font.pointSize: 16
+        }
+        TableView {
+            id: matchListView
+            width: 620
+            height: 620
+
+            TableViewColumn {
+                id: dateColumn
+                role: "dateShow"
+                title: "Datum"
+                width: 100
+                movable: false
+                resizable: false
+            }
+            TableViewColumn {
+                id: hometeamColumn
+                role: "hometeam"
+                title: "Hemmalag"
+                width: 200
+                movable: false
+                resizable: false
+            }
+            TableViewColumn {
+                role: "separator"
+                title: ""
+                width: 20
+                movable: false
+                resizable: false
+            }
+            TableViewColumn {
+                id: awayteamColumn
+                role: "awayteam"
+                title: "Bortalaglag"
+                width: 200
+                movable: false
+                resizable: false
+            }
+            TableViewColumn {
+                id: resultColumn
+                role: "result"
+                title: "Resultat"
+                width: 100
+                movable: false
+                resizable: false
+            }
+            model: resultModel
+            onClicked: {
+                console.log(matchListView.currentRow) ;
             }
         }
     }
 
 
     function show() {
-        matchList=serie.getMatchesByUid("USADivision1");
+        series="SwedenElitserien";
+        getSeries();
+        getMatches();
+        mainGamePlayedMatches.visible = true;
+    }
+    function hide() {
+        mainGamePlayedMatches.visible = false;
+    }
+    function getMatches() {
+        matchList=serie.getMatchesByUid(series);
+        matchListHeadline.text=serie.getNameByUid(series);
         tempText="";
         prevdate="";
         resultModel.clear();
@@ -127,10 +184,18 @@ Rectangle {
             }
             tempText+="<br/>";
         }
-        mainGamePlayedMatches.visible = true;
     }
-    function hide() {
-        mainGamePlayedMatches.visible = false;
+    function getSeries() {
+//        seriesList=serie.getUidByCountryUid("sweden");
+        seriesList=serie.getAllUid();
+        //seriesList+=serie.getUidByCountryUid("norway");
+        seriesModel.clear();
+        for(i=0; i < seriesList.length ; i++)
+            {
+                console.log(i+" "+seriesList[i]);
+                seriesModel.set(i,{serieNameShow: serie.getNameByUid(seriesList[i])})
+            }
+
     }
 
 }
