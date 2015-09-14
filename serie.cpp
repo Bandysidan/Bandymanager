@@ -84,7 +84,6 @@ QString Serie::getNameByUid(QString value)
         return serie->name();
     else
         return "error";
-
 }
 
 QStringList Serie::getTeamsByUid(QString value)
@@ -114,8 +113,16 @@ QStringList Serie::getMatchesByUid(QString value)
 QStringList Serie::getUidByCountryUid(QString value)
 {
     QStringList values = m_series_by_country->values(value);
-
     return values;
+}
+
+QString Serie::getCountryByUid(QString value)
+{
+    Serie *serie = m_series->value(value);
+    if (serie)
+        return serie->countryUid();
+    else
+        return "error";
 
 }
 

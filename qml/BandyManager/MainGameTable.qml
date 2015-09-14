@@ -10,6 +10,7 @@ Rectangle {
     property var matchList
     property var teamList
     property var series
+    property var seriesList
     property var placeList: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     property var playedList: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     property var wonList: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -32,112 +33,128 @@ Rectangle {
     ListModel {
         id: tableModel
     }
-
-    Item{
+    ListModel {
+        id: seriesModel
+    }
+    MainGameTableSeriesView {
+        id: seriesColumn
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.margins: 20 // Sets all margins at once
-        Column {
-            Text {
-                id: tableHeadline
-                text: "Division 1"
-                font.bold: true
-                font.pointSize: 16
+    }
+
+    Column {
+        id: tableColumn
+        anchors.left: seriesColumn.right
+        anchors.top: parent.top
+        anchors.margins: 20 // Sets all margins at once
+
+        Text {
+            id: tableHeadline
+            text: "Division 1"
+            font.bold: true
+            font.pointSize: 16
+        }
+        TableView {
+            id: matchListView
+            width: 620
+            height: 620
+
+            TableViewColumn {
+                id: teamColumn
+                role: "teamname"
+                title: "Lag"
+                width: 200
+                movable: false
+                resizable: false
             }
-            TableView {
-                id: matchListView
-                width: 620
-                height: 620
-
-                TableViewColumn {
-                    id: teamColumn
-                    role: "teamname"
-                    title: "Lag"
-                    width: 200
-                    movable: false
-                    resizable: false
-                }
-                TableViewColumn {
-                    id: playedColumn
-                    role: "played"
-                    title: "S"
-                    width: 30
-                    movable: false
-                    resizable: false
-                }
-                TableViewColumn {
-                    id: wonColumn
-                    role: "won"
-                    title: "V"
-                    width: 30
-                    movable: false
-                    resizable: false
-                }
-                TableViewColumn {
-                    id: drawColumn
-                    role: "draw"
-                    title: "O"
-                    width: 30
-                    movable: false
-                    resizable: false
-                }
-                TableViewColumn {
-                    id: lostColumn
-                    role: "lost"
-                    title: "F"
-                    width: 30
-                    movable: false
-                    resizable: false
-                }
-                TableViewColumn {
-                    id: scoredColumn
-                    role: "scored"
-                    title: "GM"
-                    width: 50
-                    movable: false
-                    resizable: false
-                }
-                TableViewColumn {
-                    id: separatorColumn
-                    role: "separator"
-                    width: 20
-                    movable: false
-                    resizable: false
-                }
-                TableViewColumn {
-                    id: againstColumn
-                    role: "against"
-                    title: "IM"
-                    width: 50
-                    movable: false
-                    resizable: false
-                }
-                TableViewColumn {
-                    id: pointColumn
-                    role: "point"
-                    title: "P"
-                    width: 50
-                    movable: false
-                    resizable: false
-                }
+            TableViewColumn {
+                id: playedColumn
+                role: "played"
+                title: "S"
+                width: 30
+                movable: false
+                resizable: false
+            }
+            TableViewColumn {
+                id: wonColumn
+                role: "won"
+                title: "V"
+                width: 30
+                movable: false
+                resizable: false
+            }
+            TableViewColumn {
+                id: drawColumn
+                role: "draw"
+                title: "O"
+                width: 30
+                movable: false
+                resizable: false
+            }
+            TableViewColumn {
+                id: lostColumn
+                role: "lost"
+                title: "F"
+                width: 30
+                movable: false
+                resizable: false
+            }
+            TableViewColumn {
+                id: scoredColumn
+                role: "scored"
+                title: "GM"
+                width: 50
+                movable: false
+                resizable: false
+            }
+            TableViewColumn {
+                id: separatorColumn
+                role: "separator"
+                width: 20
+                movable: false
+                resizable: false
+            }
+            TableViewColumn {
+                id: againstColumn
+                role: "against"
+                title: "IM"
+                width: 50
+                movable: false
+                resizable: false
+            }
+            TableViewColumn {
+                id: pointColumn
+                role: "point"
+                title: "P"
+                width: 50
+                movable: false
+                resizable: false
+            }
 
 
-                model: tableModel
-                onClicked: {
-                    console.log(matchListView.currentRow) ;
-                }
+            model: tableModel
+            onClicked: {
+                console.log(matchListView.currentRow) ;
             }
         }
-
     }
+
+
 
 
     function show() {
         mainGameTable.visible = true;
         series="SwedenElitserien";
+        getSeries();
+        getSeriesDetail();
+    }
+    function hide() {
+        mainGameTable.visible = false;
+    }
+    function getSeriesDetail() {
         teamList=serie.getTeamsByUid(series);
         matchList=serie.getMatchesByUid(series);
-        console.log(gamerTeam +" "+ series);
         tempText="";
         for(i=0;i<teamList.length;i++) {
             placeList[i]=i;
@@ -191,6 +208,7 @@ Rectangle {
                 }
             }
         }
+        tableModel.clear();
         for(i=0;i<teamList.length;i++) {
             if(teamList[placeList[i]]===gamerTeam) {
                 tempText="<b>"+team.getNameByUid(teamList[placeList[i]])+"</b>";
@@ -206,10 +224,14 @@ Rectangle {
             tableModel.set(i,{separator: "-"});
             tableModel.set(i,{against: againstList[placeList[i]]});
             tableModel.set(i,{point: pointList[placeList[i]]});
-
         }
     }
-    function hide() {
-        mainGameTable.visible = false;
+    function getSeries() {
+        seriesList=serie.getAllUid();
+        seriesModel.clear();
+        for(i=0; i < seriesList.length ; i++){
+            seriesModel.set(i,{serieNameShow: serie.getNameByUid(seriesList[i])})
+            seriesModel.set(i,{country: country.getNameByUid(serie.getCountryByUid(seriesList[i])) })
+        }
     }
 }

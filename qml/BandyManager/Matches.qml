@@ -235,30 +235,4 @@ Rectangle {
         matchMonth: 10
         matchYear: 2015
     }
-/*
-    Match {
-        uid: "USADiv1R01M01"
-        homeTeamUid: "Dinkytownherrar"
-        awayTeamUid: "Bandolierherrar"
-        matchDay: 21
-        matchMonth: 10
-        matchYear: 2015
-    }
-    Match {
-        uid: "USADiv1R01M02"
-        homeTeamUid: "Mississippiherrar"
-        awayTeamUid: "Minisotabladesherrar"
-        matchDay: 21
-        matchMonth: 10
-        matchYear: 2015
-    }
-    Match {
-        uid: "USADiv1R01M03"
-        homeTeamUid: "IceTigersherrar"
-        awayTeamUid: "DynamoDuluthherrar"
-        matchDay: 21
-        matchMonth: 10
-        matchYear: 2015
-    }
-    */
 }

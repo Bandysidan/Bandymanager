@@ -74,7 +74,7 @@ Rectangle {
         uid: "FinlandBandyliiga"
         name: "Bandyliiga"
         countryUid: "finland"
-        teamUid:["Helsinkiherrar","Narukeraherrar","OLSherrar","Veiteräherrar"]
+        teamUid:["Helsinkiherrar","Narukeraherrar","OLSherrar","Veiteraherrar"]
         matchUid: [
             "FinBandyR01M01",
             "FinBandyR01M02"

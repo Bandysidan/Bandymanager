@@ -42,6 +42,7 @@ public:
     Q_INVOKABLE QStringList getMatchesByUid(QString value);
 
     Q_INVOKABLE QStringList getUidByCountryUid(QString value);
+    Q_INVOKABLE QString getCountryByUid(QString value);
     Q_INVOKABLE QStringList getAllUid();
     Q_INVOKABLE void makeSchedule(QString value);
 

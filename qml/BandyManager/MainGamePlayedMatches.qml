@@ -28,48 +28,11 @@ Rectangle {
     ListModel {
         id: seriesModel
     }
-    anchors.left: parent.left
-    anchors.top: parent.top
-    anchors.margins: 20 // Sets all margins at once
-    Column {
+    MainGameTableSeriesView {
         id: seriesColumn
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.margins: 20 // Sets all margins at once
-        Text {
-            id: seriesHeadline
-            text: "Välj serie"
-            font.bold: true
-            font.pointSize: 16
-        }
-        TableView {
-            id: seriesListView
-            width: 310
-            height: 620
-
-            TableViewColumn {
-                id: serieNameColumn
-                role: "serieNameShow"
-                title: "Serie"
-                width: 200
-                movable: false
-                resizable: false
-            }
-            TableViewColumn {
-                id: countryColumn
-                role: "country"
-                title: "Land"
-                width: 100
-                movable: false
-                resizable: false
-            }
-            model: seriesModel
-            onClicked: {
-                console.log(seriesListView.currentRow) ;
-                series=seriesList[seriesListView.currentRow];
-                getMatches();
-            }
-        }
     }
 
     Column {
@@ -129,22 +92,21 @@ Rectangle {
             }
             model: resultModel
             onClicked: {
-                console.log(matchListView.currentRow) ;
+//                console.log(matchListView.currentRow) ;
             }
         }
     }
 
-
     function show() {
         series="SwedenElitserien";
         getSeries();
-        getMatches();
+        getSeriesDetail();
         mainGamePlayedMatches.visible = true;
     }
     function hide() {
         mainGamePlayedMatches.visible = false;
     }
-    function getMatches() {
+    function getSeriesDetail() {
         matchList=serie.getMatchesByUid(series);
         matchListHeadline.text=serie.getNameByUid(series);
         tempText="";
@@ -186,16 +148,11 @@ Rectangle {
         }
     }
     function getSeries() {
-//        seriesList=serie.getUidByCountryUid("sweden");
         seriesList=serie.getAllUid();
-        //seriesList+=serie.getUidByCountryUid("norway");
         seriesModel.clear();
-        for(i=0; i < seriesList.length ; i++)
-            {
-                console.log(i+" "+seriesList[i]);
-                seriesModel.set(i,{serieNameShow: serie.getNameByUid(seriesList[i])})
-            }
-
+        for(i=0; i < seriesList.length ; i++){
+            seriesModel.set(i,{serieNameShow: serie.getNameByUid(seriesList[i])})
+            seriesModel.set(i,{country: country.getNameByUid(serie.getCountryByUid(seriesList[i])) })
+        }
     }
-
 }
