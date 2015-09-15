@@ -227,6 +227,15 @@ Rectangle {
         homeShirt: "ShirtWhite.png"
         rating: 995
     }
+
+    Team {
+        uid: "Dynamokazanherrar"
+        name: "Dynamo Kazan"
+        countryUid: "russia"
+        homeShirt: "ShirtWhite.png"
+        rating: 910
+    }
+
     Team {
         uid: "Vodnikherrar"
         name: "Vodnik"
@@ -240,6 +249,13 @@ Rectangle {
         countryUid: "russia"
         homeShirt: "ShirtYellow.png"
         rating: 985
+    }
+    Team {
+        uid: "Rodinaherrar"
+        name: "Rodina"
+        countryUid: "russia"
+        homeShirt: "ShirtBlue.png"
+        rating: 945
     }
     Team {
         uid: "Stabaekherrar"

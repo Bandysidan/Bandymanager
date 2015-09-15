@@ -18,6 +18,7 @@ class Serie : public QObject
     Q_PROPERTY(QString countryUid READ countryUid WRITE setCountryUid NOTIFY countryUidChanged)
     Q_PROPERTY(QStringList teamUid READ teamUid WRITE setTeamUid NOTIFY teamUidChanged)
     Q_PROPERTY(QStringList matchUid READ matchUid WRITE setMatchUid NOTIFY matchUidChanged)
+    Q_PROPERTY(int timesEach READ timesEach WRITE setTimesEach NOTIFY timesEachChanged)
 public:
     explicit Serie(QObject *parent = 0);
 
@@ -36,6 +37,8 @@ public:
     void setMatchUid(QStringList value);
     QStringList matchUid();
 
+    void setTimesEach(int value);
+    int timesEach();
 
     Q_INVOKABLE QString getNameByUid(QString value);
     Q_INVOKABLE QStringList getTeamsByUid(QString value);
@@ -52,6 +55,7 @@ signals:
     void countryUidChanged();
     void teamUidChanged();
     void matchUidChanged();
+    void timesEachChanged();
 
 public slots:
 
@@ -61,6 +65,7 @@ private:
     QString m_country_uid;
     QStringList m_team_list;
     QStringList m_match_list;
+    int m_times_each;
 
     static QHash<QString, Serie *> *m_series;
     static QMultiHash<QString, QString> *m_series_by_country;

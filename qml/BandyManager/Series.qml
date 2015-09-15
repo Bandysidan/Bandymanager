@@ -7,6 +7,7 @@ Rectangle {
         uid: "SwedenAllsvSodra"
         name: "Allsvenskan Södra"
         countryUid: "sweden"
+        timesEach: 2
         teamUid: ["Jonkopingherrar","TranasBoisherrar"]
         matchUid: [
             "SweAllSR01M01"
@@ -16,6 +17,7 @@ Rectangle {
         uid: "SwedenAllsvNorra"
         name: "Allsvenskan Norra"
         countryUid: "sweden"
+        timesEach: 2
         teamUid: ["Ljusdalherrar","Katrineholmherrar","Rattvikherrar","Västanforsherrar","SpångaDjurgardenHerrar","FaluBSHerrar","GustavsbergHerrar","HaparandaHerrar","BorlangeHerrar","HelenelundHerrar","UnikHerrar","TellusHerrar"]
         matchUid: [
             "SweAllNR01M01",
@@ -30,8 +32,9 @@ Rectangle {
         uid: "SwedenElitserien"
         name: "Elitserien"
         countryUid: "sweden"
+        timesEach: 2
         teamUid: ["Bollnasherrar","Brobergherrar","Edsbynherrar","Bajenbandyherrar","Gripenherrar","Kalixbandyherrar","IFKKungalvherrar","SAIKbandyherrar","Siriusherrar","Tillbergabandyherrar","Vanersborgbandyherrar","VetlandaBKherrar","Villabandyherrar","VSKbandyherrar"]
-        matchUid: [
+/*        matchUid: [
             "SweElitR01M01",
             "SweElitR01M02",
             "SweElitR01M03",
@@ -46,12 +49,13 @@ Rectangle {
             "SweElitR02M05",
             "SweElitR02M06",
             "SweElitR02M07"
-        ]
+        ]*/
     }
     Serie {
         uid: "NorwayEliteserien"
         name: "Eliteserien"
         countryUid: "norway"
+        timesEach: 3
         teamUid: ["Stabaekherrar","Mjondalenherrar","Readyherrar","Solbergherrar","Ullevålherrar","Høvikherrar","Sarpsborgherrar","Drammenherrar"]
         matchUid: [
             "NorElitR01M01",
@@ -64,7 +68,8 @@ Rectangle {
         uid: "RussiaSuperLeague"
         name: "Superligan"
         countryUid: "russia"
-        teamUid:["Dynamomoscowherrar","Jenisejherrar","Vodnikherrar","Zorkijherrar"]
+        timesEach: 2
+        teamUid:["Dynamomoscowherrar","Jenisejherrar","Vodnikherrar","Zorkijherrar","Dynamokazanherrar","Rodinaherrar"]
         matchUid: [
             "RusSuperR01M01",
             "RusSuperR01M02"
@@ -74,6 +79,7 @@ Rectangle {
         uid: "FinlandBandyliiga"
         name: "Bandyliiga"
         countryUid: "finland"
+        timesEach: 2
         teamUid:["Helsinkiherrar","Narukeraherrar","OLSherrar","Veiteraherrar"]
         matchUid: [
             "FinBandyR01M01",
@@ -84,6 +90,7 @@ Rectangle {
         uid: "USADivision1"
         name: "Division 1"
         countryUid: "usa"
+        timesEach: 2
         teamUid: ["Bandolierherrar","Dinkytownherrar","DynamoDuluthherrar","Minisotabladesherrar","Mississippiherrar","IceTigersherrar"]
     }
 }

@@ -77,6 +77,17 @@ QStringList Serie::matchUid()
     return m_match_list;
 }
 
+void Serie::setTimesEach(int value)
+{
+    m_times_each=value;
+    emit timesEachChanged();
+}
+
+int Serie::timesEach()
+{
+    return m_times_each;
+}
+
 QString Serie::getNameByUid(QString value)
 {
     Serie *serie = m_series->value(value);
@@ -149,66 +160,132 @@ void Serie::makeSchedule(QString value)
     QList<int> day;
     QList<int> month;
     QList<int> year;
-    int countGames;
+    int countGames=0;
+    int times;
     if (serie){
         serie->m_match_list.clear();
         teams=serie->m_team_list;
-        countTeams=teams.count();
+        countTeams=teams.size();
+        times=serie->timesEach();
         if(countTeams==6){
-            //countGames=countTeams*(countTeams-1);
-            countGames=30;
-            // Round 1
-            homeTeams.append(5); awayTeams.append(3); day.append(13); month.append(11); year.append(2015);
-            homeTeams.append(4); awayTeams.append(2); day.append(13); month.append(11); year.append(2015);
-            homeTeams.append(1); awayTeams.append(0); day.append(13); month.append(11); year.append(2015);
-            // Round 2
-            homeTeams.append(3); awayTeams.append(2); day.append(20); month.append(11); year.append(2015);
-            homeTeams.append(0); awayTeams.append(5); day.append(20); month.append(11); year.append(2015);
-            homeTeams.append(1); awayTeams.append(4); day.append(20); month.append(11); year.append(2015);
-            // Round 3
-            homeTeams.append(0); awayTeams.append(3); day.append(27); month.append(11); year.append(2015);
-            homeTeams.append(2); awayTeams.append(1); day.append(27); month.append(11); year.append(2015);
-            homeTeams.append(5); awayTeams.append(4); day.append(27); month.append(11); year.append(2015);
-            // Round 4
-            homeTeams.append(3); awayTeams.append(1); day.append(4); month.append(12); year.append(2015);
-            homeTeams.append(4); awayTeams.append(0); day.append(4); month.append(12); year.append(2015);
-            homeTeams.append(5); awayTeams.append(2); day.append(4); month.append(12); year.append(2015);
-            // Round 5
-            homeTeams.append(4); awayTeams.append(3); day.append(11); month.append(12); year.append(2015);
-            homeTeams.append(1); awayTeams.append(5); day.append(11); month.append(12); year.append(2015);
-            homeTeams.append(0); awayTeams.append(2); day.append(11); month.append(12); year.append(2015);
-            // Round 6
-            homeTeams.append(3); awayTeams.append(5); day.append(18); month.append(12); year.append(2015);
-            homeTeams.append(2); awayTeams.append(4); day.append(18); month.append(12); year.append(2015);
-            homeTeams.append(0); awayTeams.append(1); day.append(18); month.append(12); year.append(2015);
-            // Round 7
-            homeTeams.append(2); awayTeams.append(3); day.append(5); month.append(1); year.append(2016);
-            homeTeams.append(5); awayTeams.append(0); day.append(5); month.append(1); year.append(2016);
-            homeTeams.append(4); awayTeams.append(1); day.append(5); month.append(1); year.append(2016);
-            // Round 8
-            homeTeams.append(3); awayTeams.append(0); day.append(12); month.append(1); year.append(2016);
-            homeTeams.append(1); awayTeams.append(2); day.append(12); month.append(1); year.append(2016);
-            homeTeams.append(4); awayTeams.append(5); day.append(12); month.append(1); year.append(2016);
-            // Round 9
-            homeTeams.append(1); awayTeams.append(3); day.append(19); month.append(1); year.append(2016);
-            homeTeams.append(0); awayTeams.append(4); day.append(19); month.append(1); year.append(2016);
-            homeTeams.append(2); awayTeams.append(5); day.append(19); month.append(1); year.append(2016);
-            // Round 10
-            homeTeams.append(3); awayTeams.append(4); day.append(11); month.append(2); year.append(2016);
-            homeTeams.append(5); awayTeams.append(1); day.append(11); month.append(2); year.append(2016);
-            homeTeams.append(2); awayTeams.append(0); day.append(11); month.append(2); year.append(2016);
+            if(times==2){
+                countGames=30;
+                // Round 1
+                homeTeams.append(5); awayTeams.append(3); day.append(13); month.append(11); year.append(2015);
+                homeTeams.append(4); awayTeams.append(2); day.append(13); month.append(11); year.append(2015);
+                homeTeams.append(1); awayTeams.append(0); day.append(13); month.append(11); year.append(2015);
+                // Round 2
+                homeTeams.append(3); awayTeams.append(2); day.append(20); month.append(11); year.append(2015);
+                homeTeams.append(0); awayTeams.append(5); day.append(20); month.append(11); year.append(2015);
+                homeTeams.append(1); awayTeams.append(4); day.append(20); month.append(11); year.append(2015);
+                // Round 3
+                homeTeams.append(0); awayTeams.append(3); day.append(27); month.append(11); year.append(2015);
+                homeTeams.append(2); awayTeams.append(1); day.append(27); month.append(11); year.append(2015);
+                homeTeams.append(5); awayTeams.append(4); day.append(27); month.append(11); year.append(2015);
+                // Round 4
+                homeTeams.append(3); awayTeams.append(1); day.append(4); month.append(12); year.append(2015);
+                homeTeams.append(4); awayTeams.append(0); day.append(4); month.append(12); year.append(2015);
+                homeTeams.append(5); awayTeams.append(2); day.append(4); month.append(12); year.append(2015);
+                // Round 5
+                homeTeams.append(4); awayTeams.append(3); day.append(11); month.append(12); year.append(2015);
+                homeTeams.append(1); awayTeams.append(5); day.append(11); month.append(12); year.append(2015);
+                homeTeams.append(0); awayTeams.append(2); day.append(11); month.append(12); year.append(2015);
+                // Round 6
+                homeTeams.append(3); awayTeams.append(5); day.append(18); month.append(12); year.append(2015);
+                homeTeams.append(2); awayTeams.append(4); day.append(18); month.append(12); year.append(2015);
+                homeTeams.append(0); awayTeams.append(1); day.append(18); month.append(12); year.append(2015);
+                // Round 7
+                homeTeams.append(2); awayTeams.append(3); day.append(5); month.append(1); year.append(2016);
+                homeTeams.append(5); awayTeams.append(0); day.append(5); month.append(1); year.append(2016);
+                homeTeams.append(4); awayTeams.append(1); day.append(5); month.append(1); year.append(2016);
+                // Round 8
+                homeTeams.append(3); awayTeams.append(0); day.append(12); month.append(1); year.append(2016);
+                homeTeams.append(1); awayTeams.append(2); day.append(12); month.append(1); year.append(2016);
+                homeTeams.append(4); awayTeams.append(5); day.append(12); month.append(1); year.append(2016);
+                // Round 9
+                homeTeams.append(1); awayTeams.append(3); day.append(19); month.append(1); year.append(2016);
+                homeTeams.append(0); awayTeams.append(4); day.append(19); month.append(1); year.append(2016);
+                homeTeams.append(2); awayTeams.append(5); day.append(19); month.append(1); year.append(2016);
+                // Round 10
+                homeTeams.append(3); awayTeams.append(4); day.append(11); month.append(2); year.append(2016);
+                homeTeams.append(5); awayTeams.append(1); day.append(11); month.append(2); year.append(2016);
+                homeTeams.append(2); awayTeams.append(0); day.append(11); month.append(2); year.append(2016);
 
+            }
+        } else if (countTeams==14){
+            if(times==2){
+                countGames=49;
+                // Round 1
+                homeTeams.append(10); awayTeams.append(9); day.append(15); month.append(11); year.append(2015);
+                homeTeams.append(11); awayTeams.append(4); day.append(15); month.append(11); year.append(2015);
+                homeTeams.append(6); awayTeams.append(2); day.append(15); month.append(11); year.append(2015);
+                homeTeams.append(5); awayTeams.append(7); day.append(15); month.append(11); year.append(2015);
+                homeTeams.append(13); awayTeams.append(0); day.append(15); month.append(11); year.append(2015);
+                homeTeams.append(8); awayTeams.append(12); day.append(15); month.append(11); year.append(2015);
+                homeTeams.append(1); awayTeams.append(3); day.append(15); month.append(11); year.append(2015);
+                // Round 2
+                homeTeams.append(9); awayTeams.append(4); day.append(18); month.append(11); year.append(2015);
+                homeTeams.append(2); awayTeams.append(10); day.append(18); month.append(11); year.append(2015);
+                homeTeams.append(7); awayTeams.append(11); day.append(18); month.append(11); year.append(2015);
+                homeTeams.append(0); awayTeams.append(6); day.append(18); month.append(11); year.append(2015);
+                homeTeams.append(12); awayTeams.append(5); day.append(18); month.append(11); year.append(2015);
+                homeTeams.append(3); awayTeams.append(13); day.append(18); month.append(11); year.append(2015);
+                homeTeams.append(1); awayTeams.append(8); day.append(18); month.append(11); year.append(2015);
+                // Round 3
+                homeTeams.append(2); awayTeams.append(9); day.append(22); month.append(11); year.append(2015);
+                homeTeams.append(4); awayTeams.append(7); day.append(22); month.append(11); year.append(2015);
+                homeTeams.append(10); awayTeams.append(0); day.append(22); month.append(11); year.append(2015);
+                homeTeams.append(11); awayTeams.append(12); day.append(22); month.append(11); year.append(2015);
+                homeTeams.append(6); awayTeams.append(3); day.append(22); month.append(11); year.append(2015);
+                homeTeams.append(5); awayTeams.append(1); day.append(22); month.append(11); year.append(2015);
+                homeTeams.append(13); awayTeams.append(8); day.append(22); month.append(11); year.append(2015);
+                // Round 4
+                homeTeams.append(9); awayTeams.append(7); day.append(25); month.append(11); year.append(2015);
+                homeTeams.append(0); awayTeams.append(2); day.append(25); month.append(11); year.append(2015);
+                homeTeams.append(12); awayTeams.append(4); day.append(25); month.append(11); year.append(2015);
+                homeTeams.append(3); awayTeams.append(10); day.append(25); month.append(11); year.append(2015);
+                homeTeams.append(1); awayTeams.append(11); day.append(25); month.append(11); year.append(2015);
+                homeTeams.append(8); awayTeams.append(6); day.append(25); month.append(11); year.append(2015);
+                homeTeams.append(13); awayTeams.append(5); day.append(25); month.append(11); year.append(2015);
+                // Round 5
+                homeTeams.append(0); awayTeams.append(9); day.append(1); month.append(12); year.append(2015);
+                homeTeams.append(7); awayTeams.append(12); day.append(1); month.append(12); year.append(2015);
+                homeTeams.append(2); awayTeams.append(3); day.append(1); month.append(12); year.append(2015);
+                homeTeams.append(4); awayTeams.append(1); day.append(1); month.append(12); year.append(2015);
+                homeTeams.append(10); awayTeams.append(8); day.append(1); month.append(12); year.append(2015);
+                homeTeams.append(11); awayTeams.append(13); day.append(1); month.append(12); year.append(2015);
+                homeTeams.append(6); awayTeams.append(5); day.append(1); month.append(12); year.append(2015);
+                // Round 6
+                homeTeams.append(9); awayTeams.append(12); day.append(5); month.append(12); year.append(2015);
+                homeTeams.append(3); awayTeams.append(0); day.append(5); month.append(12); year.append(2015);
+                homeTeams.append(1); awayTeams.append(7); day.append(5); month.append(12); year.append(2015);
+                homeTeams.append(8); awayTeams.append(2); day.append(5); month.append(12); year.append(2015);
+                homeTeams.append(13); awayTeams.append(4); day.append(5); month.append(12); year.append(2015);
+                homeTeams.append(5); awayTeams.append(10); day.append(5); month.append(12); year.append(2015);
+                homeTeams.append(6); awayTeams.append(11); day.append(5); month.append(12); year.append(2015);
+                // Round 7
+                homeTeams.append(3); awayTeams.append(9); day.append(8); month.append(12); year.append(2015);
+                homeTeams.append(12); awayTeams.append(1); day.append(8); month.append(12); year.append(2015);
+                homeTeams.append(0); awayTeams.append(8); day.append(8); month.append(12); year.append(2015);
+                homeTeams.append(7); awayTeams.append(13); day.append(8); month.append(12); year.append(2015);
+                homeTeams.append(2); awayTeams.append(5); day.append(8); month.append(12); year.append(2015);
+                homeTeams.append(4); awayTeams.append(6); day.append(8); month.append(12); year.append(2015);
+                homeTeams.append(10); awayTeams.append(11); day.append(8); month.append(12); year.append(2015);
+
+            }
         }
-        for(int i=0;i<countGames;i++){
-            newMatch = new Match();
-            newMatch->setHomeTeamUid(teams[homeTeams[i]]);
-            newMatch->setAwayTeamUid(teams[awayTeams[i]]);
-            newMatch->setMatchDay(day[i]);
-            newMatch->setMatchMonth(month[i]);
-            newMatch->setMatchYear(year[i]);
-            uid=serie->uid()+teams[homeTeams[i]]+teams[awayTeams[i]];
-            newMatch->setUid(uid);
-            serie->m_match_list.append(uid);
+        if(countGames>0){
+            for(int i=0;i<countGames;i++){
+                newMatch = new Match();
+                newMatch->setHomeTeamUid(teams[homeTeams[i]]);
+                newMatch->setAwayTeamUid(teams[awayTeams[i]]);
+                newMatch->setMatchDay(day[i]);
+                newMatch->setMatchMonth(month[i]);
+                newMatch->setMatchYear(year[i]);
+                uid=serie->uid()+teams[homeTeams[i]]+teams[awayTeams[i]];
+                newMatch->setUid(uid);
+                serie->m_match_list.append(uid);
+            }
         }
     }
 }

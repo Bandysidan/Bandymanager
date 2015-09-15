@@ -719,6 +719,7 @@ Rectangle {
     function show() {
         newGame.visible = true;
         serie.makeSchedule("USADivision1");
+        serie.makeSchedule("SwedenElitserien");
     }
 
     function countryRight() {

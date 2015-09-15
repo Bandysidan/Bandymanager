@@ -3,7 +3,7 @@ import QtQuick 2.0
 import linkan.bandymanager 1.0
 
 Rectangle {
-    Match {
+/*    Match {
         uid: "SweElitR01M01"
         homeTeamUid: "SAIKbandyherrar"
         awayTeamUid: "Edsbynherrar"
@@ -114,7 +114,7 @@ Rectangle {
         matchDay: 25
         matchMonth: 10
         matchYear: 2015
-    }
+    }*/
     Match {
         uid: "SweAllNR01M01"
         homeTeamUid: "Ljusdalherrar"
