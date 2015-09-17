@@ -245,6 +245,8 @@ void Match::matchInitiate(QString value)
 void Match::matchTick(QString value, int min, int sec)
 {
     Match *match =m_matches->value(value);
+    QString tempText;
+    matchEvent *event = new matchEvent;
     int homeAttackSkill;
     int awayAttackSkill;
     int homeMidSkill;
@@ -267,16 +269,35 @@ void Match::matchTick(QString value, int min, int sec)
         awayDefSkill=match->m_away_player_skill.value("Defender1")*0.40+match->m_away_player_skill.value("Defender2")*0.20+match->m_away_player_skill.value("Defender3")*0.20+match->m_away_player_skill.value("Defender1")*0.10+match->m_away_player_skill.value("Defender1")*0.10;
         awayMidSkill=match->m_away_player_skill.value("Defender4")*0.05+match->m_away_player_skill.value("Defender5")*0.05+match->m_away_player_skill.value("Midfielder1")*0.30+match->m_away_player_skill.value("Midfielder2")*0.30+match->m_away_player_skill.value("Midfielder3")*0.30;
         awayAttackSkill=match->m_away_player_skill.value("Attacker1")*0.35+match->m_away_player_skill.value("Attacker1")*0.35+match->m_away_player_skill.value("Midfielder1")*0.10+match->m_away_player_skill.value("Midfielder2")*0.10+match->m_away_player_skill.value("Midfielder3")*0.10;
-//        qDebug() << homeGoalSkill << " "<< homeDefSkill<< " "<< homeMidSkill << " "<< homeAttackSkill;
-//        qDebug() << awayGoalSkill << " "<< awayDefSkill<< " "<< awayMidSkill << " "<< awayAttackSkill;
         homeScore=match->homeTeamScore();
         awayScore=match->awayTeamScore();
         if(sec%10==0){
             randNum=rand()%2000;
-            hsChans=randNum+homeAttackSkill/10+homeMidSkill/20-awayDefSkill/20-awayGoalSkill/10;
-            asChans=randNum-awayAttackSkill/10-awayMidSkill/20+homeDefSkill/20+homeGoalSkill/10;
-            if(asChans<20)match->setAwayTeamScore(awayScore+1);
-            if(hsChans>1980)match->setHomeTeamScore(homeScore+1);
+            hsChans=homeAttackSkill/10+homeMidSkill/20-awayDefSkill/20-awayGoalSkill/10;
+            asChans=awayAttackSkill/10+awayMidSkill/20-homeDefSkill/20-homeGoalSkill/10;
+            tempText=QString::number(min);
+            event->time=tempText;
+            event->eventType="Mål";
+            if(randNum-asChans<20){
+                match->setAwayTeamScore(awayScore+1);
+                event->shortText="Bortamål";
+                event->longText="Mål av bortalaget";
+                m_match_event.append(event);
+                qDebug()<<event->time <<" "<< event->shortText;
+            }
+            if(randNum+hsChans>1980){
+                match->setHomeTeamScore(homeScore+1);
+                event->shortText="Hemmamål";
+                event->longText="Mål av hemmalaget";
+                m_match_event.append(event);
+                qDebug()<<event->time <<" "<< event->shortText;
+            }
+        }
+        if(min==89 && sec ==59){
+            qDebug() << match->m_home_team_uid << homeGoalSkill << " "<< homeDefSkill<< " "<< homeMidSkill << " "<< homeAttackSkill;
+            qDebug() << match->m_away_team_uid << awayGoalSkill << " "<< awayDefSkill<< " "<< awayMidSkill << " "<< awayAttackSkill;
+            qDebug() << "chansl" << hsChans << " - " << asChans;
+            qDebug() << "score" << homeScore << " - " << awayScore;
         }
     }
 }
@@ -319,5 +340,24 @@ int Match::getAwayResult(QString value)
         return match->awayTeamScore();
     }else{
         return -999;
+    }
+}
+
+QList<matchEvent *> *Match::getMatchEvents(QString value)
+{
+    Match *match =m_matches->value(value);
+    matchEvent *event = new matchEvent;
+    QList<matchEvent *> *events;
+
+    if(match){
+        events->append(match->m_match_event);
+        return events;
+    }else{
+        event->time="error";
+        event->eventType="error";
+        event->shortText="error";
+        event->longText="error";
+        events->append(event);
+        return events;
     }
 }

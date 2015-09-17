@@ -49,6 +49,7 @@ Rectangle {
     property int i
     property var playedGames
     property int gamerToday
+    property var events
 
     anchors.fill: parent
     Image {
@@ -143,16 +144,12 @@ Rectangle {
             matchList = match.getMatchesForDaysAhead(days);
             homeTeam="";
             awayTeam="";
-
             for(i=0;i<matchList.length;i++){
                 homeTeam=match.getHomeTeamUid(matchList[i]);
                 awayTeam=match.getAwayTeamUid(matchList[i]);
-                console.log(homeTeam+" "+awayTeam+" "+gamerTeam);
                 if(homeTeam===gamerTeam || awayTeam===gamerTeam){
                     gamerToday=1
                     matchUid=matchList[i];
-//                    console.log(matchUid);
-
                     homeShirt="shirts/"+team.getHomeShirtByUid(homeTeam);
                     awayShirt="shirts/"+team.getHomeShirtByUid(awayTeam);
                     if(homeTeam===gamerTeam){
@@ -175,14 +172,12 @@ Rectangle {
                     }
                     homeTeamScore=match.getHomeResult(matchList[i]);
                     awayTeamScore=match.getAwayResult(matchList[i]);
-                    console.log(homeTeamScore+" - "+awayTeamScore);
                 }
             }
             days++;
         }
         game.addDays(days);
         if(gamerToday==1){
-            console.log(matchUid);
             homeTeam=match.getHomeTeamUid(matchUid);
             awayTeam=match.getAwayTeamUid(matchUid);
             matchTactic.show();
@@ -190,11 +185,9 @@ Rectangle {
         }else{
             matchView.visible = false;
         }
-
     }
 
     function hide() {
         matchView.visible = false;
     }
-
 }

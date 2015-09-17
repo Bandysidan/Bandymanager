@@ -10,6 +10,13 @@
 #include "team.h"
 #include "game.h"
 
+struct matchEvent {
+    QString time;
+    QString eventType;
+    QString shortText;
+    QString longText;
+};
+
 class Match : public QObject
 {
     Q_OBJECT
@@ -59,6 +66,8 @@ public:
     Q_INVOKABLE int getHomeResult(QString value);
     Q_INVOKABLE int getAwayResult(QString value);
 
+    Q_INVOKABLE QList<matchEvent *> *getMatchEvents(QString value);
+
 signals:
     void uidChanged();
     void homeTeamUidChanged();
@@ -85,6 +94,7 @@ private:
     int m_match_year;
     int m_home_score;
     int m_away_score;
+    QList<matchEvent *> m_match_event;
     //QHash<QString,QString> m_match_events;
 
     static QHash<QString, Match *> *m_matches;

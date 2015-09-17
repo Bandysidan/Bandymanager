@@ -68,9 +68,7 @@ Rectangle {
             Text { id: mins}
             Text { id: colon ;text: ":"}
             Text { id: secs}
-
         }
-
     }
     function show() {
         matchPlay.visible = true;
@@ -81,7 +79,6 @@ Rectangle {
         awayTeamScore= 0;
         seconds= 0;
         minutes= 0;
-
     }
 
     function hide() {
@@ -99,22 +96,21 @@ Rectangle {
             seconds=0;
             minutes++;
         }
-        if(minutes==45 && seconds==0) {
-            matchClock.running=false;
-            matchClock.repeat=false;
-            eventText.text="Halvtid";
-            secondHalfStart.show();
-        }
-        if(minutes==90 && seconds==0) {
-            matchClock.running=false;
-            matchClock.repeat=false;
-            eventText.text="Slutsignal";
-            matchEnd.show();
-        }
+        //events=match.getMatchEvents(matchUid);
         match.matchTick(matchUid,minutes,seconds);
         homeTeamScore=match.getHomeResult(matchUid);
         awayTeamScore=match.getAwayResult(matchUid);
         secs.text=seconds.toString();
         mins.text=minutes.toString();
+        if(minutes==45 && seconds==0) {
+            matchClock.running=false;
+            matchClock.repeat=false;
+            secondHalfStart.show();
+        }
+        if(minutes==90 && seconds==0) {
+            matchClock.running=false;
+            matchClock.repeat=false;
+            matchEnd.show();
+        }
     }
 }
