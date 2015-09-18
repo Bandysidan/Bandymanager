@@ -278,7 +278,7 @@ void Match::matchTick(QString value, int min, int sec)
             tempText=QString::number(min);
             event->time=tempText;
             event->eventType="Mål";
-            if(randNum-asChans<20){
+            if(randNum-asChans<15){
                 match->setAwayTeamScore(awayScore+1);
                 event->shortText="Bortamål";
                 event->longText="Mål av bortalaget";
@@ -360,4 +360,22 @@ QList<matchEvent *> *Match::getMatchEvents(QString value)
         events->append(event);
         return events;
     }
+}
+
+QList<QString> Match::getMatchEventMins(QString value)
+{
+     Match *match =m_matches->value(value);
+     QList<matchEvent *> *events;
+     QList<QString> mins;
+     if(match){
+        events->append(match->m_match_event);
+        for(int i=0;i<events->count();i++){
+
+        }
+        mins.append("error");
+        return mins;
+     }else{
+        mins.append("error");
+        return mins;
+     }
 }

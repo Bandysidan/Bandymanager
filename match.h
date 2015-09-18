@@ -67,7 +67,7 @@ public:
     Q_INVOKABLE int getAwayResult(QString value);
 
     Q_INVOKABLE QList<matchEvent *> *getMatchEvents(QString value);
-
+    Q_INVOKABLE QList<QString> getMatchEventMins(QString value);
 signals:
     void uidChanged();
     void homeTeamUidChanged();

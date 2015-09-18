@@ -143,7 +143,7 @@ Rectangle {
 
             model: tableModel
             onClicked: {
-                changeTeam(matchListView.currentRow);
+                changeTeam(placeList[matchListView.currentRow]);
             }
         }
     }

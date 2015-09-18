@@ -12,7 +12,6 @@ Serie::Serie(QObject *parent) :
         m_series= new QHash<QString,Serie *>();
     if(!m_series_by_country)
         m_series_by_country = new QMultiHash<QString,QString>();
-
 }
 
 void Serie::setUid(QString value)

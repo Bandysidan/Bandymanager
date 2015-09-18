@@ -381,22 +381,30 @@ Rectangle {
         maleSkill: 1950
         femaleSkill: 1850
         malename: [
-           "Hampus",
-           "Mikka",
-           "Nikku",
-           "Petteri",
-           "Raoul",
-           "Tattu",
-           "Tomi",
+            "Akseli",
+            "Hampus",
+            "Jukka",
+            "Juuso",
+            "Matti",
+            "Mikka",
+            "Nikku",
+            "Pete",
+            "Petteri",
+            "Raoul",
+            "Sami",
+            "Tattu",
+            "Tomi",
             "Tuomo",
-           "Veli-Veikko"
+            "Veli-Veikko"
         ]
         familyname: [
             "Angeria",
             "Muttikainen",
             "Laakkonen",
             "Laampinen",
+            "Partanen",
             "Pursio",
+            "Pättiniemi",
             "Tukiainen",
             "Vainio",
             "Väärälä"
@@ -791,6 +799,7 @@ Rectangle {
             "Arundel",
             "Blucher",
             "Brown",
+            "Felder",
             "Halden",
             "Haney",
             "Hogan",
