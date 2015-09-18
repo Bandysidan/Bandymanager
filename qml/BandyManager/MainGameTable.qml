@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls 1.1
 
 Rectangle {
-
+    // Show the table of any series.
     id:mainGameTable
     z:20
     anchors.fill: parent
@@ -44,13 +44,14 @@ Rectangle {
         id: playerModel
     }
 
+    // Choose series, uses MainGameTableSeriesView.qml
     MainGameTableSeriesView {
         id: seriesColumn
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.margins: 20 // Sets all margins at once
     }
-
+    //Shows the table you have choosen and lets you pick a team to view the players for
     Column {
         id: tableColumn
         anchors.left: seriesColumn.right
@@ -147,7 +148,7 @@ Rectangle {
             }
         }
     }
-
+    // List of all the players in the choosen team, with stats per possition.
     Column {
         id: teamPlayerColumn
         anchors.left: tableColumn.right
