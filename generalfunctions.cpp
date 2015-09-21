@@ -1,11 +1,10 @@
 #include "generalfunctions.h"
 
-void spreadDates(QDate first, QDate last, int numRounds,int dec26)
+QList<QDate> spreadDates(QDate first, QDate last, int numRounds,int dec26)
 {
     int dateDiff;
     int daysPerRound;
     int dayOfWeek;
-//    int daysToDec26;
     int year;
     QDate next;
     QDate december26;
@@ -29,17 +28,25 @@ void spreadDates(QDate first, QDate last, int numRounds,int dec26)
                 roundDates.append(next);
                 dec26=2;
             } else if(dec26==2) {
+                next=next.addDays(3);
+
                 dayOfWeek=next.dayOfWeek();
                 dec26=0;
-            }//else{
+                if(dayOfWeek<7){
+                    next=next.addDays(7-dayOfWeek);
+                }
+                roundDates.append(next);
+            }else{
                 next=next.addDays(7);
                 roundDates.append(next);
-            //}
+            }
         }
     }else{
 
     }
+    qDebug() << roundDates.count();
     for(int i=0;i<numRounds;i++){
-        qDebug() << roundDates[i];
+        qDebug() << i << roundDates[i] << roundDates[i].dayOfWeek();
     }
+    return roundDates;
 }

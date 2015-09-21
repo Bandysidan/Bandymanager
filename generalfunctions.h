@@ -5,6 +5,6 @@
 #include <QDebug>
 #include <QList>
 
-void spreadDates(QDate first, QDate last, int numRounds, int dec26);
+QList<QDate> spreadDates(QDate first, QDate last, int numRounds, int dec26);
 
 #endif // GENERALFUNCTIONS_H
