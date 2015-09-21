@@ -9,9 +9,9 @@ Rectangle {
         countryUid: "sweden"
         timesEach: 2
         teamUid: ["Jonkopingherrar","TranasBoisherrar","Frillesasherrar","LidkopingsAIKHerrar","NassjoIFHerrar","BlasutHerrar","NitroNoraHerrar","BolticHerrar","IFKMotalaHerrar","SurteHerrar","OrebroSKHerrar"]
-        matchUid: [
+/*        matchUid: [
             "SweAllSR01M01"
-        ]
+        ]*/
     }
     Serie {
         uid: "SwedenAllsvNorra"

@@ -211,6 +211,23 @@ void Serie::makeSchedule(QString value)
                 homeTeams.append(2); awayTeams.append(0); day.append(11); month.append(2); year.append(2016);
 
             }
+        } else if (countTeams==11){
+            if(times==2){
+                countGames=10;
+                // Round 1
+                homeTeams.append(5); awayTeams.append(3); day.append(13); month.append(11); year.append(2015);
+                homeTeams.append(4); awayTeams.append(2); day.append(13); month.append(11); year.append(2015);
+                homeTeams.append(1); awayTeams.append(0); day.append(13); month.append(11); year.append(2015);
+                homeTeams.append(6); awayTeams.append(9); day.append(13); month.append(11); year.append(2015);
+                homeTeams.append(7); awayTeams.append(8); day.append(13); month.append(11); year.append(2015);
+                // Round 2
+                homeTeams.append(3); awayTeams.append(2); day.append(20); month.append(11); year.append(2015);
+                homeTeams.append(0); awayTeams.append(5); day.append(20); month.append(11); year.append(2015);
+                homeTeams.append(1); awayTeams.append(4); day.append(20); month.append(11); year.append(2015);
+                homeTeams.append(8); awayTeams.append(6); day.append(20); month.append(11); year.append(2015);
+                homeTeams.append(10); awayTeams.append(7); day.append(20); month.append(11); year.append(2015);
+
+            }
         } else if (countTeams==14){
             if(times==2){
                 countGames=49;

@@ -164,14 +164,6 @@ Rectangle {
         matchYear: 2015
     }
     Match {
-        uid: "SweAllSR01M01"
-        homeTeamUid: "Jonkopingherrar"
-        awayTeamUid: "TranasBoisherrar"
-        matchDay: 07
-        matchMonth: 11
-        matchYear: 2015
-    }
-    Match {
         uid: "RusSuperR01M01"
         homeTeamUid: "Jenisejherrar"
         awayTeamUid: "Dynamomoscowherrar"

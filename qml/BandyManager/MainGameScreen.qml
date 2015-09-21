@@ -120,8 +120,10 @@ Rectangle {
                 id: nextMatch
                 text: "Nästa match"
                 onClicked: {
-                     matchView.show();
-                     mainGameHome.update();
+                    mainGameScreen.hide();
+                    matchView.show();
+                    mainGameScreen.show();
+                    mainGameHome.update();
                     mainGameHome.show();
                     mainGameSquad.hide();
                     mainGameTactics.hide();
@@ -175,6 +177,11 @@ Rectangle {
        // newGame.visible = false;
         mainGameScreen.visible = true;
         mainGameHome.show();
+    }
+    function hide() {
+       // newGame.visible = false;
+        mainGameScreen.visible = false;
+//        mainGameHome.show();
     }
 
 }

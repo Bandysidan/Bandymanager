@@ -289,6 +289,14 @@ Rectangle {
                     tempPlac=placeList[j];
                     placeList[j]=placeList[i];
                     placeList[i]=tempPlac;
+                }else if(pointList[placeList[j]]===pointList[placeList[i]] && scoredList[placeList[j]]-againstList[placeList[j]]>scoredList[placeList[i]]-againstList[placeList[i]]){
+                    tempPlac=placeList[j];
+                    placeList[j]=placeList[i];
+                    placeList[i]=tempPlac;
+                }else if(pointList[placeList[j]]===pointList[placeList[i]] && scoredList[placeList[j]]-againstList[placeList[j]]===scoredList[placeList[i]]-againstList[placeList[i]] && scoredList[placeList[j]]>scoredList[placeList[i]]){
+                    tempPlac=placeList[j];
+                    placeList[j]=placeList[i];
+                    placeList[i]=tempPlac;
                 }
             }
         }

@@ -271,10 +271,10 @@ void Match::matchTick(QString value, int min, int sec)
         awayAttackSkill=match->m_away_player_skill.value("Attacker1")*0.35+match->m_away_player_skill.value("Attacker1")*0.35+match->m_away_player_skill.value("Midfielder1")*0.10+match->m_away_player_skill.value("Midfielder2")*0.10+match->m_away_player_skill.value("Midfielder3")*0.10;
         homeScore=match->homeTeamScore();
         awayScore=match->awayTeamScore();
+        hsChans=homeAttackSkill/10+homeMidSkill/20-awayDefSkill/20-awayGoalSkill/10;
+        asChans=awayAttackSkill/10+awayMidSkill/20-homeDefSkill/20-homeGoalSkill/10;
         if(sec%10==0){
             randNum=rand()%2000;
-            hsChans=homeAttackSkill/10+homeMidSkill/20-awayDefSkill/20-awayGoalSkill/10;
-            asChans=awayAttackSkill/10+awayMidSkill/20-homeDefSkill/20-homeGoalSkill/10;
             tempText=QString::number(min);
             event->time=tempText;
             event->eventType="Mål";

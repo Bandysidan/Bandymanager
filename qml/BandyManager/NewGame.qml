@@ -720,6 +720,7 @@ Rectangle {
         newGame.visible = true;
         serie.makeSchedule("USADivision1");
         serie.makeSchedule("SwedenElitserien");
+        serie.makeSchedule("SwedenAllsvSodra");
     }
 
     function countryRight() {
