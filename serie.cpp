@@ -1,4 +1,5 @@
 #include "serie.h"
+#include "generalfunctions.h"
 
 QHash<QString,Serie *> *Serie::m_series;
 QMultiHash<QString,QString> *Serie::m_series_by_country;
@@ -159,6 +160,11 @@ void Serie::makeSchedule(QString value)
     QList<int> day;
     QList<int> month;
     QList<int> year;
+    QDate first;
+    QDate last;
+    first=QDate(2015,11,01);
+    last=QDate(2016,02,28);
+    spreadDates(first,last,14,1);
     int countGames=0;
     int times;
     if (serie){
