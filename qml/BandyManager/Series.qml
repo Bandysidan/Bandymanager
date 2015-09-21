@@ -8,7 +8,7 @@ Rectangle {
         name: "Allsvenskan Södra"
         countryUid: "sweden"
         timesEach: 2
-        teamUid: ["Jonkopingherrar","TranasBoisherrar"]
+        teamUid: ["Jonkopingherrar","TranasBoisherrar","Frillesasherrar","LidkopingsAIKHerrar","NassjoIFHerrar","BlasutHerrar","NitroNoraHerrar","BolticHerrar","IFKMotalaHerrar","SurteHerrar","OrebroSKHerrar"]
         matchUid: [
             "SweAllSR01M01"
         ]

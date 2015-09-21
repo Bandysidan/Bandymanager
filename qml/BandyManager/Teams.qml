@@ -211,6 +211,69 @@ Rectangle {
         homeShirt: "ShirtWhite.png"
         rating: 865
     }
+    Team {
+        uid: "Frillesasherrar"
+        name: "Frillesås BK"
+        countryUid: "sweden"
+        homeShirt: "ShirtWhite.png"
+        rating: 865
+    }
+    Team {
+        uid: "LidkopingsAIKHerrar"
+        name: "Lidköpings AIK"
+        countryUid: "sweden"
+        homeShirt: "ShirtWhite.png"
+        rating: 865
+    }
+    Team {
+        uid: "NassjoIFHerrar"
+        name: "Nässjö IF"
+        countryUid: "sweden"
+        homeShirt: "ShirtWhite.png"
+        rating: 865
+    }
+    Team {
+        uid: "BlasutHerrar"
+        name: "Blåsut BK"
+        countryUid: "sweden"
+        homeShirt: "ShirtWhite.png"
+        rating: 865
+    }
+    Team {
+        uid: "NitroNoraHerrar"
+        name: "Nitro Nora BS"
+        countryUid: "sweden"
+        homeShirt: "ShirtWhite.png"
+        rating: 865
+    }
+    Team {
+        uid: "BolticHerrar"
+        name: "IF Boltic"
+        countryUid: "sweden"
+        homeShirt: "ShirtWhite.png"
+        rating: 865
+    }
+    Team {
+        uid: "IFKMotalaHerrar"
+        name: "IFK Motala"
+        countryUid: "sweden"
+        homeShirt: "ShirtWhite.png"
+        rating: 865
+    }
+    Team {
+        uid: "SurteHerrar"
+        name: "Surte BK"
+        countryUid: "sweden"
+        homeShirt: "ShirtWhite.png"
+        rating: 865
+    }
+    Team {
+        uid: "OrebroSKHerrar"
+        name: "Örebro SK Bandy"
+        countryUid: "sweden"
+        homeShirt: "ShirtWhite.png"
+        rating: 865
+    }
 
     Team {
         uid: "Jenisejherrar"
