@@ -12,10 +12,10 @@ Rectangle {
     id:mainGameHome
     z: 10
     anchors.fill: parent
-    property string nextGameID
-    property string nextGameHomeTeam
-    property string nextGameAwayTeam
-    property string nextGameDate
+    property string nextMatchID
+    property string nextMatchHomeTeam
+    property string nextMatchAwayTeam
+    property string nextMatchDate
     Row{
         anchors.fill: parent
         Column{
@@ -58,17 +58,18 @@ Rectangle {
                     anchors.margins: 20 // Sets all margins at once
                     Column {
                         Text{
-                            id: nextGameText
+                            id: nextMatchHeader
                             text: "Nästa match"
                             font.bold: true
+                            font.pointSize: 15
                         }
                         Text{
-                            id: nextGameDateText
+                            id: nextMatchDateText
                             text: ""
                             font.bold: true
                         }
                         Text{
-                            id: nextGame
+                            id: nextMatchText
                             text: ""
                         }
                     }
@@ -99,12 +100,17 @@ Rectangle {
         gamerName=gamer.getName("Player1");
         gamerTeam=gamer.getTeamUid("Player1");
         update();
-        nextGameID=match.getNextMatchByTeamUid(gamerTeam);
-        nextGameDate=match.getMatchDay(nextGameID);
-        nextGameHomeTeam=match.getHomeTeamUid(nextGameID);
-        nextGameAwayTeam=match.getAwayTeamUid(nextGameID);
-        nextGameDateText.text=nextGameDate;
-        nextGame.text=nextGameHomeTeam+" - "+nextGameAwayTeam;
+        nextMatchID=match.getNextMatchByTeamUid(gamerTeam);
+        if(nextMatchID=="err"){
+            nextMatchDateText.text="";
+            nextMatchText.text="Ingen match de närmaste 3 veckorna."
+        }else{
+            nextMatchDate=match.getMatchDay(nextMatchID);
+            nextMatchHomeTeam=team.getNameByUid(match.getHomeTeamUid(nextMatchID));
+            nextMatchAwayTeam=team.getNameByUid(match.getAwayTeamUid(nextMatchID));
+            nextMatchDateText.text=nextMatchDate;
+            nextMatchText.text=nextMatchHomeTeam+" - "+nextMatchAwayTeam;
+        }
     }
 
     function update(){
