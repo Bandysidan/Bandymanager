@@ -1,6 +1,6 @@
 #include "generalfunctions.h"
 
-QList<QDate> spreadDates(QDate first, QDate last, int numRounds,int dec26)
+QList<QDate> spreadDates(QDate first, QDate last, int numRounds,int dec26,int weekend)
 {
     int dateDiff;
     int daysPerRound;
@@ -16,8 +16,8 @@ QList<QDate> spreadDates(QDate first, QDate last, int numRounds,int dec26)
     qDebug()<< dateDiff << " "<< daysPerRound;
     if(daysPerRound>=7){
         dayOfWeek=first.dayOfWeek();
-        if(dayOfWeek<6){
-            next=first.addDays(6-dayOfWeek);
+        if(dayOfWeek<weekend){
+            next=first.addDays(weekend-dayOfWeek);
         }else{
             next=first;
         }
@@ -32,8 +32,8 @@ QList<QDate> spreadDates(QDate first, QDate last, int numRounds,int dec26)
 
                 dayOfWeek=next.dayOfWeek();
                 dec26=0;
-                if(dayOfWeek<7){
-                    next=next.addDays(7-dayOfWeek);
+                if(dayOfWeek<weekend){
+                    next=next.addDays(weekend-dayOfWeek);
                 }
                 roundDates.append(next);
             }else{
@@ -44,7 +44,7 @@ QList<QDate> spreadDates(QDate first, QDate last, int numRounds,int dec26)
     }else{
 
     }
-    qDebug() << roundDates.count();
+    //qDebug() << roundDates.count();
     for(int i=0;i<numRounds;i++){
         qDebug() << i << roundDates[i] << roundDates[i].dayOfWeek();
     }
