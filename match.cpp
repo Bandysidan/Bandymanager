@@ -146,6 +146,36 @@ QString Match::getUidByTeamUid(QString value)
     }else{
         return "error";
     }
+    
+}
+
+QString Match::getNextMatchByTeamUid(QString value)
+{
+    QString returnMatch="";
+    QString homeTeam;
+    QString awayTeam;
+    Match *match;
+    int days=0;
+    int done=0;
+    QList<QString> Matches;
+    Game *game;
+    QDate todayDate=game->getDate();
+    while(days<21 && done==0){
+        QDate indaysDate=todayDate.addDays(days);
+        Matches=m_match_dates->values(indaysDate);
+        for (int i=0;i<Matches.count();i++){
+            homeTeam=match->getHomeTeamUid(Matches[i]);
+            awayTeam=match->getAwayTeamUid(Matches[i]);
+            if(homeTeam==value || awayTeam==value) {
+                returnMatch=Matches[i];
+                done=1;
+            }
+        }
+        days++;
+    }
+    if(done==0) returnMatch="err";
+    return returnMatch;
+
 
 }
 

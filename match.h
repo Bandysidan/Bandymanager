@@ -56,6 +56,7 @@ public:
     Q_INVOKABLE QString getHomeTeamUid(QString value);
     Q_INVOKABLE QString getAwayTeamUid(QString value);
     Q_INVOKABLE QString getUidByTeamUid(QString value);
+    Q_INVOKABLE QString getNextMatchByTeamUid(QString value);
     Q_INVOKABLE QList<QString> getMatchesForDaysAhead(int days);
 
     Q_INVOKABLE void matchInitiate(QString value);

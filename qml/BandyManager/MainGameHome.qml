@@ -12,6 +12,10 @@ Rectangle {
     id:mainGameHome
     z: 10
     anchors.fill: parent
+    property string nextGameID
+    property string nextGameHomeTeam
+    property string nextGameAwayTeam
+    property string nextGameDate
     Row{
         anchors.fill: parent
         Column{
@@ -59,7 +63,7 @@ Rectangle {
                             font.bold: true
                         }
                         Text{
-                            id: nextGameDate
+                            id: nextGameDateText
                             text: ""
                             font.bold: true
                         }
@@ -95,6 +99,12 @@ Rectangle {
         gamerName=gamer.getName("Player1");
         gamerTeam=gamer.getTeamUid("Player1");
         update();
+        nextGameID=match.getNextMatchByTeamUid(gamerTeam);
+        nextGameDate=match.getMatchDay(nextGameID);
+        nextGameHomeTeam=match.getHomeTeamUid(nextGameID);
+        nextGameAwayTeam=match.getAwayTeamUid(nextGameID);
+        nextGameDateText.text=nextGameDate;
+        nextGame.text=nextGameHomeTeam+" - "+nextGameAwayTeam;
     }
 
     function update(){
