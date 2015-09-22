@@ -7,6 +7,8 @@ Rectangle {
         uid: "SwedenAllsvSodra"
         name: "Allsvenskan Södra"
         countryUid: "sweden"
+        startMonth: 11
+        endMonth: 2
         timesEach: 2
         teamUid: ["Jonkopingherrar","TranasBoisherrar","Frillesasherrar","LidkopingsAIKHerrar","NassjoIFHerrar","BlasutHerrar","NitroNoraHerrar","BolticHerrar","IFKMotalaHerrar","SurteHerrar","OrebroSKHerrar"]
 /*        matchUid: [
@@ -81,19 +83,21 @@ Rectangle {
         uid: "FinlandBandyliiga"
         name: "Bandyliiga"
         countryUid: "finland"
+        startMonth: 11
+        endMonth: 2
         timesEach: 2
-        teamUid:["Helsinkiherrar","Narukeraherrar","OLSherrar","Veiteraherrar"]
-        matchUid: [
+        teamUid:["Helsinkiherrar","Narukeraherrar","OLSherrar","Veiteraherrar","Botniaherrar","Akillesherrar","JPSherrar","Kampparitherrar","WP35herrar"]
+/*        matchUid: [
             "FinBandyR01M01",
             "FinBandyR01M02"
-        ]
+        ]*/
     }
     Serie {
         uid: "USADivision1"
         name: "Division 1"
         countryUid: "usa"
         timesEach: 2
-        startMonth: 10
+        startMonth: 12
         endMonth: 2
         teamUid: ["Bandolierherrar","Dinkytownherrar","DynamoDuluthherrar","Minisotabladesherrar","Mississippiherrar","IceTigersherrar"]
     }

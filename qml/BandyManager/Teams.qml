@@ -405,6 +405,41 @@ Rectangle {
         rating: 970
     }
     Team {
+        uid: "Botniaherrar"
+        name: "Botnia"
+        countryUid: "finland"
+        homeShirt: "ShirtRed.png"
+        rating: 970
+    }
+    Team {
+        uid: "Akillesherrar"
+        name: "Akilles"
+        countryUid: "finland"
+        homeShirt: "ShirtRed.png"
+        rating: 970
+    }
+    Team {
+        uid: "JPSherrar"
+        name: "JPS"
+        countryUid: "finland"
+        homeShirt: "ShirtRed.png"
+        rating: 970
+    }
+    Team {
+        uid: "Kampparitherrar"
+        name: "Kampparit"
+        countryUid: "finland"
+        homeShirt: "ShirtRed.png"
+        rating: 970
+    }
+    Team {
+        uid: "WP35herrar"
+        name: "WP35"
+        countryUid: "finland"
+        homeShirt: "ShirtRed.png"
+        rating: 970
+    }
+    Team {
         uid: "Dinkytownherrar"
         name: "Dinkytown Dukes"
         countryUid: "usa"

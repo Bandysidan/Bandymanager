@@ -6,6 +6,9 @@ QList<QDate> spreadDates(QDate first, QDate last, int numRounds,int dec26,int we
     int daysPerRound;
     int dayOfWeek;
     int year;
+    int weeks;
+    //int extraWeeks;
+    //int extraRounds;
     QDate next;
     QDate december26;
     QList<QDate> roundDates;
@@ -13,7 +16,8 @@ QList<QDate> spreadDates(QDate first, QDate last, int numRounds,int dec26,int we
     year=first.year();
     december26=QDate(year,12,26);
     daysPerRound=dateDiff/numRounds;
-    qDebug()<< dateDiff << " "<< daysPerRound;
+    weeks=dateDiff/7;
+    qDebug()<< weeks << dateDiff << " "<< daysPerRound;
     if(daysPerRound>=7){
         dayOfWeek=first.dayOfWeek();
         if(dayOfWeek<weekend){
@@ -37,16 +41,13 @@ QList<QDate> spreadDates(QDate first, QDate last, int numRounds,int dec26,int we
                 }
                 roundDates.append(next);
             }else{
+                if(i==3 && next.daysTo(december26)>15) next=next.addDays(7);
                 next=next.addDays(7);
                 roundDates.append(next);
             }
         }
     }else{
 
-    }
-    //qDebug() << roundDates.count();
-    for(int i=0;i<numRounds;i++){
-        qDebug() << i << roundDates[i] << roundDates[i].dayOfWeek();
     }
     return roundDates;
 }
