@@ -33,6 +33,8 @@ Rectangle {
         name: "Elitserien"
         countryUid: "sweden"
         timesEach: 2
+        startMonth: 11
+        endMonth: 2
         teamUid: ["Bollnasherrar","Brobergherrar","Edsbynherrar","Bajenbandyherrar","Gripenherrar","Kalixbandyherrar","IFKKungalvherrar","SAIKbandyherrar","Siriusherrar","Tillbergabandyherrar","Vanersborgbandyherrar","VetlandaBKherrar","Villabandyherrar","VSKbandyherrar"]
 /*        matchUid: [
             "SweElitR01M01",
@@ -91,6 +93,8 @@ Rectangle {
         name: "Division 1"
         countryUid: "usa"
         timesEach: 2
+        startMonth: 10
+        endMonth: 2
         teamUid: ["Bandolierherrar","Dinkytownherrar","DynamoDuluthherrar","Minisotabladesherrar","Mississippiherrar","IceTigersherrar"]
     }
 }

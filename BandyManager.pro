@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     gamer.cpp \
     match.cpp \
     game.cpp \
-    serie.cpp
+    serie.cpp \
+    generalfunctions.cpp
 
 # Installation path
 # target.path =
@@ -41,4 +42,5 @@ HEADERS += \
     gamer.h \
     match.h \
     game.h \
-    serie.h
+    serie.h \
+    generalfunctions.h
