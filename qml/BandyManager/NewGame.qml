@@ -722,6 +722,7 @@ Rectangle {
         serie.makeSchedule("SwedenElitserien");
         serie.makeSchedule("SwedenAllsvSodra");
         serie.makeSchedule("FinlandBandyliiga");
+        serie.makeSchedule("RussiaSuperLeague");
     }
 
     function countryRight() {

@@ -1091,8 +1091,37 @@ Rectangle {
             "Yannic"
         ]
         familyname: [
+            "Baumann",
+            "Becker",
+            "Braun",
+            "Hoffman",
+            "Fisher",
+            "Franke",
+            "Haas",
+            "Hartmann",
+            "Jung",
+            "Keller",
+            "Klein",
+            "Krause",
+            "Krüger",
+            "Lange",
             "Löbrich",
-            "Schmidt"
+            "Meyer",
+            "Müller",
+            "Möller",
+            "Neumman",
+            "Schmidt",
+            "Schneider",
+            "Schröder",
+            "Schumacher",
+            "Schwartz",
+            "Sommer",
+            "Vogel",
+            "Wagner",
+            "Weber",
+            "Werner",
+            "Wolf",
+            "Zimmerman"
         ]
     }
     Country {
@@ -1232,6 +1261,29 @@ Rectangle {
         memberNation: 1
         maleSkill: 1200
         femaleSkill: 1850
+        malename: [
+            "Andriy",
+            "Igor",
+            "Ivan",
+            "Maksym",
+            "Roman",
+            "Ruslan",
+            "Serhiy"
+        ]
+        familyname: [
+            "Boiko",
+            "Bondarenko",
+            "Koval",
+            "Kovalchuk",
+            "Kovalenko",
+            "Lysenko",
+            "Mazur",
+            "Melnyk",
+            "Moroz",
+            "Rudenko",
+            "Shevchenko",
+            "Tkachuk"
+        ]
     }
     Country {
         uid: "kyrgyzstan"

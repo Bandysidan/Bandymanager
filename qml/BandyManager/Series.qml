@@ -11,9 +11,6 @@ Rectangle {
         endMonth: 2
         timesEach: 2
         teamUid: ["Jonkopingherrar","TranasBoisherrar","Frillesasherrar","LidkopingsAIKHerrar","NassjoIFHerrar","BlasutHerrar","NitroNoraHerrar","BolticHerrar","IFKMotalaHerrar","SurteHerrar","OrebroSKHerrar"]
-/*        matchUid: [
-            "SweAllSR01M01"
-        ]*/
     }
     Serie {
         uid: "SwedenAllsvNorra"
@@ -38,22 +35,6 @@ Rectangle {
         startMonth: 11
         endMonth: 2
         teamUid: ["Bollnasherrar","Brobergherrar","Edsbynherrar","Bajenbandyherrar","Gripenherrar","Kalixbandyherrar","IFKKungalvherrar","SAIKbandyherrar","Siriusherrar","Tillbergabandyherrar","Vanersborgbandyherrar","VetlandaBKherrar","Villabandyherrar","VSKbandyherrar"]
-/*        matchUid: [
-            "SweElitR01M01",
-            "SweElitR01M02",
-            "SweElitR01M03",
-            "SweElitR01M04",
-            "SweElitR01M05",
-            "SweElitR01M06",
-            "SweElitR01M07",
-            "SweElitR02M01",
-            "SweElitR02M02",
-            "SweElitR02M03",
-            "SweElitR02M04",
-            "SweElitR02M05",
-            "SweElitR02M06",
-            "SweElitR02M07"
-        ]*/
     }
     Serie {
         uid: "NorwayEliteserien"
@@ -72,12 +53,10 @@ Rectangle {
         uid: "RussiaSuperLeague"
         name: "Superligan"
         countryUid: "russia"
+        startMonth: 11
+        endMonth: 2
         timesEach: 2
-        teamUid:["Dynamomoscowherrar","Jenisejherrar","Vodnikherrar","Zorkijherrar","Dynamokazanherrar","Rodinaherrar"]
-        matchUid: [
-            "RusSuperR01M01",
-            "RusSuperR01M02"
-        ]
+        teamUid:["Dynamomoscowherrar","Jenisejherrar","Vodnikherrar","Zorkijherrar","Dynamokazanherrar","Rodinaherrar","Kuzbassherrar","Neftyanikherrar","Baykalherrar","Sibselmachherrar","Volgaherrar","Startherrar","Trubnikherrar"]
     }
     Serie {
         uid: "FinlandBandyliiga"
@@ -87,10 +66,6 @@ Rectangle {
         endMonth: 2
         timesEach: 2
         teamUid:["Helsinkiherrar","Narukeraherrar","OLSherrar","Veiteraherrar","Botniaherrar","Akillesherrar","JPSherrar","Kampparitherrar","WP35herrar"]
-/*        matchUid: [
-            "FinBandyR01M01",
-            "FinBandyR01M02"
-        ]*/
     }
     Serie {
         uid: "USADivision1"

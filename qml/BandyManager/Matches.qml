@@ -163,7 +163,7 @@ Rectangle {
         matchMonth: 11
         matchYear: 2015
     }
-    Match {
+/*    Match {
         uid: "RusSuperR01M01"
         homeTeamUid: "Jenisejherrar"
         awayTeamUid: "Dynamomoscowherrar"
@@ -178,7 +178,7 @@ Rectangle {
         matchDay: 14
         matchMonth: 9
         matchYear: 2015
-    }
+    }*/
     Match {
         uid: "NorElitR01M01"
         homeTeamUid: "Stabaekherrar"
@@ -211,7 +211,7 @@ Rectangle {
         matchMonth: 10
         matchYear: 2015
     }
-    Match {
+/*    Match {
         uid: "FinBandyR01M01"
         homeTeamUid: "Helsinkiherrar"
         awayTeamUid: "OLSherrar"
@@ -226,5 +226,5 @@ Rectangle {
         matchDay: 21
         matchMonth: 10
         matchYear: 2015
-    }
+    }*/
 }

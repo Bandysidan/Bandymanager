@@ -321,6 +321,55 @@ Rectangle {
         rating: 945
     }
     Team {
+        uid: "Kuzbassherrar"
+        name: "Kuzbass"
+        countryUid: "russia"
+        homeShirt: "ShirtBlue.png"
+        rating: 945
+    }
+    Team {
+        uid: "Neftyanikherrar"
+        name: "SKA Neftyanik"
+        countryUid: "russia"
+        homeShirt: "ShirtBlue.png"
+        rating: 945
+    }
+    Team {
+        uid: "Baykalherrar"
+        name: "Baykal Energy"
+        countryUid: "russia"
+        homeShirt: "ShirtBlue.png"
+        rating: 945
+    }
+    Team {
+        uid: "Sibselmachherrar"
+        name: "Sibselmach"
+        countryUid: "russia"
+        homeShirt: "ShirtBlue.png"
+        rating: 945
+    }
+    Team {
+        uid: "Volgaherrar"
+        name: "Volga"
+        countryUid: "russia"
+        homeShirt: "ShirtBlue.png"
+        rating: 945
+    }
+    Team {
+        uid: "Startherrar"
+        name: "Start"
+        countryUid: "russia"
+        homeShirt: "ShirtBlue.png"
+        rating: 945
+    }
+    Team {
+        uid: "Trubnikherrar"
+        name: "Uralsky Trubnik"
+        countryUid: "russia"
+        homeShirt: "ShirtBlue.png"
+        rating: 945
+    }
+    Team {
         uid: "Stabaekherrar"
         name: "Stabaek"
         countryUid: "norway"
