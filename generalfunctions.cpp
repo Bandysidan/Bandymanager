@@ -47,7 +47,24 @@ QList<QDate> spreadDates(QDate first, QDate last, int numRounds,int dec26,int we
             }
         }
     }else{
-
+        dayOfWeek=first.dayOfWeek();
+        if(dayOfWeek-3<dayOfWeek-weekend){
+            next=first.addDays(3-dayOfWeek);
+        }else{
+            next=first.addDays(weekend-dayOfWeek);
+        }
+        roundDates.append(next);
+        for(int i=2;i<=numRounds;i++){
+            dayOfWeek=next.dayOfWeek();
+            if(dayOfWeek==7){
+                next=next.addDays(3);
+            }else if(dayOfWeek==6){
+                next=next.addDays(4);
+            }else{
+                next=next.addDays(weekend-dayOfWeek);
+            }
+            roundDates.append(next);
+        }
     }
     return roundDates;
 }
