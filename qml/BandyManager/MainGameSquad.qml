@@ -147,7 +147,7 @@ Rectangle {
 
             playerNumber=i.toString();
             playerModel.set(i,{playername: player.getFullNameByUid(playerList[i])});
-            playerModel.set(i,{playerCountry: country.getNameByUid(player.getCountryByUid(playerList[i]))});
+            playerModel.set(i,{playerCountry: country.getFlagByUid(player.getCountryByUid(playerList[i]))});
             playerModel.set(i,{goalkeeperSkill: parseInt((playerSkills[0]-1)/10+1)});
             playerModel.set(i,{liberoSkill: parseInt((playerSkills[1]-1)/10+1)});
             playerModel.set(i,{defenderSkill: parseInt((playerSkills[2]-1)/10+1)});
