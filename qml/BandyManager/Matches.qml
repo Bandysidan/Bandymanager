@@ -115,7 +115,7 @@ Rectangle {
         matchMonth: 10
         matchYear: 2015
     }*/
-    Match {
+/*    Match {
         uid: "SweAllNR01M01"
         homeTeamUid: "Ljusdalherrar"
         awayTeamUid: "Katrineholmherrar"
@@ -162,7 +162,7 @@ Rectangle {
         matchDay: 07
         matchMonth: 11
         matchYear: 2015
-    }
+    }*/
 /*    Match {
         uid: "RusSuperR01M01"
         homeTeamUid: "Jenisejherrar"
