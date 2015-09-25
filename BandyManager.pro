@@ -15,7 +15,8 @@ SOURCES += main.cpp \
     match.cpp \
     game.cpp \
     serie.cpp \
-    generalfunctions.cpp
+    generalfunctions.cpp \
+    news.cpp
 
 # Installation path
 # target.path =
@@ -43,4 +44,5 @@ HEADERS += \
     match.h \
     game.h \
     serie.h \
-    generalfunctions.h
+    generalfunctions.h \
+    news.h
