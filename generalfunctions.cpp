@@ -17,7 +17,7 @@ QList<QDate> spreadDates(QDate first, QDate last, int numRounds,int dec26,int we
     december26=QDate(year,12,26);
     daysPerRound=dateDiff/numRounds;
     weeks=dateDiff/7;
-    qDebug()<< weeks << dateDiff << " "<< daysPerRound;
+//    qDebug()<< weeks << dateDiff << " "<< daysPerRound;
     if(daysPerRound>=7){
         dayOfWeek=first.dayOfWeek();
         if(dayOfWeek<weekend){

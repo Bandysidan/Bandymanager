@@ -179,7 +179,7 @@ Rectangle {
         matchMonth: 9
         matchYear: 2015
     }*/
-    Match {
+/*    Match {
         uid: "NorElitR01M01"
         homeTeamUid: "Stabaekherrar"
         awayTeamUid: "Mjondalenherrar"
@@ -210,7 +210,7 @@ Rectangle {
         matchDay: 21
         matchMonth: 10
         matchYear: 2015
-    }
+    }*/
 /*    Match {
         uid: "FinBandyR01M01"
         homeTeamUid: "Helsinkiherrar"

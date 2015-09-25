@@ -724,6 +724,7 @@ Rectangle {
         serie.makeSchedule("SwedenAllsvNorra");
         serie.makeSchedule("FinlandBandyliiga");
         serie.makeSchedule("RussiaSuperLeague");
+        serie.makeSchedule("NorwayEliteserien");
     }
 
     function countryRight() {
@@ -737,7 +738,6 @@ Rectangle {
             currentCountry="usa"
         else
             currentCountry="sweden"
-//currentCountry = country.getNextByUid(currentCountry);
     }
 
     function countryLeft() {

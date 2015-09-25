@@ -42,14 +42,16 @@ Rectangle {
         uid: "NorwayEliteserien"
         name: "Eliteserien"
         countryUid: "norway"
+        startMonth: 11
+        endMonth: 2
         timesEach: 3
         teamUid: ["Stabaekherrar","Mjondalenherrar","Readyherrar","Solbergherrar","Ullevålherrar","Høvikherrar","Sarpsborgherrar","Drammenherrar"]
-        matchUid: [
+/*        matchUid: [
             "NorElitR01M01",
             "NorElitR01M02",
             "NorElitR01M03",
             "NorElitR01M04"
-        ]
+        ]*/
     }
     Serie {
         uid: "RussiaSuperLeague"
