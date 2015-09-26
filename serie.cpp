@@ -280,17 +280,77 @@ void Serie::makeSchedule(QString value)
                          day.append(playDay); month.append(playMonth); year.append(playYear);
                     }
                 }
-                countGames=2*4;
+                countGames=14*4;
                 // Round 1
-                homeTeams.append(5); awayTeams.append(6);
-                homeTeams.append(2); awayTeams.append(4);
-                homeTeams.append(3); awayTeams.append(0);
-                homeTeams.append(7); awayTeams.append(1);
-                // Round 2
+                homeTeams.append(7); awayTeams.append(5);
                 homeTeams.append(6); awayTeams.append(2);
+                homeTeams.append(0); awayTeams.append(1);
+                homeTeams.append(4); awayTeams.append(3);
+                // Round 2
+                homeTeams.append(5); awayTeams.append(2);
+                homeTeams.append(1); awayTeams.append(7);
+                homeTeams.append(3); awayTeams.append(6);
+                homeTeams.append(4); awayTeams.append(0);
+                // Round 3
+                homeTeams.append(1); awayTeams.append(5);
+                homeTeams.append(2); awayTeams.append(3);
+                homeTeams.append(7); awayTeams.append(4);
+                homeTeams.append(6); awayTeams.append(0);
+                // Round 4
+                homeTeams.append(5); awayTeams.append(3);
+                homeTeams.append(4); awayTeams.append(1);
+                homeTeams.append(0); awayTeams.append(2);
+                homeTeams.append(6); awayTeams.append(7);
+                // Round 5
                 homeTeams.append(4); awayTeams.append(5);
-                homeTeams.append(1); awayTeams.append(0);
+                homeTeams.append(3); awayTeams.append(0);
+                homeTeams.append(1); awayTeams.append(6);
+                homeTeams.append(2); awayTeams.append(7);
+                // Round 6
+                homeTeams.append(5); awayTeams.append(0);
+                homeTeams.append(6); awayTeams.append(4);
                 homeTeams.append(7); awayTeams.append(3);
+                homeTeams.append(2); awayTeams.append(1);
+                // Round 7
+                homeTeams.append(6); awayTeams.append(5);
+                homeTeams.append(0); awayTeams.append(7);
+                homeTeams.append(4); awayTeams.append(2);
+                homeTeams.append(3); awayTeams.append(1);
+                // Round 8
+                homeTeams.append(5); awayTeams.append(7);
+                homeTeams.append(2); awayTeams.append(6);
+                homeTeams.append(1); awayTeams.append(0);
+                homeTeams.append(3); awayTeams.append(4);
+                // Round 9
+                homeTeams.append(2); awayTeams.append(5);
+                homeTeams.append(7); awayTeams.append(1);
+                homeTeams.append(6); awayTeams.append(3);
+                homeTeams.append(0); awayTeams.append(4);
+                // Round 10
+                homeTeams.append(5); awayTeams.append(1);
+                homeTeams.append(3); awayTeams.append(2);
+                homeTeams.append(4); awayTeams.append(7);
+                homeTeams.append(0); awayTeams.append(6);
+                // Round 11
+                homeTeams.append(3); awayTeams.append(5);
+                homeTeams.append(1); awayTeams.append(4);
+                homeTeams.append(2); awayTeams.append(0);
+                homeTeams.append(7); awayTeams.append(6);
+                // Round 12
+                homeTeams.append(5); awayTeams.append(4);
+                homeTeams.append(0); awayTeams.append(3);
+                homeTeams.append(6); awayTeams.append(1);
+                homeTeams.append(7); awayTeams.append(2);
+                // Round 13
+                homeTeams.append(0); awayTeams.append(5);
+                homeTeams.append(4); awayTeams.append(6);
+                homeTeams.append(3); awayTeams.append(7);
+                homeTeams.append(1); awayTeams.append(2);
+                // Round 14
+                homeTeams.append(5); awayTeams.append(6);
+                homeTeams.append(7); awayTeams.append(0);
+                homeTeams.append(2); awayTeams.append(4);
+                homeTeams.append(1); awayTeams.append(3);
             }
         } else if (countTeams==9){
             if(times==2){
