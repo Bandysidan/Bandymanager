@@ -45,12 +45,30 @@ Rectangle {
         id: playerModel
     }
 
+    Component {
+        id: playerDelegate
+        Item {
+            Text {
+                font.bold: true
+                font.pointSize: 8
+            }
+        }
+    }
+    Component {
+        id: playerNameDelegate
+        Item {
+            Text {
+                font.bold: true
+                font.pointSize: 8
+            }
+        }
+    }
+
     Column {
         id: teamPlayerColumn
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.margins: 20 // Sets all margins at once
-
         Text {
             id: teamPlayerHeadline
             text: " "
@@ -61,7 +79,6 @@ Rectangle {
             id: playerListView
             width: 645
             height: 620
-
             TableViewColumn {
                 id: playerNameColumn
                 role: "playername"
@@ -126,12 +143,24 @@ Rectangle {
                 movable: false
                 resizable: false
             }
-
-
             model: playerModel
+            rowDelegate: playerDelegate
+            itemDelegate: playerNameDelegate
         }
     }
+    Column{
+        id: playerColumn
+        anchors.left: teamPlayerColumn.right
+        anchors.top: parent.top
+        anchors.margins: 20 // Sets all margins at once
+        Text {
+            id: playerName
+            text: " Test"
+            font.bold: true
+            font.pointSize: 16
+        }
 
+    }
 
 
     function show() {
@@ -147,7 +176,8 @@ Rectangle {
 
             playerNumber=i.toString();
             playerModel.set(i,{playername: player.getFullNameByUid(playerList[i])});
-            playerModel.set(i,{playerCountry: country.getFlagByUid(player.getCountryByUid(playerList[i]))});
+            //            playerModel.set(i,{playerCountry: country.getFlagByUid(player.getCountryByUid(playerList[i]))});
+            playerModel.set(i,{playerCountry: country.getNameByUid(player.getCountryByUid(playerList[i]))});
             playerModel.set(i,{goalkeeperSkill: parseInt((playerSkills[0]-1)/10+1)});
             playerModel.set(i,{liberoSkill: parseInt((playerSkills[1]-1)/10+1)});
             playerModel.set(i,{defenderSkill: parseInt((playerSkills[2]-1)/10+1)});
@@ -162,4 +192,8 @@ Rectangle {
     function hide() {
         mainGameSquad.visible = false;
     }
+
+        function changePlayer(playerindex){
+            playerName.text=player.getFullNameByUid(playerList[playerindex]);
+        }
 }
