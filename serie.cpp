@@ -193,6 +193,7 @@ void Serie::makeSchedule(QString value)
     QDate last;
     int countGames=0;
     int times;
+    QString si;
     if (serie){
         serie->m_match_list.clear();
         teams=serie->m_team_list;
@@ -223,8 +224,101 @@ void Serie::makeSchedule(QString value)
                  day.append(playDay); month.append(playMonth); year.append(playYear);
             }
         }
-        if(countTeams==6){
-            if(times==2){
+        if(countTeams==4){
+            if(times==2 || times==3 || times==4){
+                // Round 1
+                homeTeams.append(3); awayTeams.append(0);
+                homeTeams.append(2); awayTeams.append(1);
+                // Round 2
+                homeTeams.append(0); awayTeams.append(1);
+                homeTeams.append(2); awayTeams.append(3);
+                // Round 3
+                homeTeams.append(2); awayTeams.append(0);
+                homeTeams.append(1); awayTeams.append(3);
+                // Round 4
+                homeTeams.append(0); awayTeams.append(3);
+                homeTeams.append(1); awayTeams.append(2);
+                // Round 5
+                homeTeams.append(1); awayTeams.append(0);
+                homeTeams.append(3); awayTeams.append(2);
+                // Round 6
+                homeTeams.append(0); awayTeams.append(2);
+                homeTeams.append(3); awayTeams.append(1);
+            }
+            if(times==1 || times==3 || times==4){
+                // Round 1 / Round 7
+                homeTeams.append(3); awayTeams.append(0);
+                homeTeams.append(2); awayTeams.append(1);
+                // Round 2 / Round 8
+                homeTeams.append(0); awayTeams.append(1);
+                homeTeams.append(2); awayTeams.append(3);
+                // Round 3 / Round 9
+                homeTeams.append(2); awayTeams.append(0);
+                homeTeams.append(1); awayTeams.append(3);
+            }
+            if(times==4){
+                // Round 10
+                homeTeams.append(0); awayTeams.append(3);
+                homeTeams.append(1); awayTeams.append(2);
+                // Round 11
+                homeTeams.append(1); awayTeams.append(0);
+                homeTeams.append(3); awayTeams.append(2);
+                // Round 12
+                homeTeams.append(0); awayTeams.append(2);
+                homeTeams.append(3); awayTeams.append(1);
+            }
+        } else if(countTeams==5){
+            if(times==2 || times==3){
+                // Round 1
+                homeTeams.append(4); awayTeams.append(2);
+                homeTeams.append(1); awayTeams.append(0);
+                // Round 2
+                homeTeams.append(3); awayTeams.append(2);
+                homeTeams.append(1); awayTeams.append(4);
+                // Round 3
+                homeTeams.append(0); awayTeams.append(3);
+                homeTeams.append(2); awayTeams.append(1);
+                // Round 4
+                homeTeams.append(3); awayTeams.append(1);
+                homeTeams.append(4); awayTeams.append(0);
+                // Round 5
+                homeTeams.append(4); awayTeams.append(3);
+                homeTeams.append(0); awayTeams.append(2);
+                // Round 6
+                homeTeams.append(2); awayTeams.append(4);
+                homeTeams.append(0); awayTeams.append(1);
+                // Round 7
+                homeTeams.append(2); awayTeams.append(3);
+                homeTeams.append(4); awayTeams.append(1);
+                // Round 8
+                homeTeams.append(3); awayTeams.append(0);
+                homeTeams.append(1); awayTeams.append(2);
+                // Round 9
+                homeTeams.append(1); awayTeams.append(3);
+                homeTeams.append(0); awayTeams.append(4);
+                // Round 10
+                homeTeams.append(3); awayTeams.append(4);
+                homeTeams.append(2); awayTeams.append(0);
+            }
+            if(times==1 || times==3){
+                // Round 1 / 11
+                homeTeams.append(4); awayTeams.append(2);
+                homeTeams.append(1); awayTeams.append(0);
+                // Round 2 / 12
+                homeTeams.append(3); awayTeams.append(2);
+                homeTeams.append(1); awayTeams.append(4);
+                // Round 3 / 13
+                homeTeams.append(0); awayTeams.append(3);
+                homeTeams.append(2); awayTeams.append(1);
+                // Round 4 / 14
+                homeTeams.append(3); awayTeams.append(1);
+                homeTeams.append(4); awayTeams.append(0);
+                // Round 5 / 15
+                homeTeams.append(4); awayTeams.append(3);
+                homeTeams.append(0); awayTeams.append(2);
+            }
+        } else if(countTeams==6){
+            if(times==2 || times==3){
                 // Round 1
                 homeTeams.append(5); awayTeams.append(3);
                 homeTeams.append(4); awayTeams.append(2);
@@ -265,7 +359,28 @@ void Serie::makeSchedule(QString value)
                 homeTeams.append(3); awayTeams.append(4);
                 homeTeams.append(5); awayTeams.append(1);
                 homeTeams.append(2); awayTeams.append(0);
-
+            }
+            if(times==1 || times==3){
+                // Round 1
+                homeTeams.append(5); awayTeams.append(3);
+                homeTeams.append(4); awayTeams.append(2);
+                homeTeams.append(1); awayTeams.append(0);
+                // Round 2
+                homeTeams.append(3); awayTeams.append(2);
+                homeTeams.append(0); awayTeams.append(5);
+                homeTeams.append(1); awayTeams.append(4);
+                // Round 3
+                homeTeams.append(0); awayTeams.append(3);
+                homeTeams.append(2); awayTeams.append(1);
+                homeTeams.append(5); awayTeams.append(4);
+                // Round 4
+                homeTeams.append(3); awayTeams.append(1);
+                homeTeams.append(4); awayTeams.append(0);
+                homeTeams.append(5); awayTeams.append(2);
+                // Round 5
+                homeTeams.append(4); awayTeams.append(3);
+                homeTeams.append(1); awayTeams.append(5);
+                homeTeams.append(0); awayTeams.append(2);
             }
         } else if (countTeams==8){
             if(times==2 || times==3){
@@ -341,37 +456,37 @@ void Serie::makeSchedule(QString value)
                 homeTeams.append(1); awayTeams.append(3);
             }
             if(times==1 || times==3){
-                // Round 1
+                // Round 1  / 15
                 homeTeams.append(7); awayTeams.append(5);
                 homeTeams.append(6); awayTeams.append(2);
                 homeTeams.append(0); awayTeams.append(1);
                 homeTeams.append(4); awayTeams.append(3);
-                // Round 2
+                // Round 2 / 16
                 homeTeams.append(5); awayTeams.append(2);
                 homeTeams.append(1); awayTeams.append(7);
                 homeTeams.append(3); awayTeams.append(6);
                 homeTeams.append(4); awayTeams.append(0);
-                // Round 3
+                // Round 3 / 17
                 homeTeams.append(1); awayTeams.append(5);
                 homeTeams.append(2); awayTeams.append(3);
                 homeTeams.append(7); awayTeams.append(4);
                 homeTeams.append(6); awayTeams.append(0);
-                // Round 4
+                // Round 4 / 18
                 homeTeams.append(5); awayTeams.append(3);
                 homeTeams.append(4); awayTeams.append(1);
                 homeTeams.append(0); awayTeams.append(2);
                 homeTeams.append(6); awayTeams.append(7);
-                // Round 5
+                // Round 5 / 19
                 homeTeams.append(4); awayTeams.append(5);
                 homeTeams.append(3); awayTeams.append(0);
                 homeTeams.append(1); awayTeams.append(6);
                 homeTeams.append(2); awayTeams.append(7);
-                // Round 6
+                // Round 6 / 20
                 homeTeams.append(5); awayTeams.append(0);
                 homeTeams.append(6); awayTeams.append(4);
                 homeTeams.append(7); awayTeams.append(3);
                 homeTeams.append(2); awayTeams.append(1);
-                // Round 7
+                // Round 7 / 21
                 homeTeams.append(6); awayTeams.append(5);
                 homeTeams.append(0); awayTeams.append(7);
                 homeTeams.append(4); awayTeams.append(2);
@@ -1164,15 +1279,14 @@ void Serie::makeSchedule(QString value)
         }
         if(countGames>0){
             for(int i=0;i<countGames;i++){
-//                qDebug() << i << countGames << teams[homeTeams[i]] << teams[awayTeams[i]];
-//                qDebug() << day[i] << month[i] << year[i];
+                si=QString::number(i);
                 newMatch = new Match();
                 newMatch->setHomeTeamUid(teams[homeTeams[i]]);
                 newMatch->setAwayTeamUid(teams[awayTeams[i]]);
                 newMatch->setMatchDay(day[i]);
                 newMatch->setMatchMonth(month[i]);
                 newMatch->setMatchYear(year[i]);
-                uid=serie->uid()+teams[homeTeams[i]]+teams[awayTeams[i]];
+                uid=serie->uid()+si+teams[homeTeams[i]]+teams[awayTeams[i]];
                 newMatch->setUid(uid);
                 serie->m_match_list.append(uid);
             }
