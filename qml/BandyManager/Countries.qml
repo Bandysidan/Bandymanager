@@ -987,20 +987,65 @@ Rectangle {
             "Zayden"
         ]
         familyname: [
+            "Abbott",
+            "Adams",
             "Alesen",
+            "Armstrong",
             "Arundel",
+            "Babbitt",
+            "Barkley",
+            "Bateman",
+            "Baxter",
             "Blucher",
+            "Brandon",
             "Brown",
+            "Carew",
+            "Carter",
+            "Chapman",
+            "Clark",
+            "Cooper",
+            "Darwin",
+            "Dawkins",
+            "Dawson",
+            "Drake",
+            "Duncan",
+            "Elliot",
+            "Ewing",
             "Felder",
+            "Fincher",
+            "Franklin",
+            "Fuller",
+            "Garland",
+            "Gaskell",
+            "Gibson",
+            "Green",
+            "Grimes",
+            "Guinn",
             "Halden",
+            "Hale",
             "Haney",
+            "Harding",
+            "Hart",
+            "Head",
+            "Hodgson",
             "Hogan",
+            "Irving",
+            "Jackson",
+            "James",
+            "Jones",
             "Keseley",
             "Lickteig",
             "Knutson",
+            "Lincoln",
+            "Lord",
+            "Manners",
             "Manson",
             "Melander",
+            "Middleton",
             "Olson",
+            "Osborne",
+            "Palmer",
+            "Parsons",
             "Plaunt",
             "Richardson",
             "Stolpestad",
@@ -1020,16 +1065,30 @@ Rectangle {
         malename: [
             "Aleksei",
             "Artem",
+            "Darja",
+            "Ihar",
+            "Ivan",
+            "Jury",
+            "Leanid",
             "Maksim",
+            "Mikalaj",
             "Mikita",
-            "Nikita"
+            "Nikita",
+            "Piatra",
+            "Siarhiej"
         ]
         familyname: [
+            "Astapenia",
             "Dashkevich",
+            "Lukashenka",
+            "Malashonak",
+            "Manionak",
             "Matskevich",
+            "Maysenia",
             "Mickewicz",
             "Shushkevich",
-            "Vaytsiushkevich"
+            "Vaytsiushkevich",
+            "Yakavenka"
         ]
     }
     Country {
@@ -1043,24 +1102,44 @@ Rectangle {
         maleSkill: 1650
         femaleSkill: 1850
         malename: [
+            "Alex",
             "Benjamin",
             "Brandon",
             "Drew",
+            "Gabriel",
             "Liam",
             "Lucas",
             "Jacob",
+            "Justin",
             "Nathan",
+            "Nick",
             "Noah",
+            "Phillippe",
             "Ronnie",
+            "Samuel",
+            "Simon",
+            "Vincent",
             "William"
         ]
         familyname: [
+            "Bélanger",
             "Bell",
+            "Caron",
+            "Dubé",
             "Ellement",
+            "Fortin",
+            "Gagnon",
+            "Lapointe",
+            "Leclerc",
             "Krul",
             "Landerville",
+            "Leblanc",
             "Lintick",
-            "Ross"
+            "Poulin",
+            "Ross",
+            "Roy",
+            "Thibault",
+            "Tremblay"
         ]
     }
     Country {
@@ -1074,18 +1153,55 @@ Rectangle {
         maleSkill: 1650
         femaleSkill: 850
         malename: [
+            "Aleksander",
+            "Andrus",
             "Anton",
             "Artur",
             "Eduard",
             "Georg",
-            "Heino"
+            "Heino",
+            "Hendrik",
+            "Jaak",
+            "Mihkel",
+            "Oliver",
+            "Paavo",
+            "Peeter",
+            "Simon",
+            "Tonis",
+            "Toomas"
         ]
         familyname: [
             "Aare",
+            "Aasmäe",
+            "Allik",
             "Alver",
+            "Eenpalu",
             "Eskola",
             "Härma",
-            "Jögi"
+            "Jänes",
+            "Jögi",
+            "Keskküla",
+            "Klavan",
+            "Korjus",
+            "Kuusik",
+            "Kütt",
+            "Kärner",
+            "Laht",
+            "Lilla",
+            "Masing",
+            "Mets",
+            "Mänd",
+            "Nurme",
+            "Oja",
+            "Orav",
+            "Pärn",
+            "Sokk",
+            "Tarvas",
+            "Teder",
+            "Vaher",
+            "Valk",
+            "Viiding",
+            "Vitsut"
         ]
     }
     Country {
@@ -1135,26 +1251,45 @@ Rectangle {
         maleSkill: 1600
         femaleSkill: 1650
         malename: [
+            "Andreas",
+            "András",
+            "Attila",
+            "Botond",
             "David",
             "Ferenc",
+            "Gabor",
             "Istvan",
             "Nagy",
             "Jozsef",
             "Kristian",
             "Norbert",
             "Peter",
+            "Ronnie",
             "Sandor",
+            "Szabolcs",
+            "Tibor",
             "Tamás",
-            "Zoltan"
+            "Vilmos",
+            "Zoltán"
         ]
         familyname: [
+            "Ádámfi",
             "Banfy",
+            "Frajka",
             "Geyer",
             "Györi",
+            "Heller",
             "Jankovics",
+            "Kordisz",
+            "Mezőcsáti",
             "Marosi",
+            "Mezőcsáti",
+            "Molnar",
             "Muzsik",
-            "Polgar"
+            "Nagy",
+            "Polgar",
+            "Takacs",
+            "Thelin"
         ]
     }
     Country {
@@ -1211,7 +1346,12 @@ Rectangle {
         maleSkill: 1550
         femaleSkill: 1620
         malename: [
+            "Cornelis",
+            "Guus",
+            "Klaas",
             "Marc",
+            "Rutger",
+            "Ruud",
             "Thomas"
         ]
         familyname: [
