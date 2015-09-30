@@ -1,0 +1,43 @@
+I 0.0.10 och i 0.1.0
+
+* Grundserierna spelas
+* Om för få spelare i ett lag, så skapas slumpmässiga spelare
+* Det går att se hur bra spelarna är på olika saker
+* Laguppställning väljs av datorn
+* Det går att byta laguppställning
+* Matchklockan syns vid match för det lag som tränas
+* Finns chans till utländska spelare
+* Svenska, Norska, Finska, Ryska, Amerikanska och Holländska spelare går att få
+* Det går att träna svenska högstaserien och andraserien
+
+I 0.0.10 men ej i 0.1.0
+
+* Inga kval eller slutspel
+* Inga färgkodade tabeller
+* Inga målskyttar syns i 0.1.0
+* Inget U19-lag
+* Inga skador
+* Endast en säsong
+* Går ej att spara
+* Ingen inställningssida
+* Ingen ekonomisida
+** Inga biljettpriser
+** Inga publikintäkter
+
+
+Nytt i 0.1.0
+
+* Helt nyskrivet från grunden.
+* Grafiskt istället för textbaserat.
+* Ungerska, Somaliska, Tjeckiska, Vitryska, Kazakhstanska, Mongolska, Japanska, Kinesiska mfl (alla länder som deltagit i internationella turneringar senaste åren)
+* Det går att träna Ryska, Norska, Finska och Amerikanska högstaserierna.
+* Seriesystemen är dynamiskt kodade, så datafilerna bestämmer hur de ser ut. Tidigare kodade i C++, så det blev svårt att ändra om verkligt seriesystem ändrades.
+** Innehåller info om när på året serien startar och slutar
+* Fler skickligheter
+* Huvudsidan visar nästa match (om den är mindre än 3 veckor bort)
+* Påbörjat system för ranking på länder och lag. Dessa kombineras för att bestämma vilken nivå av skickligheter ett lag kan få spelare på.
+* Påbörjat tröjfärger. Alla lag har dock inte korrekta färger ännu.
+
+Kända buggar
+
+* När du klickat på "Nästa match", vänta en stund då det kan ta lite tid innan matchen kommer upp. Annars kan du riskera att hoppa över en match.

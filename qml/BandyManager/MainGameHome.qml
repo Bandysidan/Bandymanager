@@ -16,22 +16,21 @@ Rectangle {
     property string nextMatchHomeTeam
     property string nextMatchAwayTeam
     property string nextMatchDate
-    Row{
-        anchors.fill: parent
-        Column{
-            width: 450
             Rectangle {
-                anchors.bottomMargin: 10
+                id: newsContainer
+                anchors.left: parent.left
+                anchors.top: parent.top
+                anchors.margins: 10 // Sets all margins at once
                 width: 450
                 height: 200
                 color: "red"
                 border.color: "black"
-                border.width: 5
-                radius: 10
+                border.width: 2
+                radius: 8
                 Item{
                     anchors.left: parent.left
                     anchors.top: parent.top
-                    anchors.margins: 20 // Sets all margins at once
+                    anchors.margins: 10 // Sets all margins at once
                     Column {
                         Text{
                             id: dateID
@@ -46,16 +45,20 @@ Rectangle {
                 }
             }
             Rectangle {
+                id: nextMatchContainer
                 width: 450
                 height: 200
                 color: "green"
                 border.color: "black"
-                border.width: 5
-                radius: 10
+                border.width: 2
+                radius: 8
+                anchors.left: parent.left
+                anchors.top: newsContainer.bottom
+                anchors.margins: 10 // Sets all margins at once
                 Item{
                     anchors.left: parent.left
                     anchors.top: parent.top
-                    anchors.margins: 20 // Sets all margins at once
+                    anchors.margins: 10 // Sets all margins at once
                     Column {
                         Text{
                             id: nextMatchHeader
@@ -77,16 +80,6 @@ Rectangle {
             }
 
 
-        }
-
-        Column {
-            width:400
-            Text{
-                text: "Test"
-            }
-
-        }
-    }
 
 
     property var dateString
