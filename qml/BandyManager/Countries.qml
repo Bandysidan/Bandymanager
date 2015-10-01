@@ -599,16 +599,20 @@ Rectangle {
         maleSkill: 1950
         femaleSkill: 850
         malename: [
+            "Aibek",
             "Alexander",
             "Andrey",
             "Antatoly",
+            "Arman",
             "Denis",
             "Evgeny",
             "Ilyas",
+            "Inkar",
             "Iskander",
             "Ivan",
             "Konstantin",
             "Leonid",
+            "Makhmud",
             "Maxim",
             "Paul",
             "Pavel",
@@ -617,20 +621,31 @@ Rectangle {
             "Rinat",
             "Ruslan",
             "Sergey",
+            "Serik",
+            "Talgat",
+            "Temir",
             "Vyacheslav"
         ]
         familyname: [
+            "Abdulayev",
+            "Abdulov",
+            "Aliyev",
+            "Aronov",
+            "Bayzhanov",
             "Bedarev",
             "Dubovik",
             "Galyautodinov",
             "Gavrilenko",
             "Golubkov",
             "Gorchakov",
+            "Ibragimov",
             "Issaliev",
+            "Karimov",
             "Khairekishev",
             "Markin",
             "Maximenko",
             "Morokov",
+            "Nabiev",
             "Nasonov",
             "Naumov",
             "Nikisjov",
@@ -640,7 +655,8 @@ Rectangle {
             "Rein",
             "Samshutov",
             "Shadrin",
-            "Slautin"
+            "Slautin",
+            "Usenov"
         ]
     }
     Country {
@@ -1346,17 +1362,58 @@ Rectangle {
         maleSkill: 1550
         femaleSkill: 1620
         malename: [
+            "Cas",
             "Cornelis",
+            "Daan",
+            "Dylan",
             "Guus",
+            "Jayden",
+            "Jelle",
+            "Jesse",
             "Klaas",
+            "Lars",
+            "Levi",
+            "Luuk",
             "Marc",
+            "Max",
+            "Mees",
+            "Nick",
+            "Niels",
             "Rutger",
+            "Ruben",
             "Ruud",
-            "Thomas"
+            "Sem",
+            "Stan",
+            "Stijn",
+            "Thijs",
+            "Thomas",
+            "Tijn",
+            "Tim",
+            "Timo"
         ]
         familyname: [
+            "Baas",
+            "Bakker",
+            "Boer",
+            "Bijl",
+            "van Dyk",
+            "Graaf",
+            "Groot",
+            "Haan",
+            "Haas",
+            "Jaager",
             "Jeukens",
-            "Perenboom"
+            "van der Linden",
+            "Meijer",
+            "Muis",
+            "Mulder",
+            "Perenboom",
+            "Ruis",
+            "Smit",
+            "Visser",
+            "Vos",
+            "Wees",
+            "Wit"
         ]
     }
     Country {
@@ -1560,10 +1617,52 @@ Rectangle {
         maleSkill: 1520
         femaleSkill: 870
         malename: [
-            "Lukáš"
+            "Ambroz",
+            "Bednar",
+            "Bogdashka",
+            "Bohumir",
+            "Bronek",
+            "Capek",
+            "Datek",
+            "Dalibor",
+            "Dudek",
+            "Evzek",
+            "Franek",
+            "Hnedy",
+            "Kakub",
+            "Jirka",
+            "Kamil",
+            "Krocka",
+            "Laco",
+            "Lukáš",
+            "Medard",
+            "Otik",
+            "Pavlov",
+            "Rybar",
+            "Svec",
+            "Tesar",
+            "Tomik",
+            "Vova",
+            "Zdeslav",
+            "Zeleny"
         ]
         familyname: [
-            "Turza"
+            "Hlaváček",
+            "Honsů",
+            "Hořava",
+            "Jelinek",
+            "Klimt",
+            "Kolinger",
+            "Končák",
+            "Kvapil",
+            "Samec",
+            "Smetana",
+            "Suk",
+            "Swoboda",
+            "Trpišovský",
+            "Turza",
+            "Vála",
+            "Zacha"
         ]
     }
     Country {
@@ -1577,10 +1676,16 @@ Rectangle {
         maleSkill: 1200
         femaleSkill: 1850
         malename: [
-            "Ibrahim"
+            "Hassan",
+            "Ibrahim",
+            "Mahad",
+            "Mohammed",
+            "Omar"
         ]
         familyname: [
-            "Abdi Mokilid"
+            "Abdi Mokilid",
+            "Ahmed",
+            "Abdisalam"
         ]
     }
     Country {
@@ -1595,12 +1700,22 @@ Rectangle {
         femaleSkill: 1850
         malename: [
             "Andriy",
+            "Bohdanko",
+            "Danya",
+            "Fadey",
+            "Hadeon",
             "Igor",
             "Ivan",
+            "Krystiyan",
             "Maksym",
+            "Matviyko",
+            "Mykhaltso",
+            "Osip",
+            "Petruso",
             "Roman",
             "Ruslan",
-            "Serhiy"
+            "Serhiy",
+            "Vasyklo"
         ]
         familyname: [
             "Boiko",
@@ -1628,12 +1743,29 @@ Rectangle {
         maleSkill: 1300
         femaleSkill: 1450
         malename: [
+            "Abyshev",
+            "Adilet",
+            "Aman",
+            "ASmat",
+            "Isa",
+            "Kanat",
             "Rahat",
-            "Ruslan"
+            "Ruslan",
+            "Sanszhar",
+            "Umat",
+            "Urmahtbeck"
         ]
         familyname: [
+            "Abylkmecin",
             "Abyshev",
-            "Kadiev"
+            "Aliev",
+            "Alymkulov",
+            "Kadiev",
+            "Kalashinov",
+            "Tynymseitov",
+            "Omurbekov",
+            "Zhanybekov",
+            "Zhyrgalbek"
         ]
     }
     Country {
