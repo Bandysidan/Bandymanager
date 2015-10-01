@@ -112,5 +112,6 @@ Rectangle {
             matchClock.repeat=false;
             matchEnd.show();
         }
+        eventText.text=match.getMatchEvent(matchUid);
     }
 }

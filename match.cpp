@@ -290,6 +290,8 @@ void Match::matchTick(QString value, int min, int sec)
     int randNum;
     int hsChans;
     int asChans;
+    int randPlayerNum;
+    QString randPlayerName;
     if(match){
         homeGoalSkill=match->m_home_player_skill.value("Goalkeeper");
         homeDefSkill=match->m_home_player_skill.value("Defender1")*0.40+match->m_home_player_skill.value("Defender2")*0.20+match->m_home_player_skill.value("Defender3")*0.20+match->m_home_player_skill.value("Defender1")*0.10+match->m_home_player_skill.value("Defender1")*0.10;
@@ -309,18 +311,20 @@ void Match::matchTick(QString value, int min, int sec)
             event->time=tempText;
             event->eventType="Mål";
             if(randNum-asChans<15){
+                randPlayerNum=rand()%2;
+                if(randPlayerNum==0) randPlayerName="bortalagets högeranfallare";
+                else randPlayerName="bortalagets vänsteranfallare";
                 match->setAwayTeamScore(awayScore+1);
                 event->shortText="Bortamål";
-                event->longText="Mål av bortalaget";
-                m_match_event.append(event);
-                qDebug()<<event->time <<" "<< event->shortText;
+                event->longText="Mål av "+randPlayerName;
+                match->m_match_event.append(event);
             }
             if(randNum+hsChans>1980){
                 match->setHomeTeamScore(homeScore+1);
                 event->shortText="Hemmamål";
                 event->longText="Mål av hemmalaget";
-                m_match_event.append(event);
-                qDebug()<<event->time <<" "<< event->shortText;
+                match->m_match_event.append(event);
+
             }
         }
         if(min==89 && sec ==59){
@@ -409,3 +413,26 @@ QList<QString> Match::getMatchEventMins(QString value)
         return mins;
      }
 }
+
+QString Match::getMatchEvent(QString value)
+{
+    Match *match =m_matches->value(value);
+    QString returnText;
+    QList<matchEvent *> events;
+    matchEvent *event;
+    QList<matchEvent *>::iterator i;
+    QList<QString> testar;
+    if(match){
+        testar.append("Hej");
+        events.append(match->m_match_event);
+        for (i = events.begin(); i != events.end(); ++i){
+            event=*i;
+            returnText+=event->time+" "+event->longText+"\n";
+        }
+        return returnText;
+    }else{
+       return "Error";
+    }
+
+}
+
