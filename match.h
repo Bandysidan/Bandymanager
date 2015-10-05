@@ -68,7 +68,7 @@ public:
     Q_INVOKABLE int getHomeResult(QString value);
     Q_INVOKABLE int getAwayResult(QString value);
 
-    Q_INVOKABLE QList<matchEvent *> *getMatchEvents(QString value);
+    Q_INVOKABLE QList<QString> getMatchEvents(QString value);
     Q_INVOKABLE QList<QString> getMatchEventMins(QString value);
 
     Q_INVOKABLE QString getMatchEvent(QString value);

@@ -343,7 +343,37 @@ void Match::matchTick(QString value, int min, int sec)
 
             }
         }
-        if(min==89 && sec ==59){
+        if(min==0 && sec ==1){
+            tempText=QString::number(min);
+            event->time=tempText;
+            event->shortText="Första halvlek börjar";
+            event->eventType="Matchstart";
+            event->longText="Domaren blåser igång första halvlek";
+            match->m_match_event.append(event);
+        }
+        if(min==45 && sec ==0){
+            tempText=QString::number(min);
+            event->time=tempText;
+            event->shortText="Första halvlek slutar";
+            event->eventType="Halvtid";
+            event->longText="Domaren blåser av första halvlek";
+            match->m_match_event.append(event);
+        }
+        if(min==45 && sec ==1){
+            tempText=QString::number(min);
+            event->time=tempText;
+            event->shortText="Andra halvlek börjar";
+            event->eventType="Halvtid";
+            event->longText="Domaren blåser igång andra halvlek";
+            match->m_match_event.append(event);
+        }
+        if(min==90 && sec ==0){
+            tempText=QString::number(min);
+            event->time=tempText;
+            event->shortText="Andra halvlek slutar";
+            event->eventType="Matchslut";
+            event->longText="Domaren blåser av matchen";
+            match->m_match_event.append(event);
             qDebug() << match->m_home_team_uid << homeGoalSkill << " "<< homeDefSkill<< " "<< homeMidSkill << " "<< homeAttackSkill;
             qDebug() << match->m_away_team_uid << awayGoalSkill << " "<< awayDefSkill<< " "<< awayMidSkill << " "<< awayAttackSkill;
             qDebug() << "chansl" << hsChans << " - " << asChans;
@@ -393,22 +423,25 @@ int Match::getAwayResult(QString value)
     }
 }
 
-QList<matchEvent *> *Match::getMatchEvents(QString value)
+QList<QString> Match::getMatchEvents(QString value)
 {
     Match *match =m_matches->value(value);
-    matchEvent *event = new matchEvent;
-    QList<matchEvent *> *events;
-
+    QList<QString> eventList;
+    QString returnText;
+    QList<matchEvent *> events;
+    matchEvent *event;
+    QList<matchEvent *>::iterator i;
     if(match){
-        events->append(match->m_match_event);
-        return events;
+        events.append(match->m_match_event);
+        for (i = events.begin(); i != events.end(); ++i){
+            event=*i;
+            returnText=event->time+" "+event->longText;
+            eventList.append(returnText);
+        }
+        return eventList;
     }else{
-        event->time="error";
-        event->eventType="error";
-        event->shortText="error";
-        event->longText="error";
-        events->append(event);
-        return events;
+        eventList.append("Error");
+       return eventList;
     }
 }
 
@@ -437,9 +470,7 @@ QString Match::getMatchEvent(QString value)
     QList<matchEvent *> events;
     matchEvent *event;
     QList<matchEvent *>::iterator i;
-    QList<QString> testar;
     if(match){
-        testar.append("Hej");
         events.append(match->m_match_event);
         for (i = events.begin(); i != events.end(); ++i){
             event=*i;
