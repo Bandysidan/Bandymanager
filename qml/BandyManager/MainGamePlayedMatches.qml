@@ -7,9 +7,11 @@ Rectangle {
     z:20
     anchors.fill: parent
 
+    property var matchUid
     property var matchList
     property var series
     property var seriesList
+    property var events
     property int i
     property int j
     property string tempText
@@ -92,11 +94,28 @@ Rectangle {
             }
             model: resultModel
             onClicked: {
-//                console.log(matchListView.currentRow) ;
+                console.log(matchListView.currentRow) ;
+                matchUid=matchList[matchListView.currentRow];
+                displayMatchEvents();
             }
         }
     }
-
+    Column {
+        id: matchesStatColumn
+        anchors.left: matchesColumn.right
+        anchors.top: parent.top
+        anchors.margins: 20 // Sets all margins at once
+        Text {
+            id: matchStatHeadline
+            text: "Matchfakta"
+            font.bold: true
+            font.pointSize: 16
+        }
+        Text {
+            id: matchStatText
+            text: ""
+        }
+    }
     function show() {
         series="SwedenElitserien";
         getSeries();
@@ -154,5 +173,9 @@ Rectangle {
             seriesModel.set(i,{serieNameShow: serie.getNameByUid(seriesList[i])})
             seriesModel.set(i,{country: country.getNameByUid(serie.getCountryByUid(seriesList[i])) })
         }
+    }
+    function displayMatchEvents() {
+        events=match.getMatchEvent(matchUid);
+        matchStatText.text=events;
     }
 }

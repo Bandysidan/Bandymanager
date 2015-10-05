@@ -312,23 +312,33 @@ void Match::matchTick(QString value, int min, int sec)
             event->time=tempText;
             event->eventType="Mål";
             if(randNum-asChans<15){
-                randPlayerNum=rand()%2;
-                if(randPlayerNum==0) randPlayerName=match->m_away_player_positions.value("Attacker2");
-                else randPlayerName=match->m_away_player_positions.value("Attacker1");
+                randPlayerNum=rand()%100;
+                if(randPlayerNum<=30) randPlayerName=match->m_away_player_positions.value("Attacker2");
+                else if(randPlayerNum<=60) randPlayerName=match->m_away_player_positions.value("Attacker1");
+                else if(randPlayerNum<=70) randPlayerName=match->m_away_player_positions.value("Midfielder3");
+                else if(randPlayerNum<=80) randPlayerName=match->m_away_player_positions.value("Midfielder2");
+                else if(randPlayerNum<=90) randPlayerName=match->m_away_player_positions.value("Midfielder1");
+                else if(randPlayerNum<=95) randPlayerName=match->m_away_player_positions.value("Defender5");
+                else randPlayerName=match->m_away_player_positions.value("Defender4");
                 randPlayerName=player.getFullNameByUid(randPlayerName);
                 match->setAwayTeamScore(awayScore+1);
                 event->shortText="Bortamål";
-                event->longText="Mål av bortalaget genom "+randPlayerName;
+                event->longText="Mål till bortalaget genom "+randPlayerName;
                 match->m_match_event.append(event);
             }
             if(randNum+hsChans>1980){
-                randPlayerNum=rand()%2;
-                if(randPlayerNum==0) randPlayerName=match->m_home_player_positions.value("Attacker2");
-                else randPlayerName=match->m_home_player_positions.value("Attacker1");
+                randPlayerNum=rand()%100;
+                if(randPlayerNum<=30) randPlayerName=match->m_home_player_positions.value("Attacker2");
+                else if(randPlayerNum<=60) randPlayerName=match->m_home_player_positions.value("Attacker1");
+                else if(randPlayerNum<=70) randPlayerName=match->m_home_player_positions.value("Midfielder3");
+                else if(randPlayerNum<=80) randPlayerName=match->m_home_player_positions.value("Midfielder2");
+                else if(randPlayerNum<=90) randPlayerName=match->m_home_player_positions.value("Midfielder1");
+                else if(randPlayerNum<=95) randPlayerName=match->m_home_player_positions.value("Defender5");
+                else randPlayerName=match->m_home_player_positions.value("Defender4");
                 randPlayerName=player.getFullNameByUid(randPlayerName);
                 match->setHomeTeamScore(homeScore+1);
                 event->shortText="Hemmamål";
-                event->longText="Mål av hemmalaget genom "+randPlayerName;
+                event->longText="Mål till hemmalaget genom "+randPlayerName;
                 match->m_match_event.append(event);
 
             }
