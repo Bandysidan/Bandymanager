@@ -277,6 +277,7 @@ void Match::matchTick(QString value, int min, int sec)
     Match *match =m_matches->value(value);
     QString tempText;
     matchEvent *event = new matchEvent;
+    Player player;
     int homeAttackSkill;
     int awayAttackSkill;
     int homeMidSkill;
@@ -312,17 +313,22 @@ void Match::matchTick(QString value, int min, int sec)
             event->eventType="Mål";
             if(randNum-asChans<15){
                 randPlayerNum=rand()%2;
-                if(randPlayerNum==0) randPlayerName="bortalagets högeranfallare";
-                else randPlayerName="bortalagets vänsteranfallare";
+                if(randPlayerNum==0) randPlayerName=match->m_away_player_positions.value("Attacker2");
+                else randPlayerName=match->m_away_player_positions.value("Attacker1");
+                randPlayerName=player.getFullNameByUid(randPlayerName);
                 match->setAwayTeamScore(awayScore+1);
                 event->shortText="Bortamål";
-                event->longText="Mål av "+randPlayerName;
+                event->longText="Mål av bortalaget genom "+randPlayerName;
                 match->m_match_event.append(event);
             }
             if(randNum+hsChans>1980){
+                randPlayerNum=rand()%2;
+                if(randPlayerNum==0) randPlayerName=match->m_home_player_positions.value("Attacker2");
+                else randPlayerName=match->m_home_player_positions.value("Attacker1");
+                randPlayerName=player.getFullNameByUid(randPlayerName);
                 match->setHomeTeamScore(homeScore+1);
                 event->shortText="Hemmamål";
-                event->longText="Mål av hemmalaget";
+                event->longText="Mål av hemmalaget genom "+randPlayerName;
                 match->m_match_event.append(event);
 
             }

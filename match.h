@@ -9,6 +9,7 @@
 #include <QList>
 #include "team.h"
 #include "game.h"
+#include "player.h"
 
 struct matchEvent {
     QString time;
