@@ -1709,16 +1709,40 @@ Rectangle {
         maleSkill: 1200
         femaleSkill: 1850
         malename: [
+            "Aadan",
+            "Anis",
+            "Asad",
+            "Cabdow",
+            "Calas",
+            "Cartan",
             "Hassan",
             "Ibrahim",
+            "Ilyaas",
+            "Ishaar",
+            "Kaafi",
             "Mahad",
             "Mohammed",
-            "Omar"
+            "Nasteex",
+            "Omar",
+            "Qlol",
+            "Qasim"
         ]
         familyname: [
             "Abdi Mokilid",
             "Ahmed",
-            "Abdisalam"
+            "Abdisalam",
+            "Bille",
+            "Ellyas",
+            "Féysal",
+            "Jamać",
+            "Gullét",
+            "Hanad",
+            "Kadér",
+            "Rahim",
+            "Shire",
+            "Suléman",
+            "Yusuf",
+            "Zakaria"
         ]
     }
     Country {
