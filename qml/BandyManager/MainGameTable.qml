@@ -240,6 +240,7 @@ Rectangle {
     function getSeriesDetail() {
         teamList=serie.getTeamsByUid(series);
         matchList=serie.getMatchesByUid(series);
+        tableHeadline.text=serie.getNameByUid(series);
         tempText="";
         for(i=0;i<teamList.length;i++) {
             placeList[i]=i;
