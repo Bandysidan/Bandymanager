@@ -27,7 +27,7 @@ Rectangle {
     property var pointList: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     property var currentTeam
     property var tempVar
-
+    property int birthyear
     Country {
         id: country
     }
@@ -375,6 +375,22 @@ Rectangle {
 
             }
         }
+        Text {
+            id: ageText
+            anchors.left: passingText.left
+            anchors.top: passingText.top
+            anchors.leftMargin: 300
+            text: "Ålder: "
+            font.bold: true
+        }
+        Text {
+            id: ageValue
+            anchors.left: passingText.left
+            anchors.top: passingText.top
+            anchors.leftMargin: 450
+            text: ""
+            font.bold: false
+        }
 
     }
 
@@ -429,6 +445,11 @@ Rectangle {
         konditionValue.text = parseInt((playerSkills[12]-1)/10+1);
         tempVar=player.getCountryByUid(currentPlayer);
         playerFlag.source = country.getFlagByUid(tempVar);
+        birthyear=player.getBirthyearByUid(currentPlayer);
+        if(birthyear>0)
+            ageValue.text = 2015-birthyear;
+        else
+            ageValue.text = "";
 
 
     }
