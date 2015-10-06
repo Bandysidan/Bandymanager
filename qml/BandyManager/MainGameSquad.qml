@@ -10,6 +10,8 @@ Rectangle {
     id:mainGameSquad
     z:15
     property var playerList
+    property string currentPlayer
+    property var positionSkills
     property var gamerName
     property var gamerTeam
     property var i
@@ -24,6 +26,7 @@ Rectangle {
     property var againstList: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     property var pointList: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     property var currentTeam
+    property var tempVar
 
     Country {
         id: country
@@ -144,24 +147,236 @@ Rectangle {
                 resizable: false
             }
             model: playerModel
-            rowDelegate: playerDelegate
-            itemDelegate: playerNameDelegate
+            onClicked: {
+                changePlayer(playerListView.currentRow);
+            }
         }
     }
-    Column{
+
+    Item {
         id: playerColumn
         anchors.left: teamPlayerColumn.right
         anchors.top: parent.top
         anchors.margins: 20 // Sets all margins at once
         Text {
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.bottomMargin: 5
             id: playerName
-            text: " Test"
+            text: ""
             font.bold: true
             font.pointSize: 16
         }
+        Text {
+            id: saveText
+            anchors.left: parent.left
+            anchors.top: playerName.bottom
+            text: "Räddning: "
+            font.bold: true
+        }
+        Text {
+            id: saveValue
+            anchors.left: parent.left
+            anchors.top: playerName.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Text {
+            id: throwText
+            anchors.left: parent.left
+            anchors.top: saveText.bottom
+            text: "Utkast: "
+            font.bold: true
+        }
+        Text {
+            id: throwValue
+            anchors.left: parent.left
+            anchors.top: saveText.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Text {
+            id: skatingText
+            anchors.left: parent.left
+            anchors.top: throwText.bottom
+            text: "Skridskoåkning: "
+            font.bold: true
+        }
+        Text {
+            id: skatingValue
+            anchors.left: parent.left
+            anchors.top: throwText.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Text {
+            id: interceptText
+            anchors.left: parent.left
+            anchors.top: skatingText.bottom
+            text: "Brytning: "
+            font.bold: true
+        }
+        Text {
+            id: interceptValue
+            anchors.left: parent.left
+            anchors.top: skatingText.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Text {
+            id: passingText
+            anchors.left: parent.left
+            anchors.top: interceptText.bottom
+            text: "Passning: "
+            font.bold: true
+        }
+        Text {
+            id: passingValue
+            anchors.left: parent.left
+            anchors.top: interceptText.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Text {
+            id: lyrText
+            anchors.left: parent.left
+            anchors.top: passingText.bottom
+            text: "Lyrboll: "
+            font.bold: true
+        }
+        Text {
+            id: lyrValue
+            anchors.left: parent.left
+            anchors.top: passingText.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Text {
+            id: takedownText
+            anchors.left: parent.left
+            anchors.top: lyrText.bottom
+            text: "Nedtagning: "
+            font.bold: true
+        }
+        Text {
+            id: takedownValue
+            anchors.left: parent.left
+            anchors.top: lyrText.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Text {
+            id: takingText
+            anchors.left: parent.left
+            anchors.top: takedownText.bottom
+            text: "Mottagning: "
+            font.bold: true
+        }
+        Text {
+            id: takingValue
+            anchors.left: parent.left
+            anchors.top: takedownText.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Text {
+            id: dribblingText
+            anchors.left: parent.left
+            anchors.top: takingText.bottom
+            text: "Dribbling: "
+            font.bold: true
+        }
+        Text {
+            id: dribblingValue
+            anchors.left: parent.left
+            anchors.top: takingText.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Text {
+            id: agressionText
+            anchors.left: parent.left
+            anchors.top: dribblingText.bottom
+            text: "Aggresivitet: "
+            font.bold: true
+        }
+        Text {
+            id: aggressionValue
+            anchors.left: parent.left
+            anchors.top: dribblingText.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Text {
+            id: shotHardnessText
+            anchors.left: parent.left
+            anchors.top: agressionText.bottom
+            text: "Skott (Hårdhet): "
+            font.bold: true
+        }
+        Text {
+            id: shotHardnessValue
+            anchors.left: parent.left
+            anchors.top: agressionText.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Text {
+            id: shotPrecissionText
+            anchors.left: parent.left
+            anchors.top: shotHardnessText.bottom
+            text: "Skott (Precission): "
+            font.bold: true
+        }
+        Text {
+            id: shotPrecissionValue
+            anchors.left: parent.left
+            anchors.top: shotHardnessText.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Text {
+            id: konditionText
+            anchors.left: parent.left
+            anchors.top: shotPrecissionText.bottom
+            text: "Kondition: "
+            font.bold: true
+        }
+        Text {
+            id: konditionValue
+            anchors.left: parent.left
+            anchors.top: shotPrecissionText.bottom
+            anchors.leftMargin: 150
+            text: ""
+            font.bold: false
+        }
+        Image {
+            id: playerFlag
+            anchors.left: parent.left
+            anchors.top: playerName.bottom
+            anchors.leftMargin: 300
+            width: 59
+            height: 36
+            fillMode: Image.PreserveAspectFit
+            Component.onCompleted: {
+                source = country.getFlagByUid("sweden");
+
+            }
+        }
 
     }
-
 
     function show() {
         mainGameSquad.visible = true;
@@ -184,8 +399,9 @@ Rectangle {
             playerModel.set(i,{halfSkill: parseInt((playerSkills[3]-1)/10+1)});
             playerModel.set(i,{midfieldSkill: parseInt((playerSkills[4]-1)/10+1)});
             playerModel.set(i,{attackSkill: parseInt((playerSkills[5]-1)/10+1)});
-
         }
+
+        changePlayer(0);
     }
 
 
@@ -193,7 +409,27 @@ Rectangle {
         mainGameSquad.visible = false;
     }
 
-        function changePlayer(playerindex){
-            playerName.text=player.getFullNameByUid(playerList[playerindex]);
-        }
+    function changePlayer(playerindex){
+        currentPlayer = playerList[playerindex];
+        playerName.text=player.getFullNameByUid(currentPlayer);
+        playerSkills = player.getSkillsByUid(currentPlayer);
+        positionSkills = player.getPositionSkills(currentPlayer);
+        saveValue.text = parseInt((playerSkills[0]-1)/10+1);
+        throwValue.text = parseInt((playerSkills[1]-1)/10+1);
+        skatingValue.text = parseInt((playerSkills[2]-1)/10+1);
+        interceptValue.text = parseInt((playerSkills[3]-1)/10+1);
+        passingValue.text = parseInt((playerSkills[4]-1)/10+1);
+        lyrValue.text = parseInt((playerSkills[5]-1)/10+1);
+        takedownValue.text = parseInt((playerSkills[6]-1)/10+1);
+        takingValue.text = parseInt((playerSkills[7]-1)/10+1);
+        dribblingValue.text = parseInt((playerSkills[8]-1)/10+1);
+        aggressionValue.text = parseInt((playerSkills[9]-1)/10+1);
+        shotHardnessValue.text = parseInt((playerSkills[10]-1)/10+1);
+        shotPrecissionValue.text = parseInt((playerSkills[11]-1)/10+1);
+        konditionValue.text = parseInt((playerSkills[12]-1)/10+1);
+        tempVar=player.getCountryByUid(currentPlayer);
+        playerFlag.source = country.getFlagByUid(tempVar);
+
+
+    }
 }
