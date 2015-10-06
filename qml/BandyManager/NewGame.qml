@@ -287,7 +287,6 @@ Rectangle {
                     }
                 }
             }
-
         }
         ListView {
             id: teamslist
@@ -296,14 +295,11 @@ Rectangle {
             model: teamlistModel
             highlight: Rectangle { color: "darkgreen"; radius: 5 }
             highlightFollowsCurrentItem: true
-
         }
-
     }
 
     ListModel {
         id: teamlistModel
-
     }
 
     /* Vallista spelare */
@@ -357,7 +353,6 @@ Rectangle {
                     }
                 }
             }
-
         }
         ListView {
             id: playerlistView
@@ -366,9 +361,7 @@ Rectangle {
             model: playerlistTeam
             highlight: Rectangle { color: "darkgreen"; radius: 5 }
             highlightFollowsCurrentItem: true
-
         }
-
     }
     ListModel {
         id: playerlistTeam
@@ -387,10 +380,9 @@ Rectangle {
         id: playerName
         x: 840
         y: 410
-        text: "Torbjörn Lindquist"
+        text: ""
         font.bold: false
     }
-
     Text {
         id: saveText
         x: 840
@@ -699,7 +691,6 @@ Rectangle {
         BandyManager.MainMenuButton {
             text: "Starta spelet"
             onClicked: {
-
                 gamer.setTeamUidStart(currentTeam,currentGamer);
                 gamer.setNameStart(input.text,currentGamer);
                 team.autoPositions(currentTeam);
@@ -707,9 +698,7 @@ Rectangle {
                 mainGameScreen.show();
             }
         }
-
     }
-
 
     Component.onCompleted: {
         team.fillTeams();
@@ -729,29 +718,28 @@ Rectangle {
 
     function countryRight() {
         if(currentCountry=="sweden")
-               currentCountry="russia"
+               currentCountry="russia";
         else if(currentCountry=="russia")
-            currentCountry="finland"
+            currentCountry="finland";
         else if(currentCountry=="finland")
-            currentCountry="norway"
+            currentCountry="norway";
         else if(currentCountry=="norway")
-            currentCountry="usa"
+            currentCountry="usa";
         else
-            currentCountry="sweden"
+            currentCountry="sweden";
     }
 
     function countryLeft() {
         if(currentCountry=="sweden")
-               currentCountry="usa"
+               currentCountry="usa";
         else if(currentCountry=="usa")
-            currentCountry="norway"
+            currentCountry="norway";
         else if(currentCountry=="norway")
-            currentCountry="finland"
+            currentCountry="finland";
         else if(currentCountry=="finland")
-            currentCountry="russia"
+            currentCountry="russia";
         else
-            currentCountry="sweden"
-
+            currentCountry="sweden";
     }
 
     function changeSeries(seriesindex) {
@@ -761,7 +749,7 @@ Rectangle {
         teamlistModel.clear();
         for(i=0; i < teamList.length ; i++)
             {
-                teamlistModel.set(i,{name: team.getNameByUid(teamList[i])})
+                teamlistModel.set(i,{name: team.getNameByUid(teamList[i])});
             }
         changeTeam(0);
     }
@@ -769,19 +757,15 @@ Rectangle {
     function changeCountry() {
         flag.source= country.getFlagByUid(currentCountry);
         countryname.text= country.getNameByUid(currentCountry);
-
         serieList = serie.getUidByCountryUid(currentCountry);
 //        console.log(serieList.length);
         serielistModel.clear();
         for(i=0; i < serieList.length ; i++)
             {
-
                 serielistModel.set(i,{name: serie.getNameByUid(serieList[i])})
             }
-
         changeSeries(0);
     }
-
 
     function changeTeam(teamindex){
         playerlistTeam.clear();
@@ -794,7 +778,6 @@ Rectangle {
             }
         changePlayer(0);
     }
-
 
     function changePlayer(playerindex){
         currentPlayer = playerList[playerindex];
