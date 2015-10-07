@@ -2,6 +2,7 @@
 #define NEWS_H
 
 #include <QObject>
+#include <QString>
 #include <QDate>
 
 class News : public QObject
@@ -11,6 +12,7 @@ class News : public QObject
     Q_PROPERTY(QString uid READ uid WRITE setUid NOTIFY uidChanged)
     Q_PROPERTY(QString title READ title WRITE setTitle NOTIFY titleChanged)
     Q_PROPERTY(QString text READ text WRITE setText NOTIFY textChanged)
+    Q_PROPERTY(QDate date READ date WRITE setDate NOTIFY dateChanged)
 
 public:
     explicit News(QObject *parent = 0);
@@ -24,10 +26,15 @@ public:
     void setText(QString value);
     QString text();
 
+    void setDate(QDate value);
+    QDate date();
+
+    Q_INVOKABLE void newNews(QString title,QString text, int year, int month, int day);
 signals:
     void uidChanged();
     void titleChanged();
     void textChanged();
+    void dateChanged();
 
 public slots:
 

@@ -37,10 +37,31 @@ void News::setText(QString value)
 {
     m_text = value;
     emit textChanged();
-
 }
 
 QString News::text()
 {
     return m_text;
+}
+
+void News::setDate(QDate value)
+{
+    m_date=value;
+    emit dateChanged();
+}
+
+QDate News::date()
+{
+    return m_date;
+}
+
+void News::newNews(QString title, QString text, int year, int month, int day)
+{
+    News *newNews;
+    newNews= new News;
+    newNews->setDate(QDate(year,month,day));
+    newNews->setTitle(title);
+    newNews->setText(text);
+    newNews->m_read=0;
+    newNews->setUid(title);
 }
