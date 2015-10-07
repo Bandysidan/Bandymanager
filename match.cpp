@@ -293,7 +293,13 @@ void Match::matchTick(QString value, int min, int sec)
     int asChans;
     int randPlayerNum;
     QString randPlayerName;
+    int randTypeNum;
+    QList<QString> typeNames;
     if(match){
+        typeNames.append(" på hörna");
+        typeNames.append(" på frislag");
+        typeNames.append(" på straffslag");
+        typeNames.append(" på friläge");
         homeGoalSkill=match->m_home_player_skill.value("Goalkeeper");
         homeDefSkill=match->m_home_player_skill.value("Defender1")*0.40+match->m_home_player_skill.value("Defender2")*0.20+match->m_home_player_skill.value("Defender3")*0.20+match->m_home_player_skill.value("Defender1")*0.10+match->m_home_player_skill.value("Defender1")*0.10;
         homeMidSkill=match->m_home_player_skill.value("Defender4")*0.05+match->m_home_player_skill.value("Defender5")*0.05+match->m_home_player_skill.value("Midfielder1")*0.30+match->m_home_player_skill.value("Midfielder2")*0.30+match->m_home_player_skill.value("Midfielder3")*0.30;
@@ -309,7 +315,6 @@ void Match::matchTick(QString value, int min, int sec)
         if(m_playstop>0){
             m_playstop--;
         }else{
-
             if(sec%10==0){
                 randNum=rand()%2000;
                 tempText=QString::number(min);
@@ -326,8 +331,9 @@ void Match::matchTick(QString value, int min, int sec)
                     else randPlayerName=match->m_away_player_positions.value("Defender4");
                     randPlayerName=player.getFullNameByUid(randPlayerName);
                     match->setAwayTeamScore(awayScore+1);
+                    randTypeNum=rand()%4;
                     event->shortText="Bortamål";
-                    event->longText="Mål till bortalaget genom "+randPlayerName;
+                    event->longText="Mål till bortalaget genom "+randPlayerName+typeNames[randTypeNum];
                     match->m_match_event.append(event);
                     m_playstop=20;
                 }
@@ -342,14 +348,14 @@ void Match::matchTick(QString value, int min, int sec)
                     else randPlayerName=match->m_home_player_positions.value("Defender4");
                     randPlayerName=player.getFullNameByUid(randPlayerName);
                     match->setHomeTeamScore(homeScore+1);
+                    randTypeNum=rand()%4;
                     event->shortText="Hemmamål";
-                    event->longText="Mål till hemmalaget genom "+randPlayerName;
+                    event->longText="Mål till hemmalaget genom "+randPlayerName+typeNames[randTypeNum];
                     match->m_match_event.append(event);
                     m_playstop=20;
                 }
             }
         }
-
         if(min==0 && sec ==1){
             tempText=QString::number(min);
             event->time=tempText;
