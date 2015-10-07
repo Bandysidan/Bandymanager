@@ -16,73 +16,69 @@ Rectangle {
     property string nextMatchHomeTeam
     property string nextMatchAwayTeam
     property string nextMatchDate
-            Rectangle {
-                id: newsContainer
-                anchors.left: parent.left
-                anchors.top: parent.top
-                anchors.margins: 10 // Sets all margins at once
-                width: 450
-                height: 200
-                color: "red"
-                border.color: "black"
-                border.width: 2
-                radius: 8
-                Item{
-                    anchors.left: parent.left
-                    anchors.top: parent.top
-                    anchors.margins: 10 // Sets all margins at once
-                    Column {
-                        Text{
-                            id: dateID
-                            text: ""
-                            font.bold: true
-                        }
-                        Text{
-                            id: news
-                            text: ""
-                        }
-                    }
-                }
-            }
-            Rectangle {
-                id: nextMatchContainer
-                width: 450
-                height: 200
-                color: "green"
-                border.color: "black"
-                border.width: 2
-                radius: 8
-                anchors.left: parent.left
-                anchors.top: newsContainer.bottom
-                anchors.margins: 10 // Sets all margins at once
-                Item{
-                    anchors.left: parent.left
-                    anchors.top: parent.top
-                    anchors.margins: 10 // Sets all margins at once
-                    Column {
-                        Text{
-                            id: nextMatchHeader
-                            text: "Nästa match"
-                            font.bold: true
-                            font.pointSize: 15
-                        }
-                        Text{
-                            id: nextMatchDateText
-                            text: ""
-                            font.bold: true
-                        }
-                        Text{
-                            id: nextMatchText
-                            text: ""
-                        }
-                    }
-                }
-            }
-
-
-
-
     property var dateString
+    Rectangle {
+        id: newsContainer
+        anchors.left: parent.left
+        anchors.top: parent.top
+        anchors.margins: 10 // Sets all margins at once
+        width: 450
+        height: 200
+        color: "red"
+        border.color: "black"
+        border.width: 2
+        radius: 8
+        Item{
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.margins: 10 // Sets all margins at once
+            Column {
+                Text{
+                    id: dateID
+                    text: ""
+                    font.bold: true
+                }
+                Text{
+                    id: news
+                    text: ""
+                }
+            }
+        }
+    }
+    Rectangle {
+        id: nextMatchContainer
+        width: 450
+        height: 200
+        color: "green"
+        border.color: "black"
+        border.width: 2
+        radius: 8
+        anchors.left: parent.left
+        anchors.top: newsContainer.bottom
+        anchors.margins: 10 // Sets all margins at once
+        Item{
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.margins: 10 // Sets all margins at once
+            Column {
+                Text{
+                    id: nextMatchHeader
+                    text: "Nästa match"
+                    font.bold: true
+                    font.pointSize: 15
+                }
+                Text{
+                    id: nextMatchDateText
+                    text: ""
+                    font.bold: true
+                }
+                Text{
+                    id: nextMatchText
+                    text: ""
+                }
+            }
+        }
+    }
 
     Component.onCompleted: {
 
