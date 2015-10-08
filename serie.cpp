@@ -586,6 +586,117 @@ void Serie::makeSchedule(QString value)
                 homeTeams.append(0); awayTeams.append(1);
 
             }
+        } else if (countTeams==10){
+            if(times==2){
+                // Round 1
+                homeTeams.append(3); awayTeams.append(8);
+                homeTeams.append(2); awayTeams.append(6);
+                homeTeams.append(0); awayTeams.append(5);
+                homeTeams.append(9); awayTeams.append(1);
+                homeTeams.append(7); awayTeams.append(4);
+                // Round 2
+                homeTeams.append(8); awayTeams.append(6);
+                homeTeams.append(5); awayTeams.append(3);
+                homeTeams.append(1); awayTeams.append(2);
+                homeTeams.append(4); awayTeams.append(0);
+                homeTeams.append(7); awayTeams.append(9);
+                // Round 3
+                homeTeams.append(5); awayTeams.append(8);
+                homeTeams.append(6); awayTeams.append(1);
+                homeTeams.append(3); awayTeams.append(4);
+                homeTeams.append(2); awayTeams.append(7);
+                homeTeams.append(0); awayTeams.append(9);
+                // Round 4
+                homeTeams.append(8); awayTeams.append(1);
+                homeTeams.append(4); awayTeams.append(5);
+                homeTeams.append(7); awayTeams.append(6);
+                homeTeams.append(9); awayTeams.append(3);
+                homeTeams.append(0); awayTeams.append(2);
+                // Round 5
+                homeTeams.append(4); awayTeams.append(8);
+                homeTeams.append(1); awayTeams.append(7);
+                homeTeams.append(5); awayTeams.append(9);
+                homeTeams.append(6); awayTeams.append(0);
+                homeTeams.append(3); awayTeams.append(2);
+                // Round 6
+                homeTeams.append(8); awayTeams.append(7);
+                homeTeams.append(9); awayTeams.append(4);
+                homeTeams.append(0); awayTeams.append(1);
+                homeTeams.append(2); awayTeams.append(5);
+                homeTeams.append(3); awayTeams.append(6);
+                // Round 7
+                homeTeams.append(9); awayTeams.append(8);
+                homeTeams.append(7); awayTeams.append(0);
+                homeTeams.append(4); awayTeams.append(2);
+                homeTeams.append(1); awayTeams.append(3);
+                homeTeams.append(5); awayTeams.append(6);
+                // Round 8
+                homeTeams.append(8); awayTeams.append(0);
+                homeTeams.append(2); awayTeams.append(9);
+                homeTeams.append(3); awayTeams.append(7);
+                homeTeams.append(6); awayTeams.append(4);
+                homeTeams.append(5); awayTeams.append(1);
+                // Round 9
+                homeTeams.append(2); awayTeams.append(8);
+                homeTeams.append(0); awayTeams.append(3);
+                homeTeams.append(9); awayTeams.append(6);
+                homeTeams.append(7); awayTeams.append(5);
+                homeTeams.append(4); awayTeams.append(1);
+                // Round 10
+                homeTeams.append(8); awayTeams.append(3);
+                homeTeams.append(6); awayTeams.append(2);
+                homeTeams.append(5); awayTeams.append(0);
+                homeTeams.append(1); awayTeams.append(9);
+                homeTeams.append(4); awayTeams.append(7);
+                // Round 11
+                homeTeams.append(6); awayTeams.append(8);
+                homeTeams.append(3); awayTeams.append(5);
+                homeTeams.append(2); awayTeams.append(1);
+                homeTeams.append(0); awayTeams.append(4);
+                homeTeams.append(9); awayTeams.append(7);
+                // Round 12
+                homeTeams.append(8); awayTeams.append(5);
+                homeTeams.append(1); awayTeams.append(6);
+                homeTeams.append(4); awayTeams.append(3);
+                homeTeams.append(7); awayTeams.append(2);
+                homeTeams.append(9); awayTeams.append(0);
+                // Round 13
+                homeTeams.append(1); awayTeams.append(8);
+                homeTeams.append(5); awayTeams.append(4);
+                homeTeams.append(6); awayTeams.append(7);
+                homeTeams.append(3); awayTeams.append(9);
+                homeTeams.append(2); awayTeams.append(0);
+                // Round 14
+                homeTeams.append(8); awayTeams.append(4);
+                homeTeams.append(7); awayTeams.append(1);
+                homeTeams.append(9); awayTeams.append(5);
+                homeTeams.append(0); awayTeams.append(6);
+                homeTeams.append(2); awayTeams.append(3);
+                // Round 15
+                homeTeams.append(7); awayTeams.append(8);
+                homeTeams.append(4); awayTeams.append(9);
+                homeTeams.append(1); awayTeams.append(0);
+                homeTeams.append(5); awayTeams.append(2);
+                homeTeams.append(6); awayTeams.append(3);
+                // Round 16
+                homeTeams.append(8); awayTeams.append(9);
+                homeTeams.append(0); awayTeams.append(7);
+                homeTeams.append(2); awayTeams.append(4);
+                homeTeams.append(3); awayTeams.append(1);
+                homeTeams.append(6); awayTeams.append(5);
+                // Round 17
+                homeTeams.append(0); awayTeams.append(8);
+                homeTeams.append(9); awayTeams.append(2);
+                homeTeams.append(7); awayTeams.append(3);
+                homeTeams.append(4); awayTeams.append(6);
+                homeTeams.append(1); awayTeams.append(5);
+                // Round 18
+                homeTeams.append(8); awayTeams.append(2);
+                homeTeams.append(3); awayTeams.append(0);
+                homeTeams.append(6); awayTeams.append(9);
+                homeTeams.append(5); awayTeams.append(7);
+                homeTeams.append(1); awayTeams.append(4);
+            }
         } else if (countTeams==11){
             if(times==2){
                 // Round 1

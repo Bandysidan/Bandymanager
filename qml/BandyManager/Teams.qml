@@ -426,6 +426,20 @@ Rectangle {
         rating: 920
     }
     Team {
+        uid: "Hamarherrar2"
+        name: "Hamar"
+        countryUid: "norway"
+        homeShirt: "ShirtRed.png"
+        rating: 905
+    }
+    Team {
+        uid: "Ullernherrar2"
+        name: "Ullern"
+        countryUid: "norway"
+        homeShirt: "ShirtRed.png"
+        rating: 890
+    }
+    Team {
         uid: "Helsinkiherrar"
         name: "IFK Helsinki"
         countryUid: "finland"

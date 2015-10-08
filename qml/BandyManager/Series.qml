@@ -44,8 +44,8 @@ Rectangle {
         countryUid: "norway"
         startMonth: 11
         endMonth: 2
-        timesEach: 3
-        teamUid: ["Stabaekherrar","Mjondalenherrar","Readyherrar","Solbergherrar","Ullevålherrar","Høvikherrar","Sarpsborgherrar","Drammenherrar"]
+        timesEach: 2
+        teamUid: ["Stabaekherrar","Mjondalenherrar","Readyherrar","Solbergherrar","Ullevålherrar","Høvikherrar","Sarpsborgherrar","Drammenherrar","Hamarherrar2","Ullernherrar2"]
 /*        matchUid: [
             "NorElitR01M01",
             "NorElitR01M02",
